@@ -1,15 +1,13 @@
-import Head from "next/head";
 
-export default function Home() {
+import FooterPage from "../components/footerPage/FooterPage";
+
+export default function Home ()
+{
   return (
     <div>
-      <Head>
-        <title>webdev news</title>
-        <meta name="keywords" content="web development, programming" />
-      </Head>
-      
-      <h1>hello next</h1>
-      <a href="/about">about</a>
+      <h3 style={{textAlign:'center'}}>CorporateZone!</h3>
+      <h1>hello next js</h1>
+      <FooterPage />
     </div>
   );
 }
