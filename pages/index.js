@@ -1,10 +1,10 @@
-import FooterPage from "../components/footerPage/FooterPage";
+import Footer from "../components/Footer/Footer";
+
 
 export default function Home() {
   return (
     <div>
-      <h1>hello next</h1>
-      <FooterPage/>
+      <Footer/>
     </div>
   );
 }
