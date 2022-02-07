@@ -17,9 +17,9 @@ const CompanyJobs = () => {
                 </ul>
             </div>
    
-            <div className="md:flex justify-center items-center my-20 company_card">
+            <div className="md:flex justify-center items-center my-20 company_card w-9/12 mx-auto">
                 
-                <div className="bg-white dark:bg-slate-900 rounded-lg px-6 py-8 ring-1 w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl">
+                <div className="bg-white dark:bg-slate-900 rounded-lg px-6 py-8 ring-1 w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl border-b-2 border-slate-800 hover:border-cyan-500">
                 <div>                       
                         <Image
                     className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
@@ -31,12 +31,12 @@ const CompanyJobs = () => {
                 </div>
                 <h3 className="text-slate-900 dark:text-white mt-3 text-base font-medium tracking-tight">AmaZon</h3>
                 <span className="text-slate-400 dark:text-white text-sm font-medium tracking-tight">(SouthAfrica)</span> <br />
-                <a href="#" className="text-slate-200 dark:text-slate-400 block md:w-1/3 mx-auto mt-3 text-sm bg-slate-800 p-2 rounded-lg">
+                <a href="#" className="text-slate-200 dark:text-slate-400 block md:w-3/4 mx-auto mt-3 text-sm bg-cyan-500 p-2 rounded-lg hover:bg-cyan-600">
                     7 Openings 
                 </a>
                 </div>
                 
-                <div className="bg-white dark:bg-slate-900 rounded-lg px-6 py-8 ring-1 w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl">
+                <div className="bg-white dark:bg-slate-900 rounded-lg px-6 py-8 ring-1 md:w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl border-b-2 border-slate-800 hover:border-cyan-500">
                 <div>                       
                         <Image
                     className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
@@ -48,12 +48,12 @@ const CompanyJobs = () => {
                 </div>
                 <h3 className="text-slate-900 dark:text-white mt-3 text-base font-medium tracking-tight">AmaZon</h3>
                 <span className="text-slate-400 dark:text-white text-sm font-medium tracking-tight">(SouthAfrica)</span> <br />
-                <a href="#" className="text-slate-200 dark:text-slate-400 block md:w-1/3 mx-auto mt-3 text-sm bg-slate-800 p-2 rounded-lg">
+                <a href="#" className="text-slate-200 dark:text-slate-400 block md:w-3/4 mx-auto mt-3 text-sm bg-cyan-500 p-2 rounded-lg hover:bg-cyan-600">
                     7 Openings 
                 </a>
                 </div>
 
-                <div className="bg-white dark:bg-slate-900 rounded-lg px-6 py-8 ring-1 w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl">
+                <div className="bg-white dark:bg-slate-900 rounded-lg px-6 py-8 ring-1 md:w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl border-b-2 border-slate-800 hover:border-cyan-500">
                 <div>                       
                         <Image
                     className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
@@ -65,12 +65,12 @@ const CompanyJobs = () => {
                 </div>
                 <h3 className="text-slate-900 dark:text-white mt-3 text-base font-medium tracking-tight">AmaZon</h3>
                 <span className="text-slate-400 dark:text-white text-sm font-medium tracking-tight">(SouthAfrica)</span> <br />
-                <a href="#" className="text-slate-200 dark:text-slate-400 block md:w-1/3 mx-auto mt-3 text-sm bg-slate-800 p-2 rounded-lg">
+                <a href="#" className="text-slate-200 dark:text-slate-400 block md:w-3/4 mx-auto mt-3 text-sm bg-cyan-500 p-2 rounded-lg hover:bg-cyan-600">
                     7 Openings 
                 </a>
                 </div>
 
-                <div className="bg-white dark:bg-slate-900 rounded-lg px-6 py-8 ring-1 w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl">
+                <div className="bg-white dark:bg-slate-900 rounded-lg px-6 py-8 ring-1 md:w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl border-b-2 border-slate-800 hover:border-cyan-500">
                 <div>                       
                         <Image
                     className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
@@ -82,12 +82,12 @@ const CompanyJobs = () => {
                 </div>
                 <h3 className="text-slate-900 dark:text-white mt-3 text-base font-medium tracking-tight">AmaZon</h3>
                 <span className="text-slate-400 dark:text-white text-sm font-medium tracking-tight">(SouthAfrica)</span> <br />
-                <a href="#" className="text-slate-200 dark:text-slate-400 block md:w-1/3 mx-auto mt-3 text-sm bg-slate-800 p-2 rounded-lg">
+                <a href="#" className="text-slate-200 dark:text-slate-400 block md:w-3/4 mx-auto mt-3 text-sm bg-cyan-500 p-2 rounded-lg hover:bg-cyan-600">
                     7 Openings 
                 </a>
                 </div>
 
-                <div className="bg-white dark:bg-slate-900 rounded-lg px-6 py-8 ring-1 w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl">
+                <div className="bg-white dark:bg-slate-900 rounded-lg px-6 py-8 ring-1 md:w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl border-b-2 border-slate-800 hover:border-cyan-500">
                 <div>                       
                         <Image
                     className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
@@ -99,14 +99,14 @@ const CompanyJobs = () => {
                 </div>
                 <h3 className="text-slate-900 dark:text-white mt-3 text-base font-medium tracking-tight">AmaZon</h3>
                 <span className="text-slate-400 dark:text-white text-sm font-medium tracking-tight">(SouthAfrica)</span> <br />
-                <a href="#" className="text-slate-200 dark:text-slate-400 block md:w-1/3 mx-auto mt-3 text-sm bg-slate-800 p-2 rounded-lg">
+                <a href="#" className="text-slate-200 dark:text-slate-400 block md:w-3/4 mx-auto mt-3 text-sm bg-cyan-500 p-2 rounded-lg hover:bg-cyan-600">
                     7 Openings 
                 </a>
                 </div>
         
             
             </div>
-            
+
         </div>
     );
 };
