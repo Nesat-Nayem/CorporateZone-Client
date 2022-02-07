@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 
 const Footer = () => {
@@ -468,3 +469,4 @@ const Footer = () => {
 }
 
 export default Footer;
+>>>>>>> main
