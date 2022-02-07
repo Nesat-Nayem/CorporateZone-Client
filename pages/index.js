@@ -1,10 +1,11 @@
-import Footer from "../components/Footer/Footer";
+import Head from "next/head";
+import Footer from "../components/Home/Footer/Footer";
 
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Footer/>
-    </div>
+    </>
   );
 }
