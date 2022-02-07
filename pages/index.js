@@ -1,3 +1,4 @@
+
 import CategoryJobs from "../components/Home/CategoryJobs/CategoryJobs";
 import CompanyJobs from "../components/Home/CompanyJobs/CompanyJobs";
 import Footer from "../components/Home/Footer/Footer";
