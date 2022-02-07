@@ -1,3 +1,29 @@
+<<<<<<< HEAD
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+li{
+  list-style: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+=======
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,4 +31,5 @@
 
 *{
     scroll-behavior: smooth;
+>>>>>>> main
 }

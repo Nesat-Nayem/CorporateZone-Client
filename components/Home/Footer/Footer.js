@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+
+const Footer = () => {
+    return (
+        <div>
+            <h3>This is Footer</h3>
+        </div>
+    );
+};
+
+export default Footer;
+=======
 import Link from "next/link";
 
 const Footer = () => {
@@ -468,3 +480,4 @@ const Footer = () => {
 }
 
 export default Footer;
+>>>>>>> main
