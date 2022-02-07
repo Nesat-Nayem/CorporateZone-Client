@@ -1,5 +1,12 @@
+import Image from "next/image";
+import company from '../../../images/first_company.jpg'
+import company_second from '../../../images/second_company.jpg'
+import company_third from '../../../images/third_company.jpg'
+
+
 
 const CompanyJobs = () => {
+
     return (
         <div className="my-5">
             <div className="md:flex justify-between items-center md:w-8/12 mx-auto company_heading relative my-20">
@@ -13,10 +20,31 @@ const CompanyJobs = () => {
             <div className="md:flex justify-center items-center my-20 company_card">
                 
                 <div className="bg-white dark:bg-slate-900 rounded-lg px-6 py-8 ring-1 w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl">
-                <div>
-                    <span className="inline-flex items-center justify-center p-2 bg-indigo-500 rounded-md shadow-lg">
-                    <svg className="h-12 w-12 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"></svg>
-                    </span>
+                <div>                       
+                        <Image
+                    className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
+                    width="150"
+                    height="70"
+                    src={company_third}
+                    alt=""
+                />
+                </div>
+                <h3 className="text-slate-900 dark:text-white mt-3 text-base font-medium tracking-tight">AmaZon</h3>
+                <span className="text-slate-400 dark:text-white text-sm font-medium tracking-tight">(SouthAfrica)</span> <br />
+                <a href="#" className="text-slate-200 dark:text-slate-400 block md:w-1/3 mx-auto mt-3 text-sm bg-slate-800 p-2 rounded-lg">
+                    7 Openings 
+                </a>
+                </div>
+                
+                <div className="bg-white dark:bg-slate-900 rounded-lg px-6 py-8 ring-1 w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl">
+                <div>                       
+                        <Image
+                    className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
+                    width="150"
+                    height="70"
+                    src={company_second}
+                    alt=""
+                />
                 </div>
                 <h3 className="text-slate-900 dark:text-white mt-3 text-base font-medium tracking-tight">AmaZon</h3>
                 <span className="text-slate-400 dark:text-white text-sm font-medium tracking-tight">(SouthAfrica)</span> <br />
@@ -26,10 +54,14 @@ const CompanyJobs = () => {
                 </div>
 
                 <div className="bg-white dark:bg-slate-900 rounded-lg px-6 py-8 ring-1 w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl">
-                <div>
-                    <span className="inline-flex items-center justify-center p-2 bg-indigo-500 rounded-md shadow-lg">
-                    <svg className="h-12 w-12 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"></svg>
-                    </span>
+                <div>                       
+                        <Image
+                    className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
+                    width="150"
+                    height="70"
+                    src={company}
+                    alt=""
+                />
                 </div>
                 <h3 className="text-slate-900 dark:text-white mt-3 text-base font-medium tracking-tight">AmaZon</h3>
                 <span className="text-slate-400 dark:text-white text-sm font-medium tracking-tight">(SouthAfrica)</span> <br />
@@ -37,12 +69,16 @@ const CompanyJobs = () => {
                     7 Openings 
                 </a>
                 </div>
-        
+
                 <div className="bg-white dark:bg-slate-900 rounded-lg px-6 py-8 ring-1 w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl">
-                <div>
-                    <span className="inline-flex items-center justify-center p-2 bg-indigo-500 rounded-md shadow-lg">
-                    <svg className="h-12 w-12 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"></svg>
-                    </span>
+                <div>                       
+                        <Image
+                    className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
+                    width="150"
+                    height="70"
+                    src={company_second}
+                    alt=""
+                />
                 </div>
                 <h3 className="text-slate-900 dark:text-white mt-3 text-base font-medium tracking-tight">AmaZon</h3>
                 <span className="text-slate-400 dark:text-white text-sm font-medium tracking-tight">(SouthAfrica)</span> <br />
@@ -50,25 +86,16 @@ const CompanyJobs = () => {
                     7 Openings 
                 </a>
                 </div>
-                
+
                 <div className="bg-white dark:bg-slate-900 rounded-lg px-6 py-8 ring-1 w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl">
-                <div>
-                    <span className="inline-flex items-center justify-center p-2 bg-indigo-500 rounded-md shadow-lg">
-                    <svg className="h-12 w-12 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"></svg>
-                    </span>
-                </div>
-                <h3 className="text-slate-900 dark:text-white mt-3 text-base font-medium tracking-tight">AmaZon</h3>
-                <span className="text-slate-400 dark:text-white text-sm font-medium tracking-tight">(SouthAfrica)</span> <br />
-                <a href="#" className="text-slate-200 dark:text-slate-400 block md:w-1/3 mx-auto mt-3 text-sm bg-slate-800 p-2 rounded-lg">
-                    7 Openings 
-                </a>
-                </div>
-                
-                <div className="bg-white dark:bg-slate-900 rounded-lg px-6 py-8 ring-1 w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl">
-                <div>
-                    <span className="inline-flex items-center justify-center p-2 bg-indigo-500 rounded-md shadow-lg">
-                    <svg className="h-12 w-12 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"></svg>
-                    </span>
+                <div>                       
+                        <Image
+                    className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
+                    width="150"
+                    height="70"
+                    src={company_third}
+                    alt=""
+                />
                 </div>
                 <h3 className="text-slate-900 dark:text-white mt-3 text-base font-medium tracking-tight">AmaZon</h3>
                 <span className="text-slate-400 dark:text-white text-sm font-medium tracking-tight">(SouthAfrica)</span> <br />
