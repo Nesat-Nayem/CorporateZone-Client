@@ -23,7 +23,7 @@ const CompanyJobs = () => {
                 <div>                       
                         <Image
                     className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
-                    width="150"
+                    width="120"
                     height="70"
                     src={company_third}
                     alt=""
@@ -40,7 +40,7 @@ const CompanyJobs = () => {
                 <div>                       
                         <Image
                     className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
-                    width="150"
+                    width="120"
                     height="70"
                     src={company_second}
                     alt=""
@@ -57,7 +57,7 @@ const CompanyJobs = () => {
                 <div>                       
                         <Image
                     className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
-                    width="150"
+                    width="120"
                     height="70"
                     src={company}
                     alt=""
@@ -74,7 +74,7 @@ const CompanyJobs = () => {
                 <div>                       
                         <Image
                     className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
-                    width="150"
+                    width="120"
                     height="70"
                     src={company_second}
                     alt=""
@@ -91,7 +91,7 @@ const CompanyJobs = () => {
                 <div>                       
                         <Image
                     className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
-                    width="150"
+                    width="120"
                     height="70"
                     src={company_third}
                     alt=""
