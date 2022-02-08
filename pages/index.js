@@ -19,6 +19,6 @@ export default function Home ()
       <RecentJobs />
       <Pricing/>
       <Footer />
-    </div>
+    </>
   );
 }
