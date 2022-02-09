@@ -2,13 +2,10 @@ import Link from "next/link";
 import GithubSignin from "../components/authentication/GithubSignin";
 import GoogleSignin from "../components/authentication/GoogleSignin";
 import SigninForm from "../components/authentication/SigninForm";
-import Footer from "../components/Shared/Footer/Footer";
-import Header from "../components/Shared/Header/Header";
 
 const signin = () => {
   return (
     <section className="bg-gray-100">
-      <Header />
       <div className="md:w-9/12 w-11/12 mx-auto flex items-center justify-center py-20">
         {" "}
         <div className="text-center">
@@ -35,7 +32,6 @@ const signin = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </section>
   );
 };
