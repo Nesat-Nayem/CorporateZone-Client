@@ -1,77 +1,84 @@
+import {
+  MdRestaurantMenu,
+  MdOutlineAccountBalance,
+  MdMedicalServices,
+  MdBookmarkAdd,
+  MdOutlineCodeOff,
+  MdOutlineQrCodeScanner,
+} from "react-icons/md";
+import { FaIndustry } from "react-icons/fa";
+
 const CategoryJobs = () => {
   return (
-    <div className="my-5 relative">
-      <ul className="md:flex justify-center items-center bg-cyan-100 md:w-8/12 mx-auto my-7 py-5 rounded-lg shadow-lg relative">
-        <li className="mx-4 text-center h-32 w-40 flex justify-center items-center rounded-lg hover:bg-cyan-200 transform duration-500 hover:scale-95 px-3">
+    <div className="my-5">
+      <ul className="md:flex justify-center items-center bg-slate-100 md:w-8/12 mx-auto my-7 py-5 rounded-lg shadow-lg relative">
+        <li className="mx-4 text-center md:h-32 md:w-40 flex justify-center items-center rounded-lg hover:text transform duration-500 hover:scale-95 px-3">
           <a href="#">
             <span>
-              <i className="fas fa-laptop text-5xl text-cyan-500"></i>
+              <MdOutlineQrCodeScanner className="text-5xl mx-auto text-cyan-500" />
             </span>
-            <h3 className="text-2xl mt-3">Technology</h3>
-            <p>10 jobs</p>
+            <h3 className="text-2xl mt-2">Technology</h3>
+            <p className="text-sm font-light">10 jobs</p>
           </a>
         </li>
 
-        <li className="mx-4 text-center h-32 w-40 flex justify-center items-center rounded-lg hover:bg-cyan-200 transform duration-500 hover:scale-95">
+        <li className="mx-4 text-center h-32 md:w-40 flex justify-center items-center rounded-lg hover:text transform duration-500 hover:scale-95">
           <a href="#">
             <span>
-              <i className="fas fas fa-code text-5xl text-cyan-500"></i>
+              <MdOutlineCodeOff className="text-5xl mx-auto text-cyan-500" />
             </span>
-            <h3 className="text-2xl mt-3">Developer</h3>
-            <p>15 jobs</p>
+            <h3 className="text-2xl mt-2">Developer</h3>
+            <p className="text-sm font-light">15 jobs</p>
           </a>
         </li>
 
-        <li className="mx-4 text-center h-32 w-40 flex justify-center items-center rounded-lg hover:bg-cyan-200 transform duration-500 hover:scale-95">
+        <li className="mx-4 text-center h-32 md:w-40 flex justify-center items-center rounded-lg hover:text transform duration-500 hover:scale-95">
           <a href="#">
             <span>
-              <i className="fas fa-chess text-5xl text-cyan-500"></i>
+              <MdBookmarkAdd className="text-5xl mx-auto text-cyan-500" />
             </span>
-            <h3 className="text-2xl mt-3">Government</h3>
-            <p>7 jobs</p>
+            <h3 className="text-2xl mt-2">Government</h3>
+            <p className="text-sm font-light">7 jobs</p>
           </a>
         </li>
 
-        <li className="mx-4 text-center h-32 w-40 flex justify-center items-center rounded-lg hover:bg-cyan-200 transform duration-500 hover:scale-95">
+        <li className="mx-4 text-center h-32 md:w-40 flex justify-center items-center rounded-lg hover:text transform duration-500 hover:scale-95">
           <a href="#">
-            <span>
-              <i className="far fa-chart-bar text-5xl text-cyan-500"></i>
+            <span cl>
+              <MdOutlineAccountBalance className="text-5xl mx-auto text-cyan-500" />
             </span>
-
-            <h3 className="text-2xl mt-3">Accounting</h3>
-            <p>4 jobs(dynamic)</p>
+            <h3 className="text-2xl mt-2">Accounting</h3>
+            <p className="text-sm font-light">4 jobs(dynamic)</p>
           </a>
         </li>
 
-        <li className="mx-4 text-center h-32 w-40 flex justify-center items-center rounded-lg hover:bg-cyan-200 transform duration-500 hover:scale-95">
+        <li className="mx-4 text-center h-32 md:w-40 flex justify-center items-center rounded-lg hover:text transform duration-500 hover:scale-95">
           <a href="#">
-            <span>
-              <i className="fas fa-briefcase-medical text-5xl text-cyan-500"></i>
+            <span className="text-red-300">
+              <MdMedicalServices className="text-5xl mx-auto text-cyan-500" />
             </span>
-
-            <h3 className="text-2xl mt-3">Medical</h3>
-            <p>7 jobs</p>
+            <h3 className="text-2xl mt-2">Medical</h3>
+            <p className="text-sm font-light">7 jobs</p>
           </a>
         </li>
 
-        <li className="mx-4 text-center h-32 w-40 flex justify-center items-center rounded-lg hover:bg-cyan-200 transform duration-500 hover:scale-95">
+        <li className="mx-4 text-center h-32 md:w-40 flex justify-center items-center rounded-lg hover:text transform duration-500 hover:scale-95">
           <a href="#">
             <span>
-              <i className="fas fa-hotel text-5xl text-cyan-500"></i>
+              <MdRestaurantMenu className="text-5xl mx-auto text-cyan-500" />
             </span>
-
-            <h3 className="text-2xl mt-3">Restaurants</h3>
-            <p>5 jobs</p>
+            <h3 className="text-2xl mt-2">Restaurants</h3>
+            <p className="text-sm font-light">5 jobs</p>
           </a>
         </li>
 
-        <li className="mx-4 text-center h-32 w-40 flex justify-center items-center rounded-lg hover:bg-cyan-200 transform duration-500 hover:scale-95">
+        <li className="mx-4 text-center h-32 md:w-40 flex justify-center items-center rounded-lg hover:bg-cyan-200 transform duration-500 hover:scale-95">
           <a href="#">
             <span>
-              <i className="fas fa-industry text-5xl text-cyan-500"></i>
+              <FaIndustry className="text-5xl mx-auto text-cyan-500" />
             </span>
-            <h3 className="text-2xl mt-3">Industrial</h3>
-            <p>9 jobs</p>
+            <h3 className="text-2xl mt-2">Industrial</h3>
+            <p className="text-sm font-light">9 jobs</p>
           </a>
         </li>
       </ul>

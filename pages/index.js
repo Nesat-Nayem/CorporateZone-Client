@@ -6,6 +6,9 @@ import RecentJobs from "../components/Home/RecentJobs/RecentJobs";
 import RecentResumes from "../components/Home/RecentResumes/RecentResumes";
 import HeroArea from "../components/Home/HeroArea/HeroArea";
 import BlogArea from "../components/Home/BlogArea/BlogArea";
+import Faq from "../components/Home/Faq/Faq";
+import Header from "../components/Shared/Header/Header";
+import Footer from "../components/Shared/Footer/Footer";
 
 export default function Home() {
   return (
@@ -17,14 +20,16 @@ export default function Home() {
           integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
         />
       </Head>
-
+      <Header />
       <HeroArea />
       <CategoryJobs />
       <CompanyJobs />
       <RecentJobs />
       <RecentResumes />
       <Pricing />
+      <Faq />
       <BlogArea />
+      <Footer />
     </>
   );
 }
