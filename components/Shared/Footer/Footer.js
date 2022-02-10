@@ -568,12 +568,12 @@ const Footer = () => {
               </Link>
             </p>
             <p className="ml-3 text-xs">
-              <Link href="/">
+              <Link href="/policy">
                 <a className="">Terms & Risks</a>
               </Link>
             </p>
             <p className="ml-3 text-xs">
-              <Link href="/">
+              <Link href="/policy">
                 <a className="">Privacy Policy & Cookies</a>
               </Link>
             </p>
