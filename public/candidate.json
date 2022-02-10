@@ -1,0 +1,58 @@
+[
+    {
+      "id": 1,
+      "name": "jhon doe",
+      "img": "https://demoapus2.com/entaro/wp-content/uploads/2019/01/resume.jpg",
+      "position": "Project Manager",
+      "address": "Istanbul/Turkey",
+      "description": "As Marketing Graphic Designer, your primary responsibility is to assist the Marketing and Social Media team with a variety of graphic design tasks ranging from email, ads, print, and website design. You will be responsible to take a set of instructions, or a stated problem, and produce clean, modern design assets that are within the brand requirements of our company and our products. As part of the process, this person will collaborate with members of the marketing, design and product teams to gain a clear understanding of the campaign expectations, target audience, and product positioning.",
+      "skill1": "Design",
+      "skill2": "Marketing",
+      "skill3": "Developer",
+      "skill4": "Sale",
+      "education": "Graphic Designer at University University",
+      "contact": "doe@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "jhon doe",
+      "img": "https://demoapus2.com/entaro/wp-content/uploads/2019/01/resume.jpg",
+      "position": "Project Manager",
+      "address": "Istanbul/Turkey",
+      "description": "As Marketing Graphic Designer, your primary responsibility is to assist the Marketing and Social Media team with a variety of graphic design tasks ranging from email, ads, print, and website design. You will be responsible to take a set of instructions, or a stated problem, and produce clean, modern design assets that are within the brand requirements of our company and our products. As part of the process, this person will collaborate with members of the marketing, design and product teams to gain a clear understanding of the campaign expectations, target audience, and product positioning.",
+      "skill1": "Design",
+      "skill2": "Marketing",
+      "skill3": "Developer",
+      "skill4": "Sale",
+      "education": "Graphic Designer at University University",
+      "contact": "doe@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "jhon doe",
+      "img": "https://demoapus2.com/entaro/wp-content/uploads/2019/01/resume.jpg",
+      "position": "Project Manager",
+      "address": "Istanbul/Turkey",
+      "description": "As Marketing Graphic Designer, your primary responsibility is to assist the Marketing and Social Media team with a variety of graphic design tasks ranging from email, ads, print, and website design. You will be responsible to take a set of instructions, or a stated problem, and produce clean, modern design assets that are within the brand requirements of our company and our products. As part of the process, this person will collaborate with members of the marketing, design and product teams to gain a clear understanding of the campaign expectations, target audience, and product positioning.",
+      "skill1": "Design",
+      "skill2": "Marketing",
+      "skill3": "Developer",
+      "skill4": "Sale",
+      "education": "Graphic Designer at University University",
+      "contact": "doe@gmail.com"
+    },
+    {
+      "id": 4,
+      "name": "jhon doe",
+      "img": "https://demoapus2.com/entaro/wp-content/uploads/2019/01/resume.jpg",
+      "position": "Project Manager",
+      "address": "Istanbul/Turkey",
+      "description": "As Marketing Graphic Designer, your primary responsibility is to assist the Marketing and Social Media team with a variety of graphic design tasks ranging from email, ads, print, and website design. You will be responsible to take a set of instructions, or a stated problem, and produce clean, modern design assets that are within the brand requirements of our company and our products. As part of the process, this person will collaborate with members of the marketing, design and product teams to gain a clear understanding of the campaign expectations, target audience, and product positioning.",
+      "skill1": "Design",
+      "skill2": "Marketing",
+      "skill3": "Developer",
+      "skill4": "Sale",
+      "education": "Graphic Designer at University University",
+      "contact": "doe@gmail.com"
+    }
+  ]

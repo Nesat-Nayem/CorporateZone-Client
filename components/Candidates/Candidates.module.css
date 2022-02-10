@@ -1,0 +1,44 @@
+.candidate{
+    display:flex
+}
+.candida{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 80%;
+    margin: 0 auto;
+}
+.candidate h1{
+    font-weight: 700;
+    font-size: 24px;
+}
+#candi{
+    text-align: center;
+    margin-top: 40px;
+    font-size: 50px;
+    font-weight: 700;
+    color: #5E266E;
+}
+
+@media only screen and (max-width:688px) {
+    .main{
+        grid-template-columns: 1fr;
+    }
+    .candidate img{
+        width:30%;
+        height: 100px;
+        margin-top: 20px;
+    }
+    .candidate h1{
+        font-size: 17px;
+    }
+}
