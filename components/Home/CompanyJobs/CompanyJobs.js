@@ -106,8 +106,6 @@ const CompanyJobs = () => {
         
             
             </div>
-
->>>>>>> 70839fd63785da265328cc11a3030e5643ccd887
         </div>
     );
 };

@@ -6,7 +6,7 @@ const Errorpage = () => {
     const errorImage = "https://cdn.pixabay.com/photo/2016/11/22/23/13/black-dog-1851106__340.jpg";
     return (
         <>
-            <div className="flex items-center justify-center w-screen h-screen">
+            <div className="flex items-center justify-center w-screen bg-cyan-400 h-screen">
                 <div className="px-4 lg:py-8">
                     <div className="lg:gap-4 lg:flex">
                     <div
@@ -18,20 +18,20 @@ const Errorpage = () => {
                         >
                         <span className="text-red-500">Oops!</span> Page not found
                         </p>
-                        <p className="mb-8 text-center text-gray-500 md:text-lg">
+                        <p className="mb-8 text-center text-gray-600 md:text-lg">
                         The page you’re looking for doesn’t exist.
                         </p>
                         <Link
                         href="/"
                             >
-                                <a className="px-6 py-2 text-sm font-semibold text-blue-800 bg-blue-300 rounded-md shadow hover:bg-blue-600 hover:text-white"> Go home </a>
+                                <a className="px-6 py-2 text-sm font-semibold text-blue-800 bg-blue-600 rounded-md shadow hover:bg-blue-700 text-white"> Go home </a>
                         </Link>
                     </div>
                     <div className="mt-4">
                         <img
                         src={errorImage}
                         alt="Error_image"
-                        className="object-cover w-full h-full"
+                        className="object-cover w-full h-full rounded-md"
                         />
                     </div>
                     </div>
