@@ -5,8 +5,8 @@ import company_third from "../../../images/third_company.jpg";
 
 const CompanyJobs = () => {
   return (
-    <div className="my-5">
-      <div className="md:flex justify-between items-center md:w-8/12 mx-auto company_heading relative my-20 px-3">
+    <div className="my-5 w-screen">
+      <div className="md:flex  justify-between items-center md:w-8/12 mx-auto company_heading relative my-20 px-3">
         <h3 className="text-3xl after:content-[''] after:ml-0.5 after:text-red-500 after:absolute after:border-t-2 after:w-20 after: after:border-cyan-500 after:top-11 after:left-4 after:bottom-0 after:right-0 font-medium text-slate-700">
           Top Hiring Companies
         </h3>
@@ -16,8 +16,8 @@ const CompanyJobs = () => {
         </ul>
       </div>
 
-      <div className="md:flex justify-center items-center my-20 company_card w-9/12 mx-auto">
-        <div className="bg-white dark:bg-slate-900 mb-3 rounded-lg px-6 py-8 ring-1 md:w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl border-b-2 border-slate-800 hover:border-cyan-500 transform duration-500 hover:scale-95">
+      <div className="sm:flex md:flex justify-center items-center my-20 company_card lg:w-screen md:w-9/12 sm:w-screen mx-auto">
+        <div className="bg-white dark:bg-slate-900 mb-3 rounded-lg px-6 py-8 ring-1 lg:w-1/4  md:w-1/4 sm:w-full  mx-2 ring-slate-900/5 text-center shadow-xl border-b-2 border-slate-800 hover:border-cyan-500 transform duration-500 hover:scale-95">
           <div>
             <Image
               className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
@@ -42,7 +42,7 @@ const CompanyJobs = () => {
           </a>
         </div>
 
-        <div className="bg-white dark:bg-slate-900 mb-3 rounded-lg px-6 py-8 ring-1 md:w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl border-b-2 border-slate-800 hover:border-cyan-500 transform duration-500 hover:scale-95">
+        <div className="bg-white dark:bg-slate-900 mb-3 rounded-lg px-6 py-8 ring-1 lg:w-1/4 md:w-1/4 sm:w-full mx-2 ring-slate-900/5 text-center shadow-xl border-b-2 border-slate-800 hover:border-cyan-500 transform duration-500 hover:scale-95">
           <div>
             <Image
               className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
@@ -67,7 +67,7 @@ const CompanyJobs = () => {
           </a>
         </div>
 
-        <div className="bg-white dark:bg-slate-900 mb-3 rounded-lg px-6 py-8 ring-1 md:w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl border-b-2 border-slate-800 hover:border-cyan-500 transform duration-500 hover:scale-95">
+        <div className="bg-white dark:bg-slate-900 mb-3 rounded-lg px-6 py-8 ring-1 lg:w-1/4 md:w-1/4 sm:w-full  mx-2 ring-slate-900/5 text-center shadow-xl border-b-2 border-slate-800 hover:border-cyan-500 transform duration-500 hover:scale-95">
           <div>
             <Image
               className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
@@ -92,7 +92,7 @@ const CompanyJobs = () => {
           </a>
         </div>
 
-        <div className="bg-white dark:bg-slate-900 mb-3 rounded-lg px-6 py-8 ring-1 md:w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl border-b-2 border-slate-800 hover:border-cyan-500 transform duration-500 hover:scale-95">
+        <div className="bg-white dark:bg-slate-900 mb-3 rounded-lg px-6 py-8 ring-1 md:w-1/4 sm:w-full mx-2 ring-slate-900/5 text-center shadow-xl border-b-2 border-slate-800 hover:border-cyan-500 transform duration-500 hover:scale-95">
           <div>
             <Image
               className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
@@ -117,7 +117,7 @@ const CompanyJobs = () => {
           </a>
         </div>
 
-        <div className="bg-white dark:bg-slate-900 mb-3 rounded-lg px-6 py-8 ring-1 md:w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl border-b-2 border-slate-800 hover:border-cyan-500 transform duration-500 hover:scale-95">
+        <div className="bg-white dark:bg-slate-900 mb-3 rounded-lg px-6 py-8 ring-1 md:w-1/4 sm:w-full mx-2 ring-slate-900/5 text-center shadow-xl border-b-2 border-slate-800 hover:border-cyan-500 transform duration-500 hover:scale-95">
           <div>
             <Image
               className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
