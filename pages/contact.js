@@ -1,4 +1,4 @@
-import ContactUs from "../Components/ContactUs/ContactUs";
+import ContactUs from "../components/ContactUs/ContactUs";
 import Header from "../components/Shared/Header/Header";
 
 const contact = () => {
