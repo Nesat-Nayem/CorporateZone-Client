@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
 html,
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -14,7 +14,7 @@ a {
   color: inherit;
   text-decoration: none;
 }
-li{
+li {
   list-style: none;
 }
 
@@ -23,5 +23,3 @@ li{
   margin: 0;
   box-sizing: border-box;
 }
-
-
