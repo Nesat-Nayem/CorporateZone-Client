@@ -10,8 +10,8 @@ import { FaIndustry } from "react-icons/fa";
 
 const CategoryJobs = () => {
   return (
-    <div className="my-5">
-      <ul className="md:flex justify-center items-center bg-slate-100 md:w-8/12 mx-auto my-7 py-5 rounded-lg shadow-lg relative">
+    <div className="my-5 w-screen">
+      <ul className="md:flex sm:flex sm:flex-wrap justify-center items-center  bg-slate-100 md:w-9/12 mx-auto my-7 py-5 rounded-lg shadow-lg relative">
         <li className="mx-4 text-center md:h-32 md:w-40 flex justify-center items-center rounded-lg hover:text transform duration-500 hover:scale-95 px-3">
           <a href="#">
             <span>
