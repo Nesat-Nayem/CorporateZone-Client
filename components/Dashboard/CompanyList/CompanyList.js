@@ -1,18 +1,28 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import logo from "../../../public/favicon.ico";
 
-const handleDelete = (id) =>
+const CompanyList = () =>
 {
-    console.log(id)
-};
+    const [com, setCom] = useState([]);
 
-const CompanyList = ({ data }) =>
-{
+    useEffect(() =>
+    {
+        fetch('./company.json')
+            .then(res => res.json())
+            .then(data => setCom(data));
+    }, []);
+
+    const handleDelete = (id) =>
+    {
+        console.log(id)
+    };
+
     return (
         <>
             <p className='bg-gray-600 rounded-md shadow-md py-3 text-white text-center text-xl font-semibold mb-3'>
-                TOTAL REGISTERED COMPANY - {data.length}
+                TOTAL REGISTERED COMPANY - {com?.length}
             </p>
             <div className="flex flex-col">
                 <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -54,7 +64,7 @@ const CompanyList = ({ data }) =>
                                     </tr>
                                 </thead>
                                 <tbody className="bg-white divide-y divide-gray-200">
-                                    {data.map((company) => (
+                                    {com?.map((company) => (
                                         <tr key={company._id}>
                                             <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="flex items-center">
@@ -101,12 +111,3 @@ const CompanyList = ({ data }) =>
 }
 
 export default CompanyList
-
-export async function getStaticProps ()
-{
-    const res = await fetch('https://joynool.github.io/fitness-club-data/fitness.json')
-    const data = await res.json()
-    return {
-        props: { data }
-    }
-};
