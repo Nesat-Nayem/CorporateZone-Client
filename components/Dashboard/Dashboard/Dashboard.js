@@ -1,20 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import {
-  MdOutlineLogout,
-  MdOutlineChevronLeft,
-  MdOutlineMenu,
-  MdAssignment,
-  MdAssignmentTurnedIn,
-  MdOutlineAdminPanelSettings,
-  MdTravelExplore,
-  MdRateReview,
-  MdOutlineSearch,
-} from "react-icons/md";
+import
+  {
+    MdOutlineLogout,
+    MdOutlineChevronLeft,
+    MdOutlineMenu,
+    MdAssignment,
+    MdAssignmentTurnedIn,
+    MdOutlineAdminPanelSettings,
+    MdTravelExplore,
+    MdRateReview,
+    MdOutlineSearch,
+  } from "react-icons/md";
 import img from "../../../public/favicon.ico";
 
-const Dashboard = () => {
+const Dashboard = () =>
+{
   const [trigger, setTrigger] = useState(false);
   const user = "Joynool Abedin Mithoon";
   const admin = "admin";
@@ -23,11 +25,10 @@ const Dashboard = () => {
     <>
       <div className="antialiased min-h-screen relative lg:flex">
         <nav
-          className={`absolute lg:relative z-10 w-72 lg:transform-none lg:opacity-100 bg-gray-600 text-white h-screen ${
-            !trigger
+          className={`absolute lg:relative z-10 w-72 lg:transform-none lg:opacity-100 bg-gray-600 text-white h-screen ${!trigger
               ? "inset-0 opacity-0 transform duration-200 -translate-x-full ease-out"
               : "inset-0 opacity-100 transform duration-200 translate-x-0 ease-in"
-          }`}
+            }`}
         >
           <div className="flex justify-between m-5">
             <div className="flex flex-col items-center mx-auto">

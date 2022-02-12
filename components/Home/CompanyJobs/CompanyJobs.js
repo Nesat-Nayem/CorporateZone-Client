@@ -3,7 +3,8 @@ import company from "../../../images/first_company.jpg";
 import company_second from "../../../images/second_company.jpg";
 import company_third from "../../../images/third_company.jpg";
 
-const CompanyJobs = () => {
+const CompanyJobs = () =>
+{
   return (
     <div className="my-5">
       <div className="md:flex justify-between items-center md:w-8/12 mx-auto company_heading relative my-20 px-3">

@@ -10,7 +10,8 @@ import Faq from "../components/Home/Faq/Faq";
 import Header from "../components/Shared/Header/Header";
 import Footer from "../components/Shared/Footer/Footer";
 
-export default function Home() {
+export default function Home ()
+{
   return (
     <>
       <Head>
