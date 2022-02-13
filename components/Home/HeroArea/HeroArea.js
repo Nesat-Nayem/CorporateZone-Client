@@ -21,7 +21,7 @@ const HeroArea = () => {
         style={{
           backgroundImage: "url('https://i.ibb.co/59TgD3X/slider13.jpg')",
           color: "#23C0E9",
-          height: "650px",
+          height: "auto",
           width: "100%",
           position: "relative",
         }}
