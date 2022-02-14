@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const RegisterUser = () => {
   return (
-    <div className="w-full ">
+    <div className="w-full lg:grid grid-cols-2 ">
       <div className="text-center bg-white py-14">
         <div className="flex justify-center">
           <RiComputerLine className="text-5xl text-cyan-500 animate-bounce" />
@@ -22,10 +22,10 @@ const RegisterUser = () => {
         <p className="text-center pb-5 text-gray-500">for candidate...</p>
 
         <div className="flex justify-center">
-          <Link href="/signup">
+          <Link href="/signup/recruiter-register">
             <a className="bg-cyan-600 text-white px-5 font-bold py-2 rounded-lg flex items-center uppercase hover:bg-cyan-700">
               <AiOutlinePlusCircle className="text-white mr-2" />
-              register as company
+              register as recruiter
             </a>
           </Link>
         </div>
@@ -48,7 +48,7 @@ const RegisterUser = () => {
         <p className="text-center pb-5 text-gray-100">for candidate...</p>
 
         <div className="flex justify-center">
-          <Link href="/signup">
+          <Link href="/signup/candidate-register">
             <a className="bg-white text-black px-5 font-bold py-2 rounded-md flex items-center uppercase hover:bg-cyan-600 hover:text-white transition duration-300">
               <AiOutlinePlusCircle className=" mr-2 " />
               register candidate
