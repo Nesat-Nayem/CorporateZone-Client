@@ -11,7 +11,6 @@ import "swiper/swiper.min.css";
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 const Review = ({ articles }) => {
-  console.log(articles);
   return (
     <section className="contrl max-w-screen-xl mx-auto px-6 pb-24 mt-16">
       {/* costom */}

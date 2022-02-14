@@ -42,44 +42,44 @@ const RecentJobs = () => {
           Recent Jobs {fakejobs.length}
         </h3>
 
-              <div className="space-y-3 xs:text-center">
-              <ul className="md:flex text-center mx-auto md:flex-wrap justify-center items-center">
-          <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
+              <div className="space-y-3 xs:text-end">
+              <ul className="md:flex text-end mx-auto md:flex-wrap justify-center items-center">
+          {/* <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
             <a href="#">Featured Jobs</a>
-          </li>
-          <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
+          </li> */}
+          {/* <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
             <a href="#">Recent Jobs</a>
-          </li>
+          </li> */}
           <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
             <a href="#">Part-Time</a>
           </li>
           <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
             <a href="#">Full-Time</a>
           </li>
-          <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
+          {/* <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
             <a href="#">Contractual</a>
-          </li>
+          </li> */}
           <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
             <a href="#">Internships</a>
           </li>
         {/* </ul> 
               
         <ul className="flex flex-wrap justify-center items-center"> */}
-          <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
+          {/* <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
             <a href="#">Past 7 Days</a>
-          </li>
-          <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
+          </li> */}
+          {/* <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
             <a href="#">Locations</a>
-          </li>
-          <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
+          </li> */}
+          {/* <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
             <a href="#">On Site</a>
-          </li>
-          <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
+          </li> */}
+          {/* <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
             <a href="#">Remote</a>
-          </li>
-          <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
+          </li> */}
+          {/* <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
             <a href="#">Hybrid</a>
-          </li>
+          </li> */}
         </ul>
       </div>
               

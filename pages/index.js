@@ -26,14 +26,14 @@ export default function Home ({articles})
       </Head>
       <Header />
       <HeroArea />
-      <CategoryJobs />
-      <CompanyJobs />
+      {/* <CategoryJobs /> */}
       <RecentJobs />
-      <RecentResumes />
-      <Pricing />
-      <Faq />
+      <CompanyJobs />
+      {/* <RecentResumes /> */}
+      {/* <Pricing /> */}
+      {/* <Faq /> */}
       <Review articles={articles} />
-      <BlogArea />
+      {/* <BlogArea /> */}
       <Footer />
     </>
   );
