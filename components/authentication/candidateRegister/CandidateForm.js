@@ -1,16 +1,27 @@
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
 import axios from "axios";
+import useFirebase from "../../../redux/slices/user/useFirebase";
 
 const CandidateForm = () => {
   const [photoURL, setPhotoURL] = useState("");
+
+  // signup method
+  const { signupWithEmailAndPassword } = useFirebase();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log({ ...data, role: "candidate", photoURL });
+    signupWithEmailAndPassword(
+      data.username,
+      data.email,
+      data.password,
+      photoURL
+    );
+    // console.log({...data, role: 'candidate'})
   };
 
   // image upload handler
@@ -18,7 +29,7 @@ const CandidateForm = () => {
     const imageData = new FormData();
     imageData.set("key", "fe834545cf9ccab761e32c03f567e890");
     imageData.append("image", e.target.files[0]);
-    console.log(imageData);
+    // console.log(imageData);
     axios
       .post("https://api.imgbb.com/1/upload", imageData)
       .then(function (response) {

@@ -1,13 +1,20 @@
+import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
+import useFirebase from "../../redux/slices/user/useFirebase";
 
 const SigninForm = () => {
+  const { logInWithEmailAndPassword } = useFirebase();
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
+    logInWithEmailAndPassword(data.email, data.password);
     console.log(data);
+    // router.push("/");
   };
   return (
     <>

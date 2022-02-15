@@ -1,9 +1,13 @@
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
 import axios from "axios";
+import useFirebase from "../../../redux/slices/user/useFirebase";
 
 const RecruiterForm = () => {
   const [photoURL, setPhotoURL] = useState("");
+
+  // signup method
+  const { signupWithEmailAndPassword } = useFirebase();
 
   const {
     register,
@@ -11,7 +15,13 @@ const RecruiterForm = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log({ ...data, role: "recruiter", photoURL });
+    signupWithEmailAndPassword(
+      data.username,
+      data.email,
+      data.password,
+      photoURL
+    );
+    // console.log({ ...data, role: "recruiter", photoURL });
   };
 
   // image upload handler
