@@ -1,0 +1,5 @@
+[
+    { "_id": 1, "name": "Genuity Limited", "address": "Mirpur, Dhaka - 1000", "link": "https://www.google.com", "category": "Software solution", "contact": "info@genuity.com", "job": 30, "img": "" },
+    { "_id": 2, "name": "ICC Communication", "address": "Gulshan - 2, Dhaka", "link": "https://www.google.com", "category": "ERP solution", "contact": "info@icc.com", "job": 12, "img": "" },
+    { "_id": 3, "name": "Silicon Corporation", "address": "Court Para, Kushtia", "link": "https://www.google.com", "category": "Artificial Intelligence", "contact": "info@siliconcorp.com", "job": 5, "img": "" }
+]

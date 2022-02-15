@@ -37,19 +37,13 @@ const RecentJobs = () => {
   return (
     <div className={ContainerStyles.container}>
 
-      <div className="md:flex flex-col space-y-7 justify-between items-center relative md:w-3/4 md:mx-auto my-20 recent_header">
+      <div className="space-y-7 mx-auto md:w-3/4 relative mt-20 mb-6 recent_header">
         <h3 className="text-3xl text-center after:content-[''] after:absolute after:border-t-2 after:w-16 after: after:border-cyan-500 after:left-0 after:bottom-0 after:right-32 after:top-10 after:mx-auto font-medium text-slate-700 uppercase">
           Recent Jobs {fakejobs.length}
         </h3>
 
-              <div className="space-y-3 xs:text-center">
-              <ul className="md:flex text-center mx-auto md:flex-wrap justify-center items-center">
-          <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
-            <a href="#">Featured Jobs</a>
-          </li>
-          <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
-            <a href="#">Recent Jobs</a>
-          </li>
+              <div className="space-y-3">
+              <ul className="md:flex text-center mx-auto md:flex-wrap justify-end items-end">
           <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
             <a href="#">Part-Time</a>
           </li>
@@ -57,28 +51,7 @@ const RecentJobs = () => {
             <a href="#">Full-Time</a>
           </li>
           <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
-            <a href="#">Contractual</a>
-          </li>
-          <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
             <a href="#">Internships</a>
-          </li>
-        {/* </ul> 
-              
-        <ul className="flex flex-wrap justify-center items-center"> */}
-          <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
-            <a href="#">Past 7 Days</a>
-          </li>
-          <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
-            <a href="#">Locations</a>
-          </li>
-          <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
-            <a href="#">On Site</a>
-          </li>
-          <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
-            <a href="#">Remote</a>
-          </li>
-          <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
-            <a href="#">Hybrid</a>
           </li>
         </ul>
       </div>
@@ -104,8 +77,7 @@ const RecentJobs = () => {
                 <p><span className='font-bold'>Location: </span>{job?.location}</p>
               <h5><span className='font-bold'>Keywords: </span>: Media, Medicla, Restaurants</h5>
             </div>
-                  <div className="apply_btn md:space-y-12 text-center before:content-[''] md:before:absolute before:border-r-2  before:top-0 before:left-0 before:bottom-0 before:right-80 before:mx-5 hover:before:border-cyan-600 transition-all
-            ">
+                  <div className="apply_btn md:space-y-12 text-center">
               <li className="mx-2 my-3 bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
                 <a href="#">Remote Jobs</a>
               </li>

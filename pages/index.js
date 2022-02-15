@@ -9,8 +9,12 @@ import BlogArea from "../components/Home/BlogArea/BlogArea";
 import Faq from "../components/Home/Faq/Faq";
 import Header from "../components/Shared/Header/Header";
 import Footer from "../components/Shared/Footer/Footer";
+import Review from "../components/Home/Review/Review";
 
-export default function Home() {
+export default function Home ({articles})
+
+{
+      // console.log(articles)
   return (
     <>
       <Head>
@@ -22,14 +26,26 @@ export default function Home() {
       </Head>
       <Header />
       <HeroArea />
-      <CategoryJobs />
-      <CompanyJobs />
+      {/* <CategoryJobs /> */}
       <RecentJobs />
-      <RecentResumes />
-      <Pricing />
-      <Faq />
-      <BlogArea />
+      <CompanyJobs />
+      {/* <RecentResumes /> */}
+      {/* <Pricing /> */}
+      {/* <Faq /> */}
+      <Review articles={articles} />
+      {/* <BlogArea /> */}
       <Footer />
     </>
   );
+}
+
+export const getStaticProps = async () =>{
+      const res = await fetch(`https://ancient-castle-52925.herokuapp.com/testimonials`)
+      const articles = await res.json()
+
+      return {
+            props:{
+                  articles
+            }
+      }
 }
