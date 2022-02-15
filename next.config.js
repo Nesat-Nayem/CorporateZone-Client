@@ -3,4 +3,5 @@ module.exports = {
     domains: ["i.ibb.co", "media.istockphoto.com", "demoapus2.com"],
   },
   reactStrictMode: true,
+
 };
