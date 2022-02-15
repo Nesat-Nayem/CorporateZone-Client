@@ -1,33 +1,39 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import
-  {
-    MdOutlineLogout,
-    MdOutlineChevronLeft,
-    MdOutlineMenu,
-    MdAssignment,
-    MdAssignmentTurnedIn,
-    MdOutlineAdminPanelSettings,
-    MdTravelExplore,
-    MdRateReview,
-    MdOutlineSearch,
-  } from "react-icons/md";
-import img from "../../../public/favicon.ico";
+import { useRouter } from "next/router";
 
-const Dashboard = () =>
-{
+import {
+  MdOutlineLogout,
+  MdOutlineChevronLeft,
+  MdOutlineMenu,
+  MdAssignment,
+  MdAssignmentTurnedIn,
+  MdOutlineAdminPanelSettings,
+  MdTravelExplore,
+  MdRateReview,
+  MdOutlineSearch,
+} from "react-icons/md";
+import img from "../../../public/favicon.ico";
+import Jobs from "../../Admin/Jobs";
+import AddAdmin from "../../Admin/AddAdmin";
+import Candidate from "../../Admin/Candidate";
+
+
+
+const Dashboard = () => {
   const [trigger, setTrigger] = useState(false);
   const user = "Joynool Abedin Mithoon";
-  const admin = "admin";
+  const router = useRouter();
+  const { params = [] } = router.query;
 
   return (
     <>
       <div className="antialiased min-h-screen relative lg:flex">
         <nav
           className={`absolute lg:relative z-10 w-72 lg:transform-none lg:opacity-100 bg-gray-600 text-white h-screen ${!trigger
-              ? "inset-0 opacity-0 transform duration-200 -translate-x-full ease-out"
-              : "inset-0 opacity-100 transform duration-200 translate-x-0 ease-in"
+            ? "inset-0 opacity-0 transform duration-200 -translate-x-full ease-out"
+            : "inset-0 opacity-100 transform duration-200 translate-x-0 ease-in"
             }`}
         >
           <div className="flex justify-between m-5">
@@ -44,16 +50,57 @@ const Dashboard = () =>
             />
           </div>
           <ul className="m-2 py-5 border-y border-dotted">
-            {admin && (
+            {(
               <li className="divide-y divide-solid">
                 <span></span>
-                <a
+
+
+                {params[0] === "admin" && (
+                  <>
+                    <Link href={`/dashboard/admin`}>
+                    <a
                   onClick={() => setTrigger(false)}
-                  className="px-4 py-2 text-xl font-extralight text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer rounded-md flex mx-5 items-center my-5"
+                  className="px-4 py-2 text-xl font-extralight text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer rounded-md flex items-center mx-5 mb-5"
                 >
-                  <MdAssignment className="w-7 h-7" />
-                  &nbsp;&nbsp;&nbsp;CorporateZone 1
+                  <MdAssignmentTurnedIn className="w-7 h-7" />
+                  &nbsp;&nbsp;&nbsp;Dashboard
                 </a>
+                    </Link>
+                    <Link href={`/dashboard/admin/jobs`}>
+                    <a
+                  onClick={() => setTrigger(false)}
+                  className="px-4 py-2 text-xl font-extralight text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer rounded-md flex items-center mx-5 mb-5"
+                >
+                  <MdAssignmentTurnedIn className="w-7 h-7" />
+                  &nbsp;&nbsp;&nbsp;Jobs
+                </a>
+                    </Link>
+                    <Link href={`/dashboard/admin/addadmin`}>
+                    <a
+                  onClick={() => setTrigger(false)}
+                  className="px-4 py-2 text-xl font-extralight text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer rounded-md flex items-center mx-5 mb-5"
+                >
+                  <MdAssignmentTurnedIn className="w-7 h-7" />
+                  &nbsp;&nbsp;&nbsp;Add Admin
+                </a>
+                    </Link>
+                    <Link href={`/dashboard/admin/candidate`}>
+                    <a
+                  onClick={() => setTrigger(false)}
+                  className="px-4 py-2 text-xl font-extralight text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer rounded-md flex items-center mx-5 mb-5"
+                >
+                  <MdAssignmentTurnedIn className="w-7 h-7" />
+                  &nbsp;&nbsp;&nbsp;Candidate
+                </a>
+                    </Link>
+                    
+                  </>
+                )}
+
+
+
+
+
                 <a
                   onClick={() => setTrigger(false)}
                   className="px-4 py-2 text-xl font-extralight text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer rounded-md flex items-center mx-5 mb-5"
@@ -117,11 +164,24 @@ const Dashboard = () =>
             </form>
           </header>
           <section className="m-5">
-            <div className=" border-2 rounded-md border-dotted border-black sm:p-20 p-10">
-              <h2 className="text-xl sm:text-3xl font-light text-center">
-                Welcome to DASHBOARD
-              </h2>
-            </div>
+
+          {params?.length === 1 ? <div><h1>Welcome to the dashboard</h1></div> : null }
+        {params[1] === "jobs" && (
+          <div>
+            <Jobs></Jobs>
+          </div>
+        )}
+        {params[1] === "addadmin" && (
+          <div>
+            <AddAdmin></AddAdmin>
+          </div>
+        )}
+        {params[1] === "candidate" && (
+          <div>
+            <Candidate></Candidate>
+          </div>
+        )}
+        
           </section>
         </div>
       </div>
