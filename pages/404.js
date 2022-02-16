@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import Footer from "../components/Home/Footer/Footer";
+import Footer from "../components/Shared/Footer/Footer";
 
 const Errorpage = () => {
     const errorImage = "https://cdn.pixabay.com/photo/2016/11/22/23/13/black-dog-1851106__340.jpg";

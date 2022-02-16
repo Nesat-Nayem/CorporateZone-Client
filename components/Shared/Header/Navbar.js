@@ -15,7 +15,6 @@ import {
   ViewGridIcon,
   XIcon,
 } from "@heroicons/react/outline";
-import { ChevronDownIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 
 const pages = [
