@@ -1,17 +1,31 @@
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
+import { useRouter } from 'next/router';
 import axios from "axios";
 
 const RecruiterForm = () => {
   const [photoURL, setPhotoURL] = useState("");
+  const router = useRouter();
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
-    console.log({ ...data, role: "recruiter", photoURL });
+    axios
+      .post("http://localhost:4030/users", { ...data, role: "recruiter", photoURL })
+      .then(function (res) {
+        if (res.status === 201)
+        {
+          router.push("/");
+          alert("successfully saved!");
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   // image upload handler

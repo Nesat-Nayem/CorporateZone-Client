@@ -1,16 +1,31 @@
 import { useForm } from "react-hook-form";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useRouter } from 'next/router';
 import axios from "axios";
 
 const CandidateForm = () => {
   const [photoURL, setPhotoURL] = useState("");
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  
   const onSubmit = (data) => {
-    console.log({ ...data, role: "candidate", photoURL });
+    axios
+      .post("http://localhost:4030/users", { ...data, role: "candidate", photoURL })
+      .then(function (res) {
+        if (res.status === 201)
+        {
+          router.push("/");
+          alert("successfully saved!");
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   // image upload handler
@@ -18,7 +33,6 @@ const CandidateForm = () => {
     const imageData = new FormData();
     imageData.set("key", "fe834545cf9ccab761e32c03f567e890");
     imageData.append("image", e.target.files[0]);
-    console.log(imageData);
     axios
       .post("https://api.imgbb.com/1/upload", imageData)
       .then(function (response) {
