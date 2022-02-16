@@ -18,6 +18,8 @@ import img from "../../../public/favicon.ico";
 import Jobs from "../../Admin/Jobs";
 import AddAdmin from "../../Admin/AddAdmin";
 import Candidate from "../../Admin/Candidate";
+import company from "../../../pages/company";
+import Company from "../../Admin/Company";
 
 
 
@@ -91,6 +93,15 @@ const Dashboard = () => {
                 >
                   <MdAssignmentTurnedIn className="w-7 h-7" />
                   &nbsp;&nbsp;&nbsp;Candidate
+                </a>
+                    </Link>
+                    <Link href={`/dashboard/admin/company`}>
+                    <a
+                  onClick={() => setTrigger(false)}
+                  className="px-4 py-2 text-xl font-extralight text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer rounded-md flex items-center mx-5 mb-5"
+                >
+                  <MdAssignmentTurnedIn className="w-7 h-7" />
+                  &nbsp;&nbsp;&nbsp;Company
                 </a>
                     </Link>
                     
@@ -179,6 +190,11 @@ const Dashboard = () => {
         {params[1] === "candidate" && (
           <div>
             <Candidate></Candidate>
+          </div>
+        )}
+        {params[1] === "company" && (
+          <div>
+              <Company></Company>
           </div>
         )}
         
