@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 const SigninForm = () => {
   const {
@@ -7,7 +8,11 @@ const SigninForm = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    axios
+      .post("http://localhost:4030/login", { ...data })
+      .then(res => {
+        console.log(res);
+      }).catch(err => console.log(err));
   };
   return (
     <>
