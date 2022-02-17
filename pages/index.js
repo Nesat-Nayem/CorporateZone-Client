@@ -9,10 +9,9 @@ import Layout from "../components/layout/Layout";
 import { useSelector } from "react-redux";
 import Header from "../components/Shared/Header/Header";
 import Footer from "../components/Shared/Footer/Footer";
+import Review from "../components/Home/Review/Review";
 
 export default function Home() {
-  const currentUser = useSelector((state) => state.user.currentUser);
-  console.log(currentUser);
   return (
     <Layout title="Corporate Zone">
       <Header />
@@ -22,7 +21,8 @@ export default function Home() {
       <CompanyJobs />
       {/* <Pricing /> */}
       {/* <Faq /> */}
-      <BlogArea />
+      {/* <BlogArea /> */}
+      <Review />
       <Footer />
     </Layout>
   );

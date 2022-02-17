@@ -31,13 +31,8 @@ const pages = [
     icon: ChartBarIcon,
   },
   {
-    name: "Candidates",
-    href: "/candidates",
-    icon: CursorClickIcon,
-  },
-  {
-    name: "Employers",
-    href: "/employers",
+    name: "How works",
+    href: "/works",
     icon: ShieldCheckIcon,
   },
   {
@@ -85,15 +80,9 @@ export default function Navbar() {
                 Jobs
               </a>
             </Link>
-
-            <Link href="/candidates">
+            <Link href="/works">
               <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Candidates
-              </a>
-            </Link>
-            <Link href="/employers">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Employers
+                How Works
               </a>
             </Link>
             <Link href="/blog">
