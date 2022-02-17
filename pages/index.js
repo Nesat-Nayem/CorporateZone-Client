@@ -22,7 +22,7 @@ export default function Home() {
       <CompanyJobs />
       {/* <Pricing /> */}
       {/* <Faq /> */}
-      {/* <BlogArea /> */}
+      <BlogArea />
       <Footer />
     </Layout>
   );
