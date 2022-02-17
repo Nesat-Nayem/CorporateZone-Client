@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-import style from './Message.module.css'
-import { AiOutlineMail } from 'react-icons/ai';
-import { AiOutlinePhone } from 'react-icons/ai';
-import { AiFillFacebook } from 'react-icons/ai';
-import { AiFillTwitterSquare } from 'react-icons/ai';
-import { AiFillLinkedin } from 'react-icons/ai';
-import { AiOutlineInstagram } from 'react-icons/ai';
-import { ImAddressBook } from 'react-icons/im';
-=======
 import React from "react";
 import style from "./Message.module.css";
 import { AiOutlineMail } from "react-icons/ai";
@@ -18,7 +7,6 @@ import { AiFillTwitterSquare } from "react-icons/ai";
 import { AiFillLinkedin } from "react-icons/ai";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { ImAddressBook } from "react-icons/im";
->>>>>>> 5cf3a4d4e3b4904ad5178ac96747ad7f40ad8946
 
 const MessageArea = () => {
   return (
