@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+import { MdMoreTime, MdPedalBike } from "react-icons/md";
 import { useForm } from "react-hook-form";
 
 const PostedJobs = () => {
@@ -73,8 +75,40 @@ const PostedJobs = () => {
       {/* End Filter */}
 
       {/* Start Jobs Card */}
-      <div className="my-12 jobs_box">
-        <h3>Job Box Design with uniquely</h3>
+      <div className="flex justify-evenly items-center mx-auto my-12 border-2 border-slate-200 w-7/12 rounded-lg jobs_box">
+        <Image
+          className=""
+          width={120}
+          height={120}
+          src="https://github.com/Nesat-Nayem/CorporateZone-Clitent/blob/listed_job/ya/images/first_company.jpg?raw=true"
+        />
+
+        <div className=" w-6/12 job_card">
+          <h3>
+            Front End Engineer <span className="text-slate-500">/ MERN</span>
+          </h3>
+          <article>
+            <p>Jackson Heights, NY</p>
+            <h4>Onsite</h4>
+          </article>
+        </div>
+
+        <div className=" w-4/12 open_job">
+          <div className="flex justify-evenly items-center advantages_icon">
+            <div>
+              Facilities with icon
+              <MdMoreTime />
+              <MdPedalBike />
+            </div>
+            <h4>Salary Icon</h4>
+            <div className="text-center">
+              <h5>Deadline: Feb 20</h5>
+              <button className="bg-cyan-500 text-slate-900 px-3 py-1 rounded-lg">
+                Apply Now
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* End Jobs Card */}
