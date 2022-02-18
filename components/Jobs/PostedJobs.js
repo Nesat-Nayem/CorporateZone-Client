@@ -1,9 +1,23 @@
 import React from "react";
 import Image from "next/image";
-import { MdMoreTime, MdPedalBike } from "react-icons/md";
+import { MdMoreTime, MdPedalBike, MdMobileFriendly, MdSportsTennis, MdAddTask } from "react-icons/md";
+import { FaMoneyBillAlt } from "react-icons/fa";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const PostedJobs = () => {
+
+  const [jobs, setJObs] = useState([])
+  useEffect(() => {
+    fetch('https://sheltered-journey-99057.herokuapp.com/jobs')
+      .then(res => res.json())
+      .then(data => {
+        setJObs(data)
+      console.log(data);
+    })
+  }, [])
+  
   // Filtered Options
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
@@ -75,7 +89,8 @@ const PostedJobs = () => {
       {/* End Filter */}
 
       {/* Start Jobs Card */}
-      <div className="flex justify-evenly items-center mx-auto my-12 border-2 border-slate-200 w-7/12 rounded-lg jobs_box">
+    
+        <div div className="md:flex justify-evenly items-center mx-auto my-12 border-2 border-slate-200 w-7/12 rounded-lg jobs_box">
         <Image
           className=""
           width={120}
@@ -94,16 +109,27 @@ const PostedJobs = () => {
         </div>
 
         <div className=" w-4/12 open_job">
-          <div className="flex justify-evenly items-center advantages_icon">
-            <div>
-              Facilities with icon
-              <MdMoreTime />
-              <MdPedalBike />
+          <div className="md:flex justify-evenly items-center advantages_icon">
+
+            <div className="md:flex flex-col justify-center space-y-2 items-center">
+              <div className="flex">
+              <MdMoreTime title="Flexible Time"  className="text-cyan-500 text-2xl mx-1"/>
+              <MdPedalBike title="Bike Parking" className="text-cyan-500 text-2xl mx-1" />
+              <MdSportsTennis title="Sports" className="text-cyan-500 text-xl mx-1" />
+              </div> 
+              <div className="flex">
+              <MdMobileFriendly title="Mobile Friendly" className="text-cyan-500 text-2xl mx-1" />
+              <MdAddTask title="Get Bonuses" className="text-cyan-500 text-2xl mx-1" />
+            
+              </div>
+          </div>
+            <div className="mx-auto">
+              <FaMoneyBillAlt className="mx-auto text-2xl text-green-500" />
+              <h3 className="text-slate-500">20k - 30k</h3>
             </div>
-            <h4>Salary Icon</h4>
-            <div className="text-center">
-              <h5>Deadline: Feb 20</h5>
-              <button className="bg-cyan-500 text-slate-900 px-3 py-1 rounded-lg">
+            <div className="text-center space-y-3">
+              <h5 className="text-slate-600">Deadline: Feb 20</h5>
+              <button className="bg-cyan-500 text-slate-200 font-semibold px-3 py-1 rounded-lg">
                 Apply Now
               </button>
             </div>
