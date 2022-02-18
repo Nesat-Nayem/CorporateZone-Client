@@ -134,3 +134,29 @@
     margin-left: 0;
   }
 }
+
+.zones_bg{
+  background: 
+  linear-gradient(#64c8e6, #9198e563), url("../../images/hired.jpg");
+background-position: fixed;
+background-repeat: no-repeat;
+background-size: cover;
+height: 500px;
+padding: 30px 0px;
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+}
+
+
+@media only screen and (max-width:640px)  {
+  .zones_bg{
+    display: block;
+    height: 700px;
+    padding: 0px 10px;
+  }
+  .process_con{
+    margin: 0px 20px;
+  }
+}
