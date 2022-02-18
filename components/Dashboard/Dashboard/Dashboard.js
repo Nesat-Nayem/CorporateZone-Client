@@ -112,38 +112,14 @@ const Dashboard = () => {
 
 
 
-                <a
-                  onClick={() => setTrigger(false)}
-                  className="px-4 py-2 text-xl font-extralight text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer rounded-md flex items-center mx-5 mb-5"
-                >
-                  <MdAssignmentTurnedIn className="w-7 h-7" />
-                  &nbsp;&nbsp;&nbsp;CorporateZone 2
-                </a>
-                <a
-                  onClick={() => setTrigger(false)}
-                  className="px-4 py-2 text-xl font-extralight text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer rounded-md flex items-center mx-5 mb-5"
-                >
-                  <MdOutlineAdminPanelSettings className="w-7 h-7" />
-                  &nbsp;&nbsp;&nbsp;CorporateZone 3
-                </a>
+               
+               
+               
               </li>
             )}
             <li className="divide-y divide-solid">
               <span></span>
-              <a
-                onClick={() => setTrigger(false)}
-                className="px-4 py-2 text-xl font-extralight text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer rounded-md flex items-center mx-5 mb-5"
-              >
-                <MdTravelExplore className="w-7 h-7" />
-                &nbsp;&nbsp;&nbsp;CorporateZone 4
-              </a>
-              <a
-                onClick={() => setTrigger(false)}
-                className="px-4 py-2 text-xl font-extralight text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer rounded-md flex items-center mx-5 mb-5"
-              >
-                <MdRateReview className="w-7 h-7" />
-                &nbsp;&nbsp;&nbsp;CorporateZone 5
-              </a>
+             
             </li>
           </ul>
           <Link href="/">
