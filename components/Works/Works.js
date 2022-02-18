@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FcOk } from "react-icons/fc";
-// import recruiter from "../../../images/recruiter.png";
-// import seeking from "../../../images/seeking.png";
+import recruiter from "../../images/recruiter.png";
+import seeking from "../../images/seeking.png";
 import bgParallax from "../About/About.module.css";
 
 const Works = () => {
@@ -10,9 +10,9 @@ const Works = () => {
       {/* Company */}
       <div className="md:flex md:justify-evenly md:items-center my-20 md:mx-24  sm:mx-2">
         <div className="img mx-auto my-5">
-          <img
+          <Image
             className="w-full"
-            src="https://github.com/Nesat-Nayem/CorporateZone-Clitent/blob/listed_job/ya/images/recruiter.png?raw=true"
+            src={recruiter}
           />
         </div>
         <div className=" md:w-5/12 mx-auto process_con">
@@ -139,9 +139,9 @@ const Works = () => {
         </div>
 
         <div className="img mx-auto my-7">
-          <img
+          <Image
             className="w-full "
-            src="https://github.com/Nesat-Nayem/CorporateZone-Clitent/blob/listed_job/ya/images/seeking.png?raw=true"
+            src={seeking}
           />
         </div>
       </div>

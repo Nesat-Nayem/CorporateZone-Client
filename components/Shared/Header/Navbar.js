@@ -2,29 +2,16 @@
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import {
-  BookmarkAltIcon,
-  CalendarIcon,
   ChartBarIcon,
-  CursorClickIcon,
   MenuIcon,
-  PhoneIcon,
-  PlayIcon,
   RefreshIcon,
   ShieldCheckIcon,
-  SupportIcon,
   ViewGridIcon,
   XIcon,
 } from "@heroicons/react/outline";
 import Link from "next/link";
 
 const pages = [
-  {
-    name: "About Us",
-    description:
-      "Get a better understanding of where your traffic is coming from.",
-    href: "/about",
-    icon: ChartBarIcon,
-  },
   {
     name: "Jobs",
     href: "/jobs",
@@ -69,12 +56,7 @@ export default function Navbar() {
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
           </div>
-          <Popover.Group as="nav" className="hidden lg:flex space-x-10">
-            <Link href="/about">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-                About Us
-              </a>
-            </Link>
+          <Popover.Group as="nav" className="hidden uppercase lg:flex space-x-10">
             <Link href="/jobs">
               <a className="text-base font-medium text-gray-500 hover:text-gray-900">
                 Jobs
@@ -88,11 +70,6 @@ export default function Navbar() {
             <Link href="/blog">
               <a className="text-base font-medium text-gray-500 hover:text-gray-900">
                 Blog
-              </a>
-            </Link>
-            <Link href="/contact">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Contact Us
               </a>
             </Link>
           </Popover.Group>

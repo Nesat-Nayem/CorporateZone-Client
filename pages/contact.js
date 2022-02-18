@@ -1,6 +1,4 @@
-import ContactUs from "../Components/ContactUs/ContactUs";
-import Layout from "../components/layout/Layout";
-import Footer from "../components/Shared/Footer/Footer";
+import ContactUs from "../components/ContactUs/ContactUs";
 import Header from "../components/Shared/Header/Header";
 
 const Contact = () => {
