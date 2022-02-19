@@ -1,5 +1,5 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import {
   BookmarkAltIcon,
@@ -16,6 +16,8 @@ import {
   XIcon,
 } from "@heroicons/react/outline";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 
 const pages = [
   {
@@ -49,6 +51,23 @@ const pages = [
 ];
 
 export default function Navbar() {
+  const [userInfo, setUserInfo] = useState(null);
+  const currentUser = useSelector((state) => state.user.currentUser);
+  const loggedInUser = useSelector((state) => state.user.loggedInUser);
+  console.log(loggedInUser);
+
+  const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   fetch(`http://localhost:4030/users/${currentUser?.email}`)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       dispatch(loggedInUserData(data));
+  //     });
+  // }, [currentUser?.email]);
+
+  const popUpHandler = () => {};
   return (
     <Popover className="relative bg-white">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
@@ -69,12 +88,10 @@ export default function Navbar() {
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
           </div>
-          <Popover.Group as="nav" className="hidden lg:flex space-x-10">
-            <Link href="/about">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-                About Us
-              </a>
-            </Link>
+          <Popover.Group
+            as="nav"
+            className="hidden lg:flex items-center space-x-10"
+          >
             <Link href="/jobs">
               <a className="text-base font-medium text-gray-500 hover:text-gray-900">
                 Jobs
@@ -90,11 +107,18 @@ export default function Navbar() {
                 Blog
               </a>
             </Link>
-            <Link href="/contact">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Contact Us
-              </a>
-            </Link>
+            {currentUser && (
+              <>
+                <button onClick={popUpHandler}>
+                  <img
+                    src={currentUser?.photoURL}
+                    className="w-12 h-12 "
+                    style={{ borderRadius: "50%" }}
+                    alt=""
+                  />
+                </button>
+              </>
+            )}
           </Popover.Group>
         </div>
       </div>

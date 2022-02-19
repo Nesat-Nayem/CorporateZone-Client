@@ -12,10 +12,12 @@ import { useRouter } from "next/router";
 
 import React from "react";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { signIn, signOutCurrentUser } from "./userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { signIn, signOutCurrentUser, loggedInUserData } from "./userSlice";
 
 const useFirebase = () => {
+  const currentUser = useSelector((state) => state.user.currentUser);
+
   const dispatch = useDispatch();
   const router = useRouter();
 
@@ -57,6 +59,14 @@ const useFirebase = () => {
         console.error(err);
       });
   };
+
+  useEffect(() => {
+    fetch(`http://localhost:4030/users/${currentUser?.email}`)
+      .then((response) => response.json())
+      .then((data) => {
+        dispatch(loggedInUserData(data));
+      });
+  }, [currentUser?.email]);
 
   //   // observer function
   //   useEffect(() => {

@@ -1,9 +1,19 @@
 import { useForm } from "react-hook-form";
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import axios from "axios";
 import useFirebase from "../../../redux/slices/user/useFirebase";
+import Select from "react-select";
+import countryList from "react-select-country-list";
 
 const RecruiterForm = () => {
+  const [country, setCountry] = useState("");
+  const options = useMemo(() => countryList().getData(), []);
+
+  // location
+  const changeHandler = (country) => {
+    setCountry(country);
+  };
+
   const [photoURL, setPhotoURL] = useState("");
 
   // signup method
@@ -21,7 +31,19 @@ const RecruiterForm = () => {
       data.password,
       photoURL
     );
-    // console.log({ ...data, role: "recruiter", photoURL });
+    axios
+      .post("http://localhost:4030/users", {
+        ...data,
+        photoURL,
+        role: "recruiter",
+        location: country.label,
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   // image upload handler
@@ -157,47 +179,27 @@ const RecruiterForm = () => {
               type="text"
               {...register("companyWebsite", {
                 required: true,
+                pattern:
+                  /(https?:\/\/)?(www\.)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)|(https?:\/\/)?(www\.)?(?!ww)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/,
               })}
             />
             {/* errors will return when field validation fails  */}
-            {errors.companyWebsite && (
-              <span className="text-sm text-red-500 block">
-                Company Website is required
-              </span>
-            )}
+            <span className="text-sm text-red-500 block">
+              {errors.companyWebsite?.type === "required" &&
+                "companyWebsite is required"}
+            </span>
+            <span className="text-sm text-red-500 block">
+              {errors.companyWebsite?.type === "pattern" &&
+                "Please insert a valid link"}
+            </span>
           </div>
           <div>
             <p className="font-serif py-1">Enter your Company Location</p>
-            <input
-              className="w-full border border-gray-200 p-2  text-black focus:outline-none "
-              placeholder="New York"
-              type="text"
-              {...register("companyLocation", {
-                required: true,
-              })}
+            <Select
+              options={options}
+              value={country}
+              onChange={changeHandler}
             />
-            {/* errors will return when field validation fails  */}
-            {errors.companyLocation && (
-              <span className="text-sm text-red-500 block">
-                Company Location is required
-              </span>
-            )}
-          </div>
-          <div>
-            <p className="font-serif py-1">Total Experience in hiring</p>
-            <select
-              className="w-full border border-gray-200 p-2  text-black focus:outline-none "
-              type="text"
-              {...register("experienceInHiring", {
-                required: true,
-              })}
-            >
-              <option value="Less Than 1 Year">Less Than 1 Year</option>
-              <option value="1+ Year">1+ Year</option>
-              <option value="3+ Year">3+ Year</option>
-              <option value="5+ Year">5+ Year</option>
-              <option value="8+ Year">8+ Year</option>
-            </select>
           </div>
         </div>
 

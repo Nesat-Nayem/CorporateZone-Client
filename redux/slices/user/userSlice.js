@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const userSlice = createSlice({
   name: "user",
@@ -6,12 +6,12 @@ export const userSlice = createSlice({
     loading: false,
     currentUser: null,
     error: null,
+    loggedInUser: null,
   },
   reducers: {
     initialUserData: (state, action) => {
       if (action.payload) {
         const { displayName, email, photoURL } = action?.payload?.user;
-        console.log(displayName, email, photoURL);
         return {
           ...state,
           loading: false,
@@ -40,6 +40,12 @@ export const userSlice = createSlice({
         currentUser: action.payload,
       };
     },
+    loggedInUserData: (state, action) => {
+      return {
+        ...state,
+        loggedInUser: action.payload,
+      };
+    },
     signOutCurrentUser: (state, action) => {
       return {
         ...state,
@@ -50,7 +56,12 @@ export const userSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { initialUserData, registerUser, signIn, signOutCurrentUser } =
-  userSlice.actions;
+export const {
+  initialUserData,
+  registerUser,
+  signIn,
+  loggedInUserData,
+  signOutCurrentUser,
+} = userSlice.actions;
 
 export default userSlice.reducer;

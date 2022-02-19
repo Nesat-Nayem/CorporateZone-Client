@@ -24,6 +24,8 @@
     "react-rating": "^2.0.5",
     "react-redux": "^7.2.6",
     "react-reveal": "^1.2.2",
+    "react-select": "^5.2.2",
+    "react-select-country-list": "^2.2.3",
     "redux": "^4.1.2",
     "swiper": "^6.7.0"
   },

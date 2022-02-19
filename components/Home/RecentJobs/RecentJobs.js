@@ -57,7 +57,7 @@ const RecentJobs = () => {
       {fakejobs.map((job) => {
         return (
           <div
-            className='"md:flex flex-col justify-center items-center bg-slate-100 hover:bg-cyan-600 hover:text-white md:w-3/4 mx-auto my-5 rounded-lg border-2 transition-all'
+            className="md:flex flex-col justify-center items-center bg-slate-100 hover:bg-cyan-600 hover:text-white md:w-3/4 mx-auto my-5 rounded-lg border-2 transition-all"
             key={job.id}
           >
             <div className="md:flex md:justify-around md:items-center md:w-4/4 mx-auto rounded-lg py-3 job_card relative">
