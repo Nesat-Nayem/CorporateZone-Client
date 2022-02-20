@@ -2,6 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { MdDashboard } from "react-icons/md";
+import { MdAdminPanelSettings } from "react-icons/md";
+import { BsBagCheckFill } from "react-icons/bs";
+import { FaUserGraduate } from "react-icons/fa";
+import { FaRegBuilding } from "react-icons/fa";
 
 import {
   MdOutlineLogout,
@@ -18,8 +23,8 @@ import img from "../../../public/favicon.ico";
 import Jobs from "../../Admin/Jobs";
 import AddAdmin from "../../Admin/AddAdmin";
 import Candidate from "../../Admin/Candidate";
-import company from "../../../pages/company";
 import Company from "../../Admin/Company";
+import User from "../../Admin/User";
 
 
 
@@ -54,7 +59,7 @@ const Dashboard = () => {
           <ul className="m-2 py-5 border-y border-dotted">
             {(
               <li className="divide-y divide-solid">
-                <span></span>
+               
 
 
                 {params[0] === "admin" && (
@@ -62,46 +67,55 @@ const Dashboard = () => {
                     <Link href={`/dashboard/admin`}>
                     <a
                   onClick={() => setTrigger(false)}
-                  className="px-4 py-2 text-xl font-extralight text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer rounded-md flex items-center mx-5 mb-5"
+                  className="px-4 py-2 text-xl font-extralight text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer rounded-md flex items-center mx-5 mb-5" style={{color:'#E6D0EC', fontWeight:'700'}}
                 >
-                  <MdAssignmentTurnedIn className="w-7 h-7" />
-                  &nbsp;&nbsp;&nbsp;Dashboard
+                  <MdDashboard className="w-7 h-7" />
+                  &nbsp;&nbsp;&nbsp;DASHBOARD
+                </a>
+                    </Link>
+                    <Link href={`/dashboard/admin/user`}>
+                    <a
+                  onClick={() => setTrigger(false)}
+                  className="px-4 py-2 text-xl font-extralight text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer rounded-md flex items-center mx-5 mb-5" style={{color:'#E6D0EC', fontWeight:'700'}}
+                >
+                  <MdDashboard className="w-7 h-7" />
+                  &nbsp;&nbsp;&nbsp;USER
                 </a>
                     </Link>
                     <Link href={`/dashboard/admin/jobs`}>
                     <a
                   onClick={() => setTrigger(false)}
-                  className="px-4 py-2 text-xl font-extralight text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer rounded-md flex items-center mx-5 mb-5"
+                  className="px-4 py-2 text-xl font-extralight text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer rounded-md flex items-center mx-5 mb-5" style={{color:'#E6D0EC', fontWeight:'700'}}
                 >
-                  <MdAssignmentTurnedIn className="w-7 h-7" />
-                  &nbsp;&nbsp;&nbsp;Jobs
+                  <BsBagCheckFill className="w-7 h-7" />
+                  &nbsp;&nbsp;&nbsp;JOBS
                 </a>
                     </Link>
                     <Link href={`/dashboard/admin/addadmin`}>
                     <a
                   onClick={() => setTrigger(false)}
-                  className="px-4 py-2 text-xl font-extralight text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer rounded-md flex items-center mx-5 mb-5"
+                  className="px-4 py-2 text-xl font-extralight text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer rounded-md flex items-center mx-5 mb-5" style={{color:'#E6D0EC', fontWeight:'700'}}
                 >
-                  <MdAssignmentTurnedIn className="w-7 h-7" />
-                  &nbsp;&nbsp;&nbsp;Add Admin
+                  <MdAdminPanelSettings className="w-7 h-7" />
+                  &nbsp;&nbsp;&nbsp;ADD ADMIN
                 </a>
                     </Link>
                     <Link href={`/dashboard/admin/candidate`}>
                     <a
                   onClick={() => setTrigger(false)}
-                  className="px-4 py-2 text-xl font-extralight text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer rounded-md flex items-center mx-5 mb-5"
+                  className="px-4 py-2 text-xl font-extralight text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer rounded-md flex items-center mx-5 mb-5" style={{color:'#E6D0EC', fontWeight:'700'}}
                 >
-                  <MdAssignmentTurnedIn className="w-7 h-7" />
-                  &nbsp;&nbsp;&nbsp;Candidate
+                  <FaUserGraduate className="w-7 h-7" />
+                  &nbsp;&nbsp;&nbsp;CANDIDATES
                 </a>
                     </Link>
                     <Link href={`/dashboard/admin/company`}>
                     <a
                   onClick={() => setTrigger(false)}
-                  className="px-4 py-2 text-xl font-extralight text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer rounded-md flex items-center mx-5 mb-5"
+                  className="px-4 py-2 text-xl font-extralight text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer rounded-md flex items-center mx-5 mb-5"  style={{color:'#E6D0EC', fontWeight:'700'}}
                 >
-                  <MdAssignmentTurnedIn className="w-7 h-7" />
-                  &nbsp;&nbsp;&nbsp;Company
+                  <FaRegBuilding className="w-7 h-7" />
+                  &nbsp;&nbsp;&nbsp;COMPANY
                 </a>
                     </Link>
                     
@@ -117,10 +131,7 @@ const Dashboard = () => {
                
               </li>
             )}
-            <li className="divide-y divide-solid">
-              <span></span>
-             
-            </li>
+          
           </ul>
           <Link href="/">
             <a className="p-2 text-md w-1/2 mx-auto hover:bg-gray-700 border-2 rounded-md flex justify-center items-center mt-10">
@@ -156,6 +167,11 @@ const Dashboard = () => {
         {params[1] === "jobs" && (
           <div>
             <Jobs></Jobs>
+          </div>
+        )}
+        {params[1] === "user" && (
+          <div>
+            <User></User>
           </div>
         )}
         {params[1] === "addadmin" && (
