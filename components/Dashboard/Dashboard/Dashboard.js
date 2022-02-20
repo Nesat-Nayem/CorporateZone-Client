@@ -7,6 +7,7 @@ import { MdAdminPanelSettings } from "react-icons/md";
 import { BsBagCheckFill } from "react-icons/bs";
 import { FaUserGraduate } from "react-icons/fa";
 import { FaRegBuilding } from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
 
 import {
   MdOutlineLogout,
@@ -78,7 +79,7 @@ const Dashboard = () => {
                   onClick={() => setTrigger(false)}
                   className="px-4 py-2 text-xl font-extralight text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer rounded-md flex items-center mx-5 mb-5" style={{color:'#E6D0EC', fontWeight:'700'}}
                 >
-                  <MdDashboard className="w-7 h-7" />
+                  <FaUserCircle className="w-7 h-7" />
                   &nbsp;&nbsp;&nbsp;USER
                 </a>
                     </Link>
