@@ -5,7 +5,7 @@ import { GrLinkedinOption } from 'react-icons/gr';
 import { IoLogoGoogleplus, IoLogoPinterest } from 'react-icons/io';
 import { FcLikePlaceholder } from 'react-icons/fc';
 import { MdTitle } from 'react-icons/md';
-import Footer from "../../components/Home/Footer/Footer";
+import Footer from "../../components/Shared/Footer/Footer";
 
 const index = () => {
 
