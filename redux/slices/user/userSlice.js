@@ -26,17 +26,24 @@ export const userSlice = createSlice({
       }
     },
     registerUser: (state, action) => {
-      console.log(action.payload);
       return {
         ...state,
         loading: false,
+        error: null,
         currentUser: action.payload,
+      };
+    },
+    registerFailed: (state, action) => {
+      return {
+        ...state,
+        error: action.payload,
       };
     },
     signIn: (state, action) => {
       return {
         ...state,
         loading: false,
+        error: null,
         currentUser: action.payload,
       };
     },
@@ -49,6 +56,7 @@ export const userSlice = createSlice({
     signOutCurrentUser: (state, action) => {
       return {
         ...state,
+        error: null,
         currentUser: null,
       };
     },
@@ -62,6 +70,7 @@ export const {
   signIn,
   loggedInUserData,
   signOutCurrentUser,
+  registerFailed,
 } = userSlice.actions;
 
 export default userSlice.reducer;

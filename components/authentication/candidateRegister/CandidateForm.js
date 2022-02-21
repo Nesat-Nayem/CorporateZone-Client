@@ -24,26 +24,19 @@ const CandidateForm = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
+    const userInfo = {
+      ...data,
+      photoURL,
+      role: "candidate",
+      location: country.label,
+    };
     signupWithEmailAndPassword(
       data.username,
       data.email,
       data.password,
-      photoURL
+      photoURL,
+      userInfo
     );
-
-    axios
-      .post("http://localhost:4030/users", {
-        ...data,
-        photoURL,
-        role: "candidate",
-        location: country.label,
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
   };
 
   // image upload handler

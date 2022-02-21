@@ -1,19 +1,21 @@
+import axios from "axios";
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  GoogleAuthProvider,
-  signInWithPopup,
-  onAuthStateChanged,
   updateProfile,
   signOut,
 } from "firebase/auth";
 import { useRouter } from "next/router";
 
-import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { signIn, signOutCurrentUser, loggedInUserData } from "./userSlice";
+import {
+  signIn,
+  signOutCurrentUser,
+  loggedInUserData,
+  registerFailed,
+} from "./userSlice";
 
 const useFirebase = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
@@ -23,7 +25,13 @@ const useFirebase = () => {
 
   const auth = getAuth();
 
-  const signupWithEmailAndPassword = (username, email, password, photoURL) => {
+  const signupWithEmailAndPassword = (
+    username,
+    email,
+    password,
+    photoURL,
+    userInfo
+  ) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
         updateProfile(auth.currentUser, {
@@ -31,9 +39,17 @@ const useFirebase = () => {
           photoURL: photoURL,
         });
         router.push("/");
+        axios
+          .post("http://localhost:4030/users", userInfo)
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
       })
       .catch((err) => {
-        const errorMessage = err.message;
+        dispatch(registerFailed(err.message));
       });
   };
 
@@ -45,7 +61,7 @@ const useFirebase = () => {
         router.push("/");
       })
       .catch((err) => {
-        console.log(err.message);
+        dispatch(registerFailed(err.message));
       });
   };
 
@@ -56,7 +72,7 @@ const useFirebase = () => {
         dispatch(signOutCurrentUser());
       })
       .catch((err) => {
-        console.error(err);
+        dispatch(registerFailed(err.message));
       });
   };
 

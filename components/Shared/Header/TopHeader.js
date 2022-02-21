@@ -7,14 +7,10 @@ import { AiOutlineInstagram } from "react-icons/ai";
 import { FaUserAlt } from "react-icons/fa";
 import { MdLogin } from "react-icons/md";
 import Link from "next/link";
-import { useSelector, useDispatch } from "react-redux";
-import useFirebase from "../../../redux/slices/user/useFirebase";
+import { useSelector } from "react-redux";
 
 const TopHeader = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
-  const dispatch = useDispatch();
-
-  const { logOut } = useFirebase();
 
   return (
     <div className="bg-cyan-500 text-white px-10 md:flex hidden justify-between py-3 items-center">
@@ -40,14 +36,7 @@ const TopHeader = () => {
         {/* signup and login */}
         <div className="flex ">
           {currentUser ? (
-            <>
-              <button
-                onClick={() => dispatch(logOut)}
-                className=" font-bold bg-white text-cyan-600 hover:text-cyan-800 uppercase flex items-center px-2 py-1 rounded justify-center font-serif"
-              >
-                <MdLogin className="mr-2" /> Log Out
-              </button>
-            </>
+            <></>
           ) : (
             <>
               <Link href="/signup">
