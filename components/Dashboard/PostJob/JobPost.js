@@ -5,12 +5,14 @@ import Multiselect from "multiselect-react-dropdown";
 import Select from 'react-select'
 import countryList from 'react-select-country-list'
 import axios from "axios";
+import { useRouter } from 'next/router';
 
 const JobPost = () => {
 
     const [responsibilitiData, setResponsibilitiData] = useState('');
     const [AllResponsibilitiData, setAllResponsibilitiData] = useState([]);
     const [value, setValue] = useState('')
+    const router = useRouter();
     const options2 = useMemo(() => countryList().getData(), [])
     const [photoURL, setPhotoURL] = useState("");
     const [selectedLists, setSelectedLists] = useState([]);
@@ -97,9 +99,9 @@ const JobPost = () => {
         allData.location = value.label;
         allData.jobTags = "Media, Medicla, Restaurants";
         axios
-      .post("http://localhost:4030/jobs", allData)
-      .then(function (res) {
-        if (res.status === 201)
+      .post("https://sheltered-journey-99057.herokuapp.com/jobs", allData)
+      .then( (res) => {
+        if (res.status === 200)
         {
           router.push("/");
           alert("successfully saved!");
@@ -282,7 +284,7 @@ const JobPost = () => {
                                     
                             <div className="col-span-4 sm:col-span-3">
                                 <label  className="block text-sm font-medium text-gray-700">Since Date</label>
-                                <input type="date" name="since" id="since" autoComplete="given-name" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2" onChange={dataInput} value={allData.since} placeholder='Enter the location'/>
+                                <input type="number" name="since" id="since" autoComplete="given-name" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2" onChange={dataInput} value={allData.since} placeholder='Enter the location'/>
                                     </div>
                                     
                             <div className="col-span-4 sm:col-span-3">
