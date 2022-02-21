@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 import RuleComponent from "./RuleComponent";
 import rulesImg from "../../images/rules.png";
+import { RiDoubleQuotesR } from "react-icons/ri";
 
 const Rule = () =>
 {
@@ -90,6 +91,13 @@ const Rule = () =>
                     <button onClick={() => setTrigger(1)} className="bg-white text-slate-700 hover:bg-pink-600 hover:text-white mx-2 px-5 py-2 transition duration-700 ease-in-out hover:scale-105 rounded-xl shadow-md text-lg">
                         Candidate
                     </button>
+                </div>
+                <div className="lg:mx-40 mx-5 mt-10 text-center">
+                    <h1 className="lg:text-3xl text-xl bg-slate-500 rounded-2xl font-semibold text-white">Disclaimer</h1>
+                    <RiDoubleQuotesR className="w-10 h-10 text-pink-500 relative top-6" />
+                    <p className="text-slate-400 text-sm text-justify">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Corporate Zone will not be liable on account of any inaccuracy of information on this web site. It is the responsibility of the visitor to further research the information on the site. Any breach of privacy or of the information provided by the consumer to Corporate Zone to be placed on the website by technical or any other means is not the responsibility of Corporate Zone. Corporate Zone does not guarantee confidentiality of information provided to it by any person acquiring/using all/any information displayed on the Corporate Zone Website. Thank you all...
+                    </p>
                 </div>
                 <div className="flex justify-center items-center">
                     <div className="hidden lg:block">

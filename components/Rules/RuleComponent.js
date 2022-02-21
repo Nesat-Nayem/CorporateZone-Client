@@ -7,7 +7,7 @@ export default function RuleComponent ({ title, description })
     const [expanded, setExpanded] = useState(false);
 
     return (
-        <div className="flex flex-col p-5 m-5 border-x-4 border-pink-500 rounded-xl shadow-md text-gray-light">
+        <div className="flex flex-col p-5 lg:mx-10 mx-2 my-5 border-x-4 border-pink-500 rounded-xl shadow-md text-gray-light">
             <div className="flex justify-between items-start">
                 <p className={`text-left ${expanded && "font-light bg-slate-700 rounded-xl shadow-md text-white px-3"}`}>
                     {title}
