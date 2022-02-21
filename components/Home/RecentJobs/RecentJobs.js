@@ -1,5 +1,10 @@
 import Image from 'next/image';
 import ContainerStyles from "../../../styles/Home.module.css";
+import { FaBuilding } from "react-icons/fa";
+import { GiSkills } from "react-icons/gi";
+import { ImLocation } from "react-icons/im";
+import { FaMoneyCheckAlt } from "react-icons/fa";
+import style from './RecentJobs.module.css'
 
 
 const fakejobs = [
@@ -35,73 +40,59 @@ const fakejobs = [
 const RecentJobs = () => {
 
   return (
-    <div className={ContainerStyles.container}>
+    <div style={{backgroundColor:'#E6DBE8',  marginTop:'20px', padding:'10px 0'}} >
+      <div className={style.main}>
+          <h3>RECENT JOBS {fakejobs.length}</h3>
+        <div className={style.top}>
+          {
+            fakejobs.map((job) =>
+              <div className={style.single} key={job.id}>
+                <div>
+                  <img src={job.img} alt='' />
+                  <div>
+                    <div className={style.one}>
+                      <FaBuilding className={style.icon} />
+                      <h2> {job.company}</h2>
+                    </div>
+                    <div className={style.one}>
+                      <GiSkills  className={style.icon} />
+                      <h2>{job.skills}</h2>
+                    </div>
+                    <div className={style.one}>
+                      <ImLocation  className={style.icon} />
+                      <h2>{job.location}</h2>
+                    </div>
+                    <div className={style.one}>
+                      <FaMoneyCheckAlt  className={style.icon} />
+                      <h2>{job.salary}</h2>
+                    </div>
+                  </div>
+                </div>
+                  <div className={style.but}>
+                  <button>Full Time</button>
+                  <button>Part Time</button>
+                  <button>Mid Level</button>
+                  </div>
+                  <div style={{marginTop:'13px'}}>
+                    <div className={style.remote}>
+                    <button style={{marginTop:'13px'}} type="button" className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">APPLY NOW</button>
+                   <div className={style.head}>
+                   <h1>Remote Jobs</h1>
+                   </div>
+                    </div>
+                  </div>
+              </div>)
+          }
+        </div>
 
-      <div className="space-y-7 mx-auto md:w-3/4 relative mt-20 mb-6 recent_header">
-        <h3 className="text-3xl text-center after:content-[''] after:absolute after:border-t-2 after:w-16 after: after:border-cyan-500 after:left-0 after:bottom-0 after:right-32 after:top-10 after:mx-auto font-medium text-slate-700 uppercase">
-          Recent Jobs {fakejobs.length}
-        </h3>
 
-              <div className="space-y-3">
-              <ul className="md:flex text-center mx-auto md:flex-wrap justify-end items-end">
-          <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
-            <a href="#">Part-Time</a>
-          </li>
-          <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
-            <a href="#">Full-Time</a>
-          </li>
-          <li className="md:mx-2 my-1 capitalize font-medium bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
-            <a href="#">Internships</a>
-          </li>
-        </ul>
       </div>
-              
-      </div>
-
-      {
-        fakejobs.map((job) => {
-          return (   <div className='"md:flex flex-col justify-center items-center bg-slate-100 hover:bg-cyan-600 hover:text-white md:w-3/4 mx-auto my-5 rounded-lg border-2 transition-all' key={job.id}>
-          <div className="md:flex md:justify-around md:items-center md:w-4/4 mx-auto rounded-lg py-3 job_card relative">
-            <div className="company_logo text-center relative">
-                      <Image
-                          height="150px"
-                          width="200px"
-                          src={job?.img}
-                      />
-    
-            </div>
-            <div className="mx-3 space-y-3 jobs_content relative">
-                <h4> <span className='font-bold'>Company Name: </span> {job?.company}</h4>
-                <h3> <span className='font-bold'>Salary: </span> {job?.salary}</h3>
-                <p><span className='font-bold'>Required SKills: </span>{job?.skills}</p>
-                <p><span className='font-bold'>Location: </span>{job?.location}</p>
-              <h5><span className='font-bold'>Keywords: </span>: Media, Medicla, Restaurants</h5>
-            </div>
-                  <div className="apply_btn md:space-y-12 text-center">
-              <li className="mx-2 my-3 bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
-                <a href="#">Remote Jobs</a>
-              </li>
-              <li className="mx-2 bg-cyan-500 p-1.5 text-white text-md rounded-lg hover:bg-cyan-800">
-                <a href="#">Apply</a>
-              </li>
-                  </div>
-                  </div>
-                  
-                  <div className='border-t-2 py-1 hover:border-cyan-600 hover:bg-cyan-600 hover:text-white transition-all'>
-                  <h5 className='text-center'>Keywords: Media, Medicla, Restaurants</h5>
-                  </div>
-          </div>
-          )
-        })
-       }
-
-
 
     </div>
+
+
+
   );
-};
-
-
-
-
+}
 export default RecentJobs;
+
