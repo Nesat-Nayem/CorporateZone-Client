@@ -1,62 +1,76 @@
-.one{
-    display: flex;
-}
-.top{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 90%;
-    margin: 0 auto;
-    
-}
-.single{
-    background-color: white;
-    margin-bottom: 40px;
-    margin-right: 10px;
-    padding: 15px 10px;
-    border-radius: 10px;
-}
-.main h3{
-    font-size: 40px;
-    text-align: center;
-    margin-bottom: 10px;
-    margin-top: 20px;
-}
-.one h2{
-    font-size: 18px;
-    margin-top: 11px;
-}
 .icon{
-    font-size: 23px;
-    margin-right: 15px;
-    margin-top: 13px;
-}
-.but button{
-    margin-top: 10px;
-    margin-right: 10px;
-    background-color: aqua;
-    padding: 3px 15px;
-    font-weight: 700;
-    border-radius: 10px;
-    color: blue;
-}
-.remote{
     display: flex;
 }
-.head{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+.gri{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    width: 80%;
+    margin: 0 auto;
 }
-.head h1{
-    background-color: #CAB4D0;
-    margin-left: 25px;
-    padding: 9px 10px;
+.icons{
+    font-size: 20px;
+    margin-right: 25px;
+    margin-bottom: 5px;
+}
+.icon h2{
+    font-size: 17px ;
+}
+#sing{
+   font-weight: 700;
+   color: #2C2149;
+}
+.apply button{
+    background-color: #DA404B;
+    padding: 3px 30px;
+    color: white;
     border-radius: 5px;
 }
+.apply h4{
+    background-color: #0F242F;
+    margin-top: 10px;
+    padding: 3px 10px;
+    color: white;
+    border-radius: 5px;
+}
+.time{
+    width: 40%;
+    text-align: center;
+    margin: 0 auto;
+   
+    padding: 5px 0;
+    border-radius: 15px;
+}
+.singe:hover{
+    border: 1px solid blue;
+    border-radius: 10px;
+}
 
+.time button{
+    margin-right: 10px;
+    background-color: #AC3655;
+    padding: 3px 14px;
+    color: white;
+    border-radius: 5px;
+    font-weight: 700;
+}
 @media only screen and (max-width:688px) {
-    .top{
+    .gri{
         grid-template-columns: 1fr;
+    }
+    .gri img{
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+    .apply button {
+        margin-top: 12px;
+        width: 100%;
+    }
+    .time button{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    .time{
+        width: 90%;
+        border: 0;
     }
 }
