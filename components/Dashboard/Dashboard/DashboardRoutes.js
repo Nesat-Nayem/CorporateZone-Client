@@ -16,7 +16,11 @@ import useFirebase from "../../../redux/slices/user/useFirebase";
 import AdminRoutes from "./AdminRoutes";
 import CandidateRoutes from "./CandidateRoutes";
 import RecruiterRoutes from "./RecruiterRoutes";
-import RecruiterProfile from "../Recruiter/RecruiterProfile";
+import UpdateProfile from "../Recruiter/RecruiterProfileUpdate";
+import RecruiteProfileUpdate from "../Recruiter/RecruiterProfileUpdate";
+import CandidateProfileUpdate from "../Candidate/profileUpdate/CandidateProfileUpdate";
+import CandidateProfile from "../Candidate/profileView/CandidateProfile";
+import RecruiterProfile from "../Recruiter/profileView/RecruiterProfile";
 
 const DashboardRoutes = () => {
   const [trigger, setTrigger] = useState(false);
@@ -58,7 +62,12 @@ const DashboardRoutes = () => {
               <h2 className="font-extrabold  text-xl mx-auto p-2">
                 {currentUser?.displayName}
               </h2>
-              <small className="text-gray-100">{currentUser?.email}</small>
+              <h2 className="font-semibold text-green-600  capitalize text-md mx-auto pb-2 ">
+                {loggedInUser?.role}
+              </h2>
+              <small className="text-gray-100 text-center">
+                {currentUser?.email}
+              </small>
             </div>
             <MdOutlineChevronLeft
               onClick={() => setTrigger(false)}
@@ -113,7 +122,7 @@ const DashboardRoutes = () => {
           </header>
 
           {/* route components */}
-          <section className="p-5 bg-gray-100">
+          <section className="p-5 bg-gray-100 ">
             {!params?.length ? (
               <div>
                 <h1>Welcome to the dashboard</h1>
@@ -154,13 +163,18 @@ const DashboardRoutes = () => {
             {params[0] === "profile" && loggedInUser?.role === "recruiter" && (
               <RecruiterProfile />
             )}
+            {/* update recruiter profile  */}
+            {params[0] === "updateProfile" &&
+              loggedInUser?.role === "recruiter" && <RecruiteProfileUpdate />}
 
             {/* candidate route components */}
             {params[0] === "profile" && loggedInUser?.role === "candidate" && (
-              <div>
-                <h1>Candidate profile</h1>
-              </div>
+              <CandidateProfile />
             )}
+
+            {/* candidate profile update */}
+            {params[0] === "updateProfile" &&
+              loggedInUser?.role === "candidate" && <CandidateProfileUpdate />}
           </section>
         </div>
       </div>
