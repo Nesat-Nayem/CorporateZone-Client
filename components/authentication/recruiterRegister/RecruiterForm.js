@@ -15,7 +15,7 @@ const RecruiterForm = () => {
 
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:4030/users", { ...data, role: "recruiter", photoURL })
+      .post("https://sheltered-journey-99057.herokuapp.com/users", { ...data, role: "recruiter", photoURL })
       .then(function (res) {
         if (res.status === 201)
         {
