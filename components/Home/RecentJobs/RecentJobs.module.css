@@ -53,6 +53,11 @@
     border-radius: 5px;
     font-weight: 700;
 }
+#sik{
+    margin-left: 15px;
+    text-align: justify;
+}
+
 @media only screen and (max-width:688px) {
     .gri{
         grid-template-columns: 1fr;

@@ -97,7 +97,27 @@ const Review = () => {
       >
         {fackreview.map((data) => (
           <SwiperSlide key={data._id}>
+            <Bounce bottom>
+              <div className="container px-5 py-12 mx-auto">
+                <div className=" lg:w-3/4 w-full mx-auto text-center bg-gray-50 p-4 shadow-lg rounded-lg">
+                  <img
+                    className="w-12 mx-auto mb-4"
+                    src="https://i.ibb.co/99dfqmz/quote.png"
+                    alt="quotes"
+                  />
+
+                  <p className="leading-relaxed poppins text-gray-500">
+                    {data.review}
+                  </p>
+                  <span className="inline-block h-1 w-10 rounded bg-gray-400 mt-8 mb-6"></span>
+
+                  {/* rating  */}
+                  <div className="flex items-center justify-center pb-4">
+                    <Rating
+                      emptySymbol={
+                        <AiOutlineStar className="text-gray-600 text-xl" />
                       }
+                      fullSymbol={
                         <AiFillStar className="text-yellow-400 text-xl" />
                       }
                       initialRating={`${data.rating}`}
