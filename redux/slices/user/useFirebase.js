@@ -38,15 +38,8 @@ const useFirebase = () => {
           displayName: username,
           photoURL: photoURL,
         });
-        router.push("/");
-        axios
-          .post("http://localhost:4030/users", userInfo)
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+
+        saveData(userInfo);
       })
       .catch((err) => {
         dispatch(registerFailed(err.message));
@@ -84,6 +77,22 @@ const useFirebase = () => {
       });
   }, [currentUser?.email]);
 
+  // data save to database
+  const saveData = async (data) => {
+    try {
+      axios
+        .post("http://localhost:4030/users", data)
+        .then(function (response) {
+          console.log(response);
+          router.push("/dashboard/profile");
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    } catch (err) {
+      console.error(err);
+    }
+  };
   //   // observer function
   //   useEffect(() => {
   //     const unsubscribe = onAuthStateChanged(auth, (user) => {

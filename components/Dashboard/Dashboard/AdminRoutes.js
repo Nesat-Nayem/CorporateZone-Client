@@ -12,7 +12,7 @@ const AdminRoutes = ({ setTrigger }) => {
           onClick={() => setTrigger(false)}
           className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
         >
-          <MdDashboard className="text-xl" />
+          <MdDashboard className="text-lg" />
           &nbsp;&nbsp;&nbsp;DASHBOARD
         </a>
       </Link>
@@ -21,7 +21,7 @@ const AdminRoutes = ({ setTrigger }) => {
           onClick={() => setTrigger(false)}
           className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
         >
-          <FaUserCircle className="text-xl" />
+          <FaUserCircle className="text-lg" />
           &nbsp;&nbsp;&nbsp;USER
         </a>
       </Link>
@@ -30,7 +30,7 @@ const AdminRoutes = ({ setTrigger }) => {
           onClick={() => setTrigger(false)}
           className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
         >
-          <BsBagCheckFill className="text-xl" />
+          <BsBagCheckFill className="text-lg" />
           &nbsp;&nbsp;&nbsp;JOBS
         </a>
       </Link>
@@ -39,7 +39,7 @@ const AdminRoutes = ({ setTrigger }) => {
           onClick={() => setTrigger(false)}
           className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
         >
-          <MdAdminPanelSettings className="text-xl" />
+          <MdAdminPanelSettings className="text-lg" />
           &nbsp;&nbsp;&nbsp;ADD ADMIN
         </a>
       </Link>
@@ -48,7 +48,7 @@ const AdminRoutes = ({ setTrigger }) => {
           onClick={() => setTrigger(false)}
           className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
         >
-          <FaUserGraduate className="text-xl" />
+          <FaUserGraduate className="text-lg" />
           &nbsp;&nbsp;&nbsp;CANDIDATES
         </a>
       </Link>
@@ -57,7 +57,7 @@ const AdminRoutes = ({ setTrigger }) => {
           onClick={() => setTrigger(false)}
           className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
         >
-          <FaRegBuilding className="text-xl" />
+          <FaRegBuilding className="text-lg" />
           &nbsp;&nbsp;&nbsp;COMPANY
         </a>
       </Link>
