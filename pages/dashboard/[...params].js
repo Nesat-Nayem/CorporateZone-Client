@@ -1,16 +1,11 @@
-import { useRouter } from "next/router";
-import Dashboard from "../../components/Dashboard/Dashboard/Dashboard";
+import DashboardRoutes from "../../components/Dashboard/Dashboard/DashboardRoutes";
 
-const DashboardArea = () => {
-    const router = useRouter();
-  const { params = [] } = router.query;
-  console.log(params);
-
-    return (
-        <div>
-            <Dashboard></Dashboard>
-        </div>
-    );
+const Dashboard = () => {
+  return (
+    <>
+      <DashboardRoutes />
+    </>
+  );
 };
 
-export default DashboardArea;
+export default Dashboard;

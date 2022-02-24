@@ -1,13 +1,16 @@
 import ContactUs from "../Components/ContactUs/ContactUs";
+import Layout from "../components/layout/Layout";
+import Footer from "../components/Shared/Footer/Footer";
 import Header from "../components/Shared/Header/Header";
 
-const contact = () => {
+const Contact = () => {
   return (
-    <div>
+    <Layout title="Contact us">
       <Header />
       <ContactUs />
-    </div>
+      <Footer />
+    </Layout>
   );
 };
 
-export default contact;
+export default Contact;

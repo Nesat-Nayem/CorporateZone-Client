@@ -19,7 +19,7 @@ const HeroArea = () => {
     <section className="relative">
       <div
         style={{
-          backgroundImage: "url('https://i.ibb.co/59TgD3X/slider13.jpg')",
+          backgroundImage: `url("https://i.ibb.co/59TgD3X/slider13.jpg")`,
           color: "#23C0E9",
           height: "auto",
           width: "100%",
@@ -114,28 +114,29 @@ const HeroArea = () => {
               value="Search"
             />
           </form>
-        
-        <div className="flex flex-col justify-start items-start px-8 mt-10">
-          <div className="flex">
-            <p className="mt-1 ">
-              <BsFillTagsFill />
-            </p>
-            <p
-              style={{
-                color: "white",
-              }}
-              className="ml-2"
-            >
-              Trending Keywords:{" "}
-              <span
+
+          <div className="flex flex-col justify-start items-start px-8 mt-10">
+            <div className="flex">
+              <p className="mt-1 ">
+                <BsFillTagsFill />
+              </p>
+              <p
                 style={{
-                    color: "#93959E",
+                  color: "white",
                 }}
+                className="ml-2"
               >
-                developer, design, it company, Media, New, Jobs, Working,
-                Medical
-              </span>
-            </p>
+                Trending Keywords:{" "}
+                <span
+                  style={{
+                    color: "#93959E",
+                  }}
+                >
+                  developer, design, it company, Media, New, Jobs, Working,
+                  Medical
+                </span>
+              </p>
+            </div>
           </div>
           </div>
           </div>
@@ -243,28 +244,21 @@ const HeroArea = () => {
         color:white
         
       }
-
-
      .Ccolor{
        background-color:#22273A;
      }
-
      .Ccolor p{
        color: #93959E ;
      }
-
      .Ccolor h6{
        color: white;
      }
-
       
         
       }
-
-
       `}
         </style>
-      </div>
+     
     </section>
   );
 };

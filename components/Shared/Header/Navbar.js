@@ -2,43 +2,30 @@
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import {
-  BookmarkAltIcon,
-  CalendarIcon,
   ChartBarIcon,
-  CursorClickIcon,
   MenuIcon,
-  PhoneIcon,
-  PlayIcon,
   RefreshIcon,
   ShieldCheckIcon,
-  SupportIcon,
   ViewGridIcon,
   XIcon,
 } from "@heroicons/react/outline";
-import { ChevronDownIcon } from "@heroicons/react/solid";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import useFirebase from "../../../redux/slices/user/useFirebase";
+import { MdLogin } from "react-icons/md";
+import { BsChatRightText } from "react-icons/bs";
+import { useRouter } from "next/router";
 
 const pages = [
-  {
-    name: "About Us",
-    description:
-      "Get a better understanding of where your traffic is coming from.",
-    href: "/about",
-    icon: ChartBarIcon,
-  },
   {
     name: "Jobs",
     href: "/jobs",
     icon: ChartBarIcon,
   },
   {
-    name: "Candidates",
-    href: "/candidates",
-    icon: CursorClickIcon,
-  },
-  {
-    name: "Employers",
-    href: "/employers",
+    name: "How works",
+    href: "/works",
     icon: ShieldCheckIcon,
   },
   {
@@ -46,20 +33,32 @@ const pages = [
     href: "/blog",
     icon: ViewGridIcon,
   },
-  {
-    name: "Contact us",
-
-    href: "/contact",
-    icon: RefreshIcon,
-  },
 ];
 
 export default function Navbar() {
+  const currentUser = useSelector((state) => state.user.currentUser);
+  const loggedInUser = useSelector((state) => state.user.loggedInUser);
+  console.log(loggedInUser);
+
+  const router = useRouter();
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const dispatch = useDispatch();
+
+  const { logOut } = useFirebase();
+
+  // log out handler
+  const logOutHandler = () => {
+    dispatch(logOut);
+    setIsOpen(!isOpen);
+  };
+
   return (
     <Popover className="relative bg-white">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 lg:justify-start md:space-x-10">
-          <div className="flex justify-start lg:w-0 lg:flex-1">
+        <div className="flex relative justify-between items-center border-b-2 border-gray-100 py-6 lg:justify-start md:space-x-10">
+          <div className="flex justify-start md:w-0 md:flex-1">
             <Link href="/">
               <a className="flex items-center">
                 <span className=" text-2xl font-extrabold  pl-3">
@@ -69,32 +68,24 @@ export default function Navbar() {
               </a>
             </Link>
           </div>
-          <div className="-mr-2 -my-2 lg:hidden">
+          <div className="-mr-2 -my-2 md:hidden">
             <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
               <span className="sr-only">Open menu</span>
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
           </div>
-          <Popover.Group as="nav" className="hidden lg:flex space-x-10">
-            <Link href="/about">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-                About Us
-              </a>
-            </Link>
+          <Popover.Group
+            as="nav"
+            className="hidden md:flex items-center space-x-10 relative"
+          >
             <Link href="/jobs">
               <a className="text-base font-medium text-gray-500 hover:text-gray-900">
                 Jobs
               </a>
             </Link>
-
-            <Link href="/candidates">
+            <Link href="/works">
               <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Candidates
-              </a>
-            </Link>
-            <Link href="/employers">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Employers
+                How Works
               </a>
             </Link>
             <Link href="/blog">
@@ -102,12 +93,67 @@ export default function Navbar() {
                 Blog
               </a>
             </Link>
-            <Link href="/contact">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Contact Us
-              </a>
-            </Link>
+            {currentUser && (
+              <>
+                <button
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="flex items-center"
+                >
+                  <img
+                    src={currentUser?.photoURL}
+                    className="w-12 h-12 ring-2 ring-green-500"
+                    style={{ borderRadius: "50%" }}
+                    alt=""
+                  />
+                </button>
+              </>
+            )}
           </Popover.Group>
+        </div>
+
+        {/* user popup */}
+
+        <div
+          className={
+            isOpen
+              ? "bg-white md:block hidden shadow-md  w-56  py-4 absolute z-10 rounded top-16 right-6"
+              : "hidden"
+          }
+        >
+          <button
+            onClick={() => router.push("/dashboard/profile")}
+            className="flex items-center hover:bg-slate-100 py-2 px-5 w-full"
+          >
+            <img
+              src={currentUser?.photoURL}
+              className="w-10 h-10 mr-2 border "
+              style={{ borderRadius: "50%" }}
+              alt=""
+            />
+            <p className="">
+              <p className="font-bold text-green-600 block">
+                {loggedInUser?.username}
+              </p>
+              <p className="text-sm capitalize">{loggedInUser?.role}</p>
+            </p>
+          </button>
+          {/* // post a job if loggedInUser user is a recruiter */}
+          {loggedInUser?.role === "recruiter" && (
+            <button className="flex items-center hover:bg-slate-100 py-2 px-5 w-full">
+              <BsChatRightText className="mr-2" /> Post a job
+            </button>
+          )}
+          {/* make a review */}
+          <button className="flex items-center hover:bg-slate-100 py-2 px-5 w-full">
+            <BsChatRightText className="mr-2" /> Share experience
+          </button>
+          {/* // log out button */}
+          <button
+            onClick={logOutHandler}
+            className="flex items-center hover:bg-slate-100 py-2 px-5 w-full"
+          >
+            <MdLogin className="mr-2" /> Log Out
+          </button>
         </div>
       </div>
 
