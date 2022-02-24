@@ -21,6 +21,7 @@ import RecruiteProfileUpdate from "../Recruiter/RecruiterProfileUpdate";
 import CandidateProfileUpdate from "../Candidate/profileUpdate/CandidateProfileUpdate";
 import CandidateProfile from "../Candidate/profileView/CandidateProfile";
 import RecruiterProfile from "../Recruiter/profileView/RecruiterProfile";
+import AdminProfile from "../Admin/AdminProfile";
 
 const DashboardRoutes = () => {
   const [trigger, setTrigger] = useState(false);
@@ -132,9 +133,7 @@ const DashboardRoutes = () => {
             {/* // admin route components */}
 
             {params[0] === "profile" && loggedInUser?.role === "admin" && (
-              <div>
-                <h1>Recruiter profile</h1>
-              </div>
+              <AdminProfile />
             )}
             {params[0] === "jobs" && loggedInUser?.role === "admin" && (
               <div>

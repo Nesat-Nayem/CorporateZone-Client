@@ -18,14 +18,26 @@ const ProfileView = ({ role, loggedInUser }) => {
                 alt=""
               />
             </div>
-            <div className="text-center py-5">
-              <button
-                onClick={() => router.push("/dashboard/updateProfile")}
-                className="bg-pink-500 text-white px-5 py-2 rounded"
-              >
-                Edit Profile
-              </button>
-            </div>
+            {loggedInUser?.role === "candidate" && (
+              <div className="text-center py-5">
+                <button
+                  onClick={() => router.push("/dashboard/updateProfile")}
+                  className="bg-pink-500 text-white px-5 py-2 rounded"
+                >
+                  Edit Profile
+                </button>
+              </div>
+            )}
+            {loggedInUser?.role === "recruiter" && (
+              <div className="text-center py-5">
+                <button
+                  onClick={() => router.push("/dashboard/updateProfile")}
+                  className="bg-pink-500 text-white px-5 py-2 rounded"
+                >
+                  Edit Profile
+                </button>
+              </div>
+            )}
           </div>
 
           {/* common information for both candidate and recruiter */}
