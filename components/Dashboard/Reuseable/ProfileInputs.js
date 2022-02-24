@@ -1,4 +1,4 @@
-const CandidateProfileInputs = ({ register, loggedInUser }) => {
+const ProfileInputs = ({ register, loggedInUser }) => {
   return (
     <>
       {/* username */}
@@ -57,4 +57,4 @@ const CandidateProfileInputs = ({ register, loggedInUser }) => {
   );
 };
 
-export default CandidateProfileInputs;
+export default ProfileInputs;

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 import PhotoUpload from "../../Reuseable/sharedInputs/PhotoUpload";
-import CandidateProfileInputs from "./inputs/CandidateProfileInputs";
+import ProfileInputs from "../../Reuseable/ProfileInputs";
 import ProfileLinks from "./inputs/ProfileLinks";
 import SkillSetsInput from "./inputs/SkillSetsInput";
 
@@ -42,14 +42,10 @@ const CandidateUpdateForm = () => {
               photoURL={photoURL}
             />
           </div>
-
           {/* my profile*/}
           <h1 className="text-center py-5 text-2xl font-serif">My Profile</h1>
           <div className="grid md:grid-cols-2 grid-cols-1 gap-3 px-5">
-            <CandidateProfileInputs
-              register={register}
-              loggedInUser={loggedInUser}
-            />
+            <ProfileInputs register={register} loggedInUser={loggedInUser} />
           </div>
 
           {/* important links for */}

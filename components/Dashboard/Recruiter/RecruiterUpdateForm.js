@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
+import ProfileInputs from "../Reuseable/ProfileInputs";
 import PhotoUpload from "../Reuseable/sharedInputs/PhotoUpload";
 
 const RecruiterUpdateForm = () => {
@@ -15,7 +16,14 @@ const RecruiterUpdateForm = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log({ ...data, role: "candidate" });
+    const newData = { ...data, photoURL };
+    fetch(`http://localhost:4030/users/${loggedInUser?.email}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newData),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data));
   };
   return (
     <div>
@@ -30,12 +38,20 @@ const RecruiterUpdateForm = () => {
             />
           </div>
 
+          {/* my profile*/}
+          <h1 className="text-center py-5 text-2xl font-serif">My Profile</h1>
+          <div className="grid md:grid-cols-2 grid-cols-1 gap-3 px-5">
+            <ProfileInputs register={register} loggedInUser={loggedInUser} />
+          </div>
+
           {/* submit button */}
-          <input
-            className="  py-2 border  border-cyan-500 text-cyan-500 px-7 rounded font-medium  focus:outline-none cursor-pointer hover:bg-cyan-500 hover:text-white transition duration-300"
-            value="Save "
-            type="submit"
-          />
+          <div className="text-center py-5">
+            <input
+              className="py-2 border  border-cyan-500 text-cyan-500 px-7 rounded font-medium  focus:outline-none cursor-pointer hover:bg-cyan-500 hover:text-white transition duration-300"
+              value="Save"
+              type="submit"
+            />
+          </div>
         </div>
       </form>
     </div>
