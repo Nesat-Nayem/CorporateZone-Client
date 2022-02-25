@@ -19,7 +19,7 @@ const HeroArea = () => {
     <section className="relative">
       <div
         style={{
-          backgroundImage: "url('https://i.ibb.co/59TgD3X/slider13.jpg')",
+          backgroundImage: `url("https://i.ibb.co/59TgD3X/slider13.jpg")`,
           color: "#23C0E9",
           height: "auto",
           width: "100%",

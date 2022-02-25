@@ -1,10 +1,19 @@
 import { useForm } from "react-hook-form";
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import axios from "axios";
 import useFirebase from "../../../redux/slices/user/useFirebase";
+import Select from "react-select";
+import countryList from "react-select-country-list";
 
 const CandidateForm = () => {
   const [photoURL, setPhotoURL] = useState("");
+  const [country, setCountry] = useState("");
+  const options = useMemo(() => countryList().getData(), []);
+
+  // location
+  const changeHandler = (country) => {
+    setCountry(country);
+  };
 
   // signup method
   const { signupWithEmailAndPassword } = useFirebase();
@@ -15,13 +24,19 @@ const CandidateForm = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
+    const userInfo = {
+      ...data,
+      photoURL,
+      role: "candidate",
+      location: country.label,
+    };
     signupWithEmailAndPassword(
       data.username,
       data.email,
       data.password,
-      photoURL
+      photoURL,
+      userInfo
     );
-    // console.log({...data, role: 'candidate'})
   };
 
   // image upload handler
@@ -119,38 +134,13 @@ const CandidateForm = () => {
           {/* location */}
           <div>
             <p className="font-serif py-1">Your location</p>
-            <input
-              className="w-full border border-gray-200 p-2  text-black focus:outline-none "
-              placeholder="New York"
-              type="text"
-              {...register("location", {
-                required: true,
-              })}
+            <Select
+              options={options}
+              value={country}
+              onChange={changeHandler}
             />
-            {/* errors will return when field validation fails  */}
-            {errors.location && (
-              <span className="text-sm text-red-500 block">
-                Location is required
-              </span>
-            )}
           </div>
-          {/* experience */}
-          <div>
-            <p className="font-serif py-1">Total Experience</p>
-            <select
-              className="w-full border border-gray-200 p-2  text-black focus:outline-none "
-              type="text"
-              {...register("experienceInHiring", {
-                required: true,
-              })}
-            >
-              <option value="Less Than 1 Year">Less Than 1 Year</option>
-              <option value="1+ Year">1+ Year</option>
-              <option value="3+ Year">3+ Year</option>
-              <option value="5+ Year">5+ Year</option>
-              <option value="8+ Year">8+ Year</option>
-            </select>
-          </div>
+
           {/* password */}
 
           <div>

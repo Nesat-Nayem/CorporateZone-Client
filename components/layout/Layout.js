@@ -2,11 +2,13 @@ import Head from "next/head";
 import { useEffect } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { initialUserData } from "../../redux/slices/user/userSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import initializeAuthentication from "../../firebase";
 
 const Layout = ({ title, children }) => {
   initializeAuthentication();
+
+  const currentUser = useSelector((state) => state.user.currentUser);
 
   const dispatch = useDispatch();
   const auth = getAuth();
@@ -20,7 +22,8 @@ const Layout = ({ title, children }) => {
       }
     });
     return () => unsubscribe;
-  }, []);
+  }, [auth]);
+
   return (
     <>
       <Head>

@@ -1,37 +1,48 @@
+import axios from "axios";
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  GoogleAuthProvider,
-  signInWithPopup,
-  onAuthStateChanged,
   updateProfile,
   signOut,
 } from "firebase/auth";
 import { useRouter } from "next/router";
 
-import React from "react";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { signIn, signOutCurrentUser } from "./userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  signIn,
+  signOutCurrentUser,
+  loggedInUserData,
+  registerFailed,
+} from "./userSlice";
 
 const useFirebase = () => {
+  const currentUser = useSelector((state) => state.user.currentUser);
+
   const dispatch = useDispatch();
   const router = useRouter();
 
   const auth = getAuth();
 
-  const signupWithEmailAndPassword = (username, email, password, photoURL) => {
+  const signupWithEmailAndPassword = (
+    username,
+    email,
+    password,
+    photoURL,
+    userInfo
+  ) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
         updateProfile(auth.currentUser, {
           displayName: username,
           photoURL: photoURL,
         });
-        router.push("/");
+
+        saveData(userInfo);
       })
       .catch((err) => {
-        const errorMessage = err.message;
+        dispatch(registerFailed(err.message));
       });
   };
 
@@ -43,7 +54,7 @@ const useFirebase = () => {
         router.push("/");
       })
       .catch((err) => {
-        console.log(err.message);
+        dispatch(registerFailed(err.message));
       });
   };
 
@@ -54,10 +65,36 @@ const useFirebase = () => {
         dispatch(signOutCurrentUser());
       })
       .catch((err) => {
-        console.error(err);
+        dispatch(registerFailed(err.message));
       });
   };
 
+  useEffect(() => {
+    fetch(
+      `https://sheltered-journey-99057.herokuapp.com/users/${currentUser?.email}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        dispatch(loggedInUserData(data));
+      });
+  }, [currentUser?.email]);
+
+  // data save to database
+  const saveData = async (data) => {
+    try {
+      axios
+        .post("https://sheltered-journey-99057.herokuapp.com/users", data)
+        .then(function (response) {
+          console.log(response);
+          router.push("/dashboard/profile");
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    } catch (err) {
+      console.error(err);
+    }
+  };
   //   // observer function
   //   useEffect(() => {
   //     const unsubscribe = onAuthStateChanged(auth, (user) => {
