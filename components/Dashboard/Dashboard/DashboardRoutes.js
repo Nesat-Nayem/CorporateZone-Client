@@ -22,6 +22,7 @@ import CandidateProfileUpdate from "../Candidate/profileUpdate/CandidateProfileU
 import CandidateProfile from "../Candidate/profileView/CandidateProfile";
 import RecruiterProfile from "../Recruiter/profileView/RecruiterProfile";
 import AdminProfile from "../Admin/AdminProfile";
+import SkillTest from "../Candidate/skillTest/SkillTest";
 
 const DashboardRoutes = () => {
   const [trigger, setTrigger] = useState(false);
@@ -174,6 +175,10 @@ const DashboardRoutes = () => {
             {/* candidate profile update */}
             {params[0] === "updateProfile" &&
               loggedInUser?.role === "candidate" && <CandidateProfileUpdate />}
+
+            {/* candidate profile update */}
+            {params[0] === "skillTest" &&
+              loggedInUser?.role === "candidate" && <SkillTest />}
           </section>
         </div>
       </div>

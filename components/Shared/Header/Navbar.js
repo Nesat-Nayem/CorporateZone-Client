@@ -139,14 +139,19 @@ export default function Navbar() {
           </button>
           {/* // post a job if loggedInUser user is a recruiter */}
           {loggedInUser?.role === "recruiter" && (
-            <button className="flex items-center hover:bg-slate-100 py-2 px-5 w-full">
+            <button
+              onClick={() => router.push("/jobpost")}
+              className="flex items-center hover:bg-slate-100 py-2 px-5 w-full"
+            >
               <BsChatRightText className="mr-2" /> Post a job
             </button>
           )}
           {/* make a review */}
-          <button className="flex items-center hover:bg-slate-100 py-2 px-5 w-full">
-            <BsChatRightText className="mr-2" /> Share experience
-          </button>
+          {loggedInUser?.role !== "admin" && (
+            <button className="flex items-center hover:bg-slate-100 py-2 px-5 w-full">
+              <BsChatRightText className="mr-2" /> Share experience
+            </button>
+          )}
           {/* // log out button */}
           <button
             onClick={logOutHandler}

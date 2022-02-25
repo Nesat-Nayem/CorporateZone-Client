@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import Header from "../components/Shared/Header/Header";
 import Footer from "../components/Shared/Footer/Footer";
 import Review from "../components/Home/Review/Review";
+import Rule from "../components/Home/Rules/Rule";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       {/* <Pricing /> */}
       {/* <Faq /> */}
       {/* <BlogArea /> */}
+      <Rule />
       <Review />
       <Footer />
     </Layout>
