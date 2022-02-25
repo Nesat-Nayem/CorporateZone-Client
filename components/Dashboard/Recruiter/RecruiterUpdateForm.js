@@ -17,11 +17,14 @@ const RecruiterUpdateForm = () => {
   } = useForm();
   const onSubmit = (data) => {
     const newData = { ...data, photoURL };
-    fetch(`http://localhost:4030/users/${loggedInUser?.email}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newData),
-    })
+    fetch(
+      `https://sheltered-journey-99057.herokuapp.com/users/${loggedInUser?.email}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newData),
+      }
+    )
       .then((response) => response.json())
       .then((data) => console.log(data));
   };
