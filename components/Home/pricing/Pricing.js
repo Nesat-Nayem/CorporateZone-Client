@@ -1,7 +1,32 @@
 import { HiPlusCircle } from "react-icons/hi";
 import { AiOutlineStar } from "react-icons/ai";
+import { useEffect } from "react";
+import Swal from "sweetalert2";
 
-const Pricing = () => {
+const Pricing = () =>
+{
+
+  useEffect(() =>
+  {
+    // Check to see if this is a redirect back from Checkout
+    const query = new URLSearchParams(window.location.search);
+    if (query.get('success')) {
+      Swal.fire(
+        'Order placed!',
+        'You will receive an email confirmation.',
+        'success'
+      )
+    }
+
+    if (query.get('canceled')) {
+      Swal.fire(
+        'Order canceled!',
+        'continue to apply and checkout when you’re ready.',
+        'success'
+      )
+    }
+  }, []);
+
   return (
     <section className="lg:w-9/12 w-11/12 mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 lg:gap-12 text-center px-5 md:px-20 lg:px-32 py-10">
@@ -40,12 +65,12 @@ const Pricing = () => {
               <p className="ml-2">Email Alert</p>
             </div>
           </div>
-          <div className="flex flex-row mt-5 justify-center items-center">
-            <button className="flex flex-row justify-center items-center py-3 px-5 text-white bg-gray-800 rounded-md shadow-md hover:bg-red-500 transition-all">
+          <form action="/api/checkout_sessions_one" method="POST" className="flex flex-row mt-5 justify-center items-center">
+            <button type="submit" role="link" className="flex flex-row justify-center items-center py-3 px-5 text-white bg-gray-800 rounded-md shadow-md hover:bg-red-500 transition-all">
               <HiPlusCircle className="inline-block text-lg mr-2" />
-              <span className="inline-block font-semibold">Add To Card</span>
+              <span className="inline-block font-semibold">Buy Plan</span>
             </button>
-          </div>
+          </form>
         </div>
 
         <div className=" text-center pt-5 pb-10 shadow-md card card_2">
@@ -86,12 +111,12 @@ const Pricing = () => {
               <p className="ml-2">Email Alert</p>
             </div>
           </div>
-          <div className="flex flex-row mt-5 justify-center items-center">
-            <button className="flex flex-row justify-center items-center py-3 px-5 text-white rounded-md shadow-md bg-red-500 transition-all">
+          <form action="/api/checkout_sessions_two" method="POST" className="flex flex-row mt-5 justify-center items-center">
+            <button type="submit" role="link" className="flex flex-row justify-center items-center py-3 px-5 text-white rounded-md shadow-md bg-red-500 transition-all">
               <HiPlusCircle className="inline-block text-lg mr-2" />
-              <span className="inline-block font-semibold">Add To Card</span>
+              <span className="inline-block font-semibold">Buy Plan</span>
             </button>
-          </div>
+          </form>
         </div>
 
         <div className=" text-center pt-5 pb-10 shadow-md card card_1">
@@ -129,12 +154,12 @@ const Pricing = () => {
               <p className="ml-2">Email Alert</p>
             </div>
           </div>
-          <div className="flex flex-row mt-5 justify-center items-center">
-            <button className="flex flex-row justify-center items-center py-3 px-5 text-white bg-gray-800 rounded-md shadow-md hover:bg-red-500 transition-all">
+          <form action="/api/checkout_sessions_three" method="POST" className="flex flex-row mt-5 justify-center items-center">
+            <button type="submit" role="link" className="flex flex-row justify-center items-center py-3 px-5 text-white bg-gray-800 rounded-md shadow-md hover:bg-red-500 transition-all">
               <HiPlusCircle className="inline-block text-lg mr-2" />
-              <span className="inline-block font-semibold">Add To Card</span>
+              <span className="inline-block font-semibold">Buy Plan</span>
             </button>
-          </div>
+          </form>
         </div>
       </div>
 
