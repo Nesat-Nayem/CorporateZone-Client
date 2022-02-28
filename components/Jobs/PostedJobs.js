@@ -38,8 +38,9 @@ const PostedJobs = (props) => {
       `https://sheltered-journey-99057.herokuapp.com/jobs?jobType=${e.target.value}`
     );
     const data = await response.json();
-    setJobs(data.data);
     setDisplay(data.data)
+    setJobs(data.data);
+   
     router.push(`/jobs?jobType=${e.target.value}`, undefined, {
       shallow: true,
     });
@@ -64,7 +65,7 @@ const PostedJobs = (props) => {
                 placeholder="Search Job Keyword..."
                 type="text"
                 name="search"
-                onClick={handleChange}
+                onChange={handleChange}
               />
             </label>
           </div>
