@@ -4,9 +4,14 @@ import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
 import { useRouter } from "next/router";
 
-const PostedJob = ({ job }) => {
+const PostedJob = ( {job}) => {
+ 
   const { jobTitle, companyLogo, companyName, jobType, salary, location } = job;
   const router = useRouter();
+
+ 
+
+
   return (
     <div
       onClick={() => router.push(`jobs/${job._id}`)}

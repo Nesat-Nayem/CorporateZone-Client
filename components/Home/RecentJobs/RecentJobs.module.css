@@ -20,7 +20,7 @@
   color: #2c2149;
 }
 .apply button {
-  background-color: #da404b;
+  background-color: #0f242f;
   padding: 3px 30px;
   color: white;
   border-radius: 5px;
@@ -32,10 +32,26 @@
   color: white;
   border-radius: 5px;
 }
-.time {
-  width: 40%;
-  text-align: center;
+
+.search input{
+  border:1px solid grey;
+  padding:5px 15px;
+  
+  
+}
+.search{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
   margin: 0 auto;
+}
+
+
+
+
+.time {
+  text-align: right;
 
   padding: 5px 0;
   border-radius: 15px;
@@ -65,6 +81,8 @@
   .gri img {
     margin: 0 auto;
     margin-bottom: 15px;
+    width: 100px;
+    height: 100px;
   }
   .apply button {
     margin-top: 12px;
@@ -77,5 +95,7 @@
   .time {
     width: 90%;
     border: 0;
+    text-align: center;
   }
+ 
 }

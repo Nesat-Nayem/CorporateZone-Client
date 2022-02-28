@@ -58,7 +58,7 @@ const AdminRoutes = ({ setTrigger }) => {
           className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
         >
           <FaRegBuilding className="text-lg" />
-          &nbsp;&nbsp;&nbsp;COMPANY
+          &nbsp;&nbsp;&nbsp;RECRUITER
         </a>
       </Link>
     </>
