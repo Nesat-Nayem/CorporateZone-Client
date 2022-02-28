@@ -13,7 +13,7 @@ const Pricing = () =>
     if (query.get('success')) {
       Swal.fire(
         'Order placed!',
-        'You will receive an email confirmation.',
+        'You will receive an email confirmation with payment receipt.',
         'success'
       )
     }
@@ -22,7 +22,7 @@ const Pricing = () =>
       Swal.fire(
         'Order canceled!',
         'continue to apply and checkout when you’re ready.',
-        'success'
+        'warning'
       )
     }
   }, []);
