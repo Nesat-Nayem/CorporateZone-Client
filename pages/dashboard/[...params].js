@@ -1,6 +1,9 @@
 import DashboardRoutes from "../../components/Dashboard/Dashboard/DashboardRoutes";
+import { withProtected } from "../protect";
 
 const Dashboard = () => {
+
+
   return (
     <>
       <DashboardRoutes />
@@ -8,4 +11,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default withProtected(Dashboard);

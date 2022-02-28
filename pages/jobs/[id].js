@@ -19,6 +19,11 @@ import Header from "../../components/Shared/Header/Header";
 import Layout from "../../components/layout/Layout";
 
 const jobdetails = ({ data }) => {
+
+  const handleJobs = (id) => {
+    console.log(id);
+  }
+
   const { main_head, Card_title, mini_title } = styles;
   const {
     jobTitle,
@@ -255,7 +260,9 @@ const jobdetails = ({ data }) => {
 
                 <div className="flex justify-center mt-6 items-center">
                   <div className="ml-10">
-                    <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-4 px-20 rounded tracking-wider">
+                    <button
+                      onClick={() => handleJobs(data)}
+                      className="bg-red-500 hover:bg-red-700 text-white font-bold py-4 px-20 rounded tracking-wider">
                       APPLY NOW!
                     </button>
                   </div>
