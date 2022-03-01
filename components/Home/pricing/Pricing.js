@@ -1,11 +1,13 @@
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 import { HiPlusCircle } from "react-icons/hi";
 import { AiOutlineStar } from "react-icons/ai";
-import { useEffect } from "react";
 import Swal from "sweetalert2";
+
 
 const Pricing = () =>
 {
-  const candidate = true;
+  const loggedInUser = useSelector((state) => state.user.loggedInUser);
 
   useEffect(() =>
   {
@@ -29,7 +31,7 @@ const Pricing = () =>
   }, []);
 
   return (
-    candidate && (
+    loggedInUser?.role === "candidate" && (
       <section className="lg:w-9/12 w-11/12 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 lg:gap-12 text-center px-5 md:px-20 lg:px-32 py-10">
           <div className=" text-center pt-5 pb-10 shadow-md card card_1">
