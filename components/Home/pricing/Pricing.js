@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 
 const Pricing = () =>
 {
+  const candidate = true;
 
   useEffect(() =>
   {
@@ -28,143 +29,144 @@ const Pricing = () =>
   }, []);
 
   return (
-    <section className="lg:w-9/12 w-11/12 mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 lg:gap-12 text-center px-5 md:px-20 lg:px-32 py-10">
-        <div className=" text-center pt-5 pb-10 shadow-md card card_1">
-          <div className="text-center">
-            <h2 className="text-2xl font-semibold head_title relative">
-              BASIC PLAN
-            </h2>
-            <h1 className="mt-10">
-              <span className="inline-block text-3xl title shadow-md bg-blue-400">
-                <span className="inline-block title_middle font-semibold">
-                  $29
+    candidate && (
+      <section className="lg:w-9/12 w-11/12 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 lg:gap-12 text-center px-5 md:px-20 lg:px-32 py-10">
+          <div className=" text-center pt-5 pb-10 shadow-md card card_1">
+            <div className="text-center">
+              <h2 className="text-2xl font-semibold head_title relative">
+                BASIC PLAN
+              </h2>
+              <h1 className="mt-10">
+                <span className="inline-block text-3xl title shadow-md bg-blue-400">
+                  <span className="inline-block title_middle font-semibold">
+                    $29
+                  </span>
                 </span>
-              </span>
-            </h1>
+              </h1>
+            </div>
+            <div className="pt-10 flex flex-col">
+              <div className="flex justify-left items-center mb-2 list_item">
+                <HiPlusCircle className="inline-block text-lg" />
+                <p className="ml-2">5 Jobs Posting</p>
+              </div>
+              <div className="flex justify-left items-center mb-2 text-md list_item">
+                <HiPlusCircle className="inline-block text-lg" />
+                <p className="ml-2"> 2 Featured jobs</p>
+              </div>
+              <div className="flex justify-left items-center mb-2 text-md list_item">
+                <HiPlusCircle className="inline-block text-lg" />
+                <p className="ml-2"> 1 Renew Jobs</p>
+              </div>
+              <div className="flex justify-left items-center mb-2 text-md list_item">
+                <HiPlusCircle className="inline-block text-lg" />
+                <p className="ml-2"> 10 Days Duration</p>
+              </div>
+              <div className="flex justify-left items-center mb-2 text-md list_item">
+                <HiPlusCircle className="inline-block text-lg" />
+                <p className="ml-2">Email Alert</p>
+              </div>
+            </div>
+            <form action="/api/checkout_sessions_one" method="POST" className="flex flex-row mt-5 justify-center items-center">
+              <button type="submit" role="link" className="flex flex-row justify-center items-center py-3 px-5 text-white bg-gray-800 rounded-md shadow-md hover:bg-red-500 transition-all">
+                <HiPlusCircle className="inline-block text-lg mr-2" />
+                <span className="inline-block font-semibold">Buy Plan</span>
+              </button>
+            </form>
           </div>
-          <div className="pt-10 flex flex-col">
-            <div className="flex justify-left items-center mb-2 list_item">
-              <HiPlusCircle className="inline-block text-lg" />
-              <p className="ml-2">5 Jobs Posting</p>
+
+          <div className=" text-center pt-5 pb-10 shadow-md card card_2">
+            <div className="card_sticker text-center">
+              <AiOutlineStar className="text-white text-xl inline-block mr-4" />
             </div>
-            <div className="flex justify-left items-center mb-2 text-md list_item">
-              <HiPlusCircle className="inline-block text-lg" />
-              <p className="ml-2"> 2 Featured jobs</p>
+            <div className="text-center">
+              <h2 className="text-2xl font-semibold head_titles relative">
+                PREMIUM PLAN
+              </h2>
+              <h1 className="mt-10">
+                <span className="inline-block text-3xl title shadow-md bg-red-500">
+                  <span className="inline-block title_middle font-semibold">
+                    $59
+                  </span>
+                </span>
+              </h1>
             </div>
-            <div className="flex justify-left items-center mb-2 text-md list_item">
-              <HiPlusCircle className="inline-block text-lg" />
-              <p className="ml-2"> 1 Renew Jobs</p>
+            <div className="pt-10 flex flex-col">
+              <div className="flex justify-left items-center mb-2 list_item">
+                <HiPlusCircle className="inline-block text-lg" />
+                <p className="ml-2">10 Jobs Posting</p>
+              </div>
+              <div className="flex justify-left items-center mb-2 text-md list_item">
+                <HiPlusCircle className="inline-block text-lg" />
+                <p className="ml-2"> 5 Featured jobs</p>
+              </div>
+              <div className="flex justify-left items-center mb-2 text-md list_item">
+                <HiPlusCircle className="inline-block text-lg" />
+                <p className="ml-2"> 2 Renew Jobs</p>
+              </div>
+              <div className="flex justify-left items-center mb-2 text-md list_item">
+                <HiPlusCircle className="inline-block text-lg" />
+                <p className="ml-2"> 15 Days Duration</p>
+              </div>
+              <div className="flex justify-left items-center mb-2 text-md list_item">
+                <HiPlusCircle className="inline-block text-lg" />
+                <p className="ml-2">Email Alert</p>
+              </div>
             </div>
-            <div className="flex justify-left items-center mb-2 text-md list_item">
-              <HiPlusCircle className="inline-block text-lg" />
-              <p className="ml-2"> 10 Days Duration</p>
-            </div>
-            <div className="flex justify-left items-center mb-2 text-md list_item">
-              <HiPlusCircle className="inline-block text-lg" />
-              <p className="ml-2">Email Alert</p>
-            </div>
+            <form action="/api/checkout_sessions_two" method="POST" className="flex flex-row mt-5 justify-center items-center">
+              <button type="submit" role="link" className="flex flex-row justify-center items-center py-3 px-5 text-white rounded-md shadow-md bg-red-500 transition-all">
+                <HiPlusCircle className="inline-block text-lg mr-2" />
+                <span className="inline-block font-semibold">Buy Plan</span>
+              </button>
+            </form>
           </div>
-          <form action="/api/checkout_sessions_one" method="POST" className="flex flex-row mt-5 justify-center items-center">
-            <button type="submit" role="link" className="flex flex-row justify-center items-center py-3 px-5 text-white bg-gray-800 rounded-md shadow-md hover:bg-red-500 transition-all">
-              <HiPlusCircle className="inline-block text-lg mr-2" />
-              <span className="inline-block font-semibold">Buy Plan</span>
-            </button>
-          </form>
+
+          <div className=" text-center pt-5 pb-10 shadow-md card card_1">
+            <div className="text-center">
+              <h2 className="text-2xl font-semibold head_title relative">
+                ADVANCED PLAN
+              </h2>
+              <h1 className="mt-10">
+                <span className="inline-block text-3xl title shadow-md bg-blue-400">
+                  <span className="inline-block title_middle font-semibold">
+                    $99
+                  </span>
+                </span>
+              </h1>
+            </div>
+            <div className="pt-10 flex flex-col">
+              <div className="flex justify-left items-center mb-2 list_item">
+                <HiPlusCircle className="inline-block text-lg" />
+                <p className="ml-2">15 Jobs Posting</p>
+              </div>
+              <div className="flex justify-left items-center mb-2 text-md list_item">
+                <HiPlusCircle className="inline-block text-lg" />
+                <p className="ml-2"> 10 Featured jobs</p>
+              </div>
+              <div className="flex justify-left items-center mb-2 text-md list_item">
+                <HiPlusCircle className="inline-block text-lg" />
+                <p className="ml-2"> 5 Renew Jobs</p>
+              </div>
+              <div className="flex justify-left items-center mb-2 text-md list_item">
+                <HiPlusCircle className="inline-block text-lg" />
+                <p className="ml-2"> 20 Days Duration</p>
+              </div>
+              <div className="flex justify-left items-center mb-2 text-md list_item">
+                <HiPlusCircle className="inline-block text-lg" />
+                <p className="ml-2">Email Alert</p>
+              </div>
+            </div>
+            <form action="/api/checkout_sessions_three" method="POST" className="flex flex-row mt-5 justify-center items-center">
+              <button type="submit" role="link" className="flex flex-row justify-center items-center py-3 px-5 text-white bg-gray-800 rounded-md shadow-md hover:bg-red-500 transition-all">
+                <HiPlusCircle className="inline-block text-lg mr-2" />
+                <span className="inline-block font-semibold">Buy Plan</span>
+              </button>
+            </form>
+          </div>
         </div>
 
-        <div className=" text-center pt-5 pb-10 shadow-md card card_2">
-          <div className="card_sticker text-center">
-            <AiOutlineStar className="text-white text-xl inline-block mr-4" />
-          </div>
-          <div className="text-center">
-            <h2 className="text-2xl font-semibold head_titles relative">
-              PREMIUM PLAN
-            </h2>
-            <h1 className="mt-10">
-              <span className="inline-block text-3xl title shadow-md bg-red-500">
-                <span className="inline-block title_middle font-semibold">
-                  $59
-                </span>
-              </span>
-            </h1>
-          </div>
-          <div className="pt-10 flex flex-col">
-            <div className="flex justify-left items-center mb-2 list_item">
-              <HiPlusCircle className="inline-block text-lg" />
-              <p className="ml-2">10 Jobs Posting</p>
-            </div>
-            <div className="flex justify-left items-center mb-2 text-md list_item">
-              <HiPlusCircle className="inline-block text-lg" />
-              <p className="ml-2"> 5 Featured jobs</p>
-            </div>
-            <div className="flex justify-left items-center mb-2 text-md list_item">
-              <HiPlusCircle className="inline-block text-lg" />
-              <p className="ml-2"> 2 Renew Jobs</p>
-            </div>
-            <div className="flex justify-left items-center mb-2 text-md list_item">
-              <HiPlusCircle className="inline-block text-lg" />
-              <p className="ml-2"> 15 Days Duration</p>
-            </div>
-            <div className="flex justify-left items-center mb-2 text-md list_item">
-              <HiPlusCircle className="inline-block text-lg" />
-              <p className="ml-2">Email Alert</p>
-            </div>
-          </div>
-          <form action="/api/checkout_sessions_two" method="POST" className="flex flex-row mt-5 justify-center items-center">
-            <button type="submit" role="link" className="flex flex-row justify-center items-center py-3 px-5 text-white rounded-md shadow-md bg-red-500 transition-all">
-              <HiPlusCircle className="inline-block text-lg mr-2" />
-              <span className="inline-block font-semibold">Buy Plan</span>
-            </button>
-          </form>
-        </div>
-
-        <div className=" text-center pt-5 pb-10 shadow-md card card_1">
-          <div className="text-center">
-            <h2 className="text-2xl font-semibold head_title relative">
-              ADVANCED PLAN
-            </h2>
-            <h1 className="mt-10">
-              <span className="inline-block text-3xl title shadow-md bg-blue-400">
-                <span className="inline-block title_middle font-semibold">
-                  $99
-                </span>
-              </span>
-            </h1>
-          </div>
-          <div className="pt-10 flex flex-col">
-            <div className="flex justify-left items-center mb-2 list_item">
-              <HiPlusCircle className="inline-block text-lg" />
-              <p className="ml-2">15 Jobs Posting</p>
-            </div>
-            <div className="flex justify-left items-center mb-2 text-md list_item">
-              <HiPlusCircle className="inline-block text-lg" />
-              <p className="ml-2"> 10 Featured jobs</p>
-            </div>
-            <div className="flex justify-left items-center mb-2 text-md list_item">
-              <HiPlusCircle className="inline-block text-lg" />
-              <p className="ml-2"> 5 Renew Jobs</p>
-            </div>
-            <div className="flex justify-left items-center mb-2 text-md list_item">
-              <HiPlusCircle className="inline-block text-lg" />
-              <p className="ml-2"> 20 Days Duration</p>
-            </div>
-            <div className="flex justify-left items-center mb-2 text-md list_item">
-              <HiPlusCircle className="inline-block text-lg" />
-              <p className="ml-2">Email Alert</p>
-            </div>
-          </div>
-          <form action="/api/checkout_sessions_three" method="POST" className="flex flex-row mt-5 justify-center items-center">
-            <button type="submit" role="link" className="flex flex-row justify-center items-center py-3 px-5 text-white bg-gray-800 rounded-md shadow-md hover:bg-red-500 transition-all">
-              <HiPlusCircle className="inline-block text-lg mr-2" />
-              <span className="inline-block font-semibold">Buy Plan</span>
-            </button>
-          </form>
-        </div>
-      </div>
-
-      <style jsx>
-        {`
+        <style jsx>
+          {`
           .list_item {
             margin-left: 25%;
           }
@@ -271,8 +273,9 @@ const Pricing = () =>
             transform: rotate(-45deg);
           }
         `}
-      </style>
-    </section>
+        </style>
+      </section>
+    )
   );
 };
 
