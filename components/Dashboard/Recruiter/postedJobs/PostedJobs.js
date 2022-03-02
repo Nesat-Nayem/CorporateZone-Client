@@ -73,7 +73,7 @@ console.log(postJobs);
                 scope="col"
                 className="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
               >
-                Applied Date
+                Post Date
               </th>
               <th
                 scope="col"
@@ -101,7 +101,7 @@ console.log(postJobs);
                     {job.status}
                   </td>
                   <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                    {new Date(job.lastDate).toDateString()}
+                    {new Date(job.postedTime).toDateString()}
                   </td>
                   <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                     <button
