@@ -10,28 +10,44 @@ import { ImAddressBook } from "react-icons/im";
 
 const MessageArea = () => {
   return (
-    <div style={{ backgroundColor: "#D4C9D0" }}>
-      <div className={style.message}>
-        <h1>LEAVE MESSAGE</h1>
-        <div className={style.flex}>
+    <div className="bg-gray-50 py-5">
+      <div className="md:w-9/12 w-11/12 mx-auto py-5">
+        <h1 className="text-3xl font-semibold py-3 capitalize">
+          Leave Message
+        </h1>
+        <div className="grid md:grid-cols-3 rounded">
           <div
-            className={style.ma}
+            className="col-span-2  border-l-2 border-pink-500"
             style={{
               backgroundColor: "white",
               padding: "40px 20px",
-              borderRight: "2px solid grey",
-              borderLeft: "2px solid grey",
             }}
           >
             <form>
-              <div className={style.fle}>
-                <input placeholder="Name" type="text" />
-                <input placeholder="Email" type="text" />
+              <div className="">
+                <input
+                  className="w-full border border-gray-300 py-2 px-3 my-2 focus:outline-none"
+                  placeholder="Name"
+                  type="text"
+                />
+                <input
+                  className="w-full border border-gray-300 py-2 px-3 my-2 focus:outline-none"
+                  placeholder="Email"
+                  type="text"
+                />
               </div>
               <div>
-                <input placeholder="Subject" id={style.single} type="text" />{" "}
+                <input
+                  className="w-full border border-gray-300 py-2 px-3 my-2 focus:outline-none"
+                  placeholder="Subject"
+                  type="text"
+                />{" "}
                 <br />
-                <textarea placeholder="Type Your Message" type="text" />
+                <textarea
+                  className="w-full border border-gray-300 py-2 h-28  px-3 my-2 focus:outline-none"
+                  placeholder="Type Your Message"
+                  type="text"
+                />
                 <br />
               </div>
               <button
@@ -48,10 +64,7 @@ const MessageArea = () => {
               </button>
             </form>
           </div>
-          <div
-            className={style.mai}
-            style={{ backgroundColor: "#532361", color: "white" }}
-          >
+          <div className="bg-cyan-600 text-white py-4 px-3">
             <h1 style={{ marginTop: "30px" }}> CONTACT INFO</h1>
             <div className={style.pera}>
               <div className={style.pera0}>

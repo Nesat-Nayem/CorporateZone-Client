@@ -1,11 +1,22 @@
 import { useForm } from "react-hook-form";
-import React, { useState, useEffect } from "react";
-import { useRouter } from 'next/router';
+import React, { useState, useMemo } from "react";
 import axios from "axios";
+import useFirebase from "../../../redux/slices/user/useFirebase";
+import Select from "react-select";
+import countryList from "react-select-country-list";
 
 const CandidateForm = () => {
   const [photoURL, setPhotoURL] = useState("");
-  const router = useRouter();
+  const [country, setCountry] = useState("");
+  const options = useMemo(() => countryList().getData(), []);
+
+  // location
+  const changeHandler = (country) => {
+    setCountry(country);
+  };
+
+  // signup method
+  const { signupWithEmailAndPassword } = useFirebase();
 
   const {
     register,
@@ -14,18 +25,19 @@ const CandidateForm = () => {
   } = useForm();
   
   const onSubmit = (data) => {
-    axios
-      .post("https://sheltered-journey-99057.herokuapp.com/users", { ...data, role: "candidate", photoURL })
-      .then(function (res) {
-        if (res.status === 201)
-        {
-          router.push("/");
-          alert("successfully saved!");
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    const userInfo = {
+      ...data,
+      photoURL,
+      role: "candidate",
+      location: country.label,
+    };
+    signupWithEmailAndPassword(
+      data.username,
+      data.email,
+      data.password,
+      photoURL,
+      userInfo
+    );
   };
 
   // image upload handler
@@ -33,6 +45,7 @@ const CandidateForm = () => {
     const imageData = new FormData();
     imageData.set("key", "fe834545cf9ccab761e32c03f567e890");
     imageData.append("image", e.target.files[0]);
+    // console.log(imageData);
     axios
       .post("https://api.imgbb.com/1/upload", imageData)
       .then(function (response) {
@@ -122,38 +135,13 @@ const CandidateForm = () => {
           {/* location */}
           <div>
             <p className="font-serif py-1">Your location</p>
-            <input
-              className="w-full border border-gray-200 p-2  text-black focus:outline-none "
-              placeholder="New York"
-              type="text"
-              {...register("location", {
-                required: true,
-              })}
+            <Select
+              options={options}
+              value={country}
+              onChange={changeHandler}
             />
-            {/* errors will return when field validation fails  */}
-            {errors.location && (
-              <span className="text-sm text-red-500 block">
-                Location is required
-              </span>
-            )}
           </div>
-          {/* experience */}
-          <div>
-            <p className="font-serif py-1">Total Experience</p>
-            <select
-              className="w-full border border-gray-200 p-2  text-black focus:outline-none "
-              type="text"
-              {...register("experienceInHiring", {
-                required: true,
-              })}
-            >
-              <option value="Less Than 1 Year">Less Than 1 Year</option>
-              <option value="1+ Year">1+ Year</option>
-              <option value="3+ Year">3+ Year</option>
-              <option value="5+ Year">5+ Year</option>
-              <option value="8+ Year">8+ Year</option>
-            </select>
-          </div>
+
           {/* password */}
 
           <div>

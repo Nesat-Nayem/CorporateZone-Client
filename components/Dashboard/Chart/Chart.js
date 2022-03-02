@@ -1,12 +1,18 @@
 import { useState, useEffect } from "react";
 import { PieChart } from 'react-minimal-pie-chart';
 
-const Chart = () => {
+const Chart = ({data}) => {
+  
+  const {
+    githubProfile,
+    linkedInProfile,
+    portfolio,
+    resumeLink,
+    selectedSkills,
+    role
+  } = data;
 
   const [complete, setComplete] = useState("50%");
-  const first = true;
-  const second = true;
-  const third = true;
   const graphData = [
     { title: 'maininfo', value: 10, color: '#E38627'},
     { title: 'updateinfo', value: 15, color: '#C13C37' },
@@ -14,21 +20,32 @@ const Chart = () => {
   ]
   
   useEffect(() => {
-      if (first && second && third)
+    if (role === "candidate")
+    {
+        if (githubProfile && linkedInProfile && portfolio && resumeLink && selectedSkills.length)
+        {
+          setComplete("100%")
+        }
+        else if ((githubProfile && linkedInProfile && portfolio && resumeLink) || (githubProfile && linkedInProfile && portfolio && selectedSkills.length) || (githubProfile && linkedInProfile && resumeLink && selectedSkills.length) ||(githubProfile && portfolio && resumeLink && selectedSkills.length) || (linkedInProfile && portfolio && resumeLink && selectedSkills.length))
+        {
+          setComplete("90%")
+        }
+        else if ((githubProfile && linkedInProfile && portfolio) || (githubProfile && resumeLink && selectselectedSkills.lengthedSkills) || ( portfolio && resumeLink && selectedSkills.length) || ( portfolio && linkedInProfile && selectedSkills.length) || (linkedInProfile && portfolio && resumeLink))
+        {
+          setComplete("75%")
+        }
+        else if (githubProfile || linkedInProfile || portfolio || resumeLink || selectedSkills.length)
+        {
+          setComplete("60%")
+        }
+        else
+        {
+          setComplete("50%")
+        }
+    }
+    else
       {
-        setComplete("90%")
-      }
-      else if ((first && second) || (second && third) || (first && third))
-      {
-        setComplete("70%")
-      }
-      else if (first || second || third)
-      {
-        setComplete("60%")
-      }
-      else
-      {
-        setComplete("50%")
+        setComplete("99%")
       }
   }, [])
   
@@ -36,8 +53,7 @@ const Chart = () => {
     return (
         <>
           <section>
-            <div className="py-10 px-2 md:px-24 lg:px-36">
-              <h2 className="text-red-500 text-center text-2xl mb-4 underline">Profile Complete</h2>
+            <div className="ml-0 md:ml-8 lg:ml-12 px-2">
                 <div className="grid md:grid-cols-1 gap-4">
                 <div>
                 <div className="container">
@@ -74,7 +90,7 @@ const Chart = () => {
               }
               .container {
                 max-width: 500px;
-                margin: 50px auto 0px auto;
+                margin: 30px auto 0px auto;
               }
               .container h1 {
                 text-align: center;
@@ -136,7 +152,7 @@ const Chart = () => {
               }
 
               .right_chart{
-                width:50%;
+                width:60%;
               }
               
               `

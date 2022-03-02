@@ -2,7 +2,7 @@ import Image from "next/image";
 import company from "../../../images/first_company.jpg";
 import company_second from "../../../images/second_company.jpg";
 import company_third from "../../../images/third_company.jpg";
-import { FcNext, FcPrevious } from 'react-icons/fc';
+import { FcNext, FcPrevious } from "react-icons/fc";
 
 const CompanyJobs = () =>
 {
@@ -13,8 +13,12 @@ const CompanyJobs = () =>
           Top Hiring Companies
         </h3>
         <ul className="flex md:float-right items-center mt-6 md:ml-0 md:mt-0 ">
-          <li className="mx-3 text-xl font-bold cursor-pointer"><FcPrevious/></li>
-          <li className="mx-3 text-xl font-bold cursor-pointer"><FcNext/></li> 
+          <li className="mx-3 text-xl font-bold cursor-pointer">
+            <FcPrevious />
+          </li>
+          <li className="mx-3 text-xl font-bold cursor-pointer">
+            <FcNext />
+          </li>
         </ul>
       </div>
 

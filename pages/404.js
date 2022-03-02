@@ -1,45 +1,21 @@
-import Link from 'next/link';
-import React from 'react';
+import Layout from "../components/layout/Layout";
 import Footer from "../components/Shared/Footer/Footer";
+import Header from "../components/Shared/Header/Header";
 
-const Errorpage = () => {
-    const errorImage = "https://cdn.pixabay.com/photo/2016/11/22/23/13/black-dog-1851106__340.jpg";
-    return (
-        <>
-            <div className="flex items-center justify-center w-screen bg-cyan-400 h-screen">
-                <div className="px-4 lg:py-8">
-                    <div className="lg:gap-4 lg:flex">
-                    <div
-                        className="flex flex-col items-center justify-center md:py-24 lg:py-32"
-                    >
-                        <h1 className="font-bold text-blue-600 text-9xl">404</h1>
-                        <p
-                        className="mb-2 text-2xl font-bold text-center text-gray-800 md:text-3xl"
-                        >
-                        <span className="text-red-500">Oops!</span> Page not found
-                        </p>
-                        <p className="mb-8 text-center text-gray-600 md:text-lg">
-                        The page you’re looking for doesn’t exist.
-                        </p>
-                        <Link
-                        href="/"
-                            >
-                                <a className="px-6 py-2 text-sm font-semibold text-blue-800 bg-blue-600 rounded-md shadow hover:bg-blue-700 text-white"> Go home </a>
-                        </Link>
-                    </div>
-                    <div className="mt-4">
-                        <img
-                        src={errorImage}
-                        alt="Error_image"
-                        className="object-cover w-full h-full rounded-md"
-                        />
-                    </div>
-                    </div>
-                </div>
-            </div>
-            <Footer/>
-        </>
-    );
+import React from "react";
+
+const NotFound = () => {
+  return (
+    <Layout title="Not found">
+      <Header />
+      <div
+        className="flex items-center justify-center"
+        style={{ height: "80vh" }}
+      >
+        <h1>404 Page Not Found</h1>
+      </div>
+    </Layout>
+  );
 };
 
-export default Errorpage;
+export default NotFound;

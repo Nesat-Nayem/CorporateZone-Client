@@ -1,18 +1,20 @@
+import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import useFirebase from "../../redux/slices/user/useFirebase";
 
 const SigninForm = () => {
+  const { logInWithEmailAndPassword } = useFirebase();
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    axios
-      .post("https://sheltered-journey-99057.herokuapp.com/login", { ...data })
-      .then(res => {
-        console.log(res);
-      }).catch(err => console.log(err));
+    logInWithEmailAndPassword(data.email, data.password);
+
+    //  router.push("/");
   };
   return (
     <>
