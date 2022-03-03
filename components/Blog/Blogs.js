@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { BsCalendarCheck } from "react-icons/bs";
+import withProtected from "../../pages/protect";
+
 
 const fakeData = [
   {
@@ -100,4 +102,4 @@ const Blogs = () => {
   );
 };
 
-export default Blogs;
+export default withProtected(Blogs);

@@ -17,6 +17,7 @@ import { MdTitle } from "react-icons/md";
 import Footer from "../../components/Shared/Footer/Footer";
 import Header from "../../components/Shared/Header/Header";
 import Layout from "../../components/layout/Layout";
+import withProtected from "../protect";
 
 const jobdetails = ({ data }) => {
   const { main_head, Card_title, mini_title } = styles;
@@ -270,7 +271,7 @@ const jobdetails = ({ data }) => {
   );
 };
 
-export default jobdetails;
+export default withProtected(jobdetails);
 
 export const getServerSideProps = async (context) => {
   const res = await fetch(

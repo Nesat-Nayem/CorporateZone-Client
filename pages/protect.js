@@ -31,7 +31,7 @@ import { useEffect } from 'react';
         router.replace("/signin");
         return <div>
           {
-            !loading &&    <div className="flex justify-center items-center mt-48">
+               <div className="flex justify-center items-center mt-48">
             <div className="animate-spin rounded-full h-32 w-32 border-b-4 border-cyan-700"></div>
         </div>
           }

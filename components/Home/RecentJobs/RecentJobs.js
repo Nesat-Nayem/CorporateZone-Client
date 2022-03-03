@@ -177,6 +177,7 @@ const RecentJobs = (props) => {
                   <ImLocation2 className={style.icons} />
                   <h2>{job.location}</h2>
                 </div>
+                
                 <div className={style.icon}>
                   {/* <ImLocation2 className={style.icons} /> */}
                   <h2 style={{fontWeight:'700'}}>{job.jobType}</h2>
