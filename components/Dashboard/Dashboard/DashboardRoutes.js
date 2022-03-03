@@ -3,7 +3,8 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 
-import {
+import
+{
   MdOutlineLogout,
   MdOutlineChevronLeft,
   MdOutlineMenu,
@@ -24,7 +25,8 @@ import RecruiterProfile from "../Recruiter/profileView/RecruiterProfile";
 import AdminProfile from "../Admin/AdminProfile";
 import SkillTest from "../Candidate/skillTest/SkillTest";
 
-const DashboardRoutes = () => {
+const DashboardRoutes = () =>
+{
   const [trigger, setTrigger] = useState(false);
   const router = useRouter();
   const { params = [] } = router.query;
@@ -36,7 +38,8 @@ const DashboardRoutes = () => {
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
 
   // log out handler
-  const logOutHandler = () => {
+  const logOutHandler = () =>
+  {
     router.push("/");
     dispatch(logOut);
   };
@@ -45,11 +48,10 @@ const DashboardRoutes = () => {
     <>
       <div className="antialiased min-h-screen relative lg:flex">
         <nav
-          className={`absolute lg:relative z-10 w-72 lg:transform-none lg:opacity-100 bg-indigo-500/100 text-white h-screen ${
-            !trigger
-              ? "inset-0 opacity-0 transform duration-200 -translate-x-full ease-out"
-              : "inset-0 opacity-100 transform duration-200 translate-x-0 ease-in"
-          }`}
+          className={`absolute lg:relative z-10 w-80 lg:transform-none lg:opacity-100 bg-indigo-500/100 text-white h-screen ${!trigger
+            ? "inset-0 opacity-0 transform duration-200 -translate-x-full ease-out"
+            : "inset-0 opacity-100 transform duration-200 translate-x-0 ease-in"
+            }`}
         >
           <div className="flex justify-between m-5">
             <div className="flex flex-col items-center mx-auto">
