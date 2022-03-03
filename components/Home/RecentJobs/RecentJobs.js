@@ -43,11 +43,11 @@ import { useRouter } from "next/router";
 //   },
 // ];
 
-const RecentJobs = () => {
+const RecentJobs = (props) => {
 
-  const [jobs, setJobs] = useState([])
+  const [jobs, setJobs] = useState(props.jobs)
   const [category, setCategory] = useState();
-  const [display, setDisplay] = useState([])
+  // const [display, setDisplay] = useState([])
 
   
 
@@ -59,9 +59,10 @@ const RecentJobs = () => {
       `https://sheltered-journey-99057.herokuapp.com/jobs?jobType=${e.target.value}`
     );
     const data = await response.json();
-    setJobs(data.data.reverse());
-    setDisplay(data.data)
     console.log(data.data)
+    setJobs(data.data.reverse());
+    // setDisplay(data.data)
+   
     // router.push(`/jobs?jobType=${e.target.value}`, undefined, {
     //   shallow: true,
     // });
@@ -87,14 +88,15 @@ const RecentJobs = () => {
   
 
 
-  const handleChange = event =>{
-        const sarchText = (event.target.value);
-        const matched = jobs.filter(job => job.jobTitle.toLowerCase().includes(sarchText.toLowerCase()))
-        setDisplay(matched)
-        console.log(matched);
-  }
+  // const handleChange = event =>{
+  //       const sarchText = (event.target.value);
+  //       const matched = jobs.filter(job => job.jobTitle.toLowerCase().includes(sarchText.toLowerCase()))
+  //       setDisplay(matched)
+  //       console.log(matched);
+  // }
 
  
+  
   
 
 
@@ -111,7 +113,7 @@ const RecentJobs = () => {
     <div className="bg-slate-100 py-10 " style={{display:'inlineBlock'}}>
       <div className="space-y-7 mx-auto md:w-3/4 relative mb-6 recent_header">
         <h3 className="text-3xl text-center after:content-[''] after:absolute after:border-t-2 after:w-16 after: after:border-cyan-500 after:left-0 after:bottom-0 after:right-32 after:top-10 after:mx-auto font-medium text-slate-700 uppercase">
-          Recent Jobs {display?.length}
+          Recent Jobs {jobs?.length}
         </h3>
 
         <div  className={style.search}>
@@ -121,7 +123,7 @@ const RecentJobs = () => {
                 placeholder="Search Job Keyword..."
                 type="text"
                 name="search"
-                onChange={handleChange}
+                // onChange={handleChange}
               />
         
         </div>
@@ -136,14 +138,14 @@ const RecentJobs = () => {
             >
               
               <option value="all">All Jobs</option>
+              <option value="intern">Intern</option>
               <option value="full-time">Full-Time</option>
               <option value="part-time">Part-Time</option>
-              <option value="intern">Intern</option>
             </select>
         </div>
       </div>
       <div style={{ width: "80%", margin: "0 auto" }}>
-        {display?.map((job) => (
+        {jobs?.map((job) => (
           <div
             className={style.singe}
             style={{
@@ -174,6 +176,10 @@ const RecentJobs = () => {
                   <ImLocation2 className={style.icons} />
                   <h2>{job.location}</h2>
                 </div>
+                <div className={style.icon}>
+                  {/* <ImLocation2 className={style.icons} /> */}
+                  <h2 style={{fontWeight:'700'}}>{job.jobType}</h2>
+                </div>
               </div>
               <div
                 style={{
@@ -183,7 +189,7 @@ const RecentJobs = () => {
                 }}
               >
                 <div className={style.apply}>
-                  <button>APPLY</button>
+                  <button  onClick={() => router.push(`jobs/${job._id}`)}>APPLY</button>
                   <h4>Remote Jobs</h4>
                 </div>
               </div>
@@ -192,8 +198,9 @@ const RecentJobs = () => {
         ))}
       </div>
       <div style={{textAlign:"center", fontSize:'25px', color:'red', fontWeight:'700'}}>
-      {display?.length === 0 && <h2>No Jobs Found</h2>}
+      {/* {jobs?.length === 0 && <h2>No Jobs Found</h2>} */}
       </div>
+
     </div>
   );
 

@@ -1,50 +1,85 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 
 const Candidate = () => {
-  const candidates = [
-    {
-      name: "Jhon Doe",
-      position: "Project Manager",
-      skill: "Developer",
-      education: "abc university",
-      contact: "abc@gmail.com",
-    },
-    {
-      name: "Jhon Doe",
-      position: "Project Manager",
-      skill: "Developer",
-      education: "abc university",
-      contact: "abc@gmail.com",
-    },
-    {
-      name: "Jhon Doe",
-      position: "Project Manager",
-      skill: "Developer",
-      education: "abc university",
-      contact: "abc@gmail.com",
-    },
-    {
-      name: "Jhon Doe",
-      position: "Project Manager",
-      skill: "Developer",
-      education: "abc university",
-      contact: "abc@gmail.com",
-    },
-    {
-      name: "Jhon Doe",
-      position: "Project Manager",
-      skill: "Developer",
-      education: "abc university",
-      contact: "abc@gmail.com",
-    },
-    {
-      name: "Jhon Doe",
-      position: "Project Manager",
-      skill: "Developer",
-      education: "abc university",
-      contact: "abc@gmail.com",
-    },
-  ];
+
+
+  const [candidates, setCandidates] = useState([])
+
+  useEffect(() =>{
+    fetch('http://localhost:4030/users')
+    .then(res => res.json())
+    .then(data => {
+      const main = data.filter(company => company.role === "candidate");
+      setCandidates(main)
+    })
+},[candidates])
+
+
+const handleDelete = id =>{
+  const proccess = window.confirm('Are You Sure You Want To Delete')
+  if(proccess){
+    fetch(`http://localhost:4030/users/${id}`,{
+    method:'DELETE'
+  })
+ .then(res => res.json())
+ .then(data =>{
+   
+    if(data._id){
+      alert("Deleted Successfully")
+      const remaining = candidates.filter(ema => ema._id !==id)
+      setCandidates(remaining)
+    }
+    
+ })
+  }
+}
+
+
+
+  // const candidates = [
+  //   {
+  //     name: "Jhon Doe",
+  //     position: "Project Manager",
+  //     skill: "Developer",
+  //     education: "abc university",
+  //     contact: "abc@gmail.com",
+  //   },
+  //   {
+  //     name: "Jhon Doe",
+  //     position: "Project Manager",
+  //     skill: "Developer",
+  //     education: "abc university",
+  //     contact: "abc@gmail.com",
+  //   },
+  //   {
+  //     name: "Jhon Doe",
+  //     position: "Project Manager",
+  //     skill: "Developer",
+  //     education: "abc university",
+  //     contact: "abc@gmail.com",
+  //   },
+  //   {
+  //     name: "Jhon Doe",
+  //     position: "Project Manager",
+  //     skill: "Developer",
+  //     education: "abc university",
+  //     contact: "abc@gmail.com",
+  //   },
+  //   {
+  //     name: "Jhon Doe",
+  //     position: "Project Manager",
+  //     skill: "Developer",
+  //     education: "abc university",
+  //     contact: "abc@gmail.com",
+  //   },
+  //   {
+  //     name: "Jhon Doe",
+  //     position: "Project Manager",
+  //     skill: "Developer",
+  //     education: "abc university",
+  //     contact: "abc@gmail.com",
+  //   },
+  // ];
 
   return (
     <div>
@@ -55,42 +90,32 @@ const Candidate = () => {
               <table className="min-w-full">
                 <thead className="bg-gray-50 dark:bg-gray-700">
                   <tr>
-                    <th
+                  <th
                       scope="col"
                       className="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
                     >
-                      NAME
+                     NAME
                     </th>
                     <th
                       scope="col"
                       className="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
                     >
-                      POSITION
+                      EMAIL
                     </th>
                     <th
                       scope="col"
                       className="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
                     >
-                      SKILL
+                      ROLE
                     </th>
                     <th
                       scope="col"
                       className="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
                     >
-                      EDUCATION
+                      LOCATION
                     </th>
-                    <th
-                      scope="col"
-                      className="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
-                    >
-                      contact
-                    </th>
-                    <th
-                      scope="col"
-                      className="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
-                    >
-                      Update
-                    </th>
+                    
+                   
                     <th
                       scope="col"
                       className="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
@@ -104,37 +129,29 @@ const Candidate = () => {
                     return (
                       <>
                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                          <td className="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {job.name}
-                          </td>
-                          <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                            {job.position}
-                          </td>
-                          <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                            {job.skill}
-                          </td>
-                          <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                            {job.education}
-                          </td>
-                          <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                            {job.contact}
-                          </td>
-                          <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                            <button
-                              type="button"
-                              className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-                            >
-                              Edit
-                            </button>
-                          </td>
-                          <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                            <button
-                              type="button"
-                              className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-                            >
-                              Remove
-                            </button>
-                          </td>
+                        <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                          {job.username}
+                        </td>
+                        <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                          {job.email}
+                        </td>
+                        <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                          {job.role}
+                        </td>
+                        <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                          {job.location}
+                        </td>
+                        
+                      
+                        <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                          <button
+                            onClick={() => handleDelete(job._id)}
+                            type="button"
+                            className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                          >
+                            Remove
+                          </button>
+                        </td>
                         </tr>
                       </>
                     );
