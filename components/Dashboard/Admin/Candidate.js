@@ -6,7 +6,7 @@ const Candidate = () => {
   const [candidates, setCandidates] = useState([])
 
   useEffect(() =>{
-    fetch('http://localhost:4030/users')
+    fetch('https://sheltered-journey-99057.herokuapp.com/users')
     .then(res => res.json())
     .then(data => {
       const main = data.filter(company => company.role === "candidate");
@@ -18,7 +18,7 @@ const Candidate = () => {
 const handleDelete = id =>{
   const proccess = window.confirm('Are You Sure You Want To Delete')
   if(proccess){
-    fetch(`http://localhost:4030/users/${id}`,{
+    fetch(`https://sheltered-journey-99057.herokuapp.com/users/${id}`,{
     method:'DELETE'
   })
  .then(res => res.json())
