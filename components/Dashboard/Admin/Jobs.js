@@ -66,6 +66,12 @@ const Jobs = () => {
                     >
                       EXPERIENCE
                     </th>
+                    <th
+                      scope="col"
+                      className="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
+                    >
+                      STATUS
+                    </th>
                     {/* <th
                       scope="col"
                       className="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
@@ -95,6 +101,9 @@ const Jobs = () => {
                         </td>
                         <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                           {job.experience}
+                        </td>
+                        <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                          {job.status}
                         </td>
                         {/* <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                           <Link href={`/updatejobs/${job._id}`}>
