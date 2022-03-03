@@ -102,8 +102,8 @@ const Jobs = () => {
                         <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                           {job.experience}
                         </td>
-                        <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                          {job.status}
+                        <td  className="py-4 px-6 text-sm  whitespace-nowrap dark:text-gray-400">
+                          <span style={{backgroundColor:'black', padding:'10px 20px', color:'white',border:'1px solid grey', borderRadius:'10px'}}>{job.status}</span>
                         </td>
                         {/* <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                           <Link href={`/updatejobs/${job._id}`}>
