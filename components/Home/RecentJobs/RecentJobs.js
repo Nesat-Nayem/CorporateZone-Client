@@ -63,9 +63,9 @@ const RecentJobs = (props) => {
     setJobs(data.data.reverse());
     // setDisplay(data.data)
    
-    // router.push(`/jobs?jobType=${e.target.value}`, undefined, {
-    //   shallow: true,
-    // });
+    router.push(`/?jobType=${e.target.value}`, undefined, {
+      shallow: true,
+    });
   };
   
 
