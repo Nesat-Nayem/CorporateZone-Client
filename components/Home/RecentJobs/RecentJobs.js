@@ -73,7 +73,7 @@ const RecentJobs = (props) => {
     fetch('https://sheltered-journey-99057.herokuapp.com/jobs')
     .then(res => res.json())
     .then(data => {
-      setJobs(data.data)
+      setJobs(data.data.reverse())
       setDisplay(data.data)
       console.log(data.data)
     })
