@@ -47,7 +47,7 @@ const RecentJobs = (props) => {
 
   const [jobs, setJobs] = useState(props.jobs)
   const [category, setCategory] = useState();
-  // const [display, setDisplay] = useState([])
+  const [display, setDisplay] = useState([])
 
   
 
@@ -61,7 +61,7 @@ const RecentJobs = (props) => {
     const data = await response.json();
     console.log(data.data)
     setJobs(data.data.reverse());
-    // setDisplay(data.data)
+    setDisplay(data.data)
    
     router.push(`/?jobType=${e.target.value}`, undefined, {
       shallow: true,
@@ -69,14 +69,15 @@ const RecentJobs = (props) => {
   };
   
 
-  // useEffect(() =>{
-  //   fetch('https://sheltered-journey-99057.herokuapp.com/jobs')
-  //   .then(res => res.json())
-  //   .then(data => {
-  //     setJobs(data.data)
-  //     console.log(data.data)
-  //   })
-  // },[])
+  useEffect(() =>{
+    fetch('https://sheltered-journey-99057.herokuapp.com/jobs')
+    .then(res => res.json())
+    .then(data => {
+      setJobs(data.data)
+      setDisplay(data.data)
+      console.log(data.data)
+    })
+  },[])
  
   
   // const first = (filter) =>{
@@ -88,12 +89,12 @@ const RecentJobs = (props) => {
   
 
 
-  // const handleChange = event =>{
-  //       const sarchText = (event.target.value);
-  //       const matched = jobs.filter(job => job.jobTitle.toLowerCase().includes(sarchText.toLowerCase()))
-  //       setDisplay(matched)
-  //       console.log(matched);
-  // }
+  const handleChange = event =>{
+        const sarchText = (event.target.value);
+        const matched = jobs.filter(job => job.jobTitle.toLowerCase().includes(sarchText.toLowerCase()))
+        setDisplay(matched)
+        console.log(matched);
+  }
 
  
   
@@ -113,7 +114,7 @@ const RecentJobs = (props) => {
     <div className="bg-slate-100 py-10 " style={{display:'inlineBlock'}}>
       <div className="space-y-7 mx-auto md:w-3/4 relative mb-6 recent_header">
         <h3 className="text-3xl text-center after:content-[''] after:absolute after:border-t-2 after:w-16 after: after:border-cyan-500 after:left-0 after:bottom-0 after:right-32 after:top-10 after:mx-auto font-medium text-slate-700 uppercase">
-          Recent Jobs {jobs?.length}
+          Recent Jobs {display?.length}
         </h3>
 
         <div  className={style.search}>
@@ -123,7 +124,7 @@ const RecentJobs = (props) => {
                 placeholder="Search Job Keyword..."
                 type="text"
                 name="search"
-                // onChange={handleChange}
+                onChange={handleChange}
               />
         
         </div>
@@ -145,7 +146,7 @@ const RecentJobs = (props) => {
         </div>
       </div>
       <div style={{ width: "80%", margin: "0 auto" }}>
-        {jobs?.map((job) => (
+        {display?.map((job) => (
           <div
             className={style.singe}
             style={{
@@ -198,7 +199,7 @@ const RecentJobs = (props) => {
         ))}
       </div>
       <div style={{textAlign:"center", fontSize:'25px', color:'red', fontWeight:'700'}}>
-      {/* {jobs?.length === 0 && <h2>No Jobs Found</h2>} */}
+      {display?.length === 0 && <h2>No Jobs Found</h2>}
       </div>
 
     </div>
