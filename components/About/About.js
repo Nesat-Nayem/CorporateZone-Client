@@ -1,7 +1,7 @@
 import style from "./About.module.css";
-import { AiFillFacebook } from "react-icons/Ai";
-import { AiFillLinkedin } from "react-icons/Ai";
-import { AiFillInstagram } from "react-icons/Ai";
+import { AiFillFacebook } from "react-icons/ai";
+import { AiFillLinkedin } from "react-icons/ai";
+import { AiFillInstagram } from "react-icons/ai";
 
 const About = () => {
   return (
