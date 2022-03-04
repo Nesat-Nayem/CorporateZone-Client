@@ -17,6 +17,18 @@ import { useRouter } from "next/router";
 const PostedJobs = (props) => {
   const [jobs, setJobs] = useState(props.jobs);
   const [category, setCategory] = useState();
+  const [display, setDisplay] = useState([])
+
+
+
+  const handleChange = event =>{
+    const searchText = (event.target.value);
+    const matched = jobs.filter(job => job.jobTitle.toLowerCase().includes(searchText.toLowerCase()))
+    setDisplay(matched)
+    console.log(matched);
+}
+
+  
 
   const router = useRouter();
 
@@ -26,11 +38,27 @@ const PostedJobs = (props) => {
       `https://sheltered-journey-99057.herokuapp.com/jobs?jobType=${e.target.value}`
     );
     const data = await response.json();
+    setDisplay(data.data)
     setJobs(data.data);
+   
     router.push(`/jobs?jobType=${e.target.value}`, undefined, {
       shallow: true,
     });
   };
+
+
+  useEffect(() =>{
+    fetch('https://sheltered-journey-99057.herokuapp.com/jobs')
+    .then(res => res.json())
+    .then(data => {
+      setJobs(data.data)
+      setDisplay(data.data)
+      console.log(data.data)
+    })
+  },[])
+
+
+
 
   return (
     <section className="bg-gray-100 pb-10">
@@ -51,12 +79,11 @@ const PostedJobs = (props) => {
                 placeholder="Search Job Keyword..."
                 type="text"
                 name="search"
+                onChange={handleChange}
               />
             </label>
           </div>
-          <button className="bg-cyan-500 p-2 rounded-lg text-slate-200 font-bold w-2/12 md:absolute right-80 border-1 ring ring-inset ring-cyan-600 border-slate-50">
-            Search
-          </button>
+          
         </div>
         {/* End Search */}
 
@@ -85,19 +112,22 @@ const PostedJobs = (props) => {
 
         <div>
           <p className="text-center pb-5 font-bold ">
-            {jobs.length} total jobs found.
+            {display.length} total jobs found.
           </p>
         </div>
 
         {/* Start Jobs Card */}
 
         <div className="grid gird-cols-1 gap-4">
-          {jobs?.map((job) => (
+          {display?.map((job) => (
             <PostedJob key={job._id} job={job}></PostedJob>
           ))}
         </div>
 
         {/* End Jobs Card */}
+      </div>
+      <div style={{textAlign:"center", fontSize:'25px', color:'red', fontWeight:'700'}}>
+      {display?.length === 0 && <h2>No Jobs Found</h2>}
       </div>
     </section>
   );

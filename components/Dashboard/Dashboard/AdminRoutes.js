@@ -16,7 +16,7 @@ const AdminRoutes = ({ setTrigger }) => {
           &nbsp;&nbsp;&nbsp;Profile
         </a>
       </Link>
-      <Link href={`/dashboard/user`}>
+      {/* <Link href={`/dashboard/user`}>
         <a
           onClick={() => setTrigger(false)}
           className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
@@ -24,7 +24,7 @@ const AdminRoutes = ({ setTrigger }) => {
           <FaUserCircle className="text-lg" />
           &nbsp;&nbsp;&nbsp;USER
         </a>
-      </Link>
+      </Link> */}
       <Link href={`/dashboard/jobs`}>
         <a
           onClick={() => setTrigger(false)}
@@ -58,7 +58,7 @@ const AdminRoutes = ({ setTrigger }) => {
           className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
         >
           <FaRegBuilding className="text-lg" />
-          &nbsp;&nbsp;&nbsp;COMPANY
+          &nbsp;&nbsp;&nbsp;RECRUITER
         </a>
       </Link>
     </>
