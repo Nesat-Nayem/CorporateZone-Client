@@ -20,7 +20,7 @@ export default function Home() {
       {/* <CategoryJobs /> */}
       <RecentJobs />
       <CompanyJobs />
-      {/* <Pricing /> */}
+      <Pricing />
       {/* <Faq /> */}
       {/* <BlogArea /> */}
       <Rule />
