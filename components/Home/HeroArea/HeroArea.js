@@ -1,6 +1,11 @@
 import { BsFillTagsFill, BsLaptop } from "react-icons/bs";
 import { BiCodeAlt, BiRestaurant } from "react-icons/bi";
 import { AiOutlineBarChart } from "react-icons/ai";
+import { Navigation, Scrollbar, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from "swiper/react";
+import 'swiper/swiper-bundle.min.css'
+import 'swiper/swiper.min.css'
+import { Autoplay, Pagination } from "swiper";
 
 import { FaMedkit, FaUniversity } from "react-icons/fa";
 import { useForm } from "react-hook-form";
@@ -76,32 +81,41 @@ const HeroArea = () => {
               {...register("example")}
             />
 
-            <input
-              style={{
-                color: "black",
-                width: "180px",
-                height: "40px",
-                margin: "10px",
-                borderRadius: "10px",
-                paddingLeft: "10px",
-              }}
-              placeholder="All Region"
-              {...register("exampleRequired", { required: true })}
-            />
-            <input
-              style={{
-                color: "black",
-                width: "170px",
-                height: "40px",
-                margin: "10px",
-                paddingLeft: "10px",
-                borderRadius: "10px",
-              }}
-              placeholder="Choose a category"
-              {...register("exampleRequired", { required: true })}
-            />
+            <input type="text" list="region" placeholder="Choose Region" style={{
+              color: "black",
+              width: "170px",
+              height: "40px",
+              margin: "10px",
+              paddingLeft: "10px",
+              borderRadius: "10px",
+            }} />
+            <datalist id="region">
+              <option>Bangladesh</option>
+              <option>New York</option>
+              <option>India</option>
+              <option>Hawai</option>
+            </datalist>
 
+
+            <input type="text" list="category" placeholder="Choose Category" style={{
+              color: "black",
+              width: "170px",
+              height: "40px",
+              margin: "10px",
+              paddingLeft: "10px",
+              borderRadius: "10px",
+            }} />
+            <datalist id="category">
+              <option>Development</option>
+              <option>Accounting</option>
+              <option>Medical</option>
+              <option>Media News</option>
+            </datalist>
+
+          
             {/* {errors.exampleRequired && alert("Please fill the Input Box❌")} */}
+
+      
 
             <input
               style={{
@@ -258,7 +272,16 @@ const HeroArea = () => {
       `}
         </style>
       </div>
+
+
+
+
+
     </section>
+
+
+
+
   );
 };
 

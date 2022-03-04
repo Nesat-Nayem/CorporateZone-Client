@@ -18,7 +18,7 @@ const Candidate = () => {
 const handleDelete = id =>{
   const proccess = window.confirm('Are You Sure You Want To Delete')
   if(proccess){
-    fetch(`https://sheltered-journey-99057.herokuapp.com/users/${id}`,{
+    fetch(`http://localhost:4030/users/${id}`,{
     method:'DELETE'
   })
  .then(res => res.json())
