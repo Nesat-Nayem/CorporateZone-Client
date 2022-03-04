@@ -5,7 +5,7 @@ import axios from "axios";
 import ScrollableChat from "./ScrollableChat";
 import io from "socket.io-client";
 
-const ENDPOINT = "https://sheltered-journey-99057.herokuapp.com";
+const ENDPOINT = "https://murmuring-spire-15534.herokuapp.com";
 var socket, selectedChatCompare;
 
 const SingleChat = ({ loggedInUser, selectedChat }) => {
@@ -21,7 +21,7 @@ const SingleChat = ({ loggedInUser, selectedChat }) => {
       setLoading(true);
 
       const { data } = await axios.get(
-        `http://localhost:4030/messages/${selectedChat?._id}`
+        `https://murmuring-spire-15534.herokuapp.com/messages/${selectedChat?._id}`
       );
 
       setMessages(data);
@@ -71,7 +71,7 @@ const SingleChat = ({ loggedInUser, selectedChat }) => {
         };
         setNewMessage("");
         const { data } = await axios.post(
-          " https://sheltered-journey-99057.herokuapp.com/messages",
+          " https://murmuring-spire-15534.herokuapp.com/messages",
           {
             senderId: loggedInUser?._id,
             content: newMessage,

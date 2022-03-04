@@ -70,9 +70,7 @@ const useFirebase = () => {
   };
 
   useEffect(() => {
-    fetch(
-      `https://sheltered-journey-99057.herokuapp.com/users/${currentUser?.email}`
-    )
+    fetch(`https://murmuring-spire-15534.herokuapp.com/users/${currentUser?.email}`)
       .then((response) => response.json())
       .then((data) => {
         dispatch(loggedInUserData(data));
@@ -83,7 +81,7 @@ const useFirebase = () => {
   const saveData = async (data) => {
     try {
       axios
-        .post("https://sheltered-journey-99057.herokuapp.com/users", data)
+        .post("https://murmuring-spire-15534.herokuapp.com/users", data)
         .then(function (response) {
           console.log(response);
           router.push("/dashboard/profile");

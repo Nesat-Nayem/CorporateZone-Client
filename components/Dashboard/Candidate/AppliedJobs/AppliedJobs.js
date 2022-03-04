@@ -12,7 +12,7 @@ const AppliedJobs = ({ jobs }) => {
     const fetchData = async () => {
       const data = await (
         await fetch(
-          `https://sheltered-journey-99057.herokuapp.com/appliedJobs?email=${loggedInUser?.email}`
+          `https://murmuring-spire-15534.herokuapp.com/appliedJobs?email=${loggedInUser?.email}`
         )
       ).json();
       setMyJobs(data);

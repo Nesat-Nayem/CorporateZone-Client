@@ -4,7 +4,7 @@ const Candidate = () => {
   const [candidates, setCandidates] = useState([]);
 
   useEffect(() => {
-    fetch("https://sheltered-journey-99057.herokuapp.com/users")
+    fetch("https://murmuring-spire-15534.herokuapp.com/users")
       .then((res) => res.json())
       .then((data) => {
         const main = data.filter((company) => company.role === "candidate");
@@ -15,7 +15,7 @@ const Candidate = () => {
   const handleDelete = (id) => {
     const proccess = window.confirm("Are You Sure You Want To Delete");
     if (proccess) {
-      fetch(`https://sheltered-journey-99057.herokuapp.com/users/${id}`, {
+      fetch(`https://murmuring-spire-15534.herokuapp.com/users/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

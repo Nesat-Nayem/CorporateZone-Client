@@ -15,7 +15,7 @@ const ChatLayout = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       const response = await fetch(
-        "https://sheltered-journey-99057.herokuapp.com/users"
+        "https://murmuring-spire-15534.herokuapp.com/users"
       );
       const data = await response.json();
       const allUsers = data.filter((user) => user._id !== loggedInUser?._id);

@@ -49,7 +49,7 @@ const RecentJobs = (props) => {
   const filterJobs = async (e) => {
     setCategory(e.target.value);
     const response = await fetch(
-      `https://sheltered-journey-99057.herokuapp.com/jobs?jobType=${e.target.value}`
+      `https://murmuring-spire-15534.herokuapp.com/jobs?jobType=${e.target.value}`
     );
     const data = await response.json();
     console.log(data.data);
@@ -62,7 +62,7 @@ const RecentJobs = (props) => {
   };
 
   useEffect(() => {
-    fetch("https://sheltered-journey-99057.herokuapp.com/jobs")
+    fetch("https://murmuring-spire-15534.herokuapp.com/jobs")
       .then((res) => res.json())
       .then((data) => {
         setJobs(data.data.reverse());
