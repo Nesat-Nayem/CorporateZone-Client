@@ -7,6 +7,7 @@ import {
   MdOutlineLogout,
   MdOutlineChevronLeft,
   MdOutlineMenu,
+  MdDashboard,
 } from "react-icons/md";
 import Jobs from "../Admin/Jobs";
 import AddAdmin from "../Admin/AddAdmin";
@@ -24,6 +25,7 @@ import RecruiterProfile from "../Recruiter/profileView/RecruiterProfile";
 import AdminProfile from "../Admin/AdminProfile";
 import SkillTest from "../Candidate/skillTest/SkillTest";
 import AppliedJobs from "../Candidate/AppliedJobs/AppliedJobs";
+import ChatLayout from "../Messages/ChatLayout";
 
 const DashboardRoutes = ({ jobs }) => {
   const [trigger, setTrigger] = useState(false);
@@ -92,6 +94,20 @@ const DashboardRoutes = ({ jobs }) => {
                   )}
                   {loggedInUser?.role === "admin" && (
                     <AdminRoutes setTrigger={setTrigger} />
+                  )}
+
+                  {/* shared for candidate and recruiter */}
+                  {(loggedInUser?.role === "recruiter" ||
+                    loggedInUser?.role === "candidate") && (
+                    <Link href={`/dashboard/chats`}>
+                      <a
+                        onClick={() => setTrigger(false)}
+                        className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
+                      >
+                        <MdDashboard className="text-xl" />
+                        &nbsp;&nbsp;&nbsp;Messages
+                      </a>
+                    </Link>
                   )}
                 </li>
               }
@@ -184,6 +200,11 @@ const DashboardRoutes = ({ jobs }) => {
             {/* candidate profile update */}
             {params[0] === "skillTest" &&
               loggedInUser?.role === "candidate" && <SkillTest />}
+
+            {/* candidate profile update */}
+            {params[0] === "chats" &&
+              (loggedInUser?.role === "candidate" ||
+                loggedInUser?.role === "recruiter") && <ChatLayout />}
           </section>
         </div>
       </div>

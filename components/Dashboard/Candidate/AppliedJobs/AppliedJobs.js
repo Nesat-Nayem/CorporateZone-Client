@@ -25,7 +25,7 @@ const AppliedJobs = ({ jobs }) => {
     return (
       <div className="bg-white py-5 xl:px-20 md:px-5 px-2">
         <h1 className="text-lg font-serif text-red-500">
-          You haven't applied any jobs yet! {jobs?.length}
+          You haven't applied any jobs yet!
         </h1>
         <p className="py-5 font-serif text-xl font-bold">
           Go and apply
