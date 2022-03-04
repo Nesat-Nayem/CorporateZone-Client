@@ -9,7 +9,10 @@ const Chats = ({ selectedChat, setSelectedChat, loggedInUser, users }) => {
       receiverId: id,
     };
 
-    const { data } = await axios.post("http://localhost:4030/chats", doc);
+    const { data } = await axios.post(
+      "https://sheltered-journey-99057.herokuapp.com/chats",
+      doc
+    );
     setSelectedChat(data);
   };
   return (

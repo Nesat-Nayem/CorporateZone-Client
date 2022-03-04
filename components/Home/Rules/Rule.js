@@ -86,7 +86,7 @@ const Rule = () => {
 
   return (
     <>
-      <div className="bg-slate-700 text-white h-32 flex items-center justify-center">
+      <div className="bg-slate-800 text-white h-16 flex items-center justify-center">
         <div className=" text-center md:w-9/12 w-11/12 mx-auto ">
           <h1 className="font-serif font-bold lg:text-4xl text-2xl">
             Rules & Regulations
@@ -97,13 +97,13 @@ const Rule = () => {
         <div className="text-center bg-slate-200 shadow-xl p-2">
           <button
             onClick={() => setTrigger(0)}
-            className="bg-white text-slate-700 hover:bg-pink-600 hover:text-white mx-2 px-5 py-2 transition duration-700 ease-in-out hover:scale-105 rounded-xl shadow-md text-lg"
+            className="bg-[#42C2FF] text-white hover:bg-[#85F4FF] hover:text-black mx-2 px-5 py-2 transition duration-700 ease-in-out hover:scale-105 rounded-xl shadow-md text-lg"
           >
             Recruiter
           </button>
           <button
             onClick={() => setTrigger(1)}
-            className="bg-white text-slate-700 hover:bg-pink-600 hover:text-white mx-2 px-5 py-2 transition duration-700 ease-in-out hover:scale-105 rounded-xl shadow-md text-lg"
+            className="bg-[#85F4FF] text-black hover:bg-[#42C2FF] hover:text-white mx-2 px-5 py-2 transition duration-700 ease-in-out hover:scale-105 rounded-xl shadow-md text-lg"
           >
             Candidate
           </button>

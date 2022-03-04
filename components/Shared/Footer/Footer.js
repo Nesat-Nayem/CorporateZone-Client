@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <>
-      <footer className="text-center px:2 md:px-20 lg:text-left bg-black text-white">
+    <footer>
+      <div className="text-center px:2 md:px-20 lg:text-left bg-slate-800 text-white">
         <div className="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
           <div className="mr-12 hidden lg:block">
             <span>Get connected with us on social networks:</span>
@@ -308,7 +308,6 @@ const Footer = () => {
                 </svg>
                 + 09 234 567 89
               </p>
-              
             </div>
           </div>
         </div>
@@ -495,8 +494,6 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex flex-wrap flex-row items-center mt-2">
-
-
             <p className="ml-3 text-xs">
               <Link href="/about">
                 <a className="">About us</a>
@@ -519,17 +516,14 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        <div className="text-center p-6 bg-gray-900">
-          <span>© 2022 Copyright : </span>
-          <a
-            className="text-white font-semibold hover:text-blue-500"
-            href="https://tailwind-elements.com/"
-          >
-            @Team-CodeExpress
-          </a>
-        </div>
-      </footer>
-    </>
+      </div>
+      <div className="text-center p-6 bg-[#42C2FF]">
+        <span>© 2022 Copyright : </span>
+        <a className="text-white font-semibold hover:text-black" href="#">
+          @Team-CodeExpress
+        </a>
+      </div>
+    </footer>
   );
 };
 

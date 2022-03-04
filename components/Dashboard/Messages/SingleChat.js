@@ -5,7 +5,7 @@ import axios from "axios";
 import ScrollableChat from "./ScrollableChat";
 import io from "socket.io-client";
 
-const ENDPOINT = "http://localhost:4030";
+const ENDPOINT = "https://sheltered-journey-99057.herokuapp.com";
 var socket, selectedChatCompare;
 
 const SingleChat = ({ loggedInUser, selectedChat }) => {
@@ -71,7 +71,7 @@ const SingleChat = ({ loggedInUser, selectedChat }) => {
         };
         setNewMessage("");
         const { data } = await axios.post(
-          " http://localhost:4030/messages",
+          " https://sheltered-journey-99057.herokuapp.com/messages",
           {
             senderId: loggedInUser?._id,
             content: newMessage,

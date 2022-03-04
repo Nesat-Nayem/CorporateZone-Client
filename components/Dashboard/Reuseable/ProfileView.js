@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Chart from "../Chart/Chart";
 
 const ProfileView = ({ role, loggedInUser }) => {
   const router = useRouter();
-  console.log(loggedInUser);
   return (
-    <div className="bg-white xl:px-32 md:px-5 px-2 py-5 ">
+    <div className="bg-white xl:px-5 md:px-2 px-2 py-1 ">
       {/* profile information */}
       <div>
         <div className="md:flex ">
@@ -85,90 +85,101 @@ const ProfileView = ({ role, loggedInUser }) => {
         </div>
         {/* candidate additional information */}
         {loggedInUser && role === "candidate" && loggedInUser?.role === role && (
-          <div className=" py-5">
-            {/* skill Set */}
-            <div className="py-2">
-              <p className="font-semibold text-slate-600 py-1">Skill set: </p>
-              <p>
-                {loggedInUser?.selectedSkills.map((skill) => (
-                  <span key={skill.id}>{skill.name}, </span>
-                ))}{" "}
-                and so on.
-              </p>
-            </div>
+          <div className="flex flex-wrap md:flex-nowrap">
+            <div className=" py-5">
+              {/* skill Set */}
+              <div className="py-2">
+                <p className="font-semibold text-slate-600 py-1">Skill set: </p>
+                <p>
+                  {loggedInUser?.selectedSkills.map((skill) => (
+                    <span key={skill.id}>{skill.name}, </span>
+                  ))}{" "}
+                  and so on.
+                </p>
+              </div>
 
-            {/* resume */}
-            <div className="">
-              <p className="font-semibold text-sm text-slate-600 py-1">
-                Resume (Google Drive):
-              </p>
-              <a
-                className="text-blue-700 hover:underline"
-                href={loggedInUser?.resumeLink}
-              >
-                {loggedInUser?.resumeLink}
-              </a>
-            </div>
-            {/* portfolio */}
-            <div className="py-2">
-              <p className="font-semibold text-sm text-slate-600 py-1">
-                Portfolio Link:
-              </p>
-              <a
-                className="text-blue-700 hover:underline"
-                href={loggedInUser?.portfolio}
-              >
-                {loggedInUser?.portfolio}
-              </a>
-            </div>
-            {/* portfolio */}
-            <div>
-              <p className="font-semibold text-sm text-slate-600 py-1">
-                Github Profile:
-              </p>
-              <a
-                className="text-blue-700 hover:underline"
-                href={loggedInUser?.githubProfile}
-              >
-                {loggedInUser?.githubProfile}
-              </a>
-            </div>
+              {/* resume */}
+              <div className="">
+                <p className="font-semibold text-sm text-slate-600 py-1">
+                  Resume (Google Drive):
+                </p>
+                <a
+                  className="text-blue-700 hover:underline"
+                  href={loggedInUser?.resumeLink}
+                >
+                  {loggedInUser?.resumeLink}
+                </a>
+              </div>
+              {/* portfolio */}
+              <div className="py-2">
+                <p className="font-semibold text-sm text-slate-600 py-1">
+                  Portfolio Link:
+                </p>
+                <a
+                  className="text-blue-700 hover:underline"
+                  href={loggedInUser?.portfolio}
+                >
+                  {loggedInUser?.portfolio}
+                </a>
+              </div>
+              {/* portfolio */}
+              <div>
+                <p className="font-semibold text-sm text-slate-600 py-1">
+                  Github Profile:
+                </p>
+                <a
+                  className="text-blue-700 hover:underline"
+                  href={loggedInUser?.githubProfile}
+                >
+                  {loggedInUser?.githubProfile}
+                </a>
+              </div>
 
-            {/* linkedin */}
-            <div className="py-2">
-              <p className="font-semibold text-sm text-slate-600 py-1">
-                LinkedIn Profile:
-              </p>
-              <a
-                className="text-blue-700 hover:underline"
-                href={loggedInUser?.linkedInProfile}
-              >
-                {loggedInUser?.linkedInProfile}
-              </a>
+              {/* linkedin */}
+              <div className="py-2">
+                <p className="font-semibold text-sm text-slate-600 py-1">
+                  LinkedIn Profile:
+                </p>
+                <a
+                  className="text-blue-700 hover:underline"
+                  href={loggedInUser?.linkedInProfile}
+                >
+                  {loggedInUser?.linkedInProfile}
+                </a>
+              </div>
+            </div>
+            <div className="mt-0 md:mt-2">
+              <Chart data={loggedInUser} />
             </div>
           </div>
         )}
 
         {/* recruiter additional information */}
+
         {loggedInUser &&
           role === "recruiter" &&
           loggedInUser?.role === "recruiter" && (
-            <div className="py-5">
-              {/* company name */}
-              <div className="py-2">
-                <p className="font-semibold text-slate-600 py-1">
-                  Company Name
-                </p>
-                <p>{loggedInUser?.companyName}</p>
+            <div className="flex flex-wrap">
+              <div className="py-5">
+                {/* company name */}
+                <div className="py-2">
+                  <p className="font-semibold text-slate-600 py-1">
+                    Company Name
+                  </p>
+                  <p>{loggedInUser?.companyName}</p>
+                </div>
+                {/* companyWebsite */}
+                <div className="py-2">
+                  <p className="font-semibold text-slate-600 py-1">
+                    Company website{" "}
+                  </p>
+                  <a className="text-blue-700 hover:underline">
+                    {loggedInUser?.companyWebsite}
+                  </a>
+                </div>
               </div>
-              {/* companyWebsite */}
-              <div className="py-2">
-                <p className="font-semibold text-slate-600 py-1">
-                  Company website{" "}
-                </p>
-                <a className="text-blue-700 hover:underline">
-                  {loggedInUser?.companyWebsite}
-                </a>
+              <div>
+                <Chart data={loggedInUser} />
               </div>
             </div>
           )}
