@@ -185,7 +185,7 @@ const HeroArea = () => {
               >
                 <AiOutlineBarChart />
               </h5>
-              <h6>Technology</h6>
+              <h6>Accounting</h6>
               <p>3 jobs</p>
             </div>
             <div className="Ccolor p-4 rounded-md w-full text-center">
@@ -200,7 +200,7 @@ const HeroArea = () => {
               >
                 <FaMedkit />
               </h5>
-              <h6>Technology</h6>
+              <h6>Medical</h6>
               <p>3 jobs</p>
             </div>
             <div className="Ccolor p-4 rounded-md w-full text-center">
@@ -215,7 +215,7 @@ const HeroArea = () => {
               >
                 <FaUniversity />
               </h5>
-              <h6>Technology</h6>
+              <h6>Government</h6>
               <p>3 jobs</p>
             </div>
             <div className="Ccolor p-4 rounded-md w-full text-center checks">
@@ -230,7 +230,7 @@ const HeroArea = () => {
               >
                 <BiRestaurant />
               </h5>
-              <h6 className="tcolor">Technology</h6>
+              <h6 className="tcolor">Restaurant</h6>
               <p>3 jobs</p>
             </div>
           </div>

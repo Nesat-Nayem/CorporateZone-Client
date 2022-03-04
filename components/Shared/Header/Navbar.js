@@ -38,6 +38,7 @@ const pages = [
 export default function Navbar() {
   const currentUser = useSelector((state) => state.user.currentUser);
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
+  
   console.log(loggedInUser);
 
   const router = useRouter();

@@ -23,8 +23,9 @@ import CandidateProfile from "../Candidate/profileView/CandidateProfile";
 import RecruiterProfile from "../Recruiter/profileView/RecruiterProfile";
 import AdminProfile from "../Admin/AdminProfile";
 import SkillTest from "../Candidate/skillTest/SkillTest";
+import AppliedJobs from "../Candidate/AppliedJobs/AppliedJobs";
 
-const DashboardRoutes = () => {
+const DashboardRoutes = ({ jobs }) => {
   const [trigger, setTrigger] = useState(false);
   const router = useRouter();
   const { params = [] } = router.query;
@@ -171,6 +172,10 @@ const DashboardRoutes = () => {
             {params[0] === "profile" && loggedInUser?.role === "candidate" && (
               <CandidateProfile />
             )}
+
+            {/* candidate applied jobs*/}
+            {params[0] === "appliedJobs" &&
+              loggedInUser?.role === "candidate" && <AppliedJobs jobs={jobs} />}
 
             {/* candidate profile update */}
             {params[0] === "updateProfile" &&
