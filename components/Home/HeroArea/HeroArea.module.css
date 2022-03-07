@@ -1,0 +1,35 @@
+.slide{
+    animation: animate 16s ease-in-out infinite;
+    height: auto;
+    width: 100%;
+    position:relative;
+    padding: 30px 2px;
+    background-size: cover;
+
+}
+
+@keyframes animate {
+    0%, 100%{
+        background-image: url("https://i.ibb.co/59TgD3X/slider13.jpg");
+    }    
+    25%{
+        background-image: url("https://images.unsplash.com/photo-1508780709619-79562169bc64?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGpvYiUyMHdvcmt8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60");
+    }    
+    50%{
+        background-image: url("https://images.unsplash.com/photo-1503428593586-e225b39bddfe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGpvYiUyMHdvcmt8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
+    }    
+    75%{
+        background-image: url("https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGpvYiUyMHdvcmt8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60");
+    }    
+}
+
+
+/* style={{
+    backgroundImage: `url("https://i.ibb.co/59TgD3X/slider13.jpg")`,
+    color: "",
+    height: "auto",
+    width: "100%",
+    position: "relative",
+  }}
+  className="py-8 px-2 md:py-16" */
+

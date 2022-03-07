@@ -1,11 +1,12 @@
 import { BsFillTagsFill, BsLaptop } from "react-icons/bs";
 import { BiCodeAlt, BiRestaurant } from "react-icons/bi";
 import { AiOutlineBarChart } from "react-icons/ai";
-import { Navigation, Scrollbar, A11y } from 'swiper';
-import { Swiper, SwiperSlide } from "swiper/react";
-import 'swiper/swiper-bundle.min.css'
-import 'swiper/swiper.min.css'
-import { Autoplay, Pagination } from "swiper";
+// import { Navigation, Scrollbar, A11y } from 'swiper';
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import 'swiper/swiper-bundle.min.css'
+// import 'swiper/swiper.min.css'
+// import { Autoplay, Pagination } from "swiper";
+import style from './HeroArea.module.css'
 
 import { FaMedkit, FaUniversity } from "react-icons/fa";
 import { useForm } from "react-hook-form";
@@ -21,22 +22,19 @@ const HeroArea = () => {
 
   console.log(watch("example"));
   return (
-    <section className="relative">
-      <div
-        style={{
-          backgroundImage: `url("https://i.ibb.co/59TgD3X/slider13.jpg")`,
-          color: "#23C0E9",
-          height: "auto",
-          width: "100%",
-          position: "relative",
-        }}
-        className="py-8 px-2 md:py-16"
+    <div>
+      <div >
+      <section className="relative">
+      <div className={style.slide}
+      
+      
       >
         <div className="flex flex-col justify-center items-center">
           <h1
             style={{
               position: "relative",
               fontWeight: "bold",
+              color:'white'
             }}
             className="text-4xl md:text-5xl lg:text-6xl mb-1 md:mb-2"
           >
@@ -279,6 +277,8 @@ const HeroArea = () => {
 
     </section>
 
+      </div>
+    </div>
 
 
 
