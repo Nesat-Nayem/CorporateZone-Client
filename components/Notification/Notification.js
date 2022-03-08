@@ -39,20 +39,20 @@ const Notification = ({ notifications }) =>
                         Unread
                     </button>
                 </div>
-                <div className="w-72 h-auto border-t-2 border-green-500">
+                <div className="w-72 h-80 overflow-y-scroll border-t-2 border-green-500">
                     <ul className="p-2">
                         {
                             notifications.map((n) => <li
-                                key={n.length}
+                                key={n?.length}
                                 className=" hover:bg-slate-100 rounded-lg p-2"
                             >
                                 <h1
                                     className="text-slate-700"
                                 >
-                                    {n.notify}
+                                    {n ? n.notify : "No New Notifications"}
                                 </h1>
                                 <span className="text-xs italic text-green-500">
-                                    Posted By, {n.senderName}
+                                    Posted By, {n?.senderName}
                                 </span>
                             </li>)
                         }
