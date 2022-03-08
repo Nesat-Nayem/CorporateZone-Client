@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { BiMessageSquareAdd } from "react-icons/bi";
 import { AiFillDelete } from "react-icons/ai";
 import Multiselect from "multiselect-react-dropdown";
@@ -7,7 +7,8 @@ import countryList from "react-select-country-list";
 import axios from "axios";
 import { useRouter } from "next/router";
 
-const JobPost = () => {
+const JobPost = ({ socket, user }) =>
+{
   const [responsibilitiData, setResponsibilitiData] = useState("");
   const [AllResponsibilitiData, setAllResponsibilitiData] = useState([]);
   const [value, setValue] = useState("");
@@ -56,41 +57,50 @@ const JobPost = () => {
 
   const [options] = useState(data);
 
-  const SaveResponsibility = () => {
+  const SaveResponsibility = () =>
+  {
     setAllResponsibilitiData((value) => [...value, responsibilitiData]);
     setResponsibilitiData("");
   };
 
-  const deleteRespon = (id) => {
-    setAllResponsibilitiData((value) => {
+  const deleteRespon = (id) =>
+  {
+    setAllResponsibilitiData((value) =>
+    {
       return value.filter((crrElm, index) => index !== id);
     });
   };
 
-  const changeHandler = (value) => {
+  const changeHandler = (value) =>
+  {
     setValue(value);
   };
 
-  const imageUploadHandler = (e) => {
+  const imageUploadHandler = (e) =>
+  {
     const imageData = new FormData();
     imageData.set("key", "0835894fb24a589d54b46ce86a8fdd54");
     imageData.append("image", e.target.files[0]);
     axios
       .post("https://api.imgbb.com/1/upload", imageData)
-      .then((res) => {
+      .then((res) =>
+      {
         setPhotoURL(res.data.data.display_url);
       })
-      .catch(function (error) {
+      .catch(function (error)
+      {
         console.log(error);
       });
   };
 
-  const dataInput = (e) => {
+  const dataInput = (e) =>
+  {
     let { name, value } = e.target;
     setAllData({ ...allData, [name]: value });
   };
 
-  const submitData = (e) => {
+  const submitData = (e) =>
+  {
     e.preventDefault();
     allData.skills = selectedLists.map((crrElm) => crrElm.name);
     allData.responsibilities = AllResponsibilitiData;
@@ -99,27 +109,49 @@ const JobPost = () => {
     allData.jobTags = "Media, Medicla, Restaurants";
     axios
       .post("https://murmuring-spire-15534.herokuapp.com/jobs", allData)
-      .then((res) => {
+      .then((res) =>
+      {
         if (res.status === 200) {
           router.push("/");
           alert("successfully saved!");
+          //handleNotification(allData);
         }
       })
-      .catch(function (error) {
+      .catch(function (error)
+      {
         console.log(error);
       });
   };
 
-  const onSelect = (selectedList, selectedItem) => {
+  const handleNotification = (notify) =>
+  {
+    socket.emit("sendNotification", {
+      senderName: user,
+      receiverName: user,
+      notify,
+    });
+  };
+
+  const onSelect = (selectedList, selectedItem) =>
+  {
     setSelectedLists(selectedList);
   };
 
-  const onRemove = (selectedList, removedItem) => {
+  const onRemove = (selectedList, removedItem) =>
+  {
     setSelectedLists(selectedList);
   };
 
   return (
     <>
+      <div className="flex justify-center items-center mt-5">
+        <button
+          onClick={() => handleNotification("No. 1 Job site is CorporateZone")}
+          className="ml-2 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        >
+          Notify
+        </button>
+      </div>
       <div>
         <div className="md:grid md:grid-cols-1 px-20 py-8 md:gap-6">
           <div className="md:col-span-1">
@@ -319,7 +351,8 @@ const JobPost = () => {
                       Responsibilities
                     </label>
                     <div>
-                      {AllResponsibilitiData.map((value, id) => {
+                      {AllResponsibilitiData.map((value, id) =>
+                      {
                         return (
                           value && (
                             <div

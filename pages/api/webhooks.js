@@ -2,9 +2,9 @@ import Stripe from "stripe";
 import { buffer } from "micro";
 import Cors from "micro-cors";
 
-const stripe = new Stripe(sk_test_51Jwcx4JFSgBrd6IPkLrdWEQaSMWHZcVthlHI7WxP3kiiuzBJpx3OGE5vG43tSWgmVeFf8it2jH2YM76jpP0Q4I1100cQEIaKK2);
+const stripe = new Stripe('sk_test_51Jwcx4JFSgBrd6IPkLrdWEQaSMWHZcVthlHI7WxP3kiiuzBJpx3OGE5vG43tSWgmVeFf8it2jH2YM76jpP0Q4I1100cQEIaKK2');
 
-const webhookSecret = whsec_RPQeXqzTmrPLPOFzgo7fCRyOLugArNiU;
+const webhookSecret = 'whsec_RPQeXqzTmrPLPOFzgo7fCRyOLugArNiU';
 
 // Stripe requires the raw body to construct the event.
 export const config = {
@@ -17,7 +17,8 @@ const cors = Cors({
   allowMethods: ["POST", "HEAD"],
 });
 
-const webhookHandler = async (req, res) => {
+const webhookHandler = async (req, res) =>
+{
   if (req.method === "POST") {
     const buf = await buffer(req);
     const signature = req.headers["stripe-signature"];

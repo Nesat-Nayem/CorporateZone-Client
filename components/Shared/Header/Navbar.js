@@ -1,7 +1,8 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { Popover, Transition } from "@headlessui/react";
-import {
+import
+{
   ChartBarIcon,
   MenuIcon,
   RefreshIcon,
@@ -16,6 +17,7 @@ import useFirebase from "../../../redux/slices/user/useFirebase";
 import { MdLogin } from "react-icons/md";
 import { BsChatRightText } from "react-icons/bs";
 import { useRouter } from "next/router";
+import Notification from "../../Notification/Notification";
 
 const pages = [
   {
@@ -35,11 +37,14 @@ const pages = [
   },
 ];
 
-export default function Navbar() {
+export default function Navbar ({ socket })
+{
   const currentUser = useSelector((state) => state.user.currentUser);
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
 
   console.log(loggedInUser);
+
+  const [notifications, setNotifications] = useState([]);
 
   const router = useRouter();
 
@@ -50,15 +55,24 @@ export default function Navbar() {
   const { logOut } = useFirebase();
 
   // log out handler
-  const logOutHandler = () => {
+  const logOutHandler = () =>
+  {
     dispatch(logOut);
     setIsOpen(!isOpen);
   };
 
+  useEffect(() =>
+  {
+    socket?.on("getNotification", (data) =>
+    {
+      setNotifications((prev) => [...prev, data]);
+    });
+  }, [socket]);
+
   return (
     <Popover className="relative bg-white">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex relative justify-between items-center border-b-2 border-gray-100 py-6 lg:justify-start md:space-x-10">
+        <div className="flex relative justify-between items-center border-b-2 border-gray-100 py-5 lg:justify-start md:space-x-10">
           <div className="flex justify-start md:w-0 md:flex-1">
             <Link href="/">
               <a className="flex items-center">
@@ -69,6 +83,16 @@ export default function Navbar() {
               </a>
             </Link>
           </div>
+          {/* <button
+            onClick={() => setTrigger(!trigger)}
+            className="md:hidden ml-5 flex justify-center items-center hover:text-[#42C2FF]">
+            <BsBellFill className="w-7 h-7" />
+            <span className="relative -top-2 right-3">
+              <div className="inline-flex items-center px-1 py-0.25 border-2 border-white rounded-full text-xs font-semibold bg-red-500 text-white">
+                4
+              </div>
+            </span>
+          </button> */}
           <div className="-mr-2 -my-2 md:hidden">
             <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
               <span className="sr-only">Open menu</span>
@@ -94,6 +118,9 @@ export default function Navbar() {
                 Blog
               </a>
             </Link>
+
+            {currentUser && <Notification notifications={notifications} />}
+
             {currentUser && (
               <>
                 <button
@@ -117,7 +144,7 @@ export default function Navbar() {
         <div
           className={
             isOpen
-              ? "bg-white md:block hidden shadow-md  w-56  py-4 absolute z-10 rounded top-16 right-6"
+              ? "bg-white md:block hidden shadow-md  w-56  py-4 absolute z-10 rounded top-20 right-6"
               : "hidden"
           }
         >

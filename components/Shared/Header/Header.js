@@ -1,11 +1,12 @@
 import Navbar from "./Navbar";
 import TopHeader from "./TopHeader";
 
-const Header = () => {
+const Header = ({ socket }) =>
+{
   return (
     <div>
       <TopHeader />
-      <Navbar />
+      <Navbar socket={socket} />
     </div>
   );
 };
