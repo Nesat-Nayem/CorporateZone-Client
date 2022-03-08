@@ -8,11 +8,11 @@ const Works = () => {
   return (
     <div className="my-9">
       {/* Company */}
-      <div className="md:flex md:justify-evenly md:items-center my-20 md:mx-24  sm:mx-2">
+      <div className="md:flex md:justify-evenly md:items-center my-20 md:mx-24  mx-2">
         <div className="img mx-auto my-5">
           <img
             className="w-full"
-            src="https://github.com/Nesat-Nayem/CorporateZone-Clitent/blob/listed_job/ya/images/recruiter.png?raw=true"
+            src="https://i.ibb.co/PCRzHH5/recruiter.png"
           />
         </div>
         <div className=" md:w-5/12 mx-auto process_con">
@@ -64,15 +64,23 @@ const Works = () => {
 
           <ul className="text-slate-800 mx-3 space-y-3">
             <li className="flex justify-end items-center">
-              Solid Skills
+              Filtered Jobs
               <FcOk className="mx-3" />
             </li>
             <li className="flex justify-end items-center">
-              Experience
+              Profile 100% Setup
               <FcOk className="mx-3" />
             </li>
             <li className="flex justify-end items-center">
-              Portfolio
+              Choose Right Jobs
+              <FcOk className="mx-3" />
+            </li>
+            <li className="flex justify-end items-center">
+              Choose Right Candidate
+              <FcOk className="mx-3" />
+            </li>
+            <li className="flex justify-end items-center">
+              Connect with selected Candidate
               <FcOk className="mx-3" />
             </li>
           </ul>
@@ -89,20 +97,27 @@ const Works = () => {
 
           <ul className="text-slate-800 mx-3 space-y-3">
             <li className="flex items-center">
-              <FcOk className="mx-3" /> Solid Skills
+              <FcOk className="mx-3" /> Valid opportunities
             </li>
             <li className="flex  items-center">
-              <FcOk className="mx-3" /> Experience
+              <FcOk className="mx-3" /> Skills Required Jobs
             </li>
             <li className="flex  items-center">
-              <FcOk className="mx-3" /> Portfolio
+              <FcOk className="mx-3" /> Choose Right Candidate
+            </li>
+            <li className="flex  items-center">
+              <FcOk className="mx-3" />
+              Easy Communication
+            </li>
+            <li className="flex  items-center">
+              <FcOk className="mx-3" /> Find Each Other
             </li>
           </ul>
         </div>
       </div>
 
       {/* Candidate*/}
-      <div className="md:flex md:justify-evenly md:items-center my-20 md:mx-24 sm:mx-2">
+      <div className="md:flex md:justify-evenly md:items-center my-20 md:mx-24 mx-2">
         <div className="md:w-5/12 mx-auto process_con">
           <article className="space-y-5">
             <h3 className="text-3xl">Candidate Requirement</h3>
@@ -139,10 +154,7 @@ const Works = () => {
         </div>
 
         <div className="img mx-auto my-7">
-          <img
-            className="w-full "
-            src="https://github.com/Nesat-Nayem/CorporateZone-Clitent/blob/listed_job/ya/images/seeking.png?raw=true"
-          />
+          <img className="w-full " src="https://i.ibb.co/6yywTLQ/seeking.png" />
         </div>
       </div>
     </div>
