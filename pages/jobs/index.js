@@ -22,7 +22,7 @@ export const getServerSideProps = async (context) => {
   // without filtering
   if (jobType) {
     const response = await fetch(
-      `http://localhost:4030/jobs/?jobType=${jobType}`
+      `https://murmuring-spire-15534.herokuapp.com/jobs/?jobType=${jobType}`
     );
     const data = await response.json();
 
@@ -34,7 +34,7 @@ export const getServerSideProps = async (context) => {
     };
   } else {
     const response = await fetch(
-      "http://localhost:4030/jobs"
+      "https://murmuring-spire-15534.herokuapp.com/jobs"
     );
     const data = await response.json();
     return {

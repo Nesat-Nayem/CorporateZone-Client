@@ -5,7 +5,7 @@ import Chart from "../Chart/Chart";
 const ProfileView = ({ role, loggedInUser }) => {
   const router = useRouter();
   return (
-    <div className="bg-white xl:px-10 md:px-5 px-2 py-5 ">
+    <div className="bg-white xl:px-5 md:px-2 px-2 py-1 ">
       {/* profile information */}
       <div>
         <div className="md:flex ">
@@ -86,7 +86,7 @@ const ProfileView = ({ role, loggedInUser }) => {
         {/* candidate additional information */}
         {loggedInUser && role === "candidate" && loggedInUser?.role === role && (
           <div className="flex flex-wrap md:flex-nowrap">
-              <div className=" py-5">
+            <div className=" py-5">
               {/* skill Set */}
               <div className="py-2">
                 <p className="font-semibold text-slate-600 py-1">Skill set: </p>
@@ -149,9 +149,44 @@ const ProfileView = ({ role, loggedInUser }) => {
               </div>
             </div>
             <div className="mt-0 md:mt-2">
-              <Chart data={loggedInUser}/>
+              <Chart data={loggedInUser} />
             </div>
           </div>
+        )}
+
+        {/* recruiter additional information */}
+
+        {loggedInUser &&
+          role === "recruiter" &&
+          loggedInUser?.role === "recruiter" && (
+          <>
+            <div className="flex flex-wrap">
+              <div className="py-5">
+                {/* company name */}
+                <div className="py-2">
+                  <p className="font-semibold text-slate-600 py-1">
+                    Company Name
+                  </p>
+                  <p>{loggedInUser?.companyName}</p>
+                </div>
+                {/* companyWebsite */}
+                <div className="py-2">
+                  <p className="font-semibold text-slate-600 py-1">
+                    Company website{" "}
+                  </p>
+                  <a className="text-blue-700 hover:underline">
+                    {loggedInUser?.companyWebsite}
+                  </a>
+                </div>
+              </div>
+              <div>
+                <Chart data={loggedInUser} />
+              </div>
+            </div>
+            <div className="mt-0 md:mt-2">
+              <Chart data={loggedInUser}/>
+            </div>
+            </>
         )}
 
         {/* recruiter additional information */}

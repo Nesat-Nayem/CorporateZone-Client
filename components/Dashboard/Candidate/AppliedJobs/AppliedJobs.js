@@ -12,7 +12,7 @@ const AppliedJobs = ({ jobs }) => {
     const fetchData = async () => {
       const data = await (
         await fetch(
-          `http://localhost:4030/appliedJobs?email=${loggedInUser?.email}`
+          `https://murmuring-spire-15534.herokuapp.com/appliedJobs?email=${loggedInUser?.email}`
         )
       ).json();
       setMyJobs(data);
@@ -25,7 +25,7 @@ const AppliedJobs = ({ jobs }) => {
     return (
       <div className="bg-white py-5 xl:px-20 md:px-5 px-2">
         <h1 className="text-lg font-serif text-red-500">
-          You haven't applied any jobs yet! {jobs?.length}
+          You haven't applied any jobs yet!
         </h1>
         <p className="py-5 font-serif text-xl font-bold">
           Go and apply

@@ -42,7 +42,7 @@ const CompanyJobs = () =>
           <br />
           <a
             href="#"
-            className="text-slate-200 dark:text-slate-400 block md:w-3/4 mx-auto mt-3 text-sm font-semibold bg-cyan-500 p-2 rounded-lg hover:bg-cyan-600"
+            className="text-black block md:w-3/4 mx-auto mt-3 text-sm font-semibold bg-[#85F4FF] p-2 rounded-lg hover:bg-[#42C2FF] hover:text-white"
           >
             7 Openings
           </a>
@@ -67,7 +67,7 @@ const CompanyJobs = () =>
           <br />
           <a
             href="#"
-            className="text-slate-200 dark:text-slate-400 block md:w-3/4 mx-auto mt-3 font-semibold text-sm bg-cyan-500 p-2 rounded-lg hover:bg-cyan-600"
+            className="text-black block md:w-3/4 mx-auto mt-3 text-sm font-semibold bg-[#85F4FF] p-2 rounded-lg hover:bg-[#42C2FF] hover:text-white"
           >
             7 Openings
           </a>
@@ -92,7 +92,7 @@ const CompanyJobs = () =>
           <br />
           <a
             href="#"
-            className="text-slate-200 dark:text-slate-400 block md:w-3/4 mx-auto mt-3 font-semibold text-sm bg-cyan-500 p-2 rounded-lg hover:bg-cyan-600"
+            className="text-black block md:w-3/4 mx-auto mt-3 text-sm font-semibold bg-[#85F4FF] p-2 rounded-lg hover:bg-[#42C2FF] hover:text-white"
           >
             7 Openings
           </a>
@@ -117,7 +117,7 @@ const CompanyJobs = () =>
           <br />
           <a
             href="#"
-            className="text-slate-200 dark:text-slate-400 block md:w-3/4 mx-auto mt-3 font-semibold text-sm bg-cyan-500 p-2 rounded-lg hover:bg-cyan-600"
+            className="text-black block md:w-3/4 mx-auto mt-3 text-sm font-semibold bg-[#85F4FF] p-2 rounded-lg hover:bg-[#42C2FF] hover:text-white"
           >
             7 Openings
           </a>
@@ -142,7 +142,7 @@ const CompanyJobs = () =>
           <br />
           <a
             href="#"
-            className="text-slate-200 dark:text-slate-400 block md:w-3/4 mx-auto mt-3 font-semibold text-sm bg-cyan-500 p-2 rounded-lg hover:bg-cyan-600"
+            className="text-black block md:w-3/4 mx-auto mt-3 text-sm font-semibold bg-[#85F4FF] p-2 rounded-lg hover:bg-[#42C2FF] hover:text-white"
           >
             7 Openings
           </a>

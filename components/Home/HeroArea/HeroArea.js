@@ -105,11 +105,11 @@ const HeroArea = () => {
 
             <input
               style={{
-                backgroundColor: "#23C0E9",
-                color: "white",
                 padding: "10px 30px",
                 borderRadius: "10px",
+                cursor: "pointer",
               }}
+              className="bg-[#85F4FF] text-black hover:bg-[#42C2FF] hover:text-white"
               type="submit"
               value="Search"
             />
@@ -186,7 +186,7 @@ const HeroArea = () => {
               >
                 <AiOutlineBarChart />
               </h5>
-              <h6>Technology</h6>
+              <h6>Accounting</h6>
               <p>3 jobs</p>
             </div>
             <div className="Ccolor p-4 rounded-md w-full text-center">
@@ -201,7 +201,7 @@ const HeroArea = () => {
               >
                 <FaMedkit />
               </h5>
-              <h6>Technology</h6>
+              <h6>Medical</h6>
               <p>3 jobs</p>
             </div>
             <div className="Ccolor p-4 rounded-md w-full text-center">
@@ -216,7 +216,7 @@ const HeroArea = () => {
               >
                 <FaUniversity />
               </h5>
-              <h6>Technology</h6>
+              <h6>Government</h6>
               <p>3 jobs</p>
             </div>
             <div className="Ccolor p-4 rounded-md w-full text-center checks">
@@ -231,7 +231,7 @@ const HeroArea = () => {
               >
                 <BiRestaurant />
               </h5>
-              <h6 className="tcolor">Technology</h6>
+              <h6 className="tcolor">Restaurant</h6>
               <p>3 jobs</p>
             </div>
           </div>

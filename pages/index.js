@@ -1,4 +1,3 @@
-import Head from "next/head";
 import CategoryJobs from "../components/Home/CategoryJobs/CategoryJobs";
 import CompanyJobs from "../components/Home/CompanyJobs/CompanyJobs";
 import Pricing from "../components/Home/pricing/Pricing";

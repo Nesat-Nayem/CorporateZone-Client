@@ -1,6 +1,8 @@
 import Link from "next/link";
 import React from "react";
 import { MdDashboard } from "react-icons/md";
+import { BiCalendarCheck } from "react-icons/bi";
+import { BsFillBookmarkCheckFill } from "react-icons/bs";
 
 const CandidateRoutes = ({ setTrigger }) => {
   return (
@@ -19,7 +21,7 @@ const CandidateRoutes = ({ setTrigger }) => {
           onClick={() => setTrigger(false)}
           className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
         >
-          <MdDashboard className="text-xl" />
+          <BsFillBookmarkCheckFill className="text-xl" />
           &nbsp;&nbsp;&nbsp;Applied Jobs
         </a>
       </Link>
@@ -29,7 +31,7 @@ const CandidateRoutes = ({ setTrigger }) => {
           className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
         >
           <MdDashboard className="text-xl" />
-          &nbsp;&nbsp;&nbsp;Top Companies
+          &nbsp;&nbsp;&nbsp;Companies
         </a>
       </Link>
       {/* skill test */}
@@ -38,7 +40,7 @@ const CandidateRoutes = ({ setTrigger }) => {
           onClick={() => setTrigger(false)}
           className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
         >
-          <MdDashboard className="text-xl" />
+          <BiCalendarCheck className="text-xl" />
           &nbsp;&nbsp;&nbsp;Skill Test
         </a>
       </Link>

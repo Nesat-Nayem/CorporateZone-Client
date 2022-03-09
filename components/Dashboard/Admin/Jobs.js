@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import style from "./jobs.module.css";
 
@@ -5,10 +6,28 @@ const Jobs = () => {
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4030/jobs")
+    fetch("https://murmuring-spire-15534.herokuapp.com/jobs")
       .then((res) => res.json())
       .then((data) => setJobs(data.data));
   }, []);
+
+  const handleDelete = (id) => {
+    const proccess = window.confirm("Are You Sure You Want To Delete");
+    if (proccess) {
+      fetch(`https://murmuring-spire-15534.herokuapp.com/jobs/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data._id) {
+            alert("Deleted Successfully");
+            const remaining = jobs.filter((ema) => ema._id !== id);
+            setJobs(remaining);
+          }
+        });
+    }
+  };
+
   return (
     <div>
       <div className="flex flex-col">
@@ -46,8 +65,14 @@ const Jobs = () => {
                       scope="col"
                       className="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
                     >
-                      Update
+                      STATUS
                     </th>
+                    {/* <th
+                      scope="col"
+                      className="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
+                    >
+                      Update
+                    </th> */}
                     <th
                       scope="col"
                       className="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
@@ -72,16 +97,27 @@ const Jobs = () => {
                         <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                           {job.experience}
                         </td>
-                        <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                          <button
-                            type="button"
-                            className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                        <td className="py-4 px-6 text-sm  whitespace-nowrap dark:text-gray-400">
+                          <span
+                            style={{
+                              backgroundColor: "black",
+                              padding: "10px 20px",
+                              color: "white",
+                              border: "1px solid grey",
+                              borderRadius: "10px",
+                            }}
                           >
-                            Edit
-                          </button>
+                            {job.status}
+                          </span>
                         </td>
+                        {/* <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                          <Link href={`/updatejobs/${job._id}`}>
+                            <a>Edit</a>
+                          </Link>
+                        </td> */}
                         <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                           <button
+                            onClick={() => handleDelete(job._id)}
                             type="button"
                             className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
                           >

@@ -90,7 +90,10 @@ const Jobdetails = ({ data }) => {
         jobType,
       };
       axios
-        .post("http://localhost:4030/appliedJobs", jobData)
+        .post(
+          "https://murmuring-spire-15534.herokuapp.com/appliedJobs",
+          jobData
+        )
         .then((response) => {
           cogoToast.success("Apply successfull", options);
         })
@@ -344,7 +347,11 @@ export default Jobdetails;
 
 export const getServerSideProps = async (context) => {
   const res = await fetch(
-    `http://localhost:4030/jobs/${context.params.id}`
+<<<<<<< HEAD
+    `https://murmuring-spire-15534.herokuapp.com/jobs/${context.params.id}`
+=======
+    `https://murmuring-spire-15534.herokuapp.com/jobs/${context.params.id}`
+>>>>>>> 82ade4939e2880ed4ec6aa5bd7d8eed55f29fc08
   );
   const data = await res.json();
 

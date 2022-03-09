@@ -23,7 +23,7 @@ const CandidateUpdateForm = () => {
   const onSubmit = (data) => {
     const newData = { ...data, photoURL, selectedSkills };
     fetch(
-      `http://localhost:4030/users/${loggedInUser?.email}`,
+      `https://murmuring-spire-15534.herokuapp.com/users/${loggedInUser?.email}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },

@@ -71,7 +71,7 @@ const useFirebase = () => {
 
   useEffect(() => {
     fetch(
-      `http://localhost:4030/users/${currentUser?.email}`
+      `https://murmuring-spire-15534.herokuapp.com/users/${currentUser?.email}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -83,7 +83,7 @@ const useFirebase = () => {
   const saveData = async (data) => {
     try {
       axios
-        .post("http://localhost:4030/users", data)
+        .post("https://murmuring-spire-15534.herokuapp.com/users", data)
         .then(function (response) {
           console.log(response);
           router.push("/dashboard/profile");

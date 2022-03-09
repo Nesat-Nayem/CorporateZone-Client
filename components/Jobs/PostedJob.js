@@ -31,7 +31,7 @@ const PostedJob = ({ job }) => {
         <h3 className="font-bold py-2 capitalize">{jobType} Job</h3>
       </div>
       <div className="col-span-2">
-        <button className="bg-pink-500 px-4 py-1 rounded text-white">
+        <button className="bg-[#42C2FF] px-4 py-1 rounded text-white">
           Apply
         </button>
       </div>
