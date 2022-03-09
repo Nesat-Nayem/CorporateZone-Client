@@ -10,8 +10,6 @@ const ChatLayout = () => {
   const [selectedChat, setSelectedChat] = useState(null);
   const [chats, setChats] = useState([]);
 
-  console.log(users);
-
   useEffect(() => {
     const fetchUsers = async () => {
       const response = await fetch(
@@ -27,7 +25,7 @@ const ChatLayout = () => {
 
   return (
     <section
-      className="w-full sm:grid grid-cols-12 gap-3"
+      className="w-full chats sm:grid grid-cols-12 gap-3 overflow-y-scroll"
       style={{ height: "90vh" }}
     >
       {/* // chats names */}

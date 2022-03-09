@@ -1,6 +1,8 @@
 import React from "react";
 
 import axios from "axios";
+import { BiMessageDetail } from "react-icons/bi";
+import { FcVideoCall } from "react-icons/fc";
 
 const Chats = ({ selectedChat, setSelectedChat, loggedInUser, users }) => {
   const createChat = async (id) => {
@@ -21,10 +23,7 @@ const Chats = ({ selectedChat, setSelectedChat, loggedInUser, users }) => {
       <div className="py-5">
         {users?.map((user) => (
           <div key={user._id}>
-            <div
-              onClick={() => createChat(user._id)}
-              className="flex px-3 py-2 bg-white items-center justify-between my-2 rounded cursor-pointer hover:bg-cyan-500 hover:text-white transition duration-300"
-            >
+            <div className="flex px-3 py-2 bg-white items-center justify-between my-2 rounded  transition duration-300">
               {user?.photoURL ? (
                 <img
                   className="w-12 h-12 "
@@ -41,7 +40,20 @@ const Chats = ({ selectedChat, setSelectedChat, loggedInUser, users }) => {
                 />
               )}
 
-              <h1 className="font-bold">{user?.username}</h1>
+              <div>
+                <h1 className="font-bold  capitalize">{user?.username}</h1>
+                <div className="flex justify-end items-center">
+                  <span>
+                    <BiMessageDetail
+                      onClick={() => createChat(user._id)}
+                      className="text-xl mr-5 hover:text-cyan-500 cursor-pointer "
+                    />
+                  </span>
+                  <span>
+                    <FcVideoCall className="text-2xl cursor-pointer " />
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         ))}
