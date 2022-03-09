@@ -71,7 +71,7 @@ const useFirebase = () => {
 
   useEffect(() => {
     fetch(
-      `https://sheltered-journey-99057.herokuapp.com/users/${currentUser?.email}`
+      `http://localhost:4030/users/${currentUser?.email}`
     )
       .then((response) => response.json())
       .then((data) => {
