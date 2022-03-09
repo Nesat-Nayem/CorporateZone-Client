@@ -1,142 +1,112 @@
-import questions from "../../../../public/questions.json";
-import { useEffect, useState } from "react";
-import useCountdown from "./Countdown/useCountdown";
+import { useState } from "react";
+import Quiz from "./Quiz/Quiz";
+import tech from "../../../../public/tech.json";
+import SkillItem from "./SkillItem";
+import Swal from "sweetalert2";
+import { RiDoubleQuotesR } from "react-icons/ri";
 
 const SkillTest = () => {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedOptions, setSelectedOptions] = useState([]);
-  const [score, setScore] = useState(0);
-  const [showScore, setShowScore] = useState(false);
+  const [state, setState] = useState(false);
+  const [technology, setTechnology] = useState("");
 
-  const endTime = new Date().getTime() + 20000;
-  const [timeLeft, setEndTime] = useCountdown(endTime);
-
-  const minutes = Math.floor(timeLeft / 60000) % 60;
-  const seconds = Math.floor(timeLeft / 1000) % 60;
-
-  const handleAnswerOption = (answer) => {
-    setSelectedOptions([
-      (selectedOptions[currentQuestion] = { answerByUser: answer }),
-    ]);
-    setSelectedOptions([...selectedOptions]);
-    console.log(selectedOptions);
-  };
-
-  /* const handlePrevious = () =>
-    {
-        const prevQues = currentQuestion - 1;
-        prevQues >= 0 && setCurrentQuestion(prevQues);
-    }; */
-
-  const handleNext = () => {
-    const nextQues = currentQuestion + 1;
-    nextQues < questions.length && setCurrentQuestion(nextQues);
-    setEndTime(endTime);
-  };
-
-  const handleSubmitButton = () => {
-    let newScore = 0;
-    for (let i = 0; i < questions.length; i++) {
-      questions[i].answerOptions.map(
-        (answer) =>
-          answer.isCorrect &&
-          answer.answer === selectedOptions[i]?.answerByUser &&
-          (newScore += 1)
-      );
+  const startTest = (tech) => {
+    if (tech) {
+      Swal.fire({
+        title: `${tech} Assessment Test`,
+        icon: "warning",
+        html:
+          "<b><u>Ready? You will now be redirected!</u></b>, " +
+          "<p>This is a timed test. Please make sure you are not interrupted during the test, as the timer cannot be paused once started. Please ensure you have a stable internet connection.</p> " +
+          "<h2>Time Duration: <u><b>200 Seconds</b></u><h2/>" +
+          "<h2>No. of Questions: <u><b>10 MCQ</b></u><h2/>",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: `Let's Start!`,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          setState(true);
+          setTechnology(tech);
+        }
+      });
     }
-    setScore(newScore);
-    setShowScore(true);
   };
-
-  const startAgain = () => {
-    setShowScore(false);
-    setCurrentQuestion(0);
-    setSelectedOptions([]);
-    setEndTime(endTime);
-  };
-
-  /* if (seconds === 0) {
-        handleNext();
-    }; */
-
-  useEffect(() => {
-    if (currentQuestion + 1 === questions.length && seconds === 0) {
-      handleSubmitButton();
-    } else if (seconds === 0) {
-      handleNext();
-    }
-  }, [seconds]);
 
   return (
-    <div className="flex flex-col px-5 py-20 justify-center items-center">
-      <div>
-        <h1 className="text-white">Mithoon Quiz App</h1>
-      </div>
-      {showScore ? (
-        <div className="lg:w-1/2 bg-[#1A1A1A] text-center shadow-md rounded-xl p-5">
-          <h1 className="text-3xl font-semibold text-white">
-            You scored {score} out of {questions.length}
-          </h1>
-          <button
-            onClick={startAgain}
-            className="text-xl my-5 p-3 font-semibold text-white/70 border-2 border-dotted border-white rounded-md hover:bg-white hover:text-black"
-          >
-            Start Again
-          </button>
-        </div>
+    <>
+      {state ? (
+        <Quiz technology={technology} setState={setState} />
       ) : (
-        <div className="lg:w-1/2 bg-[#1A1A1A] shadow-md rounded-xl p-5">
-          <div className="w-full">
-            <div className="flex justify-between items-center">
-              <h4 className="text-xl text-white/60">
-                Question {currentQuestion + 1} of {questions.length}
-              </h4>
-              <h4 className="text-white text-xl border-2 border-dotted border-white rounded-xl px-5">{`${minutes}:${seconds}`}</h4>
-            </div>
-            <div className="mt-4 text-2xl text-white">
-              {questions[currentQuestion].question}
+        <div className="container">
+          <div className="flex justify-center items-center mb-10">
+            <div className="lg:w-1/2 text-center">
+              <h2 className="bg-slate-500 text-2xl tracking-widest text-white font-bold rounded-3xl py-1 shadow-xl">
+                INSTRUCTIONS
+              </h2>
+              <RiDoubleQuotesR className="w-10 h-10 text-pink-500 relative top-5" />
+              <p className="text-xl text-justify text-black bg-slate-300 rounded-2xl p-5">
+                This is a timed test. Each question takes 20 seconds and the
+                number of questions in each test is 10. So, Please make sure you
+                are not interrupted during the test, as the timer cannot be
+                paused once started. Please ensure you have a stable internet
+                connection. Before taking the test, please go through the FAQs
+                to resolve your queries related to the test.
+              </p>
             </div>
           </div>
-          <div className="flex flex-col w-full">
-            {questions[currentQuestion].answerOptions.map((answer, index) => (
-              <div
-                key={index}
-                className="flex items-center w-full py-4 pl-5 m-2 ml-0 space-x-2 border-2 cursor-pointer border-white/10 rounded-xl bg-white/5"
-                onClick={(e) => handleAnswerOption(answer.answer)}
-              >
-                <input
-                  type="radio"
-                  name={answer.answer}
-                  value={answer.answer}
-                  checked={
-                    answer.answer ===
-                    selectedOptions[currentQuestion]?.answerByUser
-                  }
-                  onChange={(e) => handleAnswerOption(answer.answer)}
-                  className="w-6 h-6 bg-black"
-                />
-                <p className="ml-6 text-white">{answer.answer}</p>
+          <div className="flex flex-col justify-center items-center">
+            <p className="text-xl text-center bg-white text-black font-bold rounded-3xl shadow-md p-2">
+              Choose a{" "}
+              <span className="text-rose-500 font-extrabold">DOMAIN</span> from
+              the bottom in which you feel confident enough
+            </p>
+            <div className=" border-b-2 border-dotted border-red-700">
+              <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 my-10">
+                {tech.map((t) => (
+                  <div key={t.key}>
+                    <SkillItem
+                      img={t.img}
+                      tech={t.tech}
+                      startTest={startTest}
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
-          <div className="flex justify-between w-full mt-4 text-white">
-            <button className="w-[49%] py-3 bg-white text-slate-700 hover:bg-pink-600 hover:text-white transition duration-700 ease-in-out hover:scale-105 rounded-xl shadow-md text-lg">
-              Cancel
-            </button>
-            <button
-              onClick={
-                currentQuestion + 1 === questions.length
-                  ? handleSubmitButton
-                  : handleNext
-              }
-              className="w-[49%] py-3 bg-white text-slate-700 hover:bg-pink-600 hover:text-white transition duration-700 ease-in-out hover:scale-105 rounded-xl shadow-md text-lg"
-            >
-              {currentQuestion + 1 === questions.length ? "Submit" : "Next"}
-            </button>
+          <div className="container my-10">
+            <div className="flex flex-col justify-center items-center">
+              <div className="text-center">
+                <p className="bg-slate-500 text-lg lg:text-xl text-white font-bold rounded-3xl p-2 shadow-xl">
+                  Are you nervous? Scared? May be a little apprehensive?{" "}
+                  <span className="text-rose-300 font-extrabold">
+                    THAT'S OK !
+                  </span>
+                </p>
+                <div className="text-xl text-justify text-slate-500 bg-rose-100 rounded-2xl p-5 mt-10 shadow-md">
+                  <p className="text-center text-lg text-rose-500 font-bold">
+                    HERE ARE A FEW TIPS TO HELP YOU !!!
+                  </p>
+                  <ul>
+                    <li>
+                      1. Each question takes 20 sec. Firstly, pace yourself and
+                      take your time!
+                    </li>
+                    <li>
+                      2. Don't worry if you don't get your desired mark. You can
+                      retake the test.
+                    </li>
+                    <li>
+                      3. And finally take it easy. I know you can do it ...
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

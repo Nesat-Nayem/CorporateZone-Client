@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <>
-      <footer className="text-center px:2 md:px-20 lg:text-left bg-black text-white">
+    <footer>
+      <div className="text-center px:2 md:px-20 lg:text-left bg-slate-800 text-white">
         <div className="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
           <div className="mr-12 hidden lg:block">
             <span>Get connected with us on social networks:</span>
@@ -228,11 +228,6 @@ const Footer = () => {
               </p>
               <p className="mb-2">
                 <Link href="/">
-                  <a className="">Jobs in India</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
                   <a className="">Jobs in Bangladesh</a>
                 </Link>
               </p>
@@ -312,24 +307,6 @@ const Footer = () => {
                   ></path>
                 </svg>
                 + 09 234 567 89
-              </p>
-              <h6 className="uppercase font-semibold mt-4 mb-2 flex justify-center md:justify-start">
-                About
-              </h6>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Startup Jobs</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">We are Hiring</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Unsubcribe</a>
-                </Link>
               </p>
             </div>
           </div>
@@ -496,11 +473,6 @@ const Footer = () => {
               </p>
               <p className="mb-2">
                 <Link href="/">
-                  <a className="">Remote Graphic Designer Jobs</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
                   <a className="">Remote Operations Manager Jobs</a>
                 </Link>
               </p>
@@ -522,54 +494,19 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex flex-wrap flex-row items-center mt-2">
-            <Link href="/">
-              <h6
-                className="
-                                            uppercase
-                                            font-semibold
-                                            flex
-                                            items-center
-                                            justify-center
-                                            md:justify-start
-                                            hover:text-red-500
-                                          "
-              >
-                <svg
-                  aria-hidden="true"
-                  focusable="false"
-                  data-prefix="fas"
-                  data-icon="cubes"
-                  className="w-6 mr-3"
-                  role="img"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M488.6 250.2L392 214V105.5c0-15-9.3-28.4-23.4-33.7l-100-37.5c-8.1-3.1-17.1-3.1-25.3 0l-100 37.5c-14.1 5.3-23.4 18.7-23.4 33.7V214l-96.6 36.2C9.3 255.5 0 268.9 0 283.9V394c0 13.6 7.7 26.1 19.9 32.2l100 50c10.1 5.1 22.1 5.1 32.2 0l103.9-52 103.9 52c10.1 5.1 22.1 5.1 32.2 0l100-50c12.2-6.1 19.9-18.6 19.9-32.2V283.9c0-15-9.3-28.4-23.4-33.7zM358 214.8l-85 31.9v-68.2l85-37v73.3zM154 104.1l102-38.2 102 38.2v.6l-102 41.4-102-41.4v-.6zm84 291.1l-85 42.5v-79.1l85-38.8v75.4zm0-112l-102 41.4-102-41.4v-.6l102-38.2 102 38.2v.6zm240 112l-85 42.5v-79.1l85-38.8v75.4zm0-112l-102 41.4-102-41.4v-.6l102-38.2 102 38.2v.6z"
-                  ></path>
-                </svg>
-                <span className="text-md">CorporateZone</span>
-              </h6>
-            </Link>
             <p className="ml-3 text-xs">
-              <Link href="/">
-                <a className="">Startup Jobs</a>
+              <Link href="/about">
+                <a className="">About us</a>
               </Link>
             </p>
             <p className="ml-3 text-xs">
-              <Link href="/">
-                <a className="">We are Hiring</a>
-              </Link>
-            </p>
-            <p className="ml-3 text-xs">
-              <Link href="/">
-                <a className="">Twitter</a>
+              <Link href="/contact">
+                <a className="">Contact us</a>
               </Link>
             </p>
             <p className="ml-3 text-xs">
               <Link href="/policy">
-                <a className="">Terms & Risks</a>
+                <a className="">Terms & Conditions</a>
               </Link>
             </p>
             <p className="ml-3 text-xs">
@@ -579,17 +516,14 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        <div className="text-center p-6 bg-gray-900">
-          <span>© 2022 Copyright : </span>
-          <a
-            className="text-white font-semibold hover:text-blue-500"
-            href="https://tailwind-elements.com/"
-          >
-            @Team-CodeExpress
-          </a>
-        </div>
-      </footer>
-    </>
+      </div>
+      <div className="text-center p-6 bg-[#42C2FF]">
+        <span>© 2022 Copyright : </span>
+        <a className="text-white font-semibold hover:text-black" href="#">
+          @Team-CodeExpress
+        </a>
+      </div>
+    </footer>
   );
 };
 

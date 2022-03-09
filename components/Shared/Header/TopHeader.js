@@ -13,7 +13,7 @@ const TopHeader = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
 
   return (
-    <div className="bg-cyan-500 text-white px-10 md:flex hidden justify-between py-3 items-center">
+    <div className="bg-[#42C2FF] text-white px-10 md:flex hidden justify-between py-3 items-center">
       <div className=" lg:flex hidden">
         <p className="flex space-x-2 border-r pr-5 items-center">
           <BsTelephoneFill className="" /> <span>Phone: </span>+12 3456 7890{" "}

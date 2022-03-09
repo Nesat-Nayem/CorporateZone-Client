@@ -13,8 +13,8 @@ const SigninForm = () => {
   } = useForm();
   const onSubmit = (data) => {
     logInWithEmailAndPassword(data.email, data.password);
-    console.log(data);
-    // router.push("/");
+
+    //  router.push("/");
   };
   return (
     <>

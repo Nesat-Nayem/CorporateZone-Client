@@ -6,7 +6,7 @@ const Jobs = () => {
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
-    fetch("https://sheltered-journey-99057.herokuapp.com/jobs")
+    fetch("http://localhost:4030/jobs")
       .then((res) => res.json())
       .then((data) => setJobs(data.data));
   }, []);
@@ -16,7 +16,7 @@ const Jobs = () => {
   const handleDelete = id =>{
     const proccess = window.confirm('Are You Sure You Want To Delete')
     if(proccess){
-      fetch(`https://sheltered-journey-99057.herokuapp.com/jobs/${id}`,{
+      fetch(`http://localhost:4030/jobs/${id}`,{
       method:'DELETE'
     })
    .then(res => res.json())
