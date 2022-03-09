@@ -99,7 +99,7 @@ const JobPost = () => {
         allData.location = value.label;
         allData.jobTags = "Media, Medicla, Restaurants";
         axios
-      .post("https://sheltered-journey-99057.herokuapp.com/jobs", allData)
+      .post("http://localhost:4030/jobs", allData)
       .then( (res) => {
         if (res.status === 200)
         {

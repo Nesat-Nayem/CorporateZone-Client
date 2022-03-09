@@ -49,7 +49,7 @@ const HeroArea = () => {
             style={{
               color: "#93959E",
             }}
-            className="text-md md:text-xl"
+            className="text-md md:text-xl job_crypess"
           >
             Find Jobs, Employment & Career Opportunities
           </h3>

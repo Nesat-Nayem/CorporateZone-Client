@@ -13,7 +13,7 @@ const PostedJobs = ({ jobs }) => {
       const fetchData = async () => {
           const data = await (
               await fetch(
-                  `https://sheltered-journey-99057.herokuapp.com/jobs`
+                  `http://localhost:4030/jobs`
               )
           ).json();
           setpostJobs(data.data.filter(crrElm => crrElm.companyEmail === loggedInUser.email))

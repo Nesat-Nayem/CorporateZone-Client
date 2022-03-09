@@ -344,7 +344,7 @@ export default Jobdetails;
 
 export const getServerSideProps = async (context) => {
   const res = await fetch(
-    `https://sheltered-journey-99057.herokuapp.com/jobs/${context.params.id}`
+    `http://localhost:4030/jobs/${context.params.id}`
   );
   const data = await res.json();
 

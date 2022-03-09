@@ -71,7 +71,7 @@ const fakeData = [
 const Blogs = () => {
   return (
     <div>
-      <h1 className="text-3xl font-serif font-bold pb-5">Blogs</h1>
+      <h1 className="text-3xl font-serif font-bold pb-5 blog_title">Blogs</h1>
       <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1  md:gap-7 gap-3">
         {fakeData.map((blog, index) => {
           return (

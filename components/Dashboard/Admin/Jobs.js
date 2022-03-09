@@ -5,7 +5,7 @@ const Jobs = () => {
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
-    fetch("https://sheltered-journey-99057.herokuapp.com/jobs")
+    fetch("http://localhost:4030/jobs")
       .then((res) => res.json())
       .then((data) => setJobs(data.data));
   }, []);

@@ -18,7 +18,7 @@ const RecruiterUpdateForm = () => {
   const onSubmit = (data) => {
     const newData = { ...data, photoURL };
     fetch(
-      `https://sheltered-journey-99057.herokuapp.com/users/${loggedInUser?.email}`,
+      `http://localhost:4030/users/${loggedInUser?.email}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },

@@ -9,7 +9,7 @@ import Footer from "../../components/Shared/Footer/Footer";
 
 
 export const getStaticPaths = async () => {
-    const res = await fetch("https://sheltered-journey-99057.herokuapp.com/jobs");
+    const res = await fetch("http://localhost:4030/jobs");
     const data = await res.json();
     
     const paths = data.data.map((crrElm) => {
@@ -27,7 +27,7 @@ export const getStaticPaths = async () => {
     };
     export const getStaticProps = async (context) => {
         const id = context.params.jobno;
-        const res = await fetch(`https://sheltered-journey-99057.herokuapp.com/jobs/${id}`);
+        const res = await fetch(`http://localhost:4030/jobs/${id}`);
         const data = await res.json();
       
         return {

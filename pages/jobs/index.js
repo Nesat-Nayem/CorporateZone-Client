@@ -22,7 +22,7 @@ export const getServerSideProps = async (context) => {
   // without filtering
   if (jobType) {
     const response = await fetch(
-      `https://sheltered-journey-99057.herokuapp.com/jobs/?jobType=${jobType}`
+      `http://localhost:4030/jobs/?jobType=${jobType}`
     );
     const data = await response.json();
 
@@ -34,7 +34,7 @@ export const getServerSideProps = async (context) => {
     };
   } else {
     const response = await fetch(
-      "https://sheltered-journey-99057.herokuapp.com/jobs"
+      "http://localhost:4030/jobs"
     );
     const data = await response.json();
     return {

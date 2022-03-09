@@ -23,7 +23,7 @@ const PostedJobs = (props) => {
   const filterJobs = async (e) => {
     setCategory(e.target.value);
     const response = await fetch(
-      `https://sheltered-journey-99057.herokuapp.com/jobs?jobType=${e.target.value}`
+      `http://localhost:4030/jobs?jobType=${e.target.value}`
     );
     const data = await response.json();
     setJobs(data.data);

@@ -41,7 +41,7 @@ import { useEffect, useState } from "react";
 const RecentJobs = () => {
   const [fakejobs, setFakeJobs] = useState([]);
   useEffect(() => {
-    fetch("https://sheltered-journey-99057.herokuapp.com/jobs")
+    fetch("http://localhost:4030/jobs")
       .then((res) => res.json())
       .then((data) => setFakeJobs(data.data.slice(0, 4)));
   }, []);
