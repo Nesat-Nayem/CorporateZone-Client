@@ -65,7 +65,10 @@
   {
     "question": "Which one is true?",
     "answerOptions": [
-      { "answer": "QuerySelectorAll will return a nodeList", "isCorrect": true },
+      {
+        "answer": "QuerySelectorAll will return a nodeList",
+        "isCorrect": true
+      },
       { "answer": "QuerySelectorAll will provide you one single element" },
       { "answer": "QuerySelector will give you a list of matched elements" },
       { "answer": "QuerySelectorAll will return you an array" }
@@ -84,8 +87,8 @@
     "question": "which one will create a new html element/tag?",
     "answerOptions": [
       { "answer": "createElementbytag" },
-      { "answer": "createElement", "isCorrect": true  },
-      { "answer": "appendElement"},
+      { "answer": "createElement", "isCorrect": true },
+      { "answer": "appendElement" },
       { "answer": "createTag" }
     ]
   }

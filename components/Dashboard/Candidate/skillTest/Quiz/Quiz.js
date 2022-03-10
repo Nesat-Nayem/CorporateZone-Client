@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import useCountdown from "./Countdown/useCountdown";
-import html from "../../../../../public/html.json"
+import html from "../../../../../public/html.json";
 import css from "../../../../../public/css.json";
 import javascript from "../../../../../public/javascript.json";
 import uc from "../../../../../public/uc.json";
@@ -15,19 +15,19 @@ const Quiz = ({ technology, setState }) =>
 
   useEffect(() =>
   {
-    if (technology === 'HTML') {
+    if (technology === "HTML") {
       setQuestions(html);
-    } else if (technology === 'CSS') {
+    } else if (technology === "CSS") {
       setQuestions(css);
-    } else if (technology === 'JavaScript') {
+    } else if (technology === "JavaScript") {
       setQuestions(javascript);
-    } else if (technology === 'Bootstrap') {
+    } else if (technology === "Bootstrap") {
       setQuestions(uc);
-    } else if (technology === 'ReactJS') {
+    } else if (technology === "ReactJS") {
       setQuestions(uc);
-    } else if (technology === 'NextJS') {
+    } else if (technology === "NextJS") {
       setQuestions(uc);
-    } else if (technology === 'NodeJS') {
+    } else if (technology === "NodeJS") {
       setQuestions(uc);
     } else {
       setQuestions(uc);
@@ -89,10 +89,22 @@ const Quiz = ({ technology, setState }) =>
   return (
     <div className="flex flex-col justify-center items-center">
       <div>
-        <h1 className="text-white border-2 text-center bg-[#1A1A1A] tracking-widest rounded-3xl font-bold py-2">{technology} Skill Assessment Test</h1>
+        <h1 className="text-white border-2 text-center bg-[#1A1A1A] tracking-widest rounded-3xl font-bold py-2">
+          {technology} Skill Assessment Test
+        </h1>
         <div className="flex bg-rose-500 text-white rounded-2xl p-3 my-2">
-          <h2 className="mr-10">Time Duration: <u><b>200 Seconds</b></u></h2>
-          <h2>No. of Questions: <u><b>10 MCQ</b></u></h2>
+          <h2 className="mr-10">
+            Time Duration:{" "}
+            <u>
+              <b>200 Seconds</b>
+            </u>
+          </h2>
+          <h2>
+            No. of Questions:{" "}
+            <u>
+              <b>10 MCQ</b>
+            </u>
+          </h2>
         </div>
       </div>
       {showScore ? (
@@ -100,7 +112,9 @@ const Quiz = ({ technology, setState }) =>
           <h1 className="text-3xl font-semibold text-white">
             You scored {score} out of {questions?.length}
           </h1>
-          <button onClick={() => setState(false)} className="text-xl my-5 p-3 font-semibold text-white/70 border-2 border-dotted border-white rounded-md hover:bg-white hover:text-black"
+          <button
+            onClick={() => setState(false)}
+            className="text-xl my-5 p-3 font-semibold text-white/70 border-2 border-dotted border-white rounded-md hover:bg-white hover:text-black"
           >
             Start Again
           </button>
@@ -141,7 +155,10 @@ const Quiz = ({ technology, setState }) =>
             ))}
           </div>
           <div className="flex justify-between w-full mt-4 text-white">
-            <button onClick={() => setState(false)} className="w-[49%] py-3 bg-white text-slate-700 hover:bg-pink-600 hover:text-white transition duration-700 ease-in-out hover:scale-105 rounded-xl shadow-md text-lg">
+            <button
+              onClick={() => setState(false)}
+              className="w-[49%] py-3 bg-white text-slate-700 hover:bg-pink-600 hover:text-white transition duration-700 ease-in-out hover:scale-105 rounded-xl shadow-md text-lg"
+            >
               Cancel
             </button>
             <button

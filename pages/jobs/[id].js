@@ -17,8 +17,13 @@ import { MdTitle } from "react-icons/md";
 import Footer from "../../components/Shared/Footer/Footer";
 import Header from "../../components/Shared/Header/Header";
 import Layout from "../../components/layout/Layout";
+import axios from "axios";
+import { useSelector } from "react-redux";
+import cogoToast from "cogo-toast";
 
-const jobdetails = ({ data }) => {
+const Jobdetails = ({ data }) => {
+  const loggedInUser = useSelector((state) => state.user.loggedInUser);
+
   const { main_head, Card_title, mini_title } = styles;
   const {
     jobTitle,
@@ -40,6 +45,63 @@ const jobdetails = ({ data }) => {
     lastDate,
     postedTime,
   } = data;
+
+  const applyJob = () => {
+    const options = { position: "bottom-right" };
+    if (!loggedInUser) {
+      return cogoToast.warn(
+        "Please make sure to sign in before apply!",
+        options
+      );
+    }
+    if (
+      loggedInUser &&
+      (loggedInUser?.role === "recruiter" || loggedInUser?.role === "admin")
+    ) {
+      return cogoToast.warn(
+        "You are not a candidate for applying a job!",
+        options
+      );
+    }
+    if (
+      (loggedInUser &&
+        loggedInUser.role === "candidate" &&
+        !loggedInUser?.githubProfile) ||
+      !loggedInUser?.linkedInProfile ||
+      !loggedInUser?.portfolio ||
+      !loggedInUser?.resumeLink ||
+      !loggedInUser?.selectedSkills.length
+    ) {
+      cogoToast.warn(" Dude please update your profile now!", options);
+    }
+    if (
+      loggedInUser &&
+      loggedInUser?.githubProfile &&
+      loggedInUser?.linkedInProfile &&
+      loggedInUser?.portfolio &&
+      loggedInUser?.resumeLink &&
+      loggedInUser?.selectedSkills.length
+    ) {
+      const jobData = {
+        jobId: data._id,
+        candidateEmail: loggedInUser.email,
+        companyName,
+        jobTitle,
+        jobType,
+      };
+      axios
+        .post(
+          "https://murmuring-spire-15534.herokuapp.com/appliedJobs",
+          jobData
+        )
+        .then((response) => {
+          cogoToast.success("Apply successfull", options);
+        })
+        .catch((err) => {
+          cogoToast.warn(`${err.message}`, options);
+        });
+    }
+  };
   return (
     <Layout title={jobTitle}>
       <Header />
@@ -132,7 +194,7 @@ const jobdetails = ({ data }) => {
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3746841.2106474624!2d88.09993645646647!3d23.495622700490763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30adaaed80e18ba7%3A0xf2d28e0c4e1fc6b!2sBangladesh!5e0!3m2!1sen!2sbd!4v1644300400443!5m2!1sen!2sbd"
                 width="600"
                 height="300"
-                allowFullScreen=""
+                allowFullScreen
                 loading="lazy"
               ></iframe>
             </div>
@@ -255,9 +317,20 @@ const jobdetails = ({ data }) => {
 
                 <div className="flex justify-center mt-6 items-center">
                   <div className="ml-10">
-                    <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-4 px-20 rounded tracking-wider">
+                    <button
+                      onClick={applyJob}
+                      className="bg-red-500 hover:bg-red-700 text-white font-bold py-4 px-20 rounded tracking-wider"
+                    >
                       APPLY NOW!
                     </button>
+
+                    {/* // modal  */}
+                    {/* <JobApply
+                      modalIsOpen={modalIsOpen}
+                      afterOpenModal={afterOpenModal}
+                      closeModal={closeModal}
+                      loggedInUser={loggedInUser}
+                    /> */}
                   </div>
                 </div>
               </div>
@@ -270,11 +343,11 @@ const jobdetails = ({ data }) => {
   );
 };
 
-export default jobdetails;
+export default Jobdetails;
 
 export const getServerSideProps = async (context) => {
   const res = await fetch(
-    `https://sheltered-journey-99057.herokuapp.com/jobs/${context.params.id}`
+    `https://murmuring-spire-15534.herokuapp.com/jobs/${context.params.id}`
   );
   const data = await res.json();
 
