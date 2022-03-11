@@ -2,51 +2,51 @@ import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import Badge from "./Badge"
+import Badge from "./Badge";
 
-const BadgeShow = () =>
-{
-    const loggedInUser = useSelector((state) => state.user.loggedInUser);
+const BadgeShow = () => {
+  const loggedInUser = useSelector((state) => state.user.loggedInUser);
 
-    const [result, setResult] = useState([]);
+  const [result, setResult] = useState([]);
 
-    useEffect(() =>
-    {
-        axios.get(`http://localhost:4030/skill/${loggedInUser?.email}`)
-            .then(function (response)
-            {
-                setResult(response?.data)
-            })
-            .catch(function (error)
-            {
-                console.log(error);
-            })
-    }, [loggedInUser?.email]);
+  useEffect(() => {
+    axios
+      .get(
+        `https://murmuring-spire-15534.herokuapp.com/skill/${loggedInUser?.email}`
+      )
+      .then(function (response) {
+        setResult(response?.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, [loggedInUser?.email]);
 
-    return (
-        <>
-            {
-                (result.length === 0) ?
-                    <div>
-                        <p className="font-semibold text-red-700 leading-8">
-                            You have no skill test badges.
-                            <br />
-                            Go to the&nbsp;
-                            <Link href={`/dashboard/skillTest`}>
-                                <a className="bg-blue-600 text-white rounded cursor-pointer p-2">
-                                    Skill Test
-                                </a>
-                            </Link>
-                            &nbsp;to earn the skill badge.
-                        </p>
-                    </div>
-                    :
-                    <div className="grid md:grid-cols-2 gap-3">
-                        {result?.map(r => <Badge key={r._id} badge={r?.technology} />)}
-                    </div>
-            }
-        </>
-    )
-}
+  return (
+    <>
+      {result.length === 0 ? (
+        <div>
+          <p className="font-semibold text-red-700 leading-8">
+            You have no skill test badges.
+            <br />
+            Go to the&nbsp;
+            <Link href={`/dashboard/skillTest`}>
+              <a className="bg-blue-600 text-white rounded cursor-pointer p-2">
+                Skill Test
+              </a>
+            </Link>
+            &nbsp;to earn the skill badge.
+          </p>
+        </div>
+      ) : (
+        <div className="grid md:grid-cols-2 gap-3">
+          {result?.map((r) => (
+            <Badge key={r._id} badge={r?.technology} />
+          ))}
+        </div>
+      )}
+    </>
+  );
+};
 
-export default BadgeShow
+export default BadgeShow;
