@@ -3,7 +3,8 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 
-import {
+import
+{
   MdOutlineLogout,
   MdOutlineChevronLeft,
   MdOutlineMenu,
@@ -26,8 +27,10 @@ import AdminProfile from "../Admin/AdminProfile";
 import SkillTest from "../Candidate/skillTest/SkillTest";
 import AppliedJobs from "../Candidate/AppliedJobs/AppliedJobs";
 import ChatLayout from "../Messages/ChatLayout";
+import BuildResume from "../Candidate/BuildResume/BuildResume";
 
-const DashboardRoutes = ({ jobs }) => {
+const DashboardRoutes = ({ jobs }) =>
+{
   const [trigger, setTrigger] = useState(false);
   const router = useRouter();
   const { params = [] } = router.query;
@@ -39,7 +42,8 @@ const DashboardRoutes = ({ jobs }) => {
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
 
   // log out handler
-  const logOutHandler = () => {
+  const logOutHandler = () =>
+  {
     router.push("/");
     dispatch(logOut);
   };
@@ -48,11 +52,10 @@ const DashboardRoutes = ({ jobs }) => {
     <>
       <div className="antialiased min-h-screen relative lg:flex">
         <nav
-          className={`absolute lg:relative z-10 w-72 lg:transform-none lg:opacity-100 bg-indigo-500/100 text-white h-screen ${
-            !trigger
-              ? "inset-0 opacity-0 transform duration-200 -translate-x-full ease-out"
-              : "inset-0 opacity-100 transform duration-200 translate-x-0 ease-in"
-          }`}
+          className={`absolute lg:relative z-10 w-72 lg:transform-none lg:opacity-100 bg-indigo-500/100 text-white h-screen ${!trigger
+            ? "inset-0 opacity-0 transform duration-200 -translate-x-full ease-out"
+            : "inset-0 opacity-100 transform duration-200 translate-x-0 ease-in"
+            }`}
         >
           <div className="flex justify-between m-5">
             <div className="flex flex-col items-center mx-auto">
@@ -99,16 +102,16 @@ const DashboardRoutes = ({ jobs }) => {
                   {/* shared for candidate and recruiter */}
                   {(loggedInUser?.role === "recruiter" ||
                     loggedInUser?.role === "candidate") && (
-                    <Link href={`/dashboard/chats`}>
-                      <a
-                        onClick={() => setTrigger(false)}
-                        className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
-                      >
-                        <MdDashboard className="text-xl" />
-                        &nbsp;&nbsp;&nbsp;Messages
-                      </a>
-                    </Link>
-                  )}
+                      <Link href={`/dashboard/chats`}>
+                        <a
+                          onClick={() => setTrigger(false)}
+                          className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
+                        >
+                          <MdDashboard className="text-xl" />
+                          &nbsp;&nbsp;&nbsp;Messages
+                        </a>
+                      </Link>
+                    )}
                 </li>
               }
             </ul>
@@ -200,6 +203,10 @@ const DashboardRoutes = ({ jobs }) => {
             {/* candidate profile update */}
             {params[0] === "skillTest" &&
               loggedInUser?.role === "candidate" && <SkillTest />}
+
+            {/* candidate profile update */}
+            {params[0] === "BuildResume" &&
+              loggedInUser?.role === "candidate" && <BuildResume />}
 
             {/* candidate profile update */}
             {params[0] === "chats" &&
