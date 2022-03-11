@@ -4,15 +4,21 @@ import html from "../../../../../public/html.json";
 import css from "../../../../../public/css.json";
 import javascript from "../../../../../public/javascript.json";
 import uc from "../../../../../public/uc.json";
+import { useSelector } from "react-redux";
+import axios from "axios";
 
-const Quiz = ({ technology, setState }) => {
+const Quiz = ({ technology, setState }) =>
+{
+  const loggedInUser = useSelector((state) => state.user.loggedInUser);
+
   const [questions, setQuestions] = useState({});
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     if (technology === "HTML") {
       setQuestions(html);
     } else if (technology === "CSS") {
@@ -38,7 +44,8 @@ const Quiz = ({ technology, setState }) => {
   const minutes = Math.floor(timeLeft / 60000) % 60;
   const seconds = Math.floor(timeLeft / 1000) % 60;
 
-  const handleAnswerOption = (answer) => {
+  const handleAnswerOption = (answer) =>
+  {
     setSelectedOptions([
       (selectedOptions[currentQuestion] = { answerByUser: answer }),
     ]);
@@ -46,19 +53,15 @@ const Quiz = ({ technology, setState }) => {
     console.log(selectedOptions);
   };
 
-  /* const handlePrevious = () =>
-    {
-        const prevQues = currentQuestion - 1;
-        prevQues >= 0 && setCurrentQuestion(prevQues);
-    }; */
-
-  const handleNext = () => {
+  const handleNext = () =>
+  {
     const nextQues = currentQuestion + 1;
     nextQues < questions.length && setCurrentQuestion(nextQues);
     setEndTime(endTime);
   };
 
-  const handleSubmitButton = () => {
+  const handleSubmitButton = () =>
+  {
     let newScore = 0;
     for (let i = 0; i < questions.length; i++) {
       questions[i].answerOptions.map(
@@ -68,11 +71,36 @@ const Quiz = ({ technology, setState }) => {
           (newScore += 1)
       );
     }
-    setScore(newScore);
-    setShowScore(true);
+    saveResult(newScore);
   };
 
-  useEffect(() => {
+  const saveResult = (newScore) =>
+  {
+    let pass = false;
+    if (newScore >= 7) {
+      pass = true;
+
+      axios.put(`http://localhost:4030/skill/${technology}`, {
+        email: loggedInUser?.email,
+        technology: technology,
+        pass: pass
+      })
+        .then(function (response)
+        {
+          console.log(response);
+        })
+        .catch(function (error)
+        {
+          console.log(error);
+        });
+    }
+
+    setScore(newScore);
+    setShowScore(true);
+  }
+
+  useEffect(() =>
+  {
     if (currentQuestion + 1 === questions?.length && seconds === 0) {
       handleSubmitButton();
     } else if (seconds === 0) {
@@ -104,7 +132,12 @@ const Quiz = ({ technology, setState }) => {
       {showScore ? (
         <div className="lg:w-1/2 bg-[#1A1A1A] text-center shadow-md rounded-xl p-5">
           <h1 className="text-3xl font-semibold text-white">
-            You scored {score} out of {questions?.length}
+            {
+              (score >= 7) ?
+                `WoW, you did it. You've got ${technology} Badges...Check your profile`
+                :
+                `Didn't get any badges. Don't worry. Please try again. Good luck to you.`
+            }
           </h1>
           <button
             onClick={() => setState(false)}
