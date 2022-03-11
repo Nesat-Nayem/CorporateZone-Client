@@ -13,7 +13,7 @@ const ScrollableChat = ({ messages }) => {
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
   return (
     <ScrollableFeed>
-      {messages &&
+      {messages.length ? (
         messages?.map((m, i) => (
           <div style={{ display: "flex" }} key={m._id}>
             {(isSameSender(messages, m, i, loggedInUser?._id) ||
@@ -50,7 +50,12 @@ const ScrollableChat = ({ messages }) => {
               {m.content}
             </span>
           </div>
-        ))}
+        ))
+      ) : (
+        <div className="py-32 font-bold text-2xl flex items-center justify-center">
+          <h1>No chat history</h1>
+        </div>
+      )}
     </ScrollableFeed>
   );
 };

@@ -72,7 +72,9 @@ console.log(currentUser);
   };
 
   useEffect(() => {
-    fetch(`https://murmuring-spire-15534.herokuapp.com/users/${currentUser?.email}`)
+    fetch(
+      `https://murmuring-spire-15534.herokuapp.com/users/${currentUser?.email}`
+    )
       .then((response) => response.json())
       .then((data) => {
         dispatch(loggedInUserData(data));

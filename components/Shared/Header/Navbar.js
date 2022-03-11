@@ -1,5 +1,5 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import {
   ChartBarIcon,
@@ -9,6 +9,7 @@ import {
   ViewGridIcon,
   XIcon,
 } from "@heroicons/react/outline";
+
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
@@ -16,6 +17,8 @@ import useFirebase from "../../../redux/slices/user/useFirebase";
 import { MdLogin } from "react-icons/md";
 import { BsChatRightText } from "react-icons/bs";
 import { useRouter } from "next/router";
+import Notification from "./Notification";
+import axios from "axios";
 
 const pages = [
   {
@@ -39,6 +42,18 @@ export default function Navbar() {
   const currentUser = useSelector((state) => state.user.currentUser);
 console.log(currentUser);
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
+  const [notifications, setNotifications] = useState([]);
+
+  useEffect(() => {
+    const fetchNotifications = async () => {
+      const res = await fetch(
+        "https://murmuring-spire-15534.herokuapp.com/jobs/notifyJobs"
+      );
+      const data = await res.json();
+      setNotifications(data);
+    };
+    fetchNotifications();
+  }, [notifications]);
 
 
 
@@ -104,6 +119,7 @@ console.log(currentUser);
                 Blog
               </a>
             </Link>
+            {currentUser && <Notification notifications={notifications} />}
             {currentUser && (
               <>
                 <button
