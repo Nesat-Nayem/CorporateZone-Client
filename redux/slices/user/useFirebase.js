@@ -19,7 +19,7 @@ import {
 
 const useFirebase = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
-
+console.log(currentUser);
   const dispatch = useDispatch();
   const router = useRouter();
 
@@ -34,6 +34,7 @@ const useFirebase = () => {
   ) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
+        console.log(result);
         updateProfile(auth.currentUser, {
           displayName: username,
           photoURL: photoURL,
@@ -51,6 +52,7 @@ const useFirebase = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         dispatch(signIn(result.user));
+      
         router.push("/");
       })
       .catch((err) => {
@@ -69,13 +71,13 @@ const useFirebase = () => {
       });
   };
 
-  useEffect(() => {
-    fetch(`https://murmuring-spire-15534.herokuapp.com/users/${currentUser?.email}`)
-      .then((response) => response.json())
-      .then((data) => {
-        dispatch(loggedInUserData(data));
-      });
-  }, [currentUser?.email]);
+  // useEffect(() => {
+  //   fetch(`https://murmuring-spire-15534.herokuapp.com/users/${currentUser?.email}`)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       dispatch(loggedInUserData(data));
+  //     });
+  // }, [currentUser?.email]);
 
   // data save to database
   const saveData = async (data) => {
@@ -83,7 +85,7 @@ const useFirebase = () => {
       axios
         .post("https://murmuring-spire-15534.herokuapp.com/users", data)
         .then(function (response) {
-          console.log(response);
+          // console.log(response);
           router.push("/dashboard/profile");
         })
         .catch(function (error) {
@@ -93,18 +95,7 @@ const useFirebase = () => {
       console.error(err);
     }
   };
-  //   // observer function
-  //   useEffect(() => {
-  //     const unsubscribe = onAuthStateChanged(auth, (user) => {
-  //       if (user) {
-  //         dispatch(initialUserData({ user }));
-  //       } else {
-  //         dispatch(initialUserData(null));
-  //       }
-  //     });
-  //     return () => unsubscribe;
-  //   }, []);
-  //[currentUser?.email]);
+
   return { logInWithEmailAndPassword, signupWithEmailAndPassword, logOut };
 };
 

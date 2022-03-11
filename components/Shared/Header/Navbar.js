@@ -37,9 +37,10 @@ const pages = [
 
 export default function Navbar() {
   const currentUser = useSelector((state) => state.user.currentUser);
+console.log(currentUser);
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
 
-  console.log(loggedInUser);
+
 
   const router = useRouter();
 
@@ -58,7 +59,9 @@ export default function Navbar() {
   return (
     <Popover className="relative bg-white">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+
         <div className="flex relative justify-between items-center border-b-2 border-gray-100 py-6 lg:justify-start md:space-x-10">
+
           <div className="flex justify-start md:w-0 md:flex-1">
             <Link href="/">
               <a className="flex items-center">
@@ -69,12 +72,19 @@ export default function Navbar() {
               </a>
             </Link>
           </div>
+
+          {/* done */}
+
           <div className="-mr-2 -my-2 md:hidden">
             <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
               <span className="sr-only">Open menu</span>
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
           </div>
+
+    {/* second part */}
+
+
           <Popover.Group
             as="nav"
             className="hidden md:flex items-center space-x-10 relative"
@@ -111,6 +121,10 @@ export default function Navbar() {
             )}
           </Popover.Group>
         </div>
+
+
+
+
 
         {/* user popup */}
 
@@ -163,6 +177,9 @@ export default function Navbar() {
         </div>
       </div>
 
+
+
+
       <Transition
         as={Fragment}
         enter="duration-200 ease-out"
@@ -176,10 +193,18 @@ export default function Navbar() {
           focus
           className="relative bottom-20 inset-x-0 p-2 transition transform origin-top-right lg:hidden"
         >
+
+      {/* here */}
+
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+
+            {/* here */}
+
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
                 <div>
+
+
                   <Link href="/">
                     <a className="flex items-center">
                       <span className=" text-2xl font-extrabold  pl-3">
@@ -188,18 +213,32 @@ export default function Navbar() {
                       </span>
                     </a>
                   </Link>
+
+
                 </div>
+
+
                 <div className="-mr-2">
                   <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                     <span className="sr-only">Close menu</span>
                     <XIcon className="h-6 w-6" aria-hidden="true" />
                   </Popover.Button>
                 </div>
+
+
               </div>
+
+
+
+
+
+
               <div className="mt-6">
                 <nav className="grid gap-y-8">
                   {pages.map((item) => (
+                    
                     <Link key={item.name} href={item.href}>
+                     
                       <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                         <item.icon
                           className="flex-shrink-0 h-6 w-6 text-indigo-600"
@@ -213,7 +252,13 @@ export default function Navbar() {
                   ))}
                 </nav>
               </div>
+
+
+
             </div>
+
+
+
             <div className="py-6 px-5 space-y-6">
               <div>
                 <Link href="/signup">
@@ -231,7 +276,12 @@ export default function Navbar() {
                 </p>
               </div>
             </div>
+
+
           </div>
+
+
+
         </Popover.Panel>
       </Transition>
     </Popover>

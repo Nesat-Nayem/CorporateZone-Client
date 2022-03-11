@@ -49,6 +49,7 @@ const RecruiterForm = () => {
     axios
       .post("https://api.imgbb.com/1/upload", imageData)
       .then(function (response) {
+        console.log(response);
         setPhotoURL(response.data.data.display_url);
       })
       .catch(function (error) {
