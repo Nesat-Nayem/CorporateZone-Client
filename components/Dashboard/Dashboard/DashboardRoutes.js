@@ -52,9 +52,9 @@ const DashboardRoutes = ({ jobs }) =>
 
   return (
     <>
-      <div className="antialiased min-h-screen relative lg:flex">
+      <div className="antialiased h-screen relative overflow-y-scroll chats lg:flex">
         <nav
-          className={`absolute lg:relative z-10 w-72 lg:transform-none lg:opacity-100 bg-slate-800/100 text-white h-screen ${
+          className={`absolute lg:relative z-10 w-72 lg:transform-none lg:opacity-100 bg-slate-800/100 text-white h-screen overflow-y-scroll py-3 chats ${
             !trigger
               ? "inset-0 opacity-0 transform duration-200 -translate-x-full ease-out"
               : "inset-0 opacity-100 transform duration-200 translate-x-0 ease-in"
@@ -114,7 +114,7 @@ const DashboardRoutes = ({ jobs }) =>
                   )}
 
                   {/* shared for candidate and recruiter */}
-                  {loggedInUser && (
+                  {loggedInUser && loggedInUser?.role !== "admin" && (
                     <Link href={`/dashboard/chats`}>
                       <a
                         onClick={() => setTrigger(false)}
@@ -157,7 +157,7 @@ const DashboardRoutes = ({ jobs }) =>
           </header>
 
           {/* route components */}
-          <section className="p-5 bg-gray-100 ">
+          <section className="p-5 h-full overflow-y-scroll bg-gray-100 ">
             {!params?.length ? (
               <div>
                 <h1>Welcome to the dashboard</h1>
