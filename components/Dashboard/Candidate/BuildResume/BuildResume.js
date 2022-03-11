@@ -26,8 +26,8 @@ const BuildResume = () => {
   };
 
   return (
-    <div className="lg:w-9/12 md:w-9/12 w-full mx-auto">
-      <div className="flex flex-col justify-center items-center">
+    <div className=" mx-auto">
+      {/* <div className="flex justify-center items-center">
         <RiDoubleQuotesR className="w-10 h-10 text-pink-500 relative top-5" />
         <p className="text-center p-4 mb-5 bg-[#85F4FF] text-black rounded-xl shadow-md">
           When an employer looks at your resume, you've got about 30 seconds to
@@ -36,7 +36,8 @@ const BuildResume = () => {
           you need to be clear and to-the-point. So, Please fill the all
           necessary input.
         </p>
-      </div>
+      </div> */}
+      <h1 className="text-center py-5 text-3xl font-bold">Build Your Resume</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-3">
           <InputItem

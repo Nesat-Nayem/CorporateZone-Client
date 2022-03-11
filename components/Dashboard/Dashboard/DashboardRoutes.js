@@ -157,7 +157,7 @@ const DashboardRoutes = ({ jobs }) =>
           </header>
 
           {/* route components */}
-          <section className="p-5 h-full overflow-y-scroll bg-gray-100 ">
+          <section className="p-5 h-full overflow-scroll bg-gray-100 ">
             {!params?.length ? (
               <div>
                 <h1>Welcome to the dashboard</h1>
