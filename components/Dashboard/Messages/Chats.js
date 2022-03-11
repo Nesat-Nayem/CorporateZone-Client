@@ -17,6 +17,11 @@ const Chats = ({ selectedChat, setSelectedChat, loggedInUser, users }) => {
     );
     setSelectedChat(data);
   };
+
+  const startVideoChat = (id, username) => {
+    createChat(id);
+    const notify = `${loggedInUser?.username} join your chat, please join , https://meet.jit.si/${username}`;
+  };
   return (
     <div>
       <h1 className="text-center py-2 text-3xl"> Chats</h1>
@@ -50,7 +55,16 @@ const Chats = ({ selectedChat, setSelectedChat, loggedInUser, users }) => {
                     />
                   </span>
                   <span>
-                    <FcVideoCall className="text-2xl cursor-pointer " />
+                    <a
+                      href={`https://meet.jit.si/${user?.username}`}
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      <FcVideoCall
+                        onClick={() => startVideoChat(user._id, user?.username)}
+                        className="text-2xl cursor-pointer "
+                      />
+                    </a>
                   </span>
                 </div>
               </div>

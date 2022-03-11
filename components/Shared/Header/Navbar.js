@@ -47,7 +47,9 @@ export default function Navbar() {
 
   useEffect(() => {
     const fetchNotifications = async () => {
-      const res = await fetch("http://localhost:4030/jobs/notifyJobs");
+      const res = await fetch(
+        "https://murmuring-spire-15534.herokuapp.com/jobs/notifyJobs"
+      );
       const data = await res.json();
       setNotifications(data);
     };

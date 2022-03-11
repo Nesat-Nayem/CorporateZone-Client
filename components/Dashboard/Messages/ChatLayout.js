@@ -8,7 +8,6 @@ const ChatLayout = () => {
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
   const [users, setUsers] = useState([]);
   const [selectedChat, setSelectedChat] = useState(null);
-  const [chats, setChats] = useState([]);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -31,7 +30,6 @@ const ChatLayout = () => {
       {/* // chats names */}
       <div className=" chats xl:col-span-3 md:col-span-4 w-full  h-full overflow-y-scroll ">
         <Chats
-          selectedChat={selectedChat}
           setSelectedChat={setSelectedChat}
           loggedInUser={loggedInUser}
           users={users}
@@ -39,7 +37,10 @@ const ChatLayout = () => {
       </div>
       {/* chat message */}
       <div className="xl:col-span-9 md:col-span-8 w-full bg-white h-full py-5 px-5">
-        <SingleChat loggedInUser={loggedInUser} selectedChat={selectedChat} />
+        <SingleChat
+          loggedInUser={loggedInUser}
+          selectedChat={selectedChat}
+        />
       </div>
     </section>
   );

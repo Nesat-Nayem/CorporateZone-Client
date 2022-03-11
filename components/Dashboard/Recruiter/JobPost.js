@@ -98,7 +98,7 @@ const JobPost = () => {
     allData.location = value.label;
     allData.jobTags = "Media, Medicla, Restaurants";
     axios
-      .post("http://localhost:4030/jobs", allData)
+      .post("https://murmuring-spire-15534.herokuapp.com/jobs", allData)
       .then((res) => {
         if (res.status === 200) {
           router.push("/");

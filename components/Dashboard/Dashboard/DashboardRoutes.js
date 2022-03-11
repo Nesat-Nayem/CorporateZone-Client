@@ -27,6 +27,7 @@ import AdminProfile from "../Admin/AdminProfile";
 import SkillTest from "../Candidate/skillTest/SkillTest";
 import AppliedJobs from "../Candidate/AppliedJobs/AppliedJobs";
 import ChatLayout from "../Messages/ChatLayout";
+import { FcVideoCall } from "react-icons/fc";
 
 const DashboardRoutes = ({ jobs }) => {
   const [trigger, setTrigger] = useState(false);
@@ -74,6 +75,17 @@ const DashboardRoutes = ({ jobs }) => {
               <small className="text-gray-100 text-center">
                 {currentUser?.email}
               </small>
+              <h2 className="font-semibold pt-3 text-green-600  capitalize text-md mx-auto pb-2  ">
+                <a
+                  href={`https://meet.jit.si/${loggedInUser?.username}`}
+                  rel="noreferrer"
+                  target="_blank"
+                  className="flex bg-white py-2 px-2 rounded"
+                >
+                  <FcVideoCall className="text-2xl cursor-pointer mr-1" />{" "}
+                  Launch Video Chat
+                </a>
+              </h2>
             </div>
             <MdOutlineChevronLeft
               onClick={() => setTrigger(false)}
