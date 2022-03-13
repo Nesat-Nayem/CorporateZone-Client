@@ -40,7 +40,7 @@ const pages = [
 
 export default function Navbar() {
   const currentUser = useSelector((state) => state.user.currentUser);
-console.log(currentUser);
+
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
   const [notifications, setNotifications] = useState([]);
 
@@ -54,8 +54,6 @@ console.log(currentUser);
     };
     fetchNotifications();
   }, [notifications]);
-
-
 
   const router = useRouter();
 
@@ -74,9 +72,7 @@ console.log(currentUser);
   return (
     <Popover className="relative bg-white">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-
         <div className="flex relative justify-between items-center border-b-2 border-gray-100 py-6 lg:justify-start md:space-x-10">
-
           <div className="flex justify-start md:w-0 md:flex-1">
             <Link href="/">
               <a className="flex items-center">
@@ -97,8 +93,7 @@ console.log(currentUser);
             </Popover.Button>
           </div>
 
-    {/* second part */}
-
+          {/* second part */}
 
           <Popover.Group
             as="nav"
@@ -137,10 +132,6 @@ console.log(currentUser);
             )}
           </Popover.Group>
         </div>
-
-
-
-
 
         {/* user popup */}
 
@@ -193,9 +184,6 @@ console.log(currentUser);
         </div>
       </div>
 
-
-
-
       <Transition
         as={Fragment}
         enter="duration-200 ease-out"
@@ -209,18 +197,14 @@ console.log(currentUser);
           focus
           className="relative bottom-20 inset-x-0 p-2 transition transform origin-top-right lg:hidden"
         >
-
-      {/* here */}
+          {/* here */}
 
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
-
             {/* here */}
 
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
                 <div>
-
-
                   <Link href="/">
                     <a className="flex items-center">
                       <span className=" text-2xl font-extrabold  pl-3">
@@ -229,10 +213,7 @@ console.log(currentUser);
                       </span>
                     </a>
                   </Link>
-
-
                 </div>
-
 
                 <div className="-mr-2">
                   <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -240,21 +221,12 @@ console.log(currentUser);
                     <XIcon className="h-6 w-6" aria-hidden="true" />
                   </Popover.Button>
                 </div>
-
-
               </div>
-
-
-
-
-
 
               <div className="mt-6">
                 <nav className="grid gap-y-8">
                   {pages.map((item) => (
-                    
                     <Link key={item.name} href={item.href}>
-                     
                       <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                         <item.icon
                           className="flex-shrink-0 h-6 w-6 text-indigo-600"
@@ -268,12 +240,7 @@ console.log(currentUser);
                   ))}
                 </nav>
               </div>
-
-
-
             </div>
-
-
 
             <div className="py-6 px-5 space-y-6">
               <div>
@@ -292,12 +259,7 @@ console.log(currentUser);
                 </p>
               </div>
             </div>
-
-
           </div>
-
-
-
         </Popover.Panel>
       </Transition>
     </Popover>
