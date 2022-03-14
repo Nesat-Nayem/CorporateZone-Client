@@ -30,6 +30,7 @@ import AppliedJobs from "../Candidate/AppliedJobs/AppliedJobs";
 import ChatLayout from "../Messages/ChatLayout";
 import BuildResume from "../Candidate/BuildResume/BuildResume";
 import { FcVideoCall } from "react-icons/fc";
+import Applicant from "../../Applicant/Applicant";
 
 const DashboardRoutes = ({ jobs }) =>
 {
@@ -195,6 +196,9 @@ const DashboardRoutes = ({ jobs }) =>
             {/* recruiter profile */}
             {params[0] === "profile" && loggedInUser?.role === "recruiter" && (
               <RecruiterProfile />
+            )}
+            {params[0] === "applicant" && loggedInUser?.role === "recruiter" && (
+              <Applicant />
             )}
             {/* update recruiter profile  */}
             {params[0] === "updateProfile" &&

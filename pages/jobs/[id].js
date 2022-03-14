@@ -85,6 +85,7 @@ const Jobdetails = ({ data }) => {
       const jobData = {
         jobId: data._id,
         candidateEmail: loggedInUser.email,
+        resumeLink: loggedInUser.resumeLink,
         companyName,
         jobTitle,
         jobType,
