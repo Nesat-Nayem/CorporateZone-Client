@@ -18,6 +18,8 @@ const PostedJobs = (props) => {
   const [jobs, setJobs] = useState(props.jobs);
   const [category, setCategory] = useState();
   const [display, setDisplay] = useState([]);
+  const [page, setPage] = useState(1);
+  const [pageCount] = useState(5);
 
   const handleChange = (event) => {
     const searchText = event.target.value;
@@ -54,6 +56,21 @@ const PostedJobs = (props) => {
       });
   }, []);
 
+  //Get Current Posts
+  const indexOfLastPost = page * pageCount;
+  const indexOfFirstPost = indexOfLastPost - pageCount;
+  const currentPost = jobs.slice(indexOfFirstPost, indexOfLastPost);
+
+  //pagination
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(jobs.length / pageCount); i++) {
+    pageNumbers.push(i);
+  }
+
+  //change page
+  const paginate = (pageNumber) => {
+    setPage(pageNumber);
+  };
   return (
     <section className="bg-gray-100 pb-10">
       <div className="md:w-9/12 w-11/12 mx-auto">
@@ -112,12 +129,24 @@ const PostedJobs = (props) => {
         {/* Start Jobs Card */}
 
         <div className="grid gird-cols-1 gap-4">
-          {display?.map((job) => (
+          {currentPost?.map((job) => (
             <PostedJob key={job._id} job={job}></PostedJob>
           ))}
         </div>
 
         {/* End Jobs Card */}
+
+        {/* pagination */}
+        <div className="text-2xl flex text-center text-black border-2 md:w-40 mx-auto my-5 pagination">
+          {pageNumbers.map((number) => (
+            <ul key={number} className="w-full">
+              <li className="border-2">
+                <button onClick={() => paginate(number)}>{number}</button>
+              </li>
+            </ul>
+          ))}
+        </div>
+
       </div>
       <div
         style={{

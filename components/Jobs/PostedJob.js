@@ -5,7 +5,15 @@ import { GoLocation } from "react-icons/go";
 import { useRouter } from "next/router";
 
 const PostedJob = ({ job }) => {
-  const { jobTitle, companyLogo, companyName, jobType, salary, location } = job;
+  const {
+    jobTitle,
+    companyLogo,
+    companyName,
+    jobType,
+    salary,
+    location,
+    paginate,
+  } = job;
   const router = useRouter();
   return (
     <div
@@ -19,7 +27,7 @@ const PostedJob = ({ job }) => {
       <div className="col-span-8">
         <h2>
           {jobTitle}
-          <span className="text-cyan-500 font-thin"> ({companyName})</span>
+          <span className="text-cyan-500 font-normal"> ({companyName})</span>
         </h2>
         <h4 className="flex items-center py-2">
           <FaRegMoneyBillAlt className="text-green-500 mr-2" />{" "}
