@@ -11,6 +11,7 @@ import Header from "../components/Shared/Header/Header";
 import Footer from "../components/Shared/Footer/Footer";
 import Review from "../components/Home/Review/Review";
 import Rule from "../components/Home/Rules/Rule";
+import Features from "../components/Home/Features/Features";
 
 export default function Home() {
   return (
@@ -19,7 +20,8 @@ export default function Home() {
 
       <HeroArea />
       {/* <CategoryJobs /> */}
-      <RecentJobs />
+      <Features />
+      {/* <RecentJobs /> */}
       <CompanyJobs />
       <Pricing />
       {/* <Faq /> */}

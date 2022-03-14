@@ -16,19 +16,18 @@ const TopHeader = () => {
     <div className="">
       <div className="text-white ml-auto pl-10 md:w-40 relative md:flex hidden justify-between items-center">
         {/* signup and login */}
-        <div className="flex flex-col rounded-bl-lg rounded-tl-lg absolute top-0 bg-[#42C2FF]">
+        <div className="flex flex-col rounded-bl-lg rounded-tl-lg absolute top-0 ">
           {currentUser ? (
             <></>
           ) : (
             <>
               <Link href="/signup">
-                <a className="pl-4 font-bold uppercase flex items-center space-x-3 font-serif pr-3 py-3  hover:text-white hover:transform duration-500 hover:scale-50">
+                <a className="pl-4 font-bold uppercase flex items-center space-x-3 font-serif pr-3 py-3  hover:text-white hover:transform duration-500 hover:scale-95 border-2 border-[#42C2FF] text-[#42C2FF] rounded-bl-lg rounded-tl-lg hover:bg-[#42C2FF]">
                   <FaUserAlt className="mr-2" /> Sign up
                 </a>
               </Link>{" "}
-              <hr />
               <Link href="/signin">
-                <a className="pl-4 font-bold uppercase flex items-center space-x-3 font-serif py-3 hover:bg-[#ffffff] hover:text-[#42C2FF] duration-500">
+                <a className="pl-4 font-bold uppercase flex items-center space-x-3 font-serif py-3 hover:bg-[#42C2FF] hover:text-white duration-500 border-2 border-[#42C2FF] text-[#42C2FF] rounded-bl-lg rounded-tl-lg">
                   <MdLogin className="mr-2" /> Sign In
                 </a>
               </Link>
