@@ -26,7 +26,7 @@ const Features = (props) => {
        console.log(data.data);
      });
  }, []);
-    // const feature = jobs.slice(0,5)
+    
   return (
     <>
       <div className="space-y-7 mx-auto md:w-3/4 relative mb-6 recent_header">
@@ -35,7 +35,7 @@ const Features = (props) => {
         </h3>
 
         <Swiper
-          navigation
+        //   navigation
           pagination={{ clickable: true }}
           effect="coverflow"
           coverflowEffect={{
@@ -52,12 +52,12 @@ const Features = (props) => {
         >
           {jobs?.map((job) => {
             return (
-              <SwiperSlide className=" bg-cover flex flex-col items-center justify-center bg-slate-100 bg-center rounded-md relative">
+              <SwiperSlide className=" bg-cover flex flex-col items-center justify-center bg-slate-100 bg-center rounded-md shadow-md relative">
                 <img
                   className="block w-32 h-32 mx-auto "
                   src={job.companyLogo}
                 />
-                <button className="absolute left-3 top-3 bg-[#42C2FF] font-medium px-3 rounded-md text-slate-700">
+                <button className="absolute left-3 top-3 bg-[#42C2FF] font-medium px-3 rounded-md text-gray-50">
                   {job?.jobType}
                 </button>
                 <div className="text-slate-800 rounded-md my-5 flex justify-between items-center md:w-8/12 space-y-3 w-100">
@@ -74,7 +74,7 @@ const Features = (props) => {
                   </div>
                   <div className="flex flex-col space-y-3">
                     <button
-                      className="bg-[#42C2FF] font-medium text-slate-700 px-3 rounded-md"
+                      className="bg-[#42C2FF] font-medium text-gray-50 px-3 rounded-md"
                       onClick={() => router.push(`jobs/${job._id}`)}
                     >
                       APPLY
