@@ -4,8 +4,8 @@ import TopHeader from "./TopHeader";
 const Header = () => {
   return (
     <div>
-      <TopHeader />
       <Navbar />
+      <TopHeader />
     </div>
   );
 };

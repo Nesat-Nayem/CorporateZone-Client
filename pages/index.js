@@ -16,6 +16,7 @@ export default function Home() {
   return (
     <Layout title="Corporate Zone">
       <Header />
+
       <HeroArea />
       {/* <CategoryJobs /> */}
       <RecentJobs />
