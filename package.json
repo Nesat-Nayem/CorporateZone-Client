@@ -17,6 +17,7 @@
     "cogo-toast": "^4.2.3",
     "file-saver": "^2.0.5",
     "firebase": "^9.6.6",
+    "flowbite": "^1.3.4",
     "heroicons-react": "^1.4.1",
     "micro": "^9.3.4",
     "micro-cors": "^0.1.1",

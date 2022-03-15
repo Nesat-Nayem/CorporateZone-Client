@@ -12,6 +12,7 @@ import Footer from "../components/Shared/Footer/Footer";
 import Review from "../components/Home/Review/Review";
 import Rule from "../components/Home/Rules/Rule";
 
+
 export default function Home() {
   return (
     <Layout title="Corporate Zone">
