@@ -3,6 +3,7 @@ import React from "react";
 import { BsBagCheckFill } from "react-icons/bs";
 import { FaRegBuilding, FaUserCircle, FaUserGraduate } from "react-icons/fa";
 import { MdAdminPanelSettings, MdDashboard } from "react-icons/md";
+import { FaUserTie } from "react-icons/fa";
 
 const AdminRoutes = ({ setTrigger }) => {
   return (
@@ -10,16 +11,16 @@ const AdminRoutes = ({ setTrigger }) => {
       <Link href={`/dashboard/profile`}>
         <a
           onClick={() => setTrigger(false)}
-          className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
+          className=" py-4 text-lg font-extralight text-gray-300 hover:text-white   cursor-pointer flex items-center  px-10  "
         >
-          <MdDashboard className="text-lg" />
+          <FaUserTie className="text-lg" />
           &nbsp;&nbsp;&nbsp;Profile
         </a>
       </Link>
       <Link href={`/dashboard/user`}>
         <a
           onClick={() => setTrigger(false)}
-          className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
+          className=" py-4 text-lg font-extralight text-gray-300 hover:text-white   cursor-pointer flex items-center  px-10  "
         >
           <FaUserCircle className="text-lg" />
           &nbsp;&nbsp;&nbsp;USER
@@ -28,7 +29,7 @@ const AdminRoutes = ({ setTrigger }) => {
       <Link href={`/dashboard/jobs`}>
         <a
           onClick={() => setTrigger(false)}
-          className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
+          className=" py-4 text-lg font-extralight text-gray-300 hover:text-white   cursor-pointer flex items-center  px-10  "
         >
           <BsBagCheckFill className="text-lg" />
           &nbsp;&nbsp;&nbsp;JOBS
@@ -37,7 +38,7 @@ const AdminRoutes = ({ setTrigger }) => {
       <Link href={`/dashboard/addadmin`}>
         <a
           onClick={() => setTrigger(false)}
-          className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
+          className=" py-4 text-lg font-extralight text-gray-300 hover:text-white   cursor-pointer flex items-center  px-10  "
         >
           <MdAdminPanelSettings className="text-lg" />
           &nbsp;&nbsp;&nbsp;ADD ADMIN
@@ -46,7 +47,7 @@ const AdminRoutes = ({ setTrigger }) => {
       <Link href={`/dashboard/candidate`}>
         <a
           onClick={() => setTrigger(false)}
-          className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
+          className=" py-4 text-lg font-extralight text-gray-300 hover:text-white   cursor-pointer flex items-center  px-10  "
         >
           <FaUserGraduate className="text-lg" />
           &nbsp;&nbsp;&nbsp;CANDIDATES
@@ -55,7 +56,7 @@ const AdminRoutes = ({ setTrigger }) => {
       <Link href={`/dashboard/company`}>
         <a
           onClick={() => setTrigger(false)}
-          className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
+          className=" py-4 text-lg font-extralight text-gray-300 hover:text-white   cursor-pointer flex items-center  px-10  "
         >
           <FaRegBuilding className="text-lg" />
           &nbsp;&nbsp;&nbsp;COMPANY

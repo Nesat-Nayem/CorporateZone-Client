@@ -3,8 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 
-import
-{
+import {
   MdOutlineLogout,
   MdOutlineChevronLeft,
   MdOutlineMenu,
@@ -28,11 +27,8 @@ import AdminProfile from "../Admin/AdminProfile";
 import SkillTest from "../Candidate/skillTest/SkillTest";
 import AppliedJobs from "../Candidate/AppliedJobs/AppliedJobs";
 import ChatLayout from "../Messages/ChatLayout";
-import BuildResume from "../Candidate/BuildResume/BuildResume";
-import { FcVideoCall } from "react-icons/fc";
 
-const DashboardRoutes = ({ jobs }) =>
-{
+const DashboardRoutes = ({ jobs }) => {
   const [trigger, setTrigger] = useState(false);
   const router = useRouter();
   const { params = [] } = router.query;
@@ -44,52 +40,30 @@ const DashboardRoutes = ({ jobs }) =>
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
 
   // log out handler
-  const logOutHandler = () =>
-  {
+  const logOutHandler = () => {
     router.push("/");
     dispatch(logOut);
   };
 
   return (
     <>
-      <div className="antialiased h-screen relative overflow-y-scroll chats lg:flex">
+      <div className="antialiased h-screen overflow-y-scroll chats relative lg:flex">
         <nav
-          className={`absolute lg:relative z-10 w-72 lg:transform-none lg:opacity-100 bg-slate-800/100 text-white h-screen overflow-y-scroll py-3 chats ${
+          className={`absolute lg:relative z-10 w-72 lg:transform-none lg:opacity-100 bg-[#00355f] text-white h-screen ${
             !trigger
               ? "inset-0 opacity-0 transform duration-200 -translate-x-full ease-out"
               : "inset-0 opacity-100 transform duration-200 translate-x-0 ease-in"
           }`}
         >
-          <div className="flex justify-between m-5">
+          <div className="flex justify-between items-center my-5 mr-5 ml-0 md:ml-4 py-5">
             <div className="flex flex-col items-center mx-auto">
-              {currentUser && (
-                <img
-                  src={currentUser?.photoURL}
-                  className="h-20 w-20 "
-                  style={{ borderRadius: "50%" }}
-                  alt="user image"
-                />
-              )}
-              <h2 className="font-extrabold  text-xl mx-auto p-2">
-                {currentUser?.displayName}
-              </h2>
-              <h2 className="font-semibold text-green-600  capitalize text-md mx-auto pb-2 ">
-                {loggedInUser?.role}
-              </h2>
-              <small className="text-gray-100 text-center">
-                {currentUser?.email}
-              </small>
-              <h2 className="font-semibold pt-3 text-green-600  capitalize text-md mx-auto pb-2  ">
-                <a
-                  href={`https://meet.jit.si/${loggedInUser?.username}`}
-                  rel="noreferrer"
-                  target="_blank"
-                  className="flex bg-white py-2 px-2 rounded"
-                >
-                  <FcVideoCall className="text-2xl cursor-pointer mr-1" />{" "}
-                  Launch Video Chat
+              <Link href="/">
+                <a className="flex items-center ">
+                  <span className=" text-xl font-extrabold ">
+                    <span className="text-pink-500">C</span>orporate Zone
+                  </span>
                 </a>
-              </h2>
+              </Link>
             </div>
             <MdOutlineChevronLeft
               onClick={() => setTrigger(false)}
@@ -98,9 +72,9 @@ const DashboardRoutes = ({ jobs }) =>
           </div>
           {/* routes */}
           <div className="w-full">
-            <ul className="m-2 py-5 border-y border-dotted">
+            <ul className="px-2 py-5 ">
               {
-                <li className="divide-y divide-solid">
+                <li className="">
                   {/* candidate dashboard */}
                   {loggedInUser?.role === "candidate" && (
                     <CandidateRoutes setTrigger={setTrigger} />
@@ -118,7 +92,7 @@ const DashboardRoutes = ({ jobs }) =>
                     <Link href={`/dashboard/chats`}>
                       <a
                         onClick={() => setTrigger(false)}
-                        className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
+                        className=" py-4 text-lg font-extralight text-gray-300 hover:text-white   cursor-pointer flex items-center  px-10 "
                       >
                         <BsFillChatSquareDotsFill className="text-xl" />
                         &nbsp;&nbsp;&nbsp;Messages
@@ -129,9 +103,9 @@ const DashboardRoutes = ({ jobs }) =>
               }
             </ul>
             {/* // log out button */}
-            <div className="text-center">
+            <div className="px-10 absolute bottom-10">
               <button onClick={logOutHandler}>
-                <a className=" w-full p-2 text-md  mx-auto hover:bg-white  hover:text-black border-2 rounded-md flex justify-center items-center mt-10">
+                <a className=" w-full py-2 px-10 text-md  mx-auto text-gray-300 border border-gray-500 rounded flex justify-center items-center mt-10 hover:text-white">
                   <MdOutlineLogout className="text-2xl" />
                   &nbsp;&nbsp;LogOut
                 </a>
@@ -140,24 +114,29 @@ const DashboardRoutes = ({ jobs }) =>
           </div>
         </nav>
         <div className="relative z-0 lg:flex-grow">
-          <header className="flex items-center bg-gray-800/100 text-white py-2">
+          <header className="flex items-center  py-2">
             <MdOutlineMenu
               onClick={() => setTrigger(true)}
               className="h-12 xl:hidden w-12 p-2 ml-2 hover:bg-pink-600 rounded-md cursor-pointer"
             />
-            <div className="flex justify-center items-center ml-auto">
-              <Link href="/">
-                <a className="flex items-center px-3">
-                  <span className=" text-xl font-extrabold  pl-3">
-                    <span className="text-pink-500">C</span>orporate Zone
-                  </span>
-                </a>
-              </Link>
+            <div className="flex justify-center items-center ml-auto md:px-10 px-5">
+              <h1 className="px-3 font-semibold ">{loggedInUser?.username}</h1>
+              <div>
+                <img
+                  src={loggedInUser?.photoURL}
+                  className="w-12 h-12 border-2 border-gray-600"
+                  style={{ borderRadius: "50%" }}
+                  alt=""
+                />
+              </div>
             </div>
           </header>
 
           {/* route components */}
-          <section className="p-5 h-full overflow-scroll bg-gray-100 ">
+          <section
+            className="p-5 bg-gray-100  overflow-y-scroll"
+            style={{ height: "90vh" }}
+          >
             {!params?.length ? (
               <div>
                 <h1>Welcome to the dashboard</h1>
@@ -216,10 +195,6 @@ const DashboardRoutes = ({ jobs }) =>
             {/* candidate profile update */}
             {params[0] === "skillTest" &&
               loggedInUser?.role === "candidate" && <SkillTest />}
-
-            {/* candidate profile update */}
-            {params[0] === "BuildResume" &&
-              loggedInUser?.role === "candidate" && <BuildResume />}
 
             {/* candidate profile update */}
             {params[0] === "chats" &&
