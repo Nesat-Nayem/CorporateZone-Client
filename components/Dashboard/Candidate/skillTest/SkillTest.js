@@ -63,7 +63,7 @@ const SkillTest = () =>
                             <span className="text-rose-500 font-extrabold">DOMAIN</span> from
                             the bottom in which you feel confident enough
                         </p>
-                        <div className=" border-b-2 border-dotted border-red-700">
+                        <div className=" border-b-2 border-dotted border-red-700 relative">
                             <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 my-10">
                                 {tech.map((t) => (
                                     <div key={t.key}>
