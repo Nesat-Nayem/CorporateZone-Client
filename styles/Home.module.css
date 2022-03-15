@@ -22,6 +22,21 @@
   background-size: cover;
 }
 
+.zone_card{
+  -webkit-border-radius: 50px;
+border-radius: 15px;
+background: #eaf2f57a;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 220px;
+height: 150px;
+margin: 10px auto;
+padding: 0px 15px;
+-webkit-box-shadow: 12px 12px 24px #b2b8c9, -12px -12px 24px #f0f8ff;
+box-shadow: 12px 12px 24px #ebeff5, -12px -12px 24px #dbe5ee;
+}
+
 .footer {
   display: flex;
   flex: 1;

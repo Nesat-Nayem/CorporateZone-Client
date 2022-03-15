@@ -69,7 +69,7 @@ const HeroArea = () => {
                   <span className="text-pink-500">3,000 +</span> Browse Jobs
                 </h6>
                 <p className="text-gray-500 leading-7">{item.description}</p>
-                <button className="pl-4 font-bold uppercase flex items-center space-x-3 pr-3 py-3  text-[#42C2FF] hover:text-white hover:transform duration-500 hover:scale-105 border-2 border-[#42C2FF] rounded-lg hover:bg-[#42C2FF] ml-5">
+                <button className="pl-4 font-bold uppercase flex items-center space-x-3 pr-3 py-3  hover:text-[#42C2FF] text-white hover:transform duration-500 hover:scale-105 border-2 border-[#42C2FF] rounded-lg bg-[#42C2FF] hover:bg-white ml-5">
                   Join US <BiRightArrowAlt className="font-medium text-2xl" />
                 </button>
               </div>

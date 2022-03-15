@@ -12,6 +12,8 @@ import Footer from "../components/Shared/Footer/Footer";
 import Review from "../components/Home/Review/Review";
 import Rule from "../components/Home/Rules/Rule";
 import Features from "../components/Home/Features/Features";
+import Recruiter from "../components/Home/Recruiter/Recruiter";
+import Zone from "../components/Home/Zone/Zone";
 
 export default function Home() {
   return (
@@ -22,6 +24,8 @@ export default function Home() {
       {/* <CategoryJobs /> */}
       <Features />
       {/* <RecentJobs /> */}
+      {/* <Recruiter /> */}
+      <Zone />
       <CompanyJobs />
       <Pricing />
       {/* <Faq /> */}
