@@ -23,7 +23,7 @@ const CompanyJobs = () =>
       </div>
 
       <div className="md:flex justify-center items-center my-20 company_card w-9/12 mx-auto">
-        <div className="bg-slate-900 mb-3 rounded-lg px-6 py-8 ring-1 md:w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl border-b-2 border-slate-800 hover:border-cyan-500 transform duration-500 hover:scale-95">
+        <div className="bg-slate-900 mb-3 rounded-lg px-6 py-8 ring-1 md:w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl border-b-4 border-slate-800 hover:border-cyan-500 transform duration-500 hover:scale-95">
           <div>
             <Image
               className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
@@ -48,7 +48,7 @@ const CompanyJobs = () =>
           </a>
         </div>
 
-        <div className="bg-slate-900 mb-3 rounded-lg px-6 py-8 ring-1 md:w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl border-b-2 border-slate-800 hover:border-cyan-500 transform duration-500 hover:scale-95">
+        <div className="bg-slate-900 mb-3 rounded-lg px-6 py-8 ring-1 md:w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl border-b-4 border-slate-800 hover:border-cyan-500 transform duration-500 hover:scale-95">
           <div>
             <Image
               className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
@@ -73,7 +73,7 @@ const CompanyJobs = () =>
           </a>
         </div>
 
-        <div className="bg-slate-900 mb-3 rounded-lg px-6 py-8 ring-1 md:w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl border-b-2 border-slate-800 hover:border-cyan-500 transform duration-500 hover:scale-95">
+        <div className="bg-slate-900 mb-3 rounded-lg px-6 py-8 ring-1 md:w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl border-b-4 border-slate-800 hover:border-cyan-500 transform duration-500 hover:scale-95">
           <div>
             <Image
               className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
@@ -98,7 +98,7 @@ const CompanyJobs = () =>
           </a>
         </div>
 
-        <div className="bg-slate-900 mb-3 rounded-lg px-6 py-8 ring-1 md:w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl border-b-2 border-slate-800 hover:border-cyan-500 transform duration-500 hover:scale-95">
+        <div className="bg-slate-900 mb-3 rounded-lg px-6 py-8 ring-1 md:w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl border-b-4 border-slate-800 hover:border-cyan-500 transform duration-500 hover:scale-95">
           <div>
             <Image
               className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
@@ -123,7 +123,7 @@ const CompanyJobs = () =>
           </a>
         </div>
 
-        <div className="bg-slate-900 mb-3 rounded-lg px-6 py-8 ring-1 md:w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl border-b-2 border-slate-800 hover:border-cyan-500 transform duration-500 hover:scale-95">
+        <div className="bg-slate-900 mb-3 rounded-lg px-6 py-8 ring-1 md:w-1/4 mx-2 ring-slate-900/5 text-center shadow-xl border-b-4 border-slate-800 hover:border-cyan-500 transform duration-500 hover:scale-95">
           <div>
             <Image
               className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"

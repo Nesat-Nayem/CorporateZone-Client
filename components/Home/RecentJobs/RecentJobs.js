@@ -128,7 +128,7 @@ const RecentJobs = (props) =>
       <div style={{ width: "80%", margin: "0 auto" }}>
         {display?.map((job) => (
           <div
-            className="bg-white dark:bg-slate-900 font-bold text-[#2c2149] dark:text-slate-200 rounded"
+            className="bg-white dark:bg-slate-900 text-[#2c2149] dark:text-slate-200 rounded"
             style={{
               marginTop: "20px",
               padding: "25px 0",
