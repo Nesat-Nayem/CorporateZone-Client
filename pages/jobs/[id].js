@@ -1,10 +1,12 @@
 import styles from "../../styles/JobDetails.module.css";
-import {
+import
+{
   FaFacebookF,
   FaLocationArrow,
   FaRegMoneyBillAlt,
 } from "react-icons/fa";
-import {
+import
+{
   AiOutlineTwitter,
   AiFillTags,
   AiTwotoneCalendar,
@@ -21,7 +23,8 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import cogoToast from "cogo-toast";
 
-const Jobdetails = ({ data }) => {
+const Jobdetails = ({ data }) =>
+{
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
 
   const { main_head, Card_title, mini_title } = styles;
@@ -46,7 +49,8 @@ const Jobdetails = ({ data }) => {
     postedTime,
   } = data;
 
-  const applyJob = () => {
+  const applyJob = () =>
+  {
     const options = { position: "bottom-right" };
     if (!loggedInUser) {
       return cogoToast.warn(
@@ -94,10 +98,12 @@ const Jobdetails = ({ data }) => {
           "https://murmuring-spire-15534.herokuapp.com/appliedJobs",
           jobData
         )
-        .then((response) => {
+        .then((response) =>
+        {
           cogoToast.success("Apply successfull", options);
         })
-        .catch((err) => {
+        .catch((err) =>
+        {
           cogoToast.warn(`${err.message}`, options);
         });
     }
@@ -119,27 +125,28 @@ const Jobdetails = ({ data }) => {
           </div>
         </section>
         <section className="w-11/12 grid grid-cols-3 gap-4 mx-auto my-10">
-          <div className="col-span-3 md:col-span-2 bottom-1 border-cyan-100 py-4 px-6 md:py-10 md:px-12 shadow-md rounded-sm">
+          <div className="col-span-3 md:col-span-2 bottom-1 dark:bg-slate-900 border-cyan-100 py-4 px-6 md:py-10 md:px-12 shadow-md rounded-sm">
             <div>
-              <h2 className="mb-4 text-xl font-bold">DESCTIPION</h2>
-              <p className="text-base font-sans text-gray-500">
+              <h2 className="mb-4 text-xl dark:text-white font-bold">DESCTIPION</h2>
+              <p className="text-base dark:text-slate-200 font-sans text-gray-500">
                 {jobDescription}
               </p>
             </div>
 
             <div className="my-10">
-              <h2 className="mb-4 text-xl font-bold">RESPONSIBILITIES</h2>
-              <p className="text-base font-sans text-gray-500">
+              <h2 className="mb-4 text-xl dark:text-white font-bold">RESPONSIBILITIES</h2>
+              <p className="text-base dark:text-slate-200 font-sans text-gray-500">
                 Curabitur non nulla sit amet nisl tempus convallis quis ac
                 lectus. Mauris blandit aliquet elit, eget tincidunt nibh
                 pulvinar a. Praesent sapien massa, convallis a pellentesque nec,
                 egestas non nisi. Curabitur aliquet quam id dui posuere blandit.
               </p>
               <ul className="list-none text-gray-500">
-                {responsibilities.map((crrElm, index) => {
+                {responsibilities.map((crrElm, index) =>
+                {
                   return (
                     <div key={index}>
-                      <li className="mt-4">
+                      <li className="mt-4 dark:text-slate-200">
                         <span className="text-red-500 mr-3">&#x2714;</span>
                         <span>{crrElm}</span>
                       </li>
@@ -150,9 +157,10 @@ const Jobdetails = ({ data }) => {
             </div>
 
             <div className="my-10">
-              <h2 className="mb-4 text-xl font-bold">MINIMUM QUALIFICATIONS</h2>
-              <ul className="list-none text-gray-500">
-                {skills.map((crrElm, index) => {
+              <h2 className="mb-4 text-xl dark:text-white font-bold">MINIMUM QUALIFICATIONS</h2>
+              <ul className="list-none text-gray-500 dark:text-slate-300">
+                {skills.map((crrElm, index) =>
+                {
                   return (
                     <li key={index} className="mt-4">
                       <span className="text-red-500 mr-3">&#x2714;</span>
@@ -164,8 +172,8 @@ const Jobdetails = ({ data }) => {
             </div>
 
             <div className="my-10">
-              <h2 className="mb-4 text-xl font-bold">HOW TO APPLY</h2>
-              <p className="text-base font-sans text-gray-500">
+              <h2 className="mb-4 text-xl dark:text-white font-bold">HOW TO APPLY</h2>
+              <p className="text-base dark:text-slate-200 font-sans text-gray-500">
                 Praesent sapien massa, convallis a pellentesque nec, egestas non
                 nisi. Curabitur aliquet quam id dui posuere blandit. Curabitur
                 aliquet quam id dui posuere blandit. Curabitur non nulla sit
@@ -174,7 +182,7 @@ const Jobdetails = ({ data }) => {
             </div>
 
             <div className="my-10">
-              <h2 className="mb-4 text-xl font-bold">VIDEOS</h2>
+              <h2 className="mb-4 text-xl dark:text-white font-bold">VIDEOS</h2>
               <iframe
                 className="inset-0 mt-6 rounded-md shadow-md mx-auto"
                 width="600"
@@ -188,7 +196,7 @@ const Jobdetails = ({ data }) => {
             </div>
 
             <div className="my-10">
-              <h2 className="mb-4 text-xl font-bold">LOCATIONS</h2>
+              <h2 className="mb-4 text-xl dark:text-white font-bold">LOCATIONS</h2>
               <iframe
                 className="inset-0 mt-6 rounded-md shadow-md mx-auto "
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3746841.2106474624!2d88.09993645646647!3d23.495622700490763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30adaaed80e18ba7%3A0xf2d28e0c4e1fc6b!2sBangladesh!5e0!3m2!1sen!2sbd!4v1644300400443!5m2!1sen!2sbd"
@@ -198,7 +206,7 @@ const Jobdetails = ({ data }) => {
                 loading="lazy"
               ></iframe>
             </div>
-            <div className="mt-12 mb-6 flex items-center ml-8">
+            <div className="mt-12 mb-6 dark:text-white flex items-center ml-8">
               <h2 className="text-md font-bold">SHARE:</h2>
               <a className="ml-3 text-lg hover:text-blue-500" href="#">
                 <FaFacebookF />
@@ -217,7 +225,7 @@ const Jobdetails = ({ data }) => {
               </a>
             </div>
             <div className=" flex items-center">
-              <h2 className="text-md font-bold flex items-center">
+              <h2 className="text-md dark:text-white font-bold flex items-center">
                 <AiFillTags className="text-blue-400 text-xl mr-2" /> Tagged as:
               </h2>
               <a className="ml-3 text-sm text-blue-400" href="#">
@@ -244,7 +252,7 @@ const Jobdetails = ({ data }) => {
                   src={companyLogo}
                   alt="ImageLogo"
                 />
-                <h2 className="my-4 font-semibold font-sans">Pay Walt</h2>
+                <h2 className="my-4 font-semibold dark:text-white font-sans">Pay Walt</h2>
                 <h2 className={`mb-4 ${mini_title}`}>{companyName}</h2>
                 <div className="flex flex-row items-center justify-center">
                   <button className="border-2 border-gray-400 rounded-sm p-1 hover:bg-red-500 hover:border-red-500">
@@ -257,7 +265,7 @@ const Jobdetails = ({ data }) => {
                 <hr className="my-10" />
                 <div className="flex justify-start items-center">
                   <div className="ml-10">
-                    <p className="flex items-center font-semibold">
+                    <p className="flex items-center dark:text-white font-semibold">
                       <AiTwotoneCalendar className="text-red-400 mr-3 text-xl" />
                       Dated Posted:
                     </p>
@@ -269,7 +277,7 @@ const Jobdetails = ({ data }) => {
 
                 <div className="flex justify-start py-6 items-center">
                   <div className="ml-10">
-                    <p className="flex items-center font-semibold">
+                    <p className="flex items-center dark:text-white font-semibold">
                       <FaLocationArrow className="text-red-400 mr-3 text-sm" />
                       Location:
                     </p>
@@ -281,7 +289,7 @@ const Jobdetails = ({ data }) => {
 
                 <div className="flex justify-start items-center">
                   <div className="ml-10">
-                    <p className="flex items-center font-semibold">
+                    <p className="flex items-center dark:text-white font-semibold">
                       <MdTitle className="text-red-400 mr-3 text-xl" />
                       Title:
                     </p>
@@ -293,7 +301,7 @@ const Jobdetails = ({ data }) => {
 
                 <div className="flex justify-start py-6 items-center">
                   <div className="ml-10">
-                    <p className="flex items-center font-semibold">
+                    <p className="flex items-center dark:text-white font-semibold">
                       <FaRegMoneyBillAlt className="text-red-400 mr-3 text-xl" />
                       Salary:
                     </p>
@@ -305,7 +313,7 @@ const Jobdetails = ({ data }) => {
 
                 <div className="flex justify-start items-center">
                   <div className="ml-10">
-                    <p className="flex items-center font-semibold">
+                    <p className="flex items-center dark:text-white font-semibold">
                       <AiFillStar className="text-red-400 mr-3 text-xl" />
                       Experience:
                     </p>
@@ -345,7 +353,8 @@ const Jobdetails = ({ data }) => {
 
 export default Jobdetails;
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async (context) =>
+{
   const res = await fetch(
     `https://murmuring-spire-15534.herokuapp.com/jobs/singleJob/${context.params.id}`
   );

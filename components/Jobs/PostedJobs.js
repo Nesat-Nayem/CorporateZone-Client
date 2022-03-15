@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import {
+import
+{
   MdMoreTime,
   MdPedalBike,
   MdMobileFriendly,
@@ -14,12 +15,14 @@ import { useEffect } from "react";
 import PostedJob from "./PostedJob";
 import { useRouter } from "next/router";
 
-const PostedJobs = (props) => {
+const PostedJobs = (props) =>
+{
   const [jobs, setJobs] = useState(props.jobs);
   const [category, setCategory] = useState();
   const [display, setDisplay] = useState([]);
 
-  const handleChange = (event) => {
+  const handleChange = (event) =>
+  {
     const searchText = event.target.value;
     const matched = jobs.filter((job) =>
       job.jobTitle.toLowerCase().includes(searchText.toLowerCase())
@@ -30,7 +33,8 @@ const PostedJobs = (props) => {
 
   const router = useRouter();
 
-  const filterJobs = async (e) => {
+  const filterJobs = async (e) =>
+  {
     setCategory(e.target.value);
     const response = await fetch(
       `https://murmuring-spire-15534.herokuapp.com/jobs?jobType=${e.target.value}`
@@ -44,10 +48,12 @@ const PostedJobs = (props) => {
     });
   };
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     fetch("https://murmuring-spire-15534.herokuapp.com/jobs")
       .then((res) => res.json())
-      .then((data) => {
+      .then((data) =>
+      {
         setJobs(data.data);
         setDisplay(data.data);
         console.log(data.data);
@@ -55,7 +61,7 @@ const PostedJobs = (props) => {
   }, []);
 
   return (
-    <section className="bg-gray-100 pb-10">
+    <section className="bg-gray-100 dark:bg-slate-700 pb-10">
       <div className="md:w-9/12 w-11/12 mx-auto">
         {/* Search Start */}
         <div className="md:flex justify-center items-center md:max-w-[75%] md:mx-auto relative mt-12">
@@ -83,7 +89,7 @@ const PostedJobs = (props) => {
         {/* Start Filter */}
         <div className="md:flex justify-between items-center md:max-w-[75%] md:mx-auto relative mb-12 filter_jobs">
           <div>
-            <h1 className="text-xl font-serif font-bold">Filter Jobs</h1>
+            <h1 className="text-xl font-serif font-bold dark:text-white">Filter Jobs</h1>
           </div>
           <div>
             <select
@@ -104,7 +110,7 @@ const PostedJobs = (props) => {
         {/* End Filter */}
 
         <div>
-          <p className="text-center pb-5 font-bold ">
+          <p className="text-center pb-5 font-bold dark:text-white">
             {display.length} total jobs found.
           </p>
         </div>

@@ -7,7 +7,8 @@ import countryList from "react-select-country-list";
 import axios from "axios";
 import { useRouter } from "next/router";
 
-const JobPost = () => {
+const JobPost = () =>
+{
   const [responsibilitiData, setResponsibilitiData] = useState("");
   const [AllResponsibilitiData, setAllResponsibilitiData] = useState([]);
   const [value, setValue] = useState("");
@@ -56,41 +57,50 @@ const JobPost = () => {
 
   const [options] = useState(data);
 
-  const SaveResponsibility = () => {
+  const SaveResponsibility = () =>
+  {
     setAllResponsibilitiData((value) => [...value, responsibilitiData]);
     setResponsibilitiData("");
   };
 
-  const deleteRespon = (id) => {
-    setAllResponsibilitiData((value) => {
+  const deleteRespon = (id) =>
+  {
+    setAllResponsibilitiData((value) =>
+    {
       return value.filter((crrElm, index) => index !== id);
     });
   };
 
-  const changeHandler = (value) => {
+  const changeHandler = (value) =>
+  {
     setValue(value);
   };
 
-  const imageUploadHandler = (e) => {
+  const imageUploadHandler = (e) =>
+  {
     const imageData = new FormData();
     imageData.set("key", "0835894fb24a589d54b46ce86a8fdd54");
     imageData.append("image", e.target.files[0]);
     axios
       .post("https://api.imgbb.com/1/upload", imageData)
-      .then((res) => {
+      .then((res) =>
+      {
         setPhotoURL(res.data.data.display_url);
       })
-      .catch(function (error) {
+      .catch(function (error)
+      {
         console.log(error);
       });
   };
 
-  const dataInput = (e) => {
+  const dataInput = (e) =>
+  {
     let { name, value } = e.target;
     setAllData({ ...allData, [name]: value });
   };
 
-  const submitData = (e) => {
+  const submitData = (e) =>
+  {
     e.preventDefault();
     allData.skills = selectedLists.map((crrElm) => crrElm.name);
     allData.responsibilities = AllResponsibilitiData;
@@ -99,22 +109,26 @@ const JobPost = () => {
     allData.jobTags = "Media, Medicla, Restaurants";
     axios
       .post("https://murmuring-spire-15534.herokuapp.com/jobs", allData)
-      .then((res) => {
+      .then((res) =>
+      {
         if (res.status === 200) {
           router.push("/");
           alert("successfully saved!");
         }
       })
-      .catch(function (error) {
+      .catch(function (error)
+      {
         console.log(error);
       });
   };
 
-  const onSelect = (selectedList, selectedItem) => {
+  const onSelect = (selectedList, selectedItem) =>
+  {
     setSelectedLists(selectedList);
   };
 
-  const onRemove = (selectedList, removedItem) => {
+  const onRemove = (selectedList, removedItem) =>
+  {
     setSelectedLists(selectedList);
   };
 
@@ -124,7 +138,7 @@ const JobPost = () => {
         <div className="md:grid md:grid-cols-1 px-20 py-8 md:gap-6">
           <div className="md:col-span-1">
             <div className="px-4 sm:px-0">
-              <h3 className="text-lg md:text-xl italic font-bold animate-bounce leading-6 text-center text-gray-900">
+              <h3 className="text-lg md:text-xl italic font-bold animate-bounce leading-6 text-center text-gray-900 dark:text-white">
                 Post You Job
               </h3>
             </div>
@@ -319,7 +333,8 @@ const JobPost = () => {
                       Responsibilities
                     </label>
                     <div>
-                      {AllResponsibilitiData.map((value, id) => {
+                      {AllResponsibilitiData.map((value, id) =>
+                      {
                         return (
                           value && (
                             <div

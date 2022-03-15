@@ -39,14 +39,16 @@ import { useRouter } from "next/router";
 //   },
 // ];
 
-const RecentJobs = (props) => {
+const RecentJobs = (props) =>
+{
   const [jobs, setJobs] = useState(props.jobs);
   const [category, setCategory] = useState();
   const [display, setDisplay] = useState([]);
 
   const router = useRouter();
 
-  const filterJobs = async (e) => {
+  const filterJobs = async (e) =>
+  {
     setCategory(e.target.value);
     const response = await fetch(
       `https://murmuring-spire-15534.herokuapp.com/jobs?jobType=${e.target.value}`
@@ -61,10 +63,12 @@ const RecentJobs = (props) => {
     });
   };
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     fetch("https://murmuring-spire-15534.herokuapp.com/jobs")
       .then((res) => res.json())
-      .then((data) => {
+      .then((data) =>
+      {
         setJobs(data.data.reverse());
         setDisplay(data.data);
         console.log(data.data);
@@ -78,7 +82,8 @@ const RecentJobs = (props) => {
   //   setJobs(filterd)
   // }
 
-  const handleChange = (event) => {
+  const handleChange = (event) =>
+  {
     const sarchText = event.target.value;
     const matched = jobs.filter((job) =>
       job.jobTitle.toLowerCase().includes(sarchText.toLowerCase())
@@ -88,9 +93,9 @@ const RecentJobs = (props) => {
   };
 
   return (
-    <div className="bg-slate-100 py-10 " style={{ display: "inlineBlock" }}>
+    <div className="bg-slate-100 dark:bg-slate-700 py-10 " style={{ display: "inlineBlock" }}>
       <div className="space-y-7 mx-auto md:w-3/4 relative mb-6 recent_header">
-        <h3 className="text-3xl text-center after:content-[''] after:absolute after:border-t-2 after:w-16 after: after:border-cyan-500 after:left-0 after:bottom-0 after:right-32 after:top-10 after:mx-auto font-medium text-slate-700 uppercase">
+        <h3 className="text-3xl text-center after:content-[''] after:absolute after:border-t-2 after:w-16 after: after:border-cyan-500 after:left-0 after:bottom-0 after:right-32 after:top-10 after:mx-auto font-medium text-slate-700 dark:text-white uppercase">
           Recent Jobs {display?.length}
         </h3>
 
@@ -110,7 +115,7 @@ const RecentJobs = (props) => {
             name=""
             id=""
             value={category}
-            className="text-black  px-2 py-2  focus:outline-none rounded"
+            className="text-black px-2 py-2 focus:outline-none rounded"
             onChange={filterJobs}
           >
             <option value="all">All Jobs</option>
@@ -123,9 +128,8 @@ const RecentJobs = (props) => {
       <div style={{ width: "80%", margin: "0 auto" }}>
         {display?.map((job) => (
           <div
-            className={style.singe}
+            className="bg-white dark:bg-slate-900 font-bold text-[#2c2149] dark:text-slate-200 rounded"
             style={{
-              backgroundColor: "white",
               marginTop: "20px",
               padding: "25px 0",
             }}
@@ -138,7 +142,7 @@ const RecentJobs = (props) => {
               <div>
                 <div className={style.icon}>
                   <BsBuilding className={style.icons} />
-                  <h2 id={style.sing}>{job.jobTitle}</h2>
+                  <h2 className="font-bold text-[#2c2149] dark:text-slate-200">{job.jobTitle}</h2>
                 </div>
                 <div className={style.icon}>
                   <FaMoneyBillAlt className={style.icons} />

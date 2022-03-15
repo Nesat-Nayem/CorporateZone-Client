@@ -1,6 +1,7 @@
 import Link from "next/link";
 
-const Footer = () => {
+const Footer = () =>
+{
   return (
     <footer>
       <div className="text-center px:2 md:px-20 lg:text-left bg-slate-800 text-white">
@@ -517,9 +518,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="text-center p-6 bg-[#42C2FF]">
+      <div className="text-center text-white dark:text-black text-base p-6 bg-[#42C2FF]">
         <span>© 2022 Copyright : </span>
-        <a className="text-white font-semibold hover:text-black" href="#">
+        <a className="font-semibold hover:text-black" href="#">
           @Team-CodeExpress
         </a>
       </div>

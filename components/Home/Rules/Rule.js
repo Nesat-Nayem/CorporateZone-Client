@@ -3,7 +3,8 @@ import { useState } from "react";
 import RuleComponent from "./RuleComponent";
 import { RiDoubleQuotesR } from "react-icons/ri";
 
-const Rule = () => {
+const Rule = () =>
+{
   const rRules = [
     {
       key: 0,
@@ -70,13 +71,15 @@ const Rule = () => {
     },
   ];
 
-  const recruiter = rRules.map((r) => {
+  const recruiter = rRules.map((r) =>
+  {
     return (
       <RuleComponent key={r.key} title={r.title} description={r.description} />
     );
   });
 
-  const candidate = cRules.map((r) => {
+  const candidate = cRules.map((r) =>
+  {
     return (
       <RuleComponent key={r.key} title={r.title} description={r.description} />
     );
@@ -113,7 +116,7 @@ const Rule = () => {
             Disclaimer
           </h1>
           <RiDoubleQuotesR className="w-10 h-10 text-pink-500 relative top-6" />
-          <p className="text-slate-400 text-sm text-justify">
+          <p className="text-slate-400 dark:text-slate-200 text-sm text-justify">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Corporate Zone
             will not be liable on account of any inaccuracy of information on
             this web site. It is the responsibility of the visitor to further

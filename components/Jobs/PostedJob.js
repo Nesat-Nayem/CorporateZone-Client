@@ -4,13 +4,14 @@ import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
 import { useRouter } from "next/router";
 
-const PostedJob = ({ job }) => {
+const PostedJob = ({ job }) =>
+{
   const { jobTitle, companyLogo, companyName, jobType, salary, location } = job;
   const router = useRouter();
   return (
     <div
       onClick={() => router.push(`jobs/${job._id}`)}
-      className="sm:grid grid-cols-12 cursor-pointer items-center bg-white rounded py-5 px-5"
+      className="sm:grid grid-cols-12 cursor-pointer items-center bg-white dark:bg-slate-900 dark:text-slate-200 rounded py-5 px-5"
     >
       <div className="col-span-2">
         <Image src={companyLogo} alt="" width="100" height="100" />

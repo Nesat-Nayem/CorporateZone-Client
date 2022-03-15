@@ -5,7 +5,8 @@ import { AiOutlineBarChart } from "react-icons/ai";
 import { FaMedkit, FaUniversity } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 
-const HeroArea = () => {
+const HeroArea = () =>
+{
   const {
     register,
     handleSubmit,
@@ -35,13 +36,21 @@ const HeroArea = () => {
             }}
             className="text-4xl md:text-5xl lg:text-6xl mb-1 md:mb-2"
           >
-            3,000 +{" "}
+            {" "}
             <span
               style={{
                 color: "white",
               }}
             >
-              Browse Jobs
+              Browse&nbsp;
+            </span>
+            3,000+{" "}
+            <span
+              style={{
+                color: "white",
+              }}
+            >
+              Jobs
             </span>
           </h1>
 
