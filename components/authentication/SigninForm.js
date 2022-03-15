@@ -1,10 +1,13 @@
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import useFirebase from "../../redux/slices/user/useFirebase";
+import { useSelector } from "react-redux";
+import cogoToast from "cogo-toast";
 
 const SigninForm = () => {
   const { logInWithEmailAndPassword } = useFirebase();
   const router = useRouter();
+  const error = useSelector((state) => state.user.error);
 
   const {
     register,
@@ -15,13 +18,14 @@ const SigninForm = () => {
     logInWithEmailAndPassword(data.email, data.password);
 
     //  router.push("/");
+    cogoToast.error(error ? error : "authentication failed");
   };
   return (
     <>
-      <form className="md:w-96" onSubmit={handleSubmit(onSubmit)}>
+      <form className="md:w-96 my-10" onSubmit={handleSubmit(onSubmit)}>
         <div className="my-4">
           <input
-            className="w-full block  border-b-2 border-black  py-2  text-black focus:outline-none placeholder:text-black placeholder:font-semibold placeholder:text-lg"
+            className="w-full block  border-b-2 border-black  py-2  text-black focus:outline-none placeholder:text-black px-2"
             placeholder="Email"
             type="email"
             {...register("email", { required: true })}
@@ -35,7 +39,7 @@ const SigninForm = () => {
         </div>
         <div className="my-4">
           <input
-            className="w-full block  border-b-2 border-black  py-2  text-black focus:outline-none placeholder:text-black placeholder:font-semibold placeholder:text-lg"
+            className="w-full block  border-b-2 border-black  py-2  text-black focus:outline-none placeholder:text-black px-2"
             placeholder="Password"
             type="password"
             {...register("password", {

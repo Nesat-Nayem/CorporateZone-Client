@@ -4,11 +4,14 @@ import axios from "axios";
 import useFirebase from "../../../redux/slices/user/useFirebase";
 import Select from "react-select";
 import countryList from "react-select-country-list";
+import cogoToast from "cogo-toast";
 
 const CandidateForm = () => {
   const [photoURL, setPhotoURL] = useState("");
   const [country, setCountry] = useState("");
   const options = useMemo(() => countryList().getData(), []);
+
+  const error = useSelector((state) => state.user.error);
 
   // location
   const changeHandler = (country) => {
@@ -37,6 +40,8 @@ const CandidateForm = () => {
       photoURL,
       userInfo
     );
+
+    cogoToast.error(error ? error : "authentication failed");
   };
 
   // image upload handler

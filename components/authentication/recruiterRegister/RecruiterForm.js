@@ -9,6 +9,8 @@ const RecruiterForm = () => {
   const [country, setCountry] = useState("");
   const options = useMemo(() => countryList().getData(), []);
 
+  const error = useSelector((state) => state.user.error);
+
   // location
   const changeHandler = (country) => {
     setCountry(country);
@@ -38,6 +40,8 @@ const RecruiterForm = () => {
       photoURL,
       userInfo
     );
+
+    cogoToast.error(error ? error : "authentication failed");
   };
 
   // image upload handler
