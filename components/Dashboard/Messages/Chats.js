@@ -46,7 +46,7 @@ const Chats = ({ selectedChat, setSelectedChat, loggedInUser, users }) => {
               )}
 
               <div>
-                <h1 className="font-bold  capitalize">{user?.username}</h1>
+                <h1 className=" capitalize py-2">{user?.username}</h1>
                 <div className="flex justify-end items-center">
                   <span>
                     <BiMessageDetail
