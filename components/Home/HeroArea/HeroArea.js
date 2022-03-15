@@ -150,7 +150,7 @@ const HeroArea = () =>
         </div>
 
         <div className="hidden md:grid justify-items-center">
-          <div className="grid grid-cols-6 gap-1  mt-10 w-4/5 justify-items-center ">
+          <div className="grid grid-cols-6 gap-1 mt-10 w-4/5 justify-items-center ">
             <div className="Ccolor rounded-md p-4 w-full text-center">
               <h5
                 style={{
@@ -253,7 +253,7 @@ const HeroArea = () =>
         
       }
      .Ccolor{
-       background-color:#22273A;
+       background-color:rgb(15 23 42 / 1);
      }
      .Ccolor p{
        color: #93959E ;

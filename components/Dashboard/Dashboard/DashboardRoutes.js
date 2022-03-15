@@ -30,6 +30,7 @@ import AppliedJobs from "../Candidate/AppliedJobs/AppliedJobs";
 import ChatLayout from "../Messages/ChatLayout";
 import BuildResume from "../Candidate/BuildResume/BuildResume";
 import { FcVideoCall } from "react-icons/fc";
+import Applicant from "../../Applicant/Applicant";
 
 const DashboardRoutes = ({ jobs }) =>
 {
@@ -54,11 +55,10 @@ const DashboardRoutes = ({ jobs }) =>
     <>
       <div className="antialiased h-screen relative overflow-y-scroll chats lg:flex">
         <nav
-          className={`absolute lg:relative z-10 w-72 lg:transform-none lg:opacity-100 bg-slate-800/100 text-white h-screen overflow-y-scroll py-3 chats ${
-            !trigger
+          className={`absolute lg:relative z-10 w-72 lg:transform-none lg:opacity-100 bg-slate-800/100 text-white h-screen overflow-y-scroll py-3 chats ${!trigger
               ? "inset-0 opacity-0 transform duration-200 -translate-x-full ease-out"
               : "inset-0 opacity-100 transform duration-200 translate-x-0 ease-in"
-          }`}
+            }`}
         >
           <div className="flex justify-between m-5">
             <div className="flex flex-col items-center mx-auto">
@@ -195,6 +195,9 @@ const DashboardRoutes = ({ jobs }) =>
             {/* recruiter profile */}
             {params[0] === "profile" && loggedInUser?.role === "recruiter" && (
               <RecruiterProfile />
+            )}
+            {params[0] === "applicant" && loggedInUser?.role === "recruiter" && (
+              <Applicant />
             )}
             {/* update recruiter profile  */}
             {params[0] === "updateProfile" &&
