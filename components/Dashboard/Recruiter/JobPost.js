@@ -6,10 +6,12 @@ import Select from "react-select";
 import countryList from "react-select-country-list";
 import axios from "axios";
 import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 import Swal from 'sweetalert2';
 import toast, { Toaster } from 'react-hot-toast';
 
 const JobPost = () => {
+  const currentUser = useSelector((state) => state.user.currentUser);
   const [responsibilitiData, setResponsibilitiData] = useState("");
   const [AllResponsibilitiData, setAllResponsibilitiData] = useState([]);
   const [value, setValue] = useState("");
@@ -20,7 +22,6 @@ const JobPost = () => {
   const [allData, setAllData] = useState({
     jobTitle: "",
     companyName: "",
-    companyEmail: "",
     companyWebsite: "",
     companySize: "",
     businessType: "",
@@ -98,6 +99,7 @@ const JobPost = () => {
     allData.responsibilities = AllResponsibilitiData;
     allData.companyLogo = photoURL;
     allData.location = value.label;
+    allData.companyEmail = currentUser.email;
     allData.jobTags = "Media, Medicla, Restaurants";
     const {businessType, companyEmail, companyLogo, companyName, companySize, companyWebsite, experience, jobDescription, jobTitle, jobType, lastDate,location, responsibilities, salary, since, skills} = allData
     if (businessType && companyEmail && companyLogo && companyName && companySize && companyWebsite && experience && jobDescription && jobTitle && jobType && lastDate && location && responsibilities.length && salary && since && skills.length)
@@ -183,12 +185,10 @@ const JobPost = () => {
                       </label>
                       <input
                         type="email"
-                        name="companyEmail"
                         id="companyEmail"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2"
-                        onChange={dataInput}
-                        value={allData.companyEmail}
-                        placeholder="Enter your company email"
+                        value={currentUser?.email}
+                        readOnly
                       />
                     </div>
 

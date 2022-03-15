@@ -47,14 +47,14 @@ export default function Navbar() {
 
   useEffect(() => {
     const fetchNotifications = async () => {
-      const res = await fetch("https://murmuring-spire-15534.herokuapp.com/jobs/notifyJobs");
+      const res = await fetch(
+        "https://murmuring-spire-15534.herokuapp.com/jobs/notifyJobs"
+      );
       const data = await res.json();
       setNotifications(data);
     };
     fetchNotifications();
   }, [notifications]);
-
-  console.log(loggedInUser);
 
   const router = useRouter();
 
@@ -92,8 +92,7 @@ export default function Navbar() {
           </div>
           <Popover.Group
             as="nav"
-            className="hidden md:flex items-center space-x-10 relative"
-          >
+            className="hidden md:flex items-center space-x-10 relative">
             <Link href="/jobs">
               <a className="text-base font-medium text-gray-500 hover:text-gray-900">
                 Jobs
@@ -114,8 +113,7 @@ export default function Navbar() {
               <>
                 <button
                   onClick={() => setIsOpen(!isOpen)}
-                  className="flex items-center"
-                >
+                  className="flex items-center">
                   <img
                     src={currentUser?.photoURL}
                     className="w-12 h-12 ring-2 ring-green-500"
@@ -135,12 +133,10 @@ export default function Navbar() {
             isOpen
               ? "bg-white md:block hidden shadow-md  w-56  py-4 absolute z-10 rounded top-16 right-6"
               : "hidden"
-          }
-        >
+          }>
           <button
             onClick={() => router.push("/dashboard/profile")}
-            className="flex items-center hover:bg-slate-100 py-2 px-5 w-full"
-          >
+            className="flex items-center hover:bg-slate-100 py-2 px-5 w-full">
             <img
               src={currentUser?.photoURL}
               className="w-10 h-10 mr-2 border "
@@ -158,8 +154,7 @@ export default function Navbar() {
           {loggedInUser?.role === "recruiter" && (
             <button
               onClick={() => router.push("/jobpost")}
-              className="flex items-center hover:bg-slate-100 py-2 px-5 w-full"
-            >
+              className="flex items-center hover:bg-slate-100 py-2 px-5 w-full">
               <BsChatRightText className="mr-2" /> Post a job
             </button>
           )}
@@ -172,8 +167,7 @@ export default function Navbar() {
           {/* // log out button */}
           <button
             onClick={logOutHandler}
-            className="flex items-center hover:bg-slate-100 py-2 px-5 w-full"
-          >
+            className="flex items-center hover:bg-slate-100 py-2 px-5 w-full">
             <MdLogin className="mr-2" /> Log Out
           </button>
         </div>
@@ -186,12 +180,10 @@ export default function Navbar() {
         enterTo="opacity-100 scale-100"
         leave="duration-100 ease-in"
         leaveFrom="opacity-100 scale-100"
-        leaveTo="opacity-0 scale-95"
-      >
+        leaveTo="opacity-0 scale-95">
         <Popover.Panel
           focus
-          className="relative bottom-20 inset-x-0 p-2 transition transform origin-top-right lg:hidden"
-        >
+          className="relative bottom-20 inset-x-0 p-2 transition transform origin-top-right lg:hidden">
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
