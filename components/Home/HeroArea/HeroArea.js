@@ -44,7 +44,7 @@ const HeroArea = () => {
   return (
     <div
       // className={cover.hero_cover}
-      style={{ width: "100%", height: "600px" }}
+      // style={{ width: "100%", height: "600px" }}
     >
       <Swiper
         spaceBetween={30}
@@ -68,7 +68,7 @@ const HeroArea = () => {
                 <h6 className="py-3 text-2xl font-bold">
                   <span className="text-pink-500">3,000 +</span> Browse Jobs
                 </h6>
-                <p className="text-gray-500 leading-7">{item.description}</p>
+                <p className="text-gray-500 leading-7 w-7/12">{item.description}</p>
                 <button className="pl-4 font-bold uppercase flex items-center space-x-3 pr-3 py-3  hover:text-[#42C2FF] text-white hover:transform duration-500 hover:scale-105 border-2 border-[#42C2FF] rounded-lg bg-[#42C2FF] hover:bg-white ml-5">
                   Join US <BiRightArrowAlt className="font-medium text-2xl" />
                 </button>

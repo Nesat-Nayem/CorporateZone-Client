@@ -4,6 +4,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { initialUserData } from "../../redux/slices/user/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import initializeAuthentication from "../../firebase";
+import cover from '../../styles/Home.module.css'
 
 const Layout = ({ title, children }) => {
   initializeAuthentication();
@@ -33,7 +34,7 @@ const Layout = ({ title, children }) => {
           rel="stylesheet"
         ></link>
       </Head>
-      <main>{children}</main>
+      <main className={cover.main}>{children}</main>
     </>
   );
 };

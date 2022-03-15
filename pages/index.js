@@ -14,6 +14,8 @@ import Rule from "../components/Home/Rules/Rule";
 import Features from "../components/Home/Features/Features";
 import Recruiter from "../components/Home/Recruiter/Recruiter";
 import Zone from "../components/Home/Zone/Zone";
+import Hiring from "../components/Home/Hiring/Hiring";
+import Candidate from "../components/Home/Candidate/Candidate";
 
 export default function Home() {
   return (
@@ -26,6 +28,8 @@ export default function Home() {
       {/* <RecentJobs /> */}
       {/* <Recruiter /> */}
       <Zone />
+      <Hiring />
+      <Candidate />
       <CompanyJobs />
       <Pricing />
       {/* <Faq /> */}

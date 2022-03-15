@@ -31,6 +31,11 @@ const TopHeader = () => {
                   <MdLogin className="mr-2" /> Sign In
                 </a>
               </Link>
+              <button>
+                <a className="pl-4 font-bold uppercase flex items-center space-x-3 font-serif py-3 hover:bg-[#42C2FF] hover:text-white duration-500 border-2 border-[#42C2FF] text-[#42C2FF] rounded-bl-lg rounded-tl-lg">
+                  <MdLogin className="mr-2" /> Mode
+                </a>
+              </button>
             </>
           )}
         </div>

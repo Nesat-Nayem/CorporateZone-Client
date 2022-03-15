@@ -70,13 +70,17 @@ export default function Navbar() {
   };
 
   return (
-    <Popover className="relative bg-white">
+    <Popover className="sticky top-0 bg-white">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex relative justify-between items-center border-b-2 border-gray-100 py-6 lg:justify-start md:space-x-10">
           <div className="flex justify-start md:w-0 md:flex-1">
             <Link href="/">
               <a className="flex items-center">
-                <img src="https://i.ibb.co/V29yZ2z/logo-zone.png" className="w-16" alt="logo" />
+                <img
+                  src="https://i.ibb.co/V29yZ2z/logo-zone.png"
+                  className="w-16"
+                  alt="logo"
+                />
                 <span className=" text-2xl font-extrabold  pl-3">
                   <span className="text-pink-500">Co</span>rporate Zo
                   <span className="text-cyan-500">ne</span>
@@ -105,14 +109,19 @@ export default function Navbar() {
                 Jobs
               </a>
             </Link>
-            <Link href="/works">
+            <Link href="#">
               <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-                How Works
+                Features
               </a>
             </Link>
-            <Link href="/blog">
+            <Link href="/works">
               <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Blog
+                How Connects
+              </a>
+            </Link>
+            <Link href="#">
+              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+                Language
               </a>
             </Link>
             {currentUser && <Notification notifications={notifications} />}
