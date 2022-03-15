@@ -60,7 +60,7 @@ const Features = (props) => {
                 <button className="absolute left-3 top-3 bg-[#42C2FF] font-medium px-3 rounded-md text-gray-50">
                   {job?.jobType}
                 </button>
-                <div className="text-slate-800 rounded-md my-5 flex justify-between items-center md:w-8/12 space-y-3 w-100">
+                <div className="text-slate-800 rounded-md my-5 md:flex justify-between items-center md:w-8/12 space-y-3 w-100 mx-3">
                   <div>
                     <h2>{job?.jobTitle}</h2>
                     <h4 className="flex items-center py-2">
