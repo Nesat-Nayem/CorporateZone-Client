@@ -16,7 +16,7 @@ const TopHeader = () => {
     <div className="">
       <div className="text-white ml-auto pl-10 md:w-40 relative md:flex hidden justify-between items-center">
         {/* signup and login */}
-        <div className="flex flex-col rounded-bl-lg rounded-tl-lg absolute top-24 ">
+        <div className="flex flex-col rounded-bl-lg rounded-tl-lg absolute top-16 ">
           {currentUser ? (
             <></>
           ) : (

@@ -43,8 +43,7 @@ const HeroArea = () => {
   ];
   return (
     <div
-      className={cover.hero_cover}
-      // style={{ width: "100%", height: "600px" }}
+      className={cover.hero_cover}  
     >
       <Swiper
         spaceBetween={30}
