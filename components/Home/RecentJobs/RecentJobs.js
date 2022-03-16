@@ -8,36 +8,8 @@ import { ImLocation2 } from "react-icons/im";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Features from "../Features/Features";
 
-// const fakejobs = [
-//   {
-//     id: 1,
-//     company: "Chisel Lap",
-//     salary: "$30k-$50k",
-//     location: "Central Hollis, NY, 11103, USA",
-//     skills: "Nodejs, AWS, Redux, Nextjs",
-//     education: "Does not matter",
-//     img: "https://i.ibb.co/PhRDzm8/third-company.jpg",
-//   },
-//   {
-//     id: 2,
-//     company: "Chisel Lap",
-//     salary: "$30k-$50k",
-//     location: "Central Hollis, NY, 11103, USA",
-//     skills: "Nodejs, AWS, Redux, Nextjs",
-//     education: "Does not matter",
-//     img: "https://i.ibb.co/KVTFzYF/first-company.jpg",
-//   },
-//   {
-//     id: 3,
-//     company: "Chisel Lap",
-//     salary: "$30k-$50k",
-//     location: "Central Hollis, NY, 11103, USA",
-//     skills: "Nodejs, AWS, Redux, Nextjs",
-//     education: "Does not matter",
-//     img: "https://i.ibb.co/48ck7kn/second-company.jpg",
-//   },
-// ];
 
 const RecentJobs = (props) =>
 {
@@ -75,12 +47,6 @@ const RecentJobs = (props) =>
       });
   }, []);
 
-  // const first = (filter) =>{
-  //   const filterd = jobs.filter(job =>{
-  //     job.jobType === filter
-  //   })
-  //   setJobs(filterd)
-  // }
 
   const handleChange = (event) =>
   {
@@ -93,104 +59,108 @@ const RecentJobs = (props) =>
   };
 
   return (
-    <div className="bg-slate-100 dark:bg-slate-700 py-10 " style={{ display: "inlineBlock" }}>
-      <div className="space-y-7 mx-auto md:w-3/4 relative mb-6 recent_header">
-        <h3 className="text-3xl text-center after:content-[''] after:absolute after:border-t-2 after:w-16 after: after:border-cyan-500 after:left-0 after:bottom-0 after:right-32 after:top-10 after:mx-auto font-medium text-slate-700 dark:text-white uppercase">
-          Recent Jobs {display?.length}
-        </h3>
+    <>
+      <Features job={jobs} />
+      <div className="bg-slate-100 py-10 " style={{ display: "inlineBlock" }}>
+        <div className="space-y-7 mx-auto md:w-3/4 relative mb-6 recent_header">
+          <h3 className="text-3xl text-center after:content-[''] after:absolute after:border-t-2 after:w-16 after: after:border-cyan-500 after:left-0 after:bottom-0 after:right-32 after:top-10 after:mx-auto font-medium text-slate-700 uppercase">
+            Recent Jobs {display?.length}
+          </h3>
 
-        <div className={style.search}>
-          <input
-            className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
-            placeholder="Search Job Keyword..."
-            type="text"
-            name="search"
-            onChange={handleChange}
-          />
+          <div className={style.search}>
+            <input
+              className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+              placeholder="Search Job Keyword..."
+              type="text"
+              name="search"
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className={style.time}>
+            <select
+              style={{ padding: "10px 30px", backgroundColor: "#85F4FF" }}
+              name=""
+              id=""
+              value={category}
+              className="text-black  px-2 py-2  focus:outline-none rounded"
+              onChange={filterJobs}
+            >
+              <option value="all">All Jobs</option>
+              <option value="intern">Intern</option>
+              <option value="full-time">Full-Time</option>
+              <option value="part-time">Part-Time</option>
+            </select>
+          </div>
         </div>
+        <div style={{ width: "80%", margin: "0 auto" }}>
+          {display?.map((job) => (
+            <div
+              className={style.singe}
+              style={{
+                backgroundColor: "white",
+                marginTop: "20px",
+                padding: "25px 0",
+              }}
+              key={job.id}
+            >
+              <div className={style.gri}>
+                <div>
+                  <img src={job.companyLogo} alt="" width="100" height="100" />
+                </div>
+                <div>
+                  <div className={style.icon}>
+                    <BsBuilding className={style.icons} />
+                    <h2 id={style.sing}>{job.jobTitle}</h2>
+                  </div>
+                  <div className={style.icon}>
+                    <FaMoneyBillAlt className={style.icons} />
+                    <h2 style={{ fontWeight: "700" }}>{job.salary}</h2>
+                  </div>
+                  <div className={style.icon}>
+                    {/* <GiSkills className={style.icons} /> */}
+                    {/* <h2 id={style.sik}>{job.skills}</h2> */}
+                  </div>
+                  <div className={style.icon}>
+                    <ImLocation2 className={style.icons} />
+                    <h2>{job.location}</h2>
+                  </div>
 
-        <div className={style.time}>
-          <select
-            style={{ padding: "10px 30px", backgroundColor: "#85F4FF" }}
-            name=""
-            id=""
-            value={category}
-            className="text-black px-2 py-2 focus:outline-none rounded"
-            onChange={filterJobs}
-          >
-            <option value="all">All Jobs</option>
-            <option value="intern">Intern</option>
-            <option value="full-time">Full-Time</option>
-            <option value="part-time">Part-Time</option>
-          </select>
-        </div>
-      </div>
-      <div style={{ width: "80%", margin: "0 auto" }}>
-        {display?.map((job) => (
-          <div
-            className="bg-white dark:bg-slate-900 text-[#2c2149] dark:text-slate-200 rounded"
-            style={{
-              marginTop: "20px",
-              padding: "25px 0",
-            }}
-            key={job.id}
-          >
-            <div className={style.gri}>
-              <div>
-                <img src={job.companyLogo} alt="" width="100" height="100" />
-              </div>
-              <div>
-                <div className={style.icon}>
-                  <BsBuilding className={style.icons} />
-                  <h2 className="font-bold text-[#2c2149] dark:text-slate-200">{job.jobTitle}</h2>
+                  <div className={style.icon}>
+                    {/* <ImLocation2 className={style.icons} /> */}
+                    <h2 style={{ fontWeight: "700" }}>{job.jobType}</h2>
+                  </div>
                 </div>
-                <div className={style.icon}>
-                  <FaMoneyBillAlt className={style.icons} />
-                  <h2 style={{ fontWeight: "700" }}>{job.salary}</h2>
-                </div>
-                <div className={style.icon}>
-                  {/* <GiSkills className={style.icons} /> */}
-                  {/* <h2 id={style.sik}>{job.skills}</h2> */}
-                </div>
-                <div className={style.icon}>
-                  <ImLocation2 className={style.icons} />
-                  <h2>{job.location}</h2>
-                </div>
-
-                <div className={style.icon}>
-                  {/* <ImLocation2 className={style.icons} /> */}
-                  <h2 style={{ fontWeight: "700" }}>{job.jobType}</h2>
-                </div>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <div className={style.apply}>
-                  <button onClick={() => router.push(`jobs/${job._id}`)}>
-                    APPLY
-                  </button>
-                  <h4>Remote Jobs</h4>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <div className={style.apply}>
+                    <button onClick={() => router.push(`jobs/${job._id}`)}>
+                      APPLY
+                    </button>
+                    <h4>Remote Jobs</h4>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        <div
+          style={{
+            textAlign: "center",
+            fontSize: "25px",
+            color: "red",
+            fontWeight: "700",
+          }}
+        >
+          {display?.length === 0 && <h2>No Jobs Found</h2>}
+        </div>
       </div>
-      <div
-        style={{
-          textAlign: "center",
-          fontSize: "25px",
-          color: "red",
-          fontWeight: "700",
-        }}
-      >
-        {display?.length === 0 && <h2>No Jobs Found</h2>}
-      </div>
-    </div>
+    </>
   );
 };
 export default RecentJobs;

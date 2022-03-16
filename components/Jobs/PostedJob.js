@@ -14,13 +14,14 @@ const PostedJob = ({ job }) =>
       className="sm:grid grid-cols-12 cursor-pointer items-center bg-white dark:bg-slate-900 dark:text-slate-200 rounded py-5 px-5"
     >
       <div className="col-span-2">
-        <Image src={companyLogo} alt="" width="100" height="100" />
+        {/* <Image src={job?.companyLogo} alt="" width="100" height="100" /> */}
+        <img src={companyLogo} alt="logo" width="100" height="100" />
       </div>
       <div className="col-span-8">
-        <h1>
+        <h2>
           {jobTitle}
-          <span className="text-cyan-500 font-thin"> ({companyName})</span>
-        </h1>
+          <span className="text-cyan-500 font-normal"> ({companyName})</span>
+        </h2>
         <h4 className="flex items-center py-2">
           <FaRegMoneyBillAlt className="text-green-500 mr-2" />{" "}
           <strong>{salary}</strong>

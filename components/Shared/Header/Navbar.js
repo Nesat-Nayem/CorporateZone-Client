@@ -42,7 +42,6 @@ const pages = [
 export default function Navbar ()
 {
   const currentUser = useSelector((state) => state.user.currentUser);
-  // console.log(currentUser);
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
   const [notifications, setNotifications] = useState([]);
 
@@ -75,12 +74,13 @@ export default function Navbar ()
   };
 
   return (
-    <Popover className="relative bg-white dark:bg-slate-700">
+    <Popover className="relative ">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex relative justify-between items-center border-b-2 border-gray-100 py-6 lg:justify-start md:space-x-10">
           <div className="flex justify-start md:w-0 md:flex-1">
             <Link href="/">
               <a className="flex items-center">
+                <img src="https://i.ibb.co/V29yZ2z/logo-zone.png" className="w-16" alt="logo" />
                 <span className=" text-2xl font-extrabold  pl-3">
                   <span className="text-pink-500">Co</span>
                   <span className="dark:text-white">rporate Zo</span>
@@ -103,20 +103,26 @@ export default function Navbar ()
 
           <Popover.Group
             as="nav"
-            className="hidden md:flex items-center space-x-10 relative">
+            className="hidden md:flex items-center space-x-10 uppercase relative"
+          >
             <Link href="/jobs">
               <a className="text-base font-medium text-gray-500 dark:text-white hover:text-gray-900 dark:hover:text-gray-300">
                 Jobs
               </a>
             </Link>
-            <Link href="/works">
-              <a className="text-base font-medium text-gray-500 dark:text-white hover:text-gray-900 dark:hover:text-gray-300">
-                How Works
+            <Link href="#">
+              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+                Features
               </a>
             </Link>
-            <Link href="/blog">
-              <a className="text-base font-medium text-gray-500 dark:text-white hover:text-gray-900 dark:hover:text-gray-300">
-                Blog
+            <Link href="/works">
+              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+                How Connects
+              </a>
+            </Link>
+            <Link href="#">
+              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+                Language
               </a>
             </Link>
 
@@ -230,9 +236,7 @@ export default function Navbar ()
               <div className="mt-6">
                 <nav className="grid gap-y-8">
                   {pages.map((item) => (
-
                     <Link key={item.name} href={item.href}>
-
                       <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                         <item.icon
                           className="flex-shrink-0 h-6 w-6 text-indigo-600"

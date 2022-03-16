@@ -3,9 +3,10 @@ import TopHeader from "./TopHeader";
 
 const Header = () => {
   return (
-    <div>
-      <TopHeader />
+    <div className="relative z-10">
       <Navbar />
+      <TopHeader />
+
     </div>
   );
 };

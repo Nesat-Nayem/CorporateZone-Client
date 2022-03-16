@@ -1,8 +1,9 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import cover from '../../../styles/Home.module.css'
 // import Swiper core and required modules
 import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
+import { BiRightArrowAlt } from "react-icons/bi";
 
 const HeroArea = () => {
   const data = [
@@ -41,7 +42,9 @@ const HeroArea = () => {
     },
   ];
   return (
-    <div style={{ width: "100%", height: "600px" }}>
+    <div
+      className={cover.hero_cover}  
+    >
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -55,16 +58,19 @@ const HeroArea = () => {
           return (
             <SwiperSlide
               key={item.id}
-              className="sm:flex justify-between items-center py-5"
+              className="sm:flex justify-between items-center py-5 space-y-3"
             >
-              <div>
+              <div className="space-y-5">
                 <h1 className="xl:text-6xl lg:text-5xl py-8 text-5xl font-bold tracking-wider">
                   {item.title}
                 </h1>
                 <h6 className="py-3 text-2xl font-bold">
                   <span className="text-pink-500">3,000 +</span> Browse Jobs
                 </h6>
-                <p className="text-gray-500 leading-7">{item.description}</p>
+                <p className="text-gray-500 leading-7 w-7/12">{item.description}</p>
+                <button className="pl-4 font-bold uppercase flex items-center space-x-3 pr-3 py-3  hover:text-[#42C2FF] text-white hover:transform duration-500 hover:scale-105 border-2 border-[#42C2FF] rounded-lg bg-[#42C2FF] hover:bg-white ml-5">
+                  Join US <BiRightArrowAlt className="font-medium text-2xl" />
+                </button>
               </div>
               <div className="flex items-center justify-end w-full">
                 <img src={item.image} alt="" />
