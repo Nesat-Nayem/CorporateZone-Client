@@ -57,9 +57,9 @@ const Candidate = () => {
                 </div>
               </div>
             </div>
-            <div className="md:w-2/4 lg:w-2/4 order-1">
+            <div className="md:w-2/4 lg:w-2/4 lg:order-last md:order-last order-1">
               <img
-                className=" transform hover:scale-105 duration-500"
+                className="mt-3 transform hover:scale-105 duration-500"
                 src="https://i.ibb.co/b6qqX0x/easyjobs-hiring-image-2-png.webp"
                 alt=""
               />

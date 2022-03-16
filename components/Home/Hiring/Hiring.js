@@ -6,7 +6,7 @@ import { MdOutlineNotificationsActive } from "react-icons/md";
 const Hiring = () => {
     return (
       <div className="space-y-7 mx-auto md:w-3/4 relative my-6 recent_header">
-        <h3 className="text-3xl text-center after:content-[''] after:absolute after:border-t-2 after:w-16 after: after:border-cyan-500 after:left-0 after:bottom-0 after:right-40 after:top-10 after:mx-auto font-medium text-slate-700 uppercase mb-20">
+        <h3 className="text-3xl text-center after:content-[''] after:absolute after:border-t-2 after:w-16 md:after:border-cyan-500 after:left-0 after:bottom-0 after:right-40 after:top-10 after:mx-auto font-medium text-slate-700 uppercase mb-20">
           Key Features For Exceptional Hiring
         </h3>
         <div className="md:flex md:justify-around lg:flex lg:justify-around  mx-3">

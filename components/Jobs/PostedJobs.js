@@ -72,7 +72,7 @@ const PostedJobs = (props) => {
     setPage(pageNumber);
   };
   return (
-    <section className="bg-gray-100 pb-10">
+    <section className="pb-10">
       <div className="md:w-9/12 w-11/12 mx-auto">
         {/* Search Start */}
         <div className="md:flex justify-center items-center md:max-w-[75%] md:mx-auto relative mt-12">

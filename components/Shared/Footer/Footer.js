@@ -1,12 +1,17 @@
 import Link from "next/link";
+import ScrollToTop from "react-scroll-to-top";
 
 const Footer = () => {
+   
   return (
     <footer>
-      <div className="text-center px:2 md:px-20 lg:text-left bg-slate-800 text-white">
+      <ScrollToTop style={{display:'flex', alignItems:'center', justifyContent:'center', fontWeight:'bold'}} color="#42C2FF" smooth top="1000" />
+      <div className="text-center px:2 md:px-20 lg:text-left bg-[#35414b] text-white">
         <div className="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
           <div className="mr-12 hidden lg:block">
-            <span>Get connected with us on social networks:</span>
+            <span className="text-xl">
+              Get connected with us on social networks:
+            </span>
           </div>
           <div className="flex justify-center">
             <a href="#!" className="mr-6">
@@ -311,215 +316,36 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
-        <div className="mx-6 pt-5 pb-10 text-center md:text-left">
-          <div className="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-sm">
-              <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
-                Jobs by Role and Location
-              </h6>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Software Engineer Jobs in San Francisco</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Software Engineer Jobs in New York City</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Software Engineer Jobs in Los Angeles</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Product Manager Jobs in New York City</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Frontend Engineer Jobs in New York City</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Software Engineer Jobs in San Francisco</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Frontend Engineer Jobs in Los Angeles</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Product Manager Jobs in Los Angeles</a>
-                </Link>
-              </p>
-            </div>
-            <div className="text-sm ml-0 md:ml-10">
-              <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
-                Today In Tech
-              </h6>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">AI & Machine Learning</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Business</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Data & Analytics</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Design</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Marketing & Sales</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Product Management</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Management</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Programming Knowladge</a>
-                </Link>
-              </p>
-            </div>
-            <div className="text-sm">
-              <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
-                Our Blog
-              </h6>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">
-                    30 Questions To Ask Before Joining A Startup
-                  </a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">
-                    9 Terms You will See in Your Startup Equity Offer
-                  </a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">
-                    The Truth About Finding Your First Engineering Job
-                  </a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">How To Hire World-Class Engineers</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">How To Hire Your First 10 Employees</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">
-                    Naval Ravikants Guide To Choosing Your First Job I Tech
-                  </a>
-                </Link>
-              </p>
-            </div>
-            <div className="text-sm">
-              <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
-                Remote Jobs
-              </h6>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Remote Software Engineer Jobs</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Remote Product Manager Jobs</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Remote Data Analyst Jobs</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Remote Product Designer Jobs</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Remote Operations Manager Jobs</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Remote Growth Marketer Jobs</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Remote Account Manager Jobs</a>
-                </Link>
-              </p>
-              <p className="mb-2">
-                <Link href="/">
-                  <a className="">Remote UI/UX Designer Jobs</a>
-                </Link>
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-wrap flex-row items-center mt-2">
-            <p className="ml-3 text-xs">
-              <Link href="/about">
-                <a className="">About us</a>
-              </Link>
-            </p>
-            <p className="ml-3 text-xs">
-              <Link href="/contact">
-                <a className="">Contact us</a>
-              </Link>
-            </p>
-            <p className="ml-3 text-xs">
-              <Link href="/policy">
-                <a className="">Terms & Conditions</a>
-              </Link>
-            </p>
-            <p className="ml-3 text-xs">
-              <Link href="/policy">
-                <a className="">Privacy Policy & Cookies</a>
-              </Link>
-            </p>
-          </div>
+        <div className="flex flex-wrap flex-row items-center pb-3">
+          <p className="ml-3 text-xs">
+            <Link href="/about">
+              <a className="">About us</a>
+            </Link>
+          </p>
+          <p className="ml-3 text-xs">
+            <Link href="/contact">
+              <a className="">Contact us</a>
+            </Link>
+          </p>
+          <p className="ml-3 text-xs">
+            <Link href="/policy">
+              <a className="">Terms & Conditions</a>
+            </Link>
+          </p>
+          <p className="ml-3 text-xs">
+            <Link href="/policy">
+              <a className="">Privacy Policy & Cookies</a>
+            </Link>
+          </p>
         </div>
       </div>
-      <div className="text-center p-6 bg-[#42C2FF]">
+
+      <div className="text-center py-3">
         <span>© 2022 Copyright : </span>
-        <a className="text-white font-semibold hover:text-black" href="#">
+        <a
+          className="text-slate-800 font-semibold hover:text-[#42C2FF]"
+          href="#"
+        >
           @Team-CodeExpress
         </a>
       </div>
