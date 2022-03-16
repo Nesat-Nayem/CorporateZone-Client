@@ -3,12 +3,14 @@
 }
 
 .main {
-  background-image: url("../images/cover.jpg"); 
+  background-color: #ebf8fe;
+  /* background-image:url("../images/cover.jpg"); 
    background-position: center; 
   background-repeat: repeat; 
-  background-size:contain;
+  background-size:contain; */
   min-height: 100vh;
    width: 100%;
+   /* opacity: 0.3px; */
   /* padding: 4rem 0; */
   /* flex: 1; */
   /* display: flex;

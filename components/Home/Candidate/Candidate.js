@@ -6,8 +6,8 @@ const Candidate = () => {
     return (
       <div>
         <div className="space-y-7 mx-auto md:w-3/4 relative my-6 recent_header">
-          <div className="md:flex md:justify-around lg:flex lg:justify-around order-2 mx-3">
-            <div className="space-y-5 md:w-2/4 lg:w-2/4 text-slate-700 md:mr-20 lg:mr-20 pr-10">
+          <div className="md:flex md:justify-around lg:flex lg:justify-evenly order-2 mx-3">
+            <div className="space-y-5 md:w-2/4 lg:w-2/4 text-slate-700 ">
               <h3 className="text-3xl font-medium my-5">
                 Find The Right Candidate Faster
               </h3>
@@ -59,7 +59,7 @@ const Candidate = () => {
             </div>
             <div className="md:w-2/4 lg:w-2/4 order-1">
               <img
-                className="md:p-20 lg:p-20 transform hover:scale-105 duration-500"
+                className=" transform hover:scale-105 duration-500"
                 src="https://i.ibb.co/b6qqX0x/easyjobs-hiring-image-2-png.webp"
                 alt=""
               />
