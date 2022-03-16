@@ -22,7 +22,7 @@ export default function Home() {
     <Layout title="Corporate Zone">
       <Header />
 
-      <HeroArea />
+      <HeroArea className="" />
       {/* <CategoryJobs /> */}
       <Features />
       {/* <RecentJobs /> */}

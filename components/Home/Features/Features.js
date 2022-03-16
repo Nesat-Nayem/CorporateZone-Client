@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
 
+
 SwiperCore.use([Autoplay, EffectCoverflow, Pagination]);
 
 const Features = (props) => {
@@ -35,7 +36,7 @@ const Features = (props) => {
         </h3>
 
         <Swiper
-        //   navigation
+          //   navigation
           pagination={{ clickable: true }}
           effect="coverflow"
           coverflowEffect={{
@@ -47,6 +48,7 @@ const Features = (props) => {
           }}
           slidesPerView={2}
           centeredSlides
+
           className="lg:w-9/12 md:w-11/12 mx-auto h-full"
           style={{ height: "350px" }}
         >

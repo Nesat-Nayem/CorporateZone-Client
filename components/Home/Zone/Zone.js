@@ -4,8 +4,13 @@ import { FaLaptopCode } from "react-icons/fa";
 import { MdMarkEmailRead } from "react-icons/md";
 import { RiUserSearchFill } from "react-icons/ri";
 import card from '../../../styles/Home.module.css'
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const Zone = () => {
+    useEffect(() => {
+      AOS.init();
+    }, []);
     return (
       <div className="mx-10 md:mx-20 md:my-40">
         <div className="md:grid md:grid-cols-2 lg:w-10/12 mx-auto space-y-20">
@@ -15,7 +20,10 @@ const Zone = () => {
                 Attract & Manage The Right Talent
               </h4>
             </div>
-            <div className="flex items-center justify-center text-[#42C2FF]">
+            <div
+              data-aos="zoom-in-up"
+              className="flex items-center justify-center text-[#42C2FF]"
+            >
               <MdMarkEmailRead className="text-7xl ring-2 rounded-lg ring-[#42c3ffe5] hover:transform duration-500 hover:scale-105" />
             </div>
             <div className={card.zone_card}>
@@ -23,7 +31,10 @@ const Zone = () => {
                 Highly Structured Candidate Pipeline
               </h4>
             </div>
-            <div className="flex items-center justify-center text-[#42C2FF]">
+            <div
+              data-aos="zoom-in-down"
+              className="flex items-center justify-center text-[#42C2FF]"
+            >
               <FaLaptopCode className="text-7xl ring-2 rounded-lg ring-[#42c3ffe5] hover:transform duration-500 hover:scale-105" />
             </div>
             <div className={card.zone_card}>
@@ -31,7 +42,10 @@ const Zone = () => {
                 Faster & Better Hiring Process
               </h4>
             </div>
-            <div className="flex items-center justify-center text-[#42C2FF]">
+            <div
+              data-aos="zoom-in-down"
+              className="flex items-center justify-center text-[#42C2FF]"
+            >
               <BsFillPieChartFill className="text-7xl ring-2 rounded-lg ring-[#42c3ffe5] hover:transform duration-500 hover:scale-105" />
             </div>
             <div className={card.zone_card}>
@@ -39,7 +53,10 @@ const Zone = () => {
                 User Friendly Process
               </h4>
             </div>
-            <div className="flex items-center justify-center text-[#42C2FF]">
+            <div
+              data-aos="zoom-in-up"
+              className="flex items-center justify-center text-[#42C2FF]"
+            >
               <RiUserSearchFill className="text-7xl ring-2 rounded-lg ring-[#42c3ffe5] hover:transform duration-500 hover:scale-105" />
             </div>
             <div className={card.zone_card}>
@@ -49,7 +66,12 @@ const Zone = () => {
             </div>
           </div>
 
-          <div className="ml-16 text-justify ">
+          <div
+            className="ml-16 text-justify "
+            data-aos="fade-up"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+          >
             <div className="">
               <h3 className=" text-5xl font-bold leading-snug">
                 Why Does Your Company Need CorporateZone?

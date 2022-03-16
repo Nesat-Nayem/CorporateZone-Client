@@ -13,6 +13,7 @@
     "@icon/heroicons-outline": "^0.4.2-alpha.0",
     "@icon/heroicons-solid": "^0.4.2-alpha.0",
     "@reduxjs/toolkit": "^1.7.2",
+    "aos": "^2.3.4",
     "axios": "^0.25.0",
     "cogo-toast": "^4.2.3",
     "emailjs": "^3.7.0",

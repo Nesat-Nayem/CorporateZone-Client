@@ -1,12 +1,18 @@
 import Image from "next/image";
 import { FcOk } from "react-icons/fc";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 import job from "../../images/job_hunt.svg";
 import hired from "../../images/career_progress.svg";
 import interview from "../../images/interview.svg";
 import bgParallax from "../About/About.module.css";
+import { useEffect } from "react";
 
+  
 const Works = () => {
+  useEffect(() => {
+  AOS.init();
+},[])
   return (
     <div className="my-9 relative">
       <h3 className="text-3xl text-center after:content-[''] after:absolute after:border-t-2 after:w-16 md:after:border-cyan-500 after:left-0 after:bottom-0 after:right-60 after:top-10 after:mx-auto font-medium text-slate-700 uppercase my-20">
@@ -14,7 +20,12 @@ const Works = () => {
       </h3>
 
       <div className="fascinate md:grid grid-cols-2 lg:w-9/12 md:w-10/12 mx-auto ">
-        <div className="space-y-7 mx-20">
+        <div
+          className="space-y-7 mx-20"
+          data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+        >
           <h3 className="text-2xl font-medium"> Fascinate</h3>
           <p className="leading-7 max-w-[500px] text-slate-700">
             Super user-friend user interface along with customization options to
@@ -41,12 +52,32 @@ const Works = () => {
             Form In-app Messaging With Candidates
           </li>
         </div>
-        <Image className="" src={job} alt="" />
+        <div>
+          <Image
+            className=""
+            data-aos="fade-left"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+            src={job}
+            alt=""
+          />
+        </div>
       </div>
 
       <div className="process md:grid grid-cols-2 lg:w-9/12 md:w-10/12 mx-auto my-20">
-        <Image src={hired} alt="" />
-        <div className="space-y-7 mx-20">
+        <Image
+          data-aos="fade-up"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+          src={hired}
+          alt=""
+        />
+        <div
+          className="space-y-7 mx-20"
+          data-aos="fade-up"
+          data-aos-offset="400"
+          data-aos-easing="ease-in-sine"
+        >
           <h3 className="text-2xl font-medium"> Process</h3>
           <p className="leading-7 max-w-[500px] text-slate-700">
             Personalized team management system along with smart tracking and
@@ -76,7 +107,12 @@ const Works = () => {
       </div>
 
       <div className="hire md:grid grid-cols-2 lg:w-9/12 md:w-10/12 mx-auto my-20">
-        <div className="space-y-7 mx-20">
+        <div
+          className="space-y-7 mx-20"
+          data-aos="fade-up"
+          data-aos-offset="400"
+          data-aos-easing="ease-in-sine"
+        >
           <h3 className="text-2xl font-medium"> Recruit</h3>
           <p className="leading-7 max-w-[500px] text-slate-700">
             Seamless and advanced recruitment system to make the best hiring
@@ -103,7 +139,13 @@ const Works = () => {
             Automated Offer Letter
           </li>
         </div>
-        <Image src={interview} alt="" />
+        <Image
+          data-aos="fade-up"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+          src={interview}
+          alt=""
+        />
       </div>
     </div>
   );
