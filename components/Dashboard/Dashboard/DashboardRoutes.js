@@ -49,7 +49,7 @@ const DashboardRoutes = ({ jobs }) => {
     <>
       <div className="antialiased h-screen overflow-y-scroll chats relative lg:flex">
         <nav
-          className={`absolute lg:relative z-10 w-72 lg:transform-none lg:opacity-100 bg-[#00355f] text-white h-screen ${
+          className={`absolute overflow-y-scroll chats lg:relative z-10 w-72 lg:transform-none lg:opacity-100 bg-[#00355f] text-white h-screen ${
             !trigger
               ? "inset-0 opacity-0 transform duration-200 -translate-x-full ease-out"
               : "inset-0 opacity-100 transform duration-200 translate-x-0 ease-in"
@@ -102,19 +102,19 @@ const DashboardRoutes = ({ jobs }) => {
                 </li>
               }
             </ul>
-            {/* // log out button */}
-            <div className="px-10 absolute bottom-10">
-              <button onClick={logOutHandler}>
-                <a className=" w-full py-2 px-10 text-md  mx-auto text-gray-300 border border-gray-500 rounded flex justify-center items-center mt-10 hover:text-white">
-                  <MdOutlineLogout className="text-2xl" />
-                  &nbsp;&nbsp;LogOut
-                </a>
-              </button>
-            </div>
+          </div>
+          {/* // log out button */}
+          <div className="px-10 absolute md:bottom-10 bottom-4">
+            <button onClick={logOutHandler}>
+              <a className=" w-full py-2 px-10 text-md  mx-auto text-gray-300 border border-gray-500 rounded flex justify-center items-center mt-10 hover:text-white">
+                <MdOutlineLogout className="text-2xl" />
+                &nbsp;&nbsp;LogOut
+              </a>
+            </button>
           </div>
         </nav>
         <div className="relative z-0 lg:flex-grow">
-          <header className="flex items-center  py-2">
+          <header className="flex  items-center  py-2">
             <MdOutlineMenu
               onClick={() => setTrigger(true)}
               className="h-12 xl:hidden w-12 p-2 ml-2 hover:bg-pink-600 rounded-md cursor-pointer"

@@ -25,7 +25,7 @@ const ChatLayout = () => {
   return (
     <section
       className="w-full chats sm:grid grid-cols-12 gap-3 overflow-y-scroll"
-      style={{ height: "90vh" }}
+      style={{ height: "86vh" }}
     >
       {/* // chats names */}
       <div className=" chats xl:col-span-3 md:col-span-4 w-full  h-full overflow-y-scroll ">
@@ -37,10 +37,7 @@ const ChatLayout = () => {
       </div>
       {/* chat message */}
       <div className="xl:col-span-9 md:col-span-8 w-full bg-white h-full py-5 px-5">
-        <SingleChat
-          loggedInUser={loggedInUser}
-          selectedChat={selectedChat}
-        />
+        <SingleChat loggedInUser={loggedInUser} selectedChat={selectedChat} />
       </div>
     </section>
   );

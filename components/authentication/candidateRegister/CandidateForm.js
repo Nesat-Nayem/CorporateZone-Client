@@ -5,6 +5,7 @@ import useFirebase from "../../../redux/slices/user/useFirebase";
 import Select from "react-select";
 import countryList from "react-select-country-list";
 import cogoToast from "cogo-toast";
+import { useSelector } from "react-redux";
 
 const CandidateForm = () => {
   const [photoURL, setPhotoURL] = useState("");
@@ -101,7 +102,7 @@ const CandidateForm = () => {
             <input
               className="w-full border border-gray-200 p-2  text-black focus:outline-none "
               placeholder="+880"
-              type="number"
+              type="text"
               {...register("phone", { required: true, pattern: /^(?=.{11,})/ })}
             />
             {/* errors will return when field validation fails  */}

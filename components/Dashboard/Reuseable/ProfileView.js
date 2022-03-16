@@ -4,9 +4,9 @@ import Badge from "../Candidate/skillTest/Badge";
 import BadgeShow from "../Candidate/skillTest/BadgeShow";
 import Chart from "../Chart/Chart";
 
-const ProfileView = ({ role, loggedInUser }) =>
-{
+const ProfileView = ({ role, loggedInUser }) => {
   const router = useRouter();
+  console.log(loggedInUser);
   return (
     <div className="bg-white xl:px-5 md:px-2 px-2 py-1">
       {/* profile information */}
@@ -82,7 +82,7 @@ const ProfileView = ({ role, loggedInUser }) =>
               <p className="font-semibold text-sm text-slate-600 py-1">
                 Phone:
               </p>
-              <p className="px-1  text-lg">0{loggedInUser?.phone.toString()}</p>
+              <p className="px-1  text-lg">{loggedInUser?.phone}</p>
             </div>
           </div>
         </div>
@@ -93,7 +93,9 @@ const ProfileView = ({ role, loggedInUser }) =>
               <div className=" py-5">
                 {/* skill Set */}
                 <div className="py-2">
-                  <p className="font-semibold text-slate-600 py-1">Skill set: </p>
+                  <p className="font-semibold text-slate-600 py-1">
+                    Skill set:{" "}
+                  </p>
                   <p>
                     {loggedInUser?.selectedSkills.map((skill) => (
                       <span key={skill.id}>{skill.name}, </span>
