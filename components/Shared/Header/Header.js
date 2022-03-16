@@ -3,7 +3,7 @@ import TopHeader from "./TopHeader";
 
 const Header = () => {
   return (
-    <div className="relative bg-white">
+    <div className="relative ">
       <Navbar />
       <TopHeader />
     </div>
