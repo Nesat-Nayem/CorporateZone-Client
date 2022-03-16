@@ -27,6 +27,9 @@ import AdminProfile from "../Admin/AdminProfile";
 import SkillTest from "../Candidate/skillTest/SkillTest";
 import AppliedJobs from "../Candidate/AppliedJobs/AppliedJobs";
 import ChatLayout from "../Messages/ChatLayout";
+import BuildResume from "../Candidate/BuildResume/BuildResume";
+import { FcVideoCall } from "react-icons/fc";
+import Applicant from "../../Applicant/Applicant";
 
 const DashboardRoutes = ({ jobs }) => {
   const [trigger, setTrigger] = useState(false);
@@ -53,7 +56,7 @@ const DashboardRoutes = ({ jobs }) => {
             !trigger
               ? "inset-0 opacity-0 transform duration-200 -translate-x-full ease-out"
               : "inset-0 opacity-100 transform duration-200 translate-x-0 ease-in"
-          }`}
+            }`}
         >
           <div className="flex justify-between items-center my-5 mr-5 ml-0 md:ml-4 py-5">
             <div className="flex flex-col items-center mx-auto">
@@ -174,6 +177,9 @@ const DashboardRoutes = ({ jobs }) => {
             {/* recruiter profile */}
             {params[0] === "profile" && loggedInUser?.role === "recruiter" && (
               <RecruiterProfile />
+            )}
+            {params[0] === "applicant" && loggedInUser?.role === "recruiter" && (
+              <Applicant />
             )}
             {/* update recruiter profile  */}
             {params[0] === "updateProfile" &&

@@ -68,13 +68,14 @@ const fackreview = [
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 // const Review = ({ review }) => {
-const Review = () => {
+const Review = () =>
+{
   return (
     <section className="contrl max-w-screen-xl mx-auto px-6 pb-24 mt-16">
       {/* costom */}
 
       <div className="flex justify-center items-center flex-col">
-        <h1 className="font-logo text-gray-800 text-3xl font-semibold">
+        <h1 className="font-logo text-gray-800 dark:text-white text-3xl font-semibold">
           Testimonials
         </h1>
         <div className="h-1 w-24 bg-gray-400 rounded-full"></div>

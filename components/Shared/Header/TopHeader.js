@@ -8,14 +8,16 @@ import { FaUserAlt } from "react-icons/fa";
 import { MdLogin } from "react-icons/md";
 import Link from "next/link";
 import { useSelector } from "react-redux";
+import Toggle from "./toggle";
 
-const TopHeader = () => {
+const TopHeader = () =>
+{
   const currentUser = useSelector((state) => state.user.currentUser);
 
   return (
-    <div className="bg-[#42C2FF] text-white px-10 md:flex hidden justify-between py-3 items-center">
+    <div className="bg-[#42C2FF] text-white dark:text-slate-800 px-10 md:flex hidden justify-between py-3 items-center">
       <div className=" lg:flex hidden">
-        <p className="flex space-x-2 border-r pr-5 items-center">
+        <p className="flex space-x-2 border-r dark:border-black pr-5 items-center">
           <BsTelephoneFill className="" /> <span>Phone: </span>+12 3456 7890{" "}
         </p>
         <p className="flex space-x-2 pl-5 items-center">
@@ -23,10 +25,15 @@ const TopHeader = () => {
           corporate.zone@gmail.com{" "}
         </p>
       </div>
-
+      <div className="flex justify-center items-center">
+        <Toggle />
+      </div>
       <div className="flex justify-between items-center">
+
+
+
         {/* social icons */}
-        <div className="flex space-x-4 text-gray-200 border-r pr-4">
+        <div className="flex space-x-4 text-gray-200 dark:text-slate-800 border-r dark:border-black pr-4">
           <FaFacebookF className="text-lg cursor-pointer hover:text-white" />
           <BsTwitter className="text-lg cursor-pointer hover:text-white" />
           <FaLinkedinIn className="text-xl cursor-pointer hover:text-white" />
@@ -34,13 +41,13 @@ const TopHeader = () => {
         </div>
 
         {/* signup and login */}
-        <div className="flex ">
+        <div className="flex dark:text-slate-800">
           {currentUser ? (
             <></>
           ) : (
             <>
               <Link href="/signup">
-                <a className="pl-4 font-bold uppercase flex items-center space-x-3 font-serif border-r pr-3">
+                <a className="pl-4 font-bold uppercase flex items-center space-x-3 font-serif border-r dark:border-black pr-3">
                   <FaUserAlt className="mr-2" /> Sign up
                 </a>
               </Link>

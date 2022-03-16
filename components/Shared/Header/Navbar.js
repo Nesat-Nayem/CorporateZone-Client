@@ -1,7 +1,8 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment, useEffect } from "react";
 import { Popover, Transition } from "@headlessui/react";
-import {
+import
+{
   ChartBarIcon,
   MenuIcon,
   RefreshIcon,
@@ -38,14 +39,17 @@ const pages = [
   },
 ];
 
-export default function Navbar() {
+export default function Navbar ()
+{
   const currentUser = useSelector((state) => state.user.currentUser);
-
+  // console.log(currentUser);
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
   const [notifications, setNotifications] = useState([]);
 
-  useEffect(() => {
-    const fetchNotifications = async () => {
+  useEffect(() =>
+  {
+    const fetchNotifications = async () =>
+    {
       const res = await fetch(
         "https://murmuring-spire-15534.herokuapp.com/jobs/notifyJobs"
       );
@@ -64,20 +68,22 @@ export default function Navbar() {
   const { logOut } = useFirebase();
 
   // log out handler
-  const logOutHandler = () => {
+  const logOutHandler = () =>
+  {
     dispatch(logOut);
     setIsOpen(!isOpen);
   };
 
   return (
-    <Popover className="relative bg-white">
+    <Popover className="relative bg-white dark:bg-slate-700">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex relative justify-between items-center border-b-2 border-gray-100 py-6 lg:justify-start md:space-x-10">
           <div className="flex justify-start md:w-0 md:flex-1">
             <Link href="/">
               <a className="flex items-center">
                 <span className=" text-2xl font-extrabold  pl-3">
-                  <span className="text-pink-500">Co</span>rporate Zo
+                  <span className="text-pink-500">Co</span>
+                  <span className="dark:text-white">rporate Zo</span>
                   <span className="text-cyan-500">ne</span>
                 </span>
               </a>
@@ -100,21 +106,23 @@ export default function Navbar() {
             className="hidden md:flex items-center space-x-10 relative"
           >
             <Link href="/jobs">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+              <a className="text-base font-medium text-gray-500 dark:text-white hover:text-gray-900 dark:hover:text-gray-300">
                 Jobs
               </a>
             </Link>
             <Link href="/works">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+              <a className="text-base font-medium text-gray-500 dark:text-white hover:text-gray-900 dark:hover:text-gray-300">
                 How Works
               </a>
             </Link>
             <Link href="/blog">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+              <a className="text-base font-medium text-gray-500 dark:text-white hover:text-gray-900 dark:hover:text-gray-300">
                 Blog
               </a>
             </Link>
+
             {currentUser && <Notification notifications={notifications} />}
+
             {currentUser && (
               <>
                 <button
@@ -138,13 +146,13 @@ export default function Navbar() {
         <div
           className={
             isOpen
-              ? "bg-white md:block hidden shadow-md  w-56  py-4 absolute z-10 rounded top-16 right-6"
+              ? "bg-white dark:bg-slate-700 dark:text-white md:block hidden shadow-md  w-56  py-4 absolute z-10 rounded top-16 right-6"
               : "hidden"
           }
         >
           <button
             onClick={() => router.push("/dashboard/profile")}
-            className="flex items-center hover:bg-slate-100 py-2 px-5 w-full"
+            className="flex items-center hover:bg-slate-100 dark:hover:text-black py-2 px-5 w-full"
           >
             <img
               src={currentUser?.photoURL}
@@ -163,21 +171,21 @@ export default function Navbar() {
           {loggedInUser?.role === "recruiter" && (
             <button
               onClick={() => router.push("/jobpost")}
-              className="flex items-center hover:bg-slate-100 py-2 px-5 w-full"
+              className="flex items-center hover:bg-slate-100 dark:hover:text-black py-2 px-5 w-full"
             >
               <BsChatRightText className="mr-2" /> Post a job
             </button>
           )}
           {/* make a review */}
           {loggedInUser?.role !== "admin" && (
-            <button className="flex items-center hover:bg-slate-100 py-2 px-5 w-full">
+            <button className="flex items-center hover:bg-slate-100 dark:hover:text-black py-2 px-5 w-full">
               <BsChatRightText className="mr-2" /> Share experience
             </button>
           )}
           {/* // log out button */}
           <button
             onClick={logOutHandler}
-            className="flex items-center hover:bg-slate-100 py-2 px-5 w-full"
+            className="flex items-center hover:bg-slate-100 dark:hover:text-black py-2 px-5 w-full"
           >
             <MdLogin className="mr-2" /> Log Out
           </button>
@@ -226,7 +234,9 @@ export default function Navbar() {
               <div className="mt-6">
                 <nav className="grid gap-y-8">
                   {pages.map((item) => (
+
                     <Link key={item.name} href={item.href}>
+
                       <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                         <item.icon
                           className="flex-shrink-0 h-6 w-6 text-indigo-600"

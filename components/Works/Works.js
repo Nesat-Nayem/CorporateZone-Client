@@ -4,7 +4,8 @@ import { FcOk } from "react-icons/fc";
 // import seeking from "../../../images/seeking.png";
 import bgParallax from "../About/About.module.css";
 
-const Works = () => {
+const Works = () =>
+{
   return (
     <div className="my-9">
       {/* Company */}
@@ -17,15 +18,15 @@ const Works = () => {
         </div>
         <div className=" md:w-5/12 mx-auto process_con">
           <article className="space-y-5">
-            <h3 className="text-3xl">Recruiter Requirement</h3>
-            <p className="text-slate-600">
+            <h3 className="text-3xl dark:text-white">Recruiter Requirement</h3>
+            <p className="text-slate-600 dark:text-slate-300">
               We've Verified Company for jobs posting in different era with
               secure communication. so many company believe us for that
               techniques and we're growing fast. See more policy about
               recruiters in privacy & policy. Here are some conditions for any
               company.
             </p>
-            <ul className="text-slate-800 mx-3 space-y-3">
+            <ul className="text-slate-800 dark:text-slate-200 mx-3 space-y-3">
               <li className="flex">
                 <FcOk className="mx-3" />
                 Company History
@@ -120,15 +121,15 @@ const Works = () => {
       <div className="md:flex md:justify-evenly md:items-center my-20 md:mx-24 mx-2">
         <div className="md:w-5/12 mx-auto process_con">
           <article className="space-y-5">
-            <h3 className="text-3xl">Candidate Requirement</h3>
-            <p className="text-slate-600">
+            <h3 className="text-3xl dark:text-white">Candidate Requirement</h3>
+            <p className="text-slate-600 dark:text-slate-300">
               We've Verified Company for jobs posting in different era with
               secure communication. so many company believe us for that
               techniques and we're growing fast. See more policy about
               recruiters in privacy & policy. Here are some conditions for any
               company.
             </p>
-            <ul className="text-slate-800 mx-3 space-y-3">
+            <ul className="text-slate-800 dark:text-slate-200 mx-3 space-y-3">
               <li className="flex">
                 <FcOk className="mx-3" />
                 Solid Skills

@@ -4,14 +4,16 @@ import { saveAs } from "file-saver";
 import InputItem from "./InputItem";
 import { RiDoubleQuotesR } from "react-icons/ri";
 
-const BuildResume = () => {
+const BuildResume = () =>
+{
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = (data) =>
+  {
     axios
       .post("https://murmuring-spire-15534.herokuapp.com/create-pdf", data)
       .then(() =>
@@ -19,7 +21,8 @@ const BuildResume = () => {
           responseType: "blob",
         })
       )
-      .then((res) => {
+      .then((res) =>
+      {
         const pdfBlob = new Blob([res.data], { type: "application/pdf" });
         saveAs(pdfBlob, `${data.name}.pdf`);
       });
@@ -37,7 +40,7 @@ const BuildResume = () => {
           necessary input.
         </p>
       </div> */}
-      <h1 className="text-center py-5 text-3xl font-bold">Build Your Resume</h1>
+      <h1 className="bg-slate-500 text-2xl text-center tracking-widest text-white font-bold rounded-3xl py-2 mb-5 shadow-xl">Build Your Resume</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-3">
           <InputItem

@@ -68,16 +68,18 @@ const fakeData = [
   },
 ];
 
-const Blogs = () => {
+const Blogs = () =>
+{
   return (
     <div>
-      <h1 className="text-3xl font-serif font-bold pb-5">Blogs</h1>
+      <h1 className="text-3xl dark:text-white font-serif font-bold pb-5">Blogs</h1>
       <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1  md:gap-7 gap-3">
-        {fakeData.map((blog, index) => {
+        {fakeData.map((blog, index) =>
+        {
           return (
             <div
               key={index}
-              className="bg-white py-5 px-3 rounded group overflow-hidden cursor-pointer"
+              className="bg-white dark:bg-slate-900 py-5 px-3 rounded group overflow-hidden cursor-pointer"
             >
               <div className="overflow-hidden">
                 <img
@@ -85,13 +87,13 @@ const Blogs = () => {
                   className="w-full h-40 transform transition duration-300 group-hover:scale-125 overflow-hidden"
                 />
               </div>
-              <div className="flex items-center justify-center py-3">
+              <div className="flex items-center justify-center dark:text-slate-200 py-3">
                 <span>
                   <BsCalendarCheck className="mr-2 mb-1 text-green-600" />
                 </span>
                 <h6>{blog.date}</h6>
               </div>
-              <p className="font-sans ">{blog.description}</p>
+              <p className="font-sans dark:text-white">{blog.description}</p>
             </div>
           );
         })}

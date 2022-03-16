@@ -5,7 +5,8 @@ import { IoLogoTwitter } from "react-icons/Io";
 import { GrLinkedinOption } from "react-icons/Gr";
 import { BsInstagram } from "react-icons/Bs";
 
-const Footer = () => {
+const Footer = () =>
+{
   return (
     <div
       // style={{backgroundImage:"linear-gradient(to right, rgba(39, 177, 252, 0.5), rgba(255, 143, 83, 0.5))"}}
@@ -58,37 +59,11 @@ const Footer = () => {
       
         `}</style>
       </div>
-
-      <div>
-        <h3 className="text-2xl">Follow Us</h3>
-        <div className="flex item-center justify-center mt-6">
-          <a
-            href=""
-            className="text-red-600 text-3xl mr-4 hover:text-indigo-700"
-          >
-      
-            <ImFacebook />{" "}
-          </a>
-
-          <a
-            href=""
-            className="text-red-600 text-3xl mr-4 hover:text-indigo-700"
-          >
-         
-            <IoLogoTwitter />
-          </a>
-          <a
-            href=""
-            className="text-red-600 text-3xl mr-4 hover:text-indigo-700"
-          >
-      
-            <GrLinkedinOption />
-          </a>
-          <a href="" className="text-red-600 text-3xl hover:text-indigo-700">
-        
-            <BsInstagram />
-          </a>
-        </div>
+      <div className="text-center text-white dark:text-black text-base p-6 bg-[#42C2FF]">
+        <span>© 2022 Copyright : </span>
+        <a className="font-semibold hover:text-black" href="#">
+          @Team-CodeExpress
+        </a>
       </div>
     </div>
   );
