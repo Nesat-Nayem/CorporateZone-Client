@@ -103,8 +103,7 @@ export default function Navbar ()
 
           <Popover.Group
             as="nav"
-            className="hidden md:flex items-center space-x-10 relative"
-          >
+            className="hidden md:flex items-center space-x-10 relative">
             <Link href="/jobs">
               <a className="text-base font-medium text-gray-500 dark:text-white hover:text-gray-900 dark:hover:text-gray-300">
                 Jobs
@@ -127,8 +126,7 @@ export default function Navbar ()
               <>
                 <button
                   onClick={() => setIsOpen(!isOpen)}
-                  className="flex items-center"
-                >
+                  className="flex items-center">
                   <img
                     src={currentUser?.photoURL}
                     className="w-12 h-12 ring-2 ring-green-500"
@@ -148,8 +146,7 @@ export default function Navbar ()
             isOpen
               ? "bg-white dark:bg-slate-700 dark:text-white md:block hidden shadow-md  w-56  py-4 absolute z-10 rounded top-16 right-6"
               : "hidden"
-          }
-        >
+          }>
           <button
             onClick={() => router.push("/dashboard/profile")}
             className="flex items-center hover:bg-slate-100 dark:hover:text-black py-2 px-5 w-full"
@@ -199,8 +196,7 @@ export default function Navbar ()
         enterTo="opacity-100 scale-100"
         leave="duration-100 ease-in"
         leaveFrom="opacity-100 scale-100"
-        leaveTo="opacity-0 scale-95"
-      >
+        leaveTo="opacity-0 scale-95">
         <Popover.Panel
           focus
           className="relative bottom-20 inset-x-0 p-2 transition transform origin-top-right lg:hidden"

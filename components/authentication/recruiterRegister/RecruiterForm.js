@@ -4,8 +4,12 @@ import axios from "axios";
 import useFirebase from "../../../redux/slices/user/useFirebase";
 import Select from "react-select";
 import countryList from "react-select-country-list";
+<<<<<<< HEAD
 import { useSelector } from "react-redux";
 import cogoToast from "cogo-toast";
+=======
+import { useRouter } from 'next/router';
+>>>>>>> kausar/main
 
 const RecruiterForm = () => {
   const [country, setCountry] = useState("");
@@ -19,6 +23,7 @@ const RecruiterForm = () => {
   };
 
   const [photoURL, setPhotoURL] = useState("");
+  const router = useRouter();
 
   // signup method
   const { signupWithEmailAndPassword } = useFirebase();
@@ -28,6 +33,7 @@ const RecruiterForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
     const userInfo = {
       ...data,
@@ -49,7 +55,6 @@ const RecruiterForm = () => {
     const imageData = new FormData();
     imageData.set("key", "fe834545cf9ccab761e32c03f567e890");
     imageData.append("image", e.target.files[0]);
-    console.log(imageData);
     axios
       .post("https://api.imgbb.com/1/upload", imageData)
       .then(function (response) {

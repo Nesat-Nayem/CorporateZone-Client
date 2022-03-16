@@ -27,6 +27,7 @@ const CandidateForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  
   const onSubmit = (data) => {
     const userInfo = {
       ...data,

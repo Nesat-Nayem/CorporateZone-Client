@@ -172,6 +172,7 @@ const ProfileView = ({ role, loggedInUser }) => {
         {loggedInUser &&
           role === "recruiter" &&
           loggedInUser?.role === "recruiter" && (
+          <>
             <div className="flex flex-wrap">
               <div className="py-5">
                 {/* company name */}
@@ -195,7 +196,41 @@ const ProfileView = ({ role, loggedInUser }) => {
                 <Chart data={loggedInUser} />
               </div>
             </div>
-          )}
+            <div className="mt-0 md:mt-2">
+              <Chart data={loggedInUser}/>
+            </div>
+            </>
+        )}
+
+        {/* recruiter additional information */}
+                  
+          {loggedInUser &&
+            role === "recruiter" &&
+            loggedInUser?.role === "recruiter" && (
+              <div className="flex flex-wrap">
+              <div className="py-5">
+                {/* company name */}
+                <div className="py-2">
+                  <p className="font-semibold text-slate-600 py-1">
+                    Company Name
+                  </p>
+                  <p>{loggedInUser?.companyName}</p>
+                </div>
+                {/* companyWebsite */}
+                <div className="py-2">
+                  <p className="font-semibold text-slate-600 py-1">
+                    Company website{" "}
+                  </p>
+                  <a className="text-blue-700 hover:underline">
+                    {loggedInUser?.companyWebsite}
+                  </a>
+              </div>
+              </div>
+          <div>
+              <Chart data={loggedInUser}/>
+          </div>
+        </div>
+            )}
       </div>
     </div>
   );
