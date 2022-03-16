@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 
 const JobPost = () => {
   const [responsibilitiData, setResponsibilitiData] = useState("");
-  const [AllResponsibilitiData, setAllResponsibilitiData] = useState([]);
+  const [allResponsibilitiData, setAllResponsibilitiData] = useState([]);
   const [value, setValue] = useState("");
   const router = useRouter();
   const options2 = useMemo(() => countryList().getData(), []);
@@ -93,7 +93,7 @@ const JobPost = () => {
   const submitData = (e) => {
     e.preventDefault();
     allData.skills = selectedLists.map((crrElm) => crrElm.name);
-    allData.responsibilities = AllResponsibilitiData;
+    allData.responsibilities = allResponsibilitiData;
     allData.companyLogo = photoURL;
     allData.location = value.label;
     allData.jobTags = "Media, Medicla, Restaurants";
@@ -314,7 +314,7 @@ const JobPost = () => {
                       Responsibilities
                     </label>
                     <div>
-                      {AllResponsibilitiData.map((value, id) => {
+                      {allResponsibilitiData.map((value, id) => {
                         return (
                           value && (
                             <div
