@@ -73,7 +73,7 @@ console.log(currentUser);
 
   useEffect(() => {
     fetch(
-      `https://murmuring-spire-15534.herokuapp.com/users/${currentUser?.email}`
+      `https://murmuring-spire-15534.herokuapp.com/users/signleUser/${currentUser?.email}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -85,7 +85,7 @@ console.log(currentUser);
   const saveData = async (data) => {
     try {
       axios
-        .post("https://murmuring-spire-15534.herokuapp.com/users", data)
+        .post("https://murmuring-spire-15534.herokuapp.com/users/register", data)
         .then(function (response) {
           // console.log(response);
           router.push("/dashboard/profile");
