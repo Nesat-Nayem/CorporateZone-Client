@@ -1,7 +1,7 @@
 import React from 'react';
 import JobPost from '../components/Dashboard/PostJob/JobPost';
 
-const Jobpost = () => {
+const PostJobs = () => {
     return (
         <>
             <JobPost/>
@@ -9,4 +9,4 @@ const Jobpost = () => {
     );
 };
 
-export default Jobpost;
+export default PostJobs;
