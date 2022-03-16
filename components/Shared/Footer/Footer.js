@@ -1,8 +1,33 @@
+import React, { useRef } from "react";
+
 import Link from "next/link";
 import ScrollToTop from "react-scroll-to-top";
+import emailjs from "emailjs-com";
+
 
 const Footer = () => {
-   
+
+   const form = useRef();
+
+   const sendEmail = (e) => {
+     e.preventDefault();
+
+     emailjs.sendForm(
+         "service_xgz22ma",
+         "template_kmbg1t2",
+         form.current,
+         "iTYZHZvfqHjV6ixNT"
+       )
+       .then(
+         (result) => {
+           console.log(result.text);
+         },
+         (error) => {
+           console.log(error.text);
+         }
+       );
+   };
+
   return (
     <footer className="">
       <ScrollToTop
@@ -19,18 +44,22 @@ const Footer = () => {
       <div className="text-center px:2 md:px-20 lg:text-left md:w-10/12 mx-auto  text-slate-800">
         <div className="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
           <div className="mr-12 hidden lg:block">
-            <span className="text-xl uppercase">
+            <span className="text-xl font-bold uppercase">
               Get your required jobs
             </span>
           </div>
           <div className="relative">
-            <input
-              class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
-              placeholder="Enter your mail..."
-              type="text"
-              name="search"
-            />
-            <button className="bg-cyan-500 px-3 py-2 text-white font-medium rounded-lg absolute top-0 right-0">Subscribe</button>
+            <form action="#" ref={form} onSubmit={sendEmail}>
+              <input
+                class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+                placeholder="Enter your mail..."
+                type="text"
+                name="search"
+              />
+              <button className="bg-cyan-500 px-3 py-2 text-white font-medium rounded-lg absolute top-0 right-0">
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
         <div className="mx-6 py-10 text-center md:text-left">
@@ -51,22 +80,22 @@ const Footer = () => {
                 Post A Job
               </h6>
               <p className="mb-2">
-                <Link href="/">
+                <Link href="/signin">
                   <a className="">Sign In</a>
                 </Link>
               </p>
               <p className="mb-2">
-                <Link href="/">
+                <Link href="/pricing">
                   <a className="">Pricing</a>
                 </Link>
               </p>
               <p className="mb-2">
-                <Link href="/">
+                <Link href="/signup">
                   <a className="">Guarantee</a>
                 </Link>
               </p>
               <p className="mb-2">
-                <Link href="/">
+                <Link href="/signup">
                   <a className="">Request an Invoice</a>
                 </Link>
               </p>
@@ -77,22 +106,22 @@ const Footer = () => {
                 Find A job
               </h6>
               <p className="mb-2">
-                <Link href="/">
+                <Link href="/jobs">
                   <a className="">Full-time Jobs</a>
                 </Link>
               </p>
               <p className="mb-2">
-                <Link href="/">
+                <Link href="/jobs">
                   <a className="">Remote Jobs</a>
                 </Link>
               </p>
               <p className="mb-2">
-                <Link href="/">
+                <Link href="/jobs">
                   <a className="">Part-time Jobs</a>
                 </Link>
               </p>
               <p className="mb-2">
-                <Link href="/">
+                <Link href="/jobs">
                   <a className="">Internship</a>
                 </Link>
               </p>
@@ -103,9 +132,8 @@ const Footer = () => {
                 Hire Remotely
               </h6>
               <p className="text-base text-slate-700 leading-8">
-                Optimize your entire recruiting process. Post a
-                job and reach thousands of engineers, developers,
-                 and other remote candidates.
+                Optimize your entire recruiting process. Post a job and reach
+                thousands of engineers, developers, and other remote candidates.
               </p>
             </div>
           </div>
