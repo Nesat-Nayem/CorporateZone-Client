@@ -109,7 +109,7 @@ useEffect(() => {
              <br />
              <a
                href="#"
-               className="text-black block md:w-3/4 mx-auto mt-3 text-sm font-semibold bg-[#85F4FF] p-2 rounded-lg hover:bg-[#42C2FF] hover:text-white"
+               className="text-black block md:w-3/4 mx-auto mt-3 text-sm font-semibold hover:bg-[#36b9f7] p-2 rounded-lg bg-[#42C2FF] hover:text-white"
              >
                7 Openings
              </a>

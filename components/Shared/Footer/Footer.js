@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import Link from "next/link";
 import ScrollToTop from "react-scroll-to-top";
 import emailjs from "emailjs-com";
+import Swal from "sweetalert2";
 
 
 const Footer = () => {
@@ -21,6 +22,14 @@ const Footer = () => {
        .then(
          (result) => {
            console.log(result.text);
+           if (result.text) {
+             return Swal.fire(
+               "Thank You For Subscription!",
+               "You will get skills required jobs within 24hrs!",
+               "success"
+             );
+           } 
+           useRef('')
          },
          (error) => {
            console.log(error.text);
