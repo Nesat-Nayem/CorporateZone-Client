@@ -24,7 +24,7 @@ const Video_Chat = () => {
         <div
           style={{ height: "40vw" }}
           className="flex justify-center items-center flex-col bg-gray-800">
-          <Marquee direction="left"/>
+          <Marquee direction="left" />
           <Jutsu
             roomName={room}
             displayName={name}
@@ -33,7 +33,7 @@ const Video_Chat = () => {
             loadingComponent={<p>loading ...</p>}
             errorComponent={<p>Oops, something went wrong</p>}
           />
-          <Marquee direction="right"/>
+          <Marquee direction="right" />
         </div>
       </div>
     </>
@@ -46,7 +46,7 @@ const Video_Chat = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div className="py-2 md:py-8 flex justify-center items-center flex-col bg-gray-800">
-          <div className="w-100 md:w-3/4 lg:w-2/3 mx-auto">
+          <div className="w-100 px-2 md:w-3/4 lg:w-2/3 mx-auto">
             <form className=" form px-8 pt-6 pb-8 mb-4">
               <div className="mb-5 text-center">
                 <h1 className="text-3xl text-white tracking-wide">
@@ -91,6 +91,16 @@ const Video_Chat = () => {
                 Join Now
               </button>
             </form>
+            <div className="">
+              <h4 className="text-white flex flex-row justify-center items-center font-extrabold">
+                Start And Join For
+                <span className=" font-extrabold  px-1">
+                  <span className="text-pink-500">Co</span>rporate Zo
+                  <span className="text-cyan-500">ne</span>
+                </span>
+                Meet
+              </h4>
+            </div>
           </div>
           <body>
             <Script src="https://meet.jit.si/external_api.js"></Script>

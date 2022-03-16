@@ -9,7 +9,7 @@ const Marquee = ({direction}) => {
             Start And Join For{" "}
             <span className=" text-2xl font-extrabold  pl-3">
                 <span className="text-pink-500">Co</span>rporate Zo
-                <span className="text-cyan-500">ne</span>
+                <span className="text-cyan-500">ne</span> Meet
             </span>
             </h1>
         </marquee>
