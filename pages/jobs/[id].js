@@ -347,11 +347,7 @@ export default Jobdetails;
 
 export const getServerSideProps = async (context) => {
   const res = await fetch(
-<<<<<<< HEAD
     `https://murmuring-spire-15534.herokuapp.com/jobs/${context.params.id}`
-=======
-    `https://murmuring-spire-15534.herokuapp.com/jobs/${context.params.id}`
->>>>>>> 82ade4939e2880ed4ec6aa5bd7d8eed55f29fc08
   );
   const data = await res.json();
 
