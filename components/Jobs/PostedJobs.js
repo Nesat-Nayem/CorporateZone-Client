@@ -40,8 +40,8 @@ const PostedJobs = (props) =>
       `https://murmuring-spire-15534.herokuapp.com/jobs?jobType=${e.target.value}`
     );
     const data = await response.json();
-    setDisplay(data.data);
-    setJobs(data.data);
+    setDisplay(data?.data);
+    setJobs(data?.data);
 
     router.push(`/jobs?jobType=${e.target.value}`, undefined, {
       shallow: true,
