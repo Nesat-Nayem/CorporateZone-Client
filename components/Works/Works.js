@@ -1,178 +1,109 @@
 import Image from "next/image";
 import { FcOk } from "react-icons/fc";
-// import recruiter from "../../../images/recruiter.png";
-// import seeking from "../../../images/seeking.png";
+
+import job from "../../images/job_hunt.svg";
+import hired from "../../images/career_progress.svg";
+import interview from "../../images/interview.svg";
 import bgParallax from "../About/About.module.css";
 
 const Works = () => {
   return (
     <div className="my-9 relative">
-      <h3 className="text-3xl text-center after:content-[''] after:absolute after:border-t-2 after:w-16 md:after:border-cyan-500 after:left-0 after:bottom-0 after:right-60 after:top-10 after:mx-auto font-medium text-slate-700 uppercase mb-20">
+      <h3 className="text-3xl text-center after:content-[''] after:absolute after:border-t-2 after:w-16 md:after:border-cyan-500 after:left-0 after:bottom-0 after:right-60 after:top-10 after:mx-auto font-medium text-slate-700 uppercase my-20">
         How Does IT Works
       </h3>
 
-      <div className="attract">
-
-      </div>
-
-      <div className="manage">
-
-      </div>
-      
-      <div className="hire">
-
-      </div>
-
-
-      {/* Company */}
-      <div className="md:flex md:justify-evenly md:items-center my-20 md:mx-24  mx-2">
-        <div className="img mx-auto my-5">
-          <img
-            className="w-full"
-            src="https://i.ibb.co/PCRzHH5/recruiter.png"
-          />
-        </div>
-        <div className=" md:w-5/12 mx-auto process_con">
-          <article className="space-y-5">
-            <h3 className="text-3xl">Recruiter Requirement</h3>
-            <p className="text-slate-600">
-              We've Verified Company for jobs posting in different era with
-              secure communication. so many company believe us for that
-              techniques and we're growing fast. See more policy about
-              recruiters in privacy & policy. Here are some conditions for any
-              company.
-            </p>
-            <ul className="text-slate-800 mx-3 space-y-3">
-              <li className="flex">
-                <FcOk className="mx-3" />
-                Company History
-              </li>
-              <li className="flex">
-                <FcOk className="mx-3" />
-                Business Type
-              </li>
-              <li className="flex">
-                <FcOk className="mx-3" />
-                Must've Website
-              </li>
-              <li className="flex">
-                <FcOk className="mx-3" />
-                Verified Profile
-              </li>
-              <li className="flex">
-                <FcOk className="mx-3" />
-                Should have Valid Info
-              </li>
-            </ul>
-          </article>
-        </div>
-      </div>
-
-      {/* HighLight with parallax --- why corporate zone*/}
-      <div className={bgParallax.zones_bg}>
-        <div className="benefit md:w-5/12 md:after:border-r-2 md:after:border-cyan-600 space-y-5 mx-auto py-3 text-right md:after:content-[''] md:after:text-red-500 md:after:h-80 md:after:absolute md:after:ml-20 md:after:top-28">
-          <h3 className="text-3xl">How Benefits From Corporate Zone</h3>
-          <p className=" text-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-            veritatis ut odio repudiandae nesciunt voluptate tenetur et facilis,
-            tempore repellendus vel expedita? Expedita, nobis! Quo vitae
-            praesentium distinctio possimus error?
+      <div className="fascinate md:grid grid-cols-2 lg:w-9/12 md:w-10/12 mx-auto ">
+        <div className="space-y-7 mx-20">
+          <h3 className="text-2xl font-medium"> Fascinate</h3>
+          <p className="leading-7 max-w-[500px] text-slate-700">
+            Super user-friend user interface along with customization options to
+            make your jobs look attractive for the potential candidates.
           </p>
-
-          <ul className="text-slate-800 mx-3 space-y-3">
-            <li className="flex justify-end items-center">
-              Filtered Jobs
-              <FcOk className="mx-3" />
-            </li>
-            <li className="flex justify-end items-center">
-              Profile 100% Setup
-              <FcOk className="mx-3" />
-            </li>
-            <li className="flex justify-end items-center">
-              Choose Right Jobs
-              <FcOk className="mx-3" />
-            </li>
-            <li className="flex justify-end items-center">
-              Choose Right Candidate
-              <FcOk className="mx-3" />
-            </li>
-            <li className="flex justify-end items-center">
-              Connect with selected Candidate
-              <FcOk className="mx-3" />
-            </li>
-          </ul>
+          <li className="flex text-slate-700">
+            <FcOk className="mx-3 text-[#36b9f7]" />
+            Showcase Stunning Company Page
+          </li>
+          <li className="flex text-slate-700">
+            <FcOk className="mx-3 text-[#36b9f7]" />
+            Highlight Work Culture & Benefits
+          </li>
+          <li className="flex text-slate-700">
+            <FcOk className="mx-3 text-[#36b9f7]" />
+            Easy To Create Candidate Profile
+          </li>
+          <li className="flex text-slate-700">
+            <FcOk className="mx-3 text-[#36b9f7]" />
+            Interactive Job Application
+          </li>
+          <li className="flex text-slate-700">
+            <FcOk className="mx-3 text-[#36b9f7]" />
+            Form In-app Messaging With Candidates
+          </li>
         </div>
+        <Image className="" src={job} alt="" />
+      </div>
 
-        <div className="benefit md:w-5/12 space-y-5 mx-auto py-3">
-          <h3 className="text-3xl">Why Choose Corporate Zone</h3>
-          <p className=" text-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-            veritatis ut odio repudiandae nesciunt voluptate tenetur et facilis,
-            tempore repellendus vel expedita? Expedita, nobis! Quo vitae
-            praesentium distinctio possimus error?
+      <div className="process md:grid grid-cols-2 lg:w-9/12 md:w-10/12 mx-auto my-20">
+        <Image src={hired} alt="" />
+        <div className="space-y-7 mx-20">
+          <h3 className="text-2xl font-medium"> Process</h3>
+          <p className="leading-7 max-w-[500px] text-slate-700">
+            Personalized team management system along with smart tracking and
+            engaging user experience to make the recruitment process faster.
           </p>
-
-          <ul className="text-slate-800 mx-3 space-y-3">
-            <li className="flex items-center">
-              <FcOk className="mx-3" /> Valid opportunities
-            </li>
-            <li className="flex  items-center">
-              <FcOk className="mx-3" /> Skills Required Jobs
-            </li>
-            <li className="flex  items-center">
-              <FcOk className="mx-3" /> Choose Right Candidate
-            </li>
-            <li className="flex  items-center">
-              <FcOk className="mx-3" />
-              Easy Communication
-            </li>
-            <li className="flex  items-center">
-              <FcOk className="mx-3" /> Find Each Other
-            </li>
-          </ul>
+          <li className="flex text-slate-700">
+            <FcOk className="mx-3 text-[#36b9f7]" />
+            Advanced Applicant Tracking & Filter
+          </li>
+          <li className="flex text-slate-700">
+            <FcOk className="mx-3 text-[#36b9f7]" />
+            Automatic Resume Parsing & Analyze
+          </li>
+          <li className="flex text-slate-700">
+            <FcOk className="mx-3 text-[#36b9f7]" />
+            Smart & Quick Evaluation Process
+          </li>
+          <li className="flex text-slate-700">
+            <FcOk className="mx-3 text-[#36b9f7]" />
+            Smart & Quick Evaluation Process
+          </li>
+          <li className="flex text-slate-700">
+            <FcOk className="mx-3 text-[#36b9f7]" />
+            Effortless Interview Scheduling
+          </li>
         </div>
       </div>
 
-      {/* Candidate*/}
-      <div className="md:flex md:justify-evenly md:items-center my-20 md:mx-24 mx-2">
-        <div className="md:w-5/12 mx-auto process_con">
-          <article className="space-y-5">
-            <h3 className="text-3xl">Candidate Requirement</h3>
-            <p className="text-slate-600">
-              We've Verified Company for jobs posting in different era with
-              secure communication. so many company believe us for that
-              techniques and we're growing fast. See more policy about
-              recruiters in privacy & policy. Here are some conditions for any
-              company.
-            </p>
-            <ul className="text-slate-800 mx-3 space-y-3">
-              <li className="flex">
-                <FcOk className="mx-3" />
-                Solid Skills
-              </li>
-              <li className="flex">
-                <FcOk className="mx-3" />
-                Experience
-              </li>
-              <li className="flex">
-                <FcOk className="mx-3" />
-                Portfolio
-              </li>
-              <li className="flex">
-                <FcOk className="mx-3" />
-                Verified Profile
-              </li>
-              <li className="flex">
-                <FcOk className="mx-3" />
-                Should have Valid Info
-              </li>
-            </ul>
-          </article>
+      <div className="hire md:grid grid-cols-2 lg:w-9/12 md:w-10/12 mx-auto my-20">
+        <div className="space-y-7 mx-20">
+          <h3 className="text-2xl font-medium"> Recruit</h3>
+          <p className="leading-7 max-w-[500px] text-slate-700">
+            Seamless and advanced recruitment system to make the best hiring
+            decisions & create the most efficient team with the right people.
+          </p>
+          <li className="flex text-slate-700">
+            <FcOk className="mx-3 text-[#36b9f7]" />
+            Specialized Note For Team
+          </li>
+          <li className="flex text-slate-700">
+            <FcOk className="mx-3 text-[#36b9f7]" />
+            Advanced Scoring Process
+          </li>
+          <li className="flex text-slate-700">
+            <FcOk className="mx-3 text-[#36b9f7]" />
+            Customizable Pipeline
+          </li>
+          <li className="flex text-slate-700">
+            <FcOk className="mx-3 text-[#36b9f7]" />
+            Remote Hiring Ready
+          </li>
+          <li className="flex text-slate-700">
+            <FcOk className="mx-3 text-[#36b9f7]" />
+            Automated Offer Letter
+          </li>
         </div>
-
-        <div className="img mx-auto my-7">
-          <img className="w-full " src="https://i.ibb.co/6yywTLQ/seeking.png" />
-        </div>
+        <Image src={interview} alt="" />
       </div>
     </div>
   );
