@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import cover from '../../../styles/Home.module.css'
+import cover from '../../../styles/Home.module.css'
 // import Swiper core and required modules
 import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
 import { BiRightArrowAlt } from "react-icons/bi";
@@ -43,7 +43,7 @@ const HeroArea = () => {
   ];
   return (
     <div
-      // className={cover.hero_cover}
+      className={cover.hero_cover}
       // style={{ width: "100%", height: "600px" }}
     >
       <Swiper

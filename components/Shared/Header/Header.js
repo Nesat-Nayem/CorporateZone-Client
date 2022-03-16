@@ -3,7 +3,7 @@ import TopHeader from "./TopHeader";
 
 const Header = () => {
   return (
-    <div>
+    <div className="relative">
       <Navbar />
       <TopHeader />
     </div>
