@@ -54,7 +54,7 @@ const Features = (props) => {
         >
           {jobs?.map((job) => {
             return (
-              <SwiperSlide className=" bg-cover flex flex-col items-center justify-center bg-slate-100 bg-center rounded-md shadow-md relative">
+              <SwiperSlide key={job._id} className=" bg-cover flex flex-col items-center justify-center bg-slate-100 bg-center rounded-md shadow-md relative">
                 <img
                   className="block w-32 h-32 mx-auto "
                   src={job.companyLogo}

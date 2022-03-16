@@ -4,12 +4,8 @@ import axios from "axios";
 import useFirebase from "../../../redux/slices/user/useFirebase";
 import Select from "react-select";
 import countryList from "react-select-country-list";
-<<<<<<< HEAD
 import { useSelector } from "react-redux";
 import cogoToast from "cogo-toast";
-=======
-import { useRouter } from 'next/router';
->>>>>>> kausar/main
 
 const RecruiterForm = () => {
   const [country, setCountry] = useState("");

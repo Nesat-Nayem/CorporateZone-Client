@@ -45,6 +45,7 @@ useEffect(() => {
     }
   }, [swiper]);
 
+
   return (
     <div className="my-20">
       <div className="flex flex-wrap justify-center md:justify-between items-center md:w-8/12 mx-auto company_heading relative my-20 px-3">
@@ -86,7 +87,7 @@ useEffect(() => {
       >
         {jobs?.map((job) => {
          return (
-           <SwiperSlide className="bg-white dark:bg-slate-900 mb-3 rounded-lg px-6 py-8 ring-1 mx-2 ring-slate-900/5 text-center shadow-xl border-b-2 border-slate-800 hover:border-cyan-500 transform duration-500 hover:scale-95">
+           <SwiperSlide key={job._id} className="bg-white dark:bg-slate-900 mb-3 rounded-lg px-6 py-8 ring-1 mx-2 ring-slate-900/5 text-center shadow-xl border-b-2 border-slate-800 hover:border-cyan-500 transform duration-500 hover:scale-95">
              <div>
                <Image
                  className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
