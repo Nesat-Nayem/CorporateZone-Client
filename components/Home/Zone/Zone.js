@@ -16,7 +16,7 @@ const Zone = () => {
               </h4>
             </div>
             <div className="flex items-center justify-center text-[#42C2FF]">
-              <MdMarkEmailRead className="text-7xl ring-2 rounded-lg ring-[#42c3ffe5]" />
+              <MdMarkEmailRead className="text-7xl ring-2 rounded-lg ring-[#42c3ffe5] hover:transform duration-500 hover:scale-105" />
             </div>
             <div className={card.zone_card}>
               <h4 className="text-xl text-center font-medium text-slate-800">
@@ -24,7 +24,7 @@ const Zone = () => {
               </h4>
             </div>
             <div className="flex items-center justify-center text-[#42C2FF]">
-              <FaLaptopCode className="text-7xl ring-2 rounded-lg ring-[#42c3ffe5]" />
+              <FaLaptopCode className="text-7xl ring-2 rounded-lg ring-[#42c3ffe5] hover:transform duration-500 hover:scale-105" />
             </div>
             <div className={card.zone_card}>
               <h4 className="text-xl text-center font-medium text-slate-800">
@@ -32,7 +32,7 @@ const Zone = () => {
               </h4>
             </div>
             <div className="flex items-center justify-center text-[#42C2FF]">
-              <BsFillPieChartFill className="text-7xl ring-2 rounded-lg ring-[#42c3ffe5]" />
+              <BsFillPieChartFill className="text-7xl ring-2 rounded-lg ring-[#42c3ffe5] hover:transform duration-500 hover:scale-105" />
             </div>
             <div className={card.zone_card}>
               <h4 className="text-xl text-center font-medium text-slate-800">
@@ -40,7 +40,7 @@ const Zone = () => {
               </h4>
             </div>
             <div className="flex items-center justify-center text-[#42C2FF]">
-              <RiUserSearchFill className="text-7xl ring-2 rounded-lg ring-[#42c3ffe5]" />
+              <RiUserSearchFill className="text-7xl ring-2 rounded-lg ring-[#42c3ffe5] hover:transform duration-500 hover:scale-105" />
             </div>
             <div className={card.zone_card}>
               <h4 className="text-xl text-center font-medium text-slate-800">
