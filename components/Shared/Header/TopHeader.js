@@ -14,12 +14,16 @@ const TopHeader = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
 
   return (
-    <div className="">
+    <div className="fixed top-0 right-0">
       <div className="text-white ml-auto pl-10 md:w-40 relative md:flex hidden justify-between items-center">
         {/* signup and login */}
         <div className="flex flex-col rounded-bl-lg rounded-tl-lg absolute top-16 ">
           {currentUser ? (
-            <></>
+            <button>
+              <a className="pl-4 font-bold uppercase flex items-center space-x-3 font-serif py-3 hover:bg-[#42C2FF] hover:text-white duration-500 border-2 border-[#42C2FF] text-[#42C2FF] rounded-bl-lg rounded-tl-lg w-28 ml-2">
+                <MdLogin className="mr-2" /> Mode
+              </a>
+            </button>
           ) : (
             <>
               <Link href="/signup">
@@ -32,13 +36,13 @@ const TopHeader = () => {
                   <MdLogin className="mr-2" /> Sign In
                 </a>
               </Link>
+              <button>
+                <a className="pl-4 font-bold uppercase flex items-center space-x-3 font-serif py-3 hover:bg-[#42C2FF] hover:text-white duration-500 border-2 border-[#42C2FF] text-[#42C2FF] rounded-bl-lg rounded-tl-lg ">
+                  <MdLogin className="mr-2" /> Mode
+                </a>
+              </button>
             </>
           )}
-          <button>
-            <a className="pl-4 font-bold uppercase flex items-center space-x-3 font-serif py-3 hover:bg-[#42C2FF] hover:text-white duration-500 border-2 border-[#42C2FF] text-[#42C2FF] rounded-bl-lg rounded-tl-lg">
-              <MdLogin className="mr-2" /> Mode
-            </a>
-          </button>
         </div>
       </div>
     </div>

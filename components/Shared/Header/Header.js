@@ -6,7 +6,6 @@ const Header = () => {
     <div className="relative z-10">
       <Navbar />
       <TopHeader />
-
     </div>
   );
 };

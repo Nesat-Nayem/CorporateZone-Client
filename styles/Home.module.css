@@ -30,7 +30,7 @@
 }
 @media (min-width: 1280px) { 
   .hero_cover{
-    margin-top: -100px;
+    margin-top: 0px;
   }
  }
 
