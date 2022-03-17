@@ -30,6 +30,8 @@ import ChatLayout from "../Messages/ChatLayout";
 import BuildResume from "../Candidate/BuildResume/BuildResume";
 import { FcVideoCall } from "react-icons/fc";
 import Applicant from "../../Applicant/Applicant";
+import PostedJobs from "../Recruiter/postedJobs/PostedJobs";
+import CompanyLists from "../Candidate/CampalyLists";
 
 const DashboardRoutes = ({ jobs }) => {
   const [trigger, setTrigger] = useState(false);
@@ -56,7 +58,7 @@ const DashboardRoutes = ({ jobs }) => {
             !trigger
               ? "inset-0 opacity-0 transform duration-200 -translate-x-full ease-out"
               : "inset-0 opacity-100 transform duration-200 translate-x-0 ease-in"
-            }`}
+          }`}
         >
           <div className="flex justify-between items-center my-5 mr-5 ml-0 md:ml-4 py-5">
             <div className="flex flex-col items-center mx-auto">
@@ -125,12 +127,21 @@ const DashboardRoutes = ({ jobs }) => {
             <div className="flex justify-center items-center ml-auto md:px-10 px-5">
               <h1 className="px-3 font-semibold ">{loggedInUser?.username}</h1>
               <div>
-                <img
-                  src={loggedInUser?.photoURL}
-                  className="w-12 h-12 border-2 border-gray-600"
-                  style={{ borderRadius: "50%" }}
-                  alt=""
-                />
+                {loggedInUser?.photoRUL ? (
+                  <img
+                    src={loggedInUser?.photoURL}
+                    className="w-12 h-12 border-2 border-gray-600"
+                    style={{ borderRadius: "50%" }}
+                    alt=""
+                  />
+                ) : (
+                  <img
+                    src="https://png.pngtree.com/png-vector/20190704/ourlarge/pngtree-businessman-user-avatar-free-vector-png-image_1538405.jpg"
+                    className="w-12 h-12 border-2 border-gray-600"
+                    style={{ borderRadius: "50%" }}
+                    alt=""
+                  />
+                )}
               </div>
             </div>
           </header>
@@ -178,9 +189,10 @@ const DashboardRoutes = ({ jobs }) => {
             {params[0] === "profile" && loggedInUser?.role === "recruiter" && (
               <RecruiterProfile />
             )}
-            {params[0] === "applicant" && loggedInUser?.role === "recruiter" && (
-              <Applicant />
-            )}
+            {params[0] === "applicant" &&
+              loggedInUser?.role === "recruiter" && <Applicant />}
+            {params[0] === "postedJobs" &&
+              loggedInUser?.role === "recruiter" && <PostedJobs />}
             {/* update recruiter profile  */}
             {params[0] === "updateProfile" &&
               loggedInUser?.role === "recruiter" && <RecruiteProfileUpdate />}
@@ -197,6 +209,10 @@ const DashboardRoutes = ({ jobs }) => {
             {/* candidate profile update */}
             {params[0] === "updateProfile" &&
               loggedInUser?.role === "candidate" && <CandidateProfileUpdate />}
+
+            {/* candidate profile update */}
+            {params[0] === "topCompanies" &&
+              loggedInUser?.role === "candidate" && <CompanyLists />}
 
             {/* candidate profile update */}
             {params[0] === "skillTest" &&

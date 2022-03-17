@@ -5,7 +5,6 @@ import useFirebase from "../../../redux/slices/user/useFirebase";
 import Select from "react-select";
 import countryList from "react-select-country-list";
 import { useSelector } from "react-redux";
-import cogoToast from "cogo-toast";
 
 const RecruiterForm = () => {
   const [country, setCountry] = useState("");
@@ -19,7 +18,6 @@ const RecruiterForm = () => {
   };
 
   const [photoURL, setPhotoURL] = useState("");
-  const router = useRouter();
 
   // signup method
   const { signupWithEmailAndPassword } = useFirebase();

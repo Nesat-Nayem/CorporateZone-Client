@@ -1,4 +1,5 @@
 import axios from "axios";
+import cogoToast from "cogo-toast";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -43,6 +44,7 @@ const useFirebase = () => {
         saveData(userInfo);
       })
       .catch((err) => {
+        cogoToast.error(err ? err.message : "authentication failed");
         dispatch(registerFailed(err.message));
       });
   };
@@ -56,6 +58,7 @@ const useFirebase = () => {
         router.push("/");
       })
       .catch((err) => {
+        cogoToast.error(err ? err.message : "authentication failed");
         dispatch(registerFailed(err.message));
       });
   };
