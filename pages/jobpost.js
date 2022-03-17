@@ -1,4 +1,3 @@
-import React from "react";
 import JobPost from "../components/Dashboard/PostJob/JobPost";
 import Layout from "../components/layout/Layout";
 import Footer from "../components/Shared/Footer/Footer";
