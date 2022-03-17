@@ -54,7 +54,7 @@ const HeroArea = () => {
           return (
             <SwiperSlide
               key={item.id}
-              className="sm:flex justify-between items-center py-5 space-y-3"
+              className="sm:flex justify-between items-center py-5 space-y-3 "
             >
               <div className="space-y-5">
                 <h1 className="xl:text-6xl lg:text-5xl md:py-8 text-black  py-2 md:text-4xl text-3xl font-bold tracking-wider">

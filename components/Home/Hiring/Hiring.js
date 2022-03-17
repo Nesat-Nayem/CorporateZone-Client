@@ -9,7 +9,7 @@ const Hiring = () => {
         <h3 className="text-3xl text-center after:content-[''] after:absolute after:border-t-2 after:w-16 md:after:border-cyan-500 after:left-0 after:bottom-0 after:right-40 after:top-10 after:mx-auto font-medium text-slate-700 uppercase mb-20">
           Key Features For Exceptional Hiring
         </h3>
-        <div className="md:flex md:justify-around lg:flex lg:justify-around  mx-3">
+        <div className="md:flex md:justify-around lg:flex lg:justify-around ml-20 mx-3">
           <div className="md:w-2/4 lg:w-2/4">
             <img
               className="md:p-20 lg:p-20 transform hover:scale-105 duration-500"
