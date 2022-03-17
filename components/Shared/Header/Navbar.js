@@ -75,7 +75,7 @@ export default function Navbar() {
       // document.getElementById("scroll").style.background = "#ebf8fe";
     }
   }
-  // Similar to componentDidMount and componentDidUpdate:
+  
   useEffect(() => {
     window.addEventListener("scroll", listenScrollEvent)
   })
