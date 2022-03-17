@@ -19,12 +19,13 @@ const Video_Chat = () => {
   return call ? (
     <>
       <div>
-        <Layout title="Join Meet" />
+        <div title="Join Meet" />
         <Header />
         <div
-          style={{ height: "40vw" }}
-          className="flex justify-center items-center flex-col bg-gray-800">
-          <Marquee direction="left"/>
+          style={{ height: "90vh" }}
+          className="flex justify-center items-center flex-col bg-gray-800"
+        >
+          <Marquee direction="left" />
           <Jutsu
             roomName={room}
             displayName={name}
@@ -33,15 +34,15 @@ const Video_Chat = () => {
             loadingComponent={<p>loading ...</p>}
             errorComponent={<p>Oops, something went wrong</p>}
           />
-          <Marquee direction="right"/>
+          <Marquee direction="right" />
         </div>
       </div>
     </>
   ) : (
-    <>
+    <div className="h-screen">
       {/* outside of meet  */}
       <div>
-        <Layout title="Join Meet" />
+        <div title="Join Meet" />
         <Header />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2">
@@ -87,7 +88,8 @@ const Video_Chat = () => {
               <button
                 className="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300 text-white font-bold py-2 px-4 rounded-full"
                 onClick={handleClick}
-                type="submit">
+                type="submit"
+              >
                 Join Now
               </button>
             </form>
@@ -117,7 +119,7 @@ const Video_Chat = () => {
           }
         `}
       </style>
-    </>
+    </div>
   );
 };
 

@@ -57,7 +57,7 @@ const HeroArea = () => {
               className="sm:flex justify-between items-center py-5 space-y-3"
             >
               <div className="space-y-5">
-                <h1 className="xl:text-6xl lg:text-5xl py-8 text-5xl font-bold tracking-wider">
+                <h1 className="xl:text-6xl lg:text-5xl py-8 md:text-4xl text-xl font-bold tracking-wider">
                   {item.title}
                 </h1>
                 <h6 className="py-3 text-2xl font-bold">
