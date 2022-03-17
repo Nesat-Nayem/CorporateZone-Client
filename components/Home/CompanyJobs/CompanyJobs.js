@@ -68,10 +68,10 @@ useEffect(() => {
         </ul>
       </div>
 
-      <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
-        slidesPerGroup={3}
+      <Swiper 
+        slidesPerView={2}
+        spaceBetween={10}
+        slidesPerGroup={2}
         loop={true}
         loopFillGroupWithBlank={true}
         navigation={{

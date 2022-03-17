@@ -1,0 +1,11 @@
+.review{
+    color: grey;
+    font-weight: 700;
+}
+
+@media only screen and (max-width:688px) {
+    .review{
+        width: 100%;
+        
+    }
+}

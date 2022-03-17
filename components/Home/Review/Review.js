@@ -7,6 +7,7 @@ import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper/core";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import card from '../../../styles/Home.module.css'
+import style from './Review.module.css'
 
 const fackreview = [
   {
@@ -108,7 +109,7 @@ const Review = () =>
                       alt="quotes"
                     />
 
-                    <p className="leading-relaxed poppins text-gray-500">
+                    <p className={style.review}>
                       {data.review}
                     </p>
                     <span className="inline-block h-1 w-10 rounded bg-gray-400 mt-8 mb-6"></span>

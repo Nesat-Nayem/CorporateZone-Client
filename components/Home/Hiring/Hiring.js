@@ -1,7 +1,7 @@
 import { BiAnalyse } from "react-icons/bi";
 import { FaUsers } from "react-icons/fa";
 import { MdOutlineNotificationsActive } from "react-icons/md";
-
+import style from './Hiring.module.css'
 
 const Hiring = () => {
     return (
@@ -18,7 +18,7 @@ const Hiring = () => {
             />
           </div>
           <div className="space-y-5 md:w-2/4 lg:w-2/4 text-slate-700 md:mr-20 lg:mr-20 pr-10">
-            <h3 className="text-3xl font-medium my-5">
+            <h3 id={style.get}>
               Get Your Entire Team Onboard
             </h3>
 

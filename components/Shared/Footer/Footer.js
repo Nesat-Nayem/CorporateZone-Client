@@ -67,7 +67,7 @@ const Footer = () => {
                 type="text"
                 name="search"
               />
-              <button className="bg-[#42C2FF] hover:bg-white px-3 py-2 text-white hover:text-[#42C2FF] font-medium rounded-lg absolute top-0 right-0">
+              <button style={{marginLeft:'40px'}} className="bg-[#42C2FF] hover:bg-white px-3 py-2 text-white hover:text-[#42C2FF] font-medium rounded-lg absolute top-0 right-0">
                 Subscribe
               </button>
             </form>

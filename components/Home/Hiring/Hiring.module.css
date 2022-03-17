@@ -1,0 +1,12 @@
+#get{
+    font-size: 35px;
+    text-align: center;
+    font-weight: 700;
+}
+@media only screen and (max-width:688px) {
+    #get{
+        text-align: center;
+        margin-left: 25px;
+        margin-top: 20px;
+    }
+}

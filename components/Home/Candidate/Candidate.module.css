@@ -1,0 +1,12 @@
+#find{
+    font-size: 35px;
+    text-align: center;
+    font-weight: 700;
+}
+@media only screen and (max-width:688px) {
+    #find{
+        text-align: center;
+        margin-left: 15px;
+        margin-top: 20px;
+    }
+}
