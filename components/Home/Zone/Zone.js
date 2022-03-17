@@ -73,7 +73,7 @@ const Zone = () => {
           data-aos-easing="ease-in-sine"
         >
           <div className="">
-            <h3 className=" xl:text-5xl md:text-3xl sm:tex-2xl text-xl font-bold leading-snug">
+            <h3 style={{fontSize:'30px'}} className="  sm:tex-2xl text-xl font-bold leading-snug">
               Why Does Your Company Need CorporateZone?
             </h3>
             <p className="text-gray-500 leading-7 mt-5">
