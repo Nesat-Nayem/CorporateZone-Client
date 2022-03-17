@@ -1,0 +1,25 @@
+#why{
+    font-size: 30px;
+    color: grey;
+}
+
+
+.ma{
+    margin-left: 100px;
+    text-align: justify;
+}
+
+
+
+@media only screen and (max-width:688px) {
+    #why{
+        font-size: 25px;
+    }
+    .ma{
+        margin-left: 10px;
+    }    
+    #button{
+        text-align: center;
+        margin-left: 70px;
+    }
+}

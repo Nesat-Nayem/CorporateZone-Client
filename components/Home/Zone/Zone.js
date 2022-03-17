@@ -4,6 +4,7 @@ import { FaLaptopCode } from "react-icons/fa";
 import { MdMarkEmailRead } from "react-icons/md";
 import { RiUserSearchFill } from "react-icons/ri";
 import card from "../../../styles/Home.module.css";
+import style from './Zone.module.css'
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
@@ -67,13 +68,13 @@ const Zone = () => {
         </div>
 
         <div
-          className="ml-16 text-justify "
+          className={style.ma}
           data-aos="fade-up"
           data-aos-offset="300"
           data-aos-easing="ease-in-sine"
         >
-          <div className="">
-            <h3 style={{fontSize:'30px'}} className="  sm:tex-2xl text-xl font-bold leading-snug">
+          <div >
+            <h3 id={style.why} className="  sm:tex-2xl text-xl font-bold leading-snug">
               Why Does Your Company Need CorporateZone?
             </h3>
             <p className="text-gray-500 leading-7 mt-5">
@@ -92,7 +93,7 @@ const Zone = () => {
               obstacle arises, the community instantly provides support and
               removes it, resulting in a far quicker development process.
             </p>
-            <button className="pl-4 font-bold uppercase flex items-center space-x-3 pr-3 py-3  hover:text-[#42C2FF] text-white hover:transform duration-500 hover:scale-105 border-2 border-[#42C2FF] rounded-lg bg-[#42C2FF] hover:bg-white ml-5">
+            <button id={style.button} className="pl-4 font-bold uppercase flex items-center space-x-3 pr-3 py-3  hover:text-[#42C2FF] text-white hover:transform duration-500 hover:scale-105 border-2 border-[#42C2FF] rounded-lg bg-[#42C2FF] hover:bg-white ml-5">
               Join US <BiRightArrowAlt className="font-medium text-2xl" />
             </button>
           </div>
