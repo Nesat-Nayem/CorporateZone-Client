@@ -3,6 +3,7 @@ import React from "react";
 import axios from "axios";
 import { BiMessageDetail } from "react-icons/bi";
 import { FcVideoCall } from "react-icons/fc";
+import Link from "next/link";
 
 const Chats = ({ selectedChat, setSelectedChat, loggedInUser, users }) => {
   const createChat = async (id) => {
@@ -55,16 +56,16 @@ const Chats = ({ selectedChat, setSelectedChat, loggedInUser, users }) => {
                     />
                   </span>
                   <span>
-                    <a
-                      href={`https://meet.jit.si/${user?.username}`}
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      <FcVideoCall
-                        onClick={() => startVideoChat(user._id, user?.username)}
-                        className="text-2xl cursor-pointer "
-                      />
-                    </a>
+                    <Link href="/video">
+                      <a>
+                        <FcVideoCall
+                          onClick={() =>
+                            startVideoChat(user._id, user?.username)
+                          }
+                          className="text-2xl cursor-pointer "
+                        />
+                      </a>
+                    </Link>
                   </span>
                 </div>
               </div>

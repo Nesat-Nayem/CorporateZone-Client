@@ -7,7 +7,6 @@ import {
   MdOutlineLogout,
   MdOutlineChevronLeft,
   MdOutlineMenu,
-  MdDashboard,
 } from "react-icons/md";
 import { BsFillChatSquareDotsFill } from "react-icons/bs";
 import Jobs from "../Admin/Jobs";
@@ -213,6 +212,10 @@ const DashboardRoutes = ({ jobs }) => {
             {/* candidate profile update */}
             {params[0] === "topCompanies" &&
               loggedInUser?.role === "candidate" && <CompanyLists />}
+
+            {/* candidate profile update */}
+            {params[0] === "buildResume" &&
+              loggedInUser?.role === "candidate" && <BuildResume />}
 
             {/* candidate profile update */}
             {params[0] === "skillTest" &&

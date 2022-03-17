@@ -71,7 +71,7 @@ export default function Navbar() {
   return (
     <Popover className="relative ">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex relative justify-between items-center border-b-2 border-gray-100 py-6 lg:justify-start md:space-x-10">
+        <div className="flex relative justify-between items-center   py-6 lg:justify-start md:space-x-10">
           <div className="flex justify-start md:w-0 md:flex-1">
             <Link href="/">
               <a className="flex items-center">
@@ -82,7 +82,7 @@ export default function Navbar() {
                 />
                 <span className=" text-2xl font-extrabold  pl-3">
                   <span className="text-pink-500">Co</span>
-                  <span className="dark:text-white">rporate Zo</span>
+                  <span className="dark:text-white text-black">rporate Zo</span>
                   <span className="text-cyan-500">ne</span>
                 </span>
               </a>
@@ -110,12 +110,12 @@ export default function Navbar() {
               </a>
             </Link>
             <Link href="/works">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+              <a className="text-base font-medium text-gray-500 dark:text-white hover:text-gray-900">
                 Features
               </a>
             </Link>
             <Link href="/works">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+              <a className="text-base font-medium text-gray-500  dark:text-white hover:text-gray-900">
                 How Connects
               </a>
             </Link>
@@ -261,22 +261,26 @@ export default function Navbar() {
             <div className="py-6 px-5 space-y-6 relative">
               {loggedInUser ? (
                 <>
-                  <div className="bg-white dark:bg-slate-700 dark:text-white ">
+                  <div className="bg-white  dark:text-white ">
                     {/* // post a job if loggedInUser user is a recruiter */}
                     {loggedInUser?.role === "recruiter" && (
                       <button
                         onClick={() => router.push("/jobpost")}
-                        className="flex items-center hover:bg-slate-100 dark:hover:text-black py-3  w-full"
+                        className="-m-3 p-3 mb-2 flex bg-white items-center rounded-md hover:bg-gray-50"
                       >
                         <BsChatRightText className="flex-shrink-0 h-6 w-6 text-indigo-600 mr-3" />{" "}
-                        Post a job
+                        <span className=" text-base font-medium text-gray-900">
+                          Post a job
+                        </span>
                       </button>
                     )}
                     {/* make a review */}
                     {loggedInUser?.role !== "admin" && (
-                      <button className="flex items-center hover:bg-slate-100 dark:hover:text-black py-3  w-full">
+                      <button className="-m-3 p-3 flex mb-2 bg-white  items-center rounded-md hover:bg-gray-50">
                         <BsChatRightText className="flex-shrink-0 h-6 w-6 text-indigo-600 mr-3" />{" "}
-                        Share experience
+                        <span className=" text-base font-medium text-gray-900">
+                          Share experience
+                        </span>
                       </button>
                     )}
                     {/* // log out button */}

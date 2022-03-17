@@ -46,6 +46,16 @@ const CandidateRoutes = ({ setTrigger }) => {
           &nbsp;&nbsp;&nbsp;Skill Test
         </a>
       </Link>
+      {/* skill test */}
+      <Link href={`/dashboard/buildResume`}>
+        <a
+          onClick={() => setTrigger(false)}
+          className=" py-4 text-lg font-extralight text-gray-300 hover:text-white   cursor-pointer flex items-center  px-10  "
+        >
+          <BiCalendarCheck className="text-xl" />
+          &nbsp;&nbsp;&nbsp;Build Resume
+        </a>
+      </Link>
     </>
   );
 };

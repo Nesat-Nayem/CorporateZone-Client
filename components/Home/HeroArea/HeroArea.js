@@ -57,11 +57,11 @@ const HeroArea = () => {
               className="sm:flex justify-between items-center py-5 space-y-3"
             >
               <div className="space-y-5">
-                <h1 className="xl:text-6xl lg:text-5xl py-8 md:text-4xl text-xl font-bold tracking-wider">
+                <h1 className="xl:text-6xl lg:text-5xl md:py-8 text-black  py-2 md:text-4xl text-3xl font-bold tracking-wider">
                   {item.title}
                 </h1>
-                <h6 className="py-3 text-2xl font-bold">
-                  <span className="text-pink-500">3,000 +</span> Browse Jobs
+                <h6 className="md:py-3 py-1 md:text-2xl text-xl text-gray-500  font-bold">
+                  Browse <span className="text-cyan-500">3,000 +</span> Jobs
                 </h6>
                 <p className="text-gray-500 leading-7 w-7/12">
                   {item.description}

@@ -13,7 +13,7 @@ import toast, { Toaster } from "react-hot-toast";
 const JobPost = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
   const [responsibilitiData, setResponsibilitiData] = useState("");
-  const [allResponsibilitiData, setAllResponsibilitiData] = useState([]);
+  const [AllResponsibilitiData, setAllResponsibilitiData] = useState([]);
   const [value, setValue] = useState("");
   const router = useRouter();
   const options2 = useMemo(() => countryList().getData(), []);
@@ -96,7 +96,7 @@ const JobPost = () => {
   const submitData = (e) => {
     e.preventDefault();
     allData.skills = selectedLists.map((crrElm) => crrElm.name);
-    allData.responsibilities = allResponsibilitiData;
+    allData.responsibilities = AllResponsibilitiData;
     allData.companyLogo = photoURL;
     allData.location = value.label;
     allData.companyEmail = currentUser.email;
@@ -171,7 +171,7 @@ const JobPost = () => {
         <div className="md:grid md:grid-cols-1 px-20 py-8 md:gap-6">
           <div className="md:col-span-1">
             <div className="px-4 sm:px-0">
-              <h3 className="text-lg md:text-xl italic font-bold animate-bounce leading-6 text-center text-gray-900 dark:text-white">
+              <h3 className="text-lg md:text-xl italic font-bold animate-bounce leading-6 text-center text-gray-900">
                 Post You Job
               </h3>
             </div>
@@ -366,7 +366,7 @@ const JobPost = () => {
                       Responsibilities
                     </label>
                     <div>
-                      {allResponsibilitiData.map((value, id) => {
+                      {AllResponsibilitiData.map((value, id) => {
                         return (
                           value && (
                             <div

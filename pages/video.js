@@ -1,12 +1,12 @@
-import React from "react";
-import Video_Chat from "../components/Video/Video_Chat";
+import React from 'react';
+import Video_Chat from '../components/Video/Video_Chat';
 
 const video = () => {
-  return (
-    <div>
-      <Video_Chat />
-    </div>
-  );
+    return (
+        <>
+            <Video_Chat/>
+        </>
+    );
 };
 
 export default video;
