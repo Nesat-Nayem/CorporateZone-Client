@@ -1,264 +1,83 @@
-import { BsFillTagsFill, BsLaptop } from "react-icons/bs";
-import { BiCodeAlt, BiRestaurant } from "react-icons/bi";
-import { AiOutlineBarChart } from "react-icons/ai";
-
-import { FaMedkit, FaUniversity } from "react-icons/fa";
-import { useForm } from "react-hook-form";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import cover from "../../../styles/Home.module.css";
+// import Swiper core and required modules
+import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
+import { BiRightArrowAlt } from "react-icons/bi";
 
 const HeroArea = () => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const data = [
+    {
+      id: "34lkdasfj",
+      title: "Find Jobs & Career Opportunities",
+      description:
+        "Corporate zone is one of newest and fastest growing job portal where you can advertise jobs and search for resumes. They are an integral part of almost every hiring process and using them effectively will translate into qualified candidates for relatively low costs.",
+      image:
+        "https://i.postimg.cc/RCpdb3yN/Top-10-Highest-Paying-Jobs-in-India-removebg-preview.png",
+    },
 
-  console.log(watch("example"));
+    {
+      id: "34lkdadsfasfj",
+      title: "Build Your Resume",
+      description:
+        "We provide you a custom resume builder from where you can build your own resume without have any trouble of the format. We provide you one of the world-class resume format which will help help you to land your dream job. ",
+      image: "https://i.postimg.cc/SKVC23pJ/build-removebg-preview.png",
+    },
+    {
+      id: "34lk34sfasfj",
+      title: "Live Chat",
+      description:
+        "As a job portal, we provide a live chat functionality. It can be used for recruitment process or to hang out wiht others. You can easily build your connection bigger to make a chat with them or just can make a chat with company HR.",
+      image:
+        "https://i.postimg.cc/0j1wLsYX/Time-To-Chat-Vector-For-Free-removebg-preview.png",
+    },
+    {
+      id: "34lkdad67fasfj",
+      title: "Skill Assesment",
+      description:
+        "As a candidate, you always have to prove yourself that you are the best. To make attention to the company, you can take a skill assesment,if you pass that will show in your profile that will help you to land your job.",
+      image: "https://i.postimg.cc/LsSG6YHm/exam-removebg-preview.png",
+    },
+  ];
   return (
-    <section className="relative">
-      <div
-        style={{
-          backgroundImage: `url("https://i.ibb.co/59TgD3X/slider13.jpg")`,
-          color: "#23C0E9",
-          height: "auto",
-          width: "100%",
-          position: "relative",
+    <div className={cover.hero_cover}>
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
         }}
-        className="py-8 px-2 md:py-16"
+        className="mySwiper lg:w-9/12 w-11/12 mx-auto h-full"
       >
-        <div className="flex flex-col justify-center items-center">
-          <h1
-            style={{
-              position: "relative",
-              fontWeight: "bold",
-            }}
-            className="text-4xl md:text-5xl lg:text-6xl mb-1 md:mb-2"
-          >
-            3,000 +{" "}
-            <span
-              style={{
-                color: "white",
-              }}
+        {data.map((item) => {
+          return (
+            <SwiperSlide
+              key={item.id}
+              className="sm:flex justify-between items-center py-5 space-y-3"
             >
-              Browse Jobs
-            </span>
-          </h1>
-
-          <h3
-            style={{
-              color: "#93959E",
-            }}
-            className="text-md md:text-xl job_crypess"
-          >
-            Find Jobs, Employment & Career Opportunities
-          </h3>
-        </div>
-
-        <div className="flex flex-col justify-center items-center">
-          <form
-            style={{
-              backgroundColor: "#3D4051",
-            }}
-            className="mt-10 p-4 rounded-md"
-            onSubmit={handleSubmit(onSubmit)}
-          >
-            <input
-              style={{
-                color: "black",
-                width: "250px",
-                height: "40px",
-                margin: "10px",
-                paddingLeft: "10px",
-                borderRadius: "10px",
-              }}
-              placeholder="What are you looking for?"
-              {...register("example")}
-            />
-
-            <input
-              style={{
-                color: "black",
-                width: "180px",
-                height: "40px",
-                margin: "10px",
-                borderRadius: "10px",
-                paddingLeft: "10px",
-              }}
-              placeholder="All Region"
-              {...register("exampleRequired", { required: true })}
-            />
-            <input
-              style={{
-                color: "black",
-                width: "170px",
-                height: "40px",
-                margin: "10px",
-                paddingLeft: "10px",
-                borderRadius: "10px",
-              }}
-              placeholder="Choose a category"
-              {...register("exampleRequired", { required: true })}
-            />
-
-            {/* {errors.exampleRequired && alert("Please fill the Input Box❌")} */}
-
-            <input
-              style={{
-                padding: "10px 30px",
-                borderRadius: "10px",
-                cursor: "pointer",
-              }}
-              className="bg-[#85F4FF] text-black hover:bg-[#42C2FF] hover:text-white"
-              type="submit"
-              value="Search"
-            />
-          </form>
-
-          <div className="flex flex-col justify-start items-start px-8 mt-10">
-            <div className="flex">
-              <p className="mt-1 ">
-                <BsFillTagsFill />
-              </p>
-              <p
-                style={{
-                  color: "white",
-                }}
-                className="ml-2"
-              >
-                Trending Keywords:{" "}
-                <span
-                  style={{
-                    color: "#93959E",
-                  }}
-                >
-                  developer, design, it company, Media, New, Jobs, Working,
-                  Medical
-                </span>
-              </p>
-            </div>
-          </div>
-          </div>
-          </div>
-
-        <div className="hidden md:grid justify-items-center">
-          <div className="grid grid-cols-6 gap-1  mt-10 w-4/5 justify-items-center ">
-            <div className="Ccolor rounded-md p-4 w-full text-center">
-              <h5
-                style={{
-                  fontSize: "30px",
-                  display: "flex",
-
-                  justifyContent: "center",
-                  marginBottom: "5px",
-                }}
-              >
-                <BiCodeAlt />
-              </h5>
-              <h6>Developer</h6>
-              <p>7 jobs</p>
-            </div>
-
-            <div className="Ccolor p-4 rounded-md w-full text-center">
-              <h5
-                style={{
-                  fontSize: "30px",
-                  display: "flex",
-
-                  justifyContent: "center",
-                  marginBottom: "5px",
-                }}
-              >
-                <BsLaptop />
-              </h5>
-              <h6>Technology</h6>
-              <p>3 jobs</p>
-            </div>
-            <div className="Ccolor p-4 rounded-md w-full text-center">
-              <h5
-                style={{
-                  fontSize: "30px",
-                  display: "flex",
-
-                  justifyContent: "center",
-                  marginBottom: "5px",
-                }}
-              >
-                <AiOutlineBarChart />
-              </h5>
-              <h6>Accounting</h6>
-              <p>3 jobs</p>
-            </div>
-            <div className="Ccolor p-4 rounded-md w-full text-center">
-              <h5
-                style={{
-                  fontSize: "30px",
-                  display: "flex",
-
-                  justifyContent: "center",
-                  marginBottom: "5px",
-                }}
-              >
-                <FaMedkit />
-              </h5>
-              <h6>Medical</h6>
-              <p>3 jobs</p>
-            </div>
-            <div className="Ccolor p-4 rounded-md w-full text-center">
-              <h5
-                style={{
-                  fontSize: "30px",
-                  display: "flex",
-
-                  justifyContent: "center",
-                  marginBottom: "5px",
-                }}
-              >
-                <FaUniversity />
-              </h5>
-              <h6>Government</h6>
-              <p>3 jobs</p>
-            </div>
-            <div className="Ccolor p-4 rounded-md w-full text-center checks">
-              <h5
-                style={{
-                  fontSize: "30px",
-                  display: "flex",
-
-                  justifyContent: "center",
-                  marginBottom: "5px",
-                }}
-              >
-                <BiRestaurant />
-              </h5>
-              <h6 className="tcolor">Restaurant</h6>
-              <p>3 jobs</p>
-            </div>
-          </div>
-        </div>
-        <style jsx>
-          {`
-      
-      .Ccolor:hover{
-        background-color:#23C0E9;
-        color:white
-        
-      }
-     .Ccolor{
-       background-color:#22273A;
-     }
-     .Ccolor p{
-       color: #93959E ;
-     }
-     .Ccolor h6{
-       color: white;
-     }
-      
-        
-      }
-      `}
-        </style>
-    </section>
+              <div className="space-y-5">
+                <h1 className="xl:text-6xl lg:text-5xl py-8 md:text-4xl text-xl font-bold tracking-wider">
+                  {item.title}
+                </h1>
+                <h6 className="py-3 text-2xl font-bold">
+                  <span className="text-pink-500">3,000 +</span> Browse Jobs
+                </h6>
+                <p className="text-gray-500 leading-7 w-7/12">
+                  {item.description}
+                </p>
+                <button className="pl-4 font-bold uppercase flex items-center space-x-3 pr-3 py-3  hover:text-[#42C2FF] text-white hover:transform duration-500 hover:scale-105 border-2 border-[#42C2FF] rounded-lg bg-[#42C2FF] hover:bg-white ml-5">
+                  Join US <BiRightArrowAlt className="font-medium text-2xl" />
+                </button>
+              </div>
+              <div className="flex items-center justify-end w-full">
+                <img src={item.image} alt="" />
+              </div>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
+    </div>
   );
 };
 

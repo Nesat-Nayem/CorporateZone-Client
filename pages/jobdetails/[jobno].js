@@ -16,24 +16,7 @@ import { FcLikePlaceholder } from "react-icons/fc";
 import { MdTitle } from "react-icons/md";
 import Footer from "../../components/Shared/Footer/Footer";
 
-export const getStaticPaths = async () => {
-  const res = await fetch("https://murmuring-spire-15534.herokuapp.com/jobs");
-  const data = await res.json();
-
-  const paths = data.data.map((crrElm) => {
-    return {
-      params: {
-        jobno: crrElm._id.toString(),
-      },
-    };
-  });
-
-  return {
-    paths,
-    fallback: true,
-  };
-};
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
   const id = context.params.jobno;
   const res = await fetch(
     `https://murmuring-spire-15534.herokuapp.com/jobs/${id}`
@@ -149,7 +132,8 @@ const jobdetails = ({ data }) => {
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen></iframe>
+                allowFullScreen
+              ></iframe>
             </div>
 
             <div className="my-10">
@@ -160,7 +144,8 @@ const jobdetails = ({ data }) => {
                 width="600"
                 height="300"
                 allowFullScreen=""
-                loading="lazy"></iframe>
+                loading="lazy"
+              ></iframe>
             </div>
             <div className="mt-12 mb-6 flex items-center ml-8">
               <h2 className="text-md font-bold">SHARE:</h2>
@@ -198,7 +183,8 @@ const jobdetails = ({ data }) => {
 
           <div
             style={{ height: "880px", borderBottom: "2px solid red" }}
-            className="col-span-3 md:col-span-1 bottom-1 border-cyan-100 shadow-md rounded-sm">
+            className="col-span-3 md:col-span-1 bottom-1 border-cyan-100 shadow-md rounded-sm"
+          >
             <div>
               <h2 className={`${Card_title}`}>Job Overview</h2>
               <div className="text-center pt-8 pb-12">

@@ -4,11 +4,13 @@ import axios from "axios";
 import useFirebase from "../../../redux/slices/user/useFirebase";
 import Select from "react-select";
 import countryList from "react-select-country-list";
-import { useRouter } from 'next/router';
+import { useSelector } from "react-redux";
 
 const RecruiterForm = () => {
   const [country, setCountry] = useState("");
   const options = useMemo(() => countryList().getData(), []);
+
+  const error = useSelector((state) => state.user.error);
 
   // location
   const changeHandler = (country) => {
@@ -16,7 +18,6 @@ const RecruiterForm = () => {
   };
 
   const [photoURL, setPhotoURL] = useState("");
-  const router = useRouter();
 
   // signup method
   const { signupWithEmailAndPassword } = useFirebase();
@@ -51,6 +52,7 @@ const RecruiterForm = () => {
     axios
       .post("https://api.imgbb.com/1/upload", imageData)
       .then(function (response) {
+        console.log(response);
         setPhotoURL(response.data.data.display_url);
       })
       .catch(function (error) {
@@ -99,7 +101,7 @@ const RecruiterForm = () => {
             <input
               className="w-full border border-gray-200 p-2  text-black focus:outline-none "
               placeholder="+880 "
-              type="number"
+              type="text"
               {...register("phone", { required: true, pattern: /^(?=.{11,})/ })}
             />
             {/* errors will return when field validation fails  */}

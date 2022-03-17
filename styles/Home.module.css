@@ -3,13 +3,50 @@
 }
 
 .main {
+  background-color: #ebf8fe;
+  /* background-image:url("../images/cover.jpg"); 
+   background-position: center; 
+  background-repeat: repeat; 
+  background-size:contain; */
   min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
+   width: 100%;
+   /* opacity: 0.3px; */
+  /* padding: 4rem 0; */
+  /* flex: 1; */
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+}
+
+.hero_cover{
+   background-image: url("../images/cover.jpg"); 
+  background-color: #cccccc;
+  width: 100%;
+ height: 100vh;
+  background-position:center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+}
+@media (min-width: 1280px) { 
+  .hero_cover{
+    margin-top: -100px;
+  }
+ }
+
+.zone_card{
+  -webkit-border-radius: 50px;
+border-radius: 15px;
+background: #eaf2f57a;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 220px;
+height: 150px;
+margin: 10px auto;
+padding: 0px 15px;
+-webkit-box-shadow: 12px 12px 24px #b2b8c9, -12px -12px 24px #f0f8ff;
+box-shadow: 12px 12px 24px #ebeff5, -12px -12px 24px #dbe5ee;
 }
 
 .footer {

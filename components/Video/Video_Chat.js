@@ -19,7 +19,7 @@ const Video_Chat = () => {
   return call ? (
     <>
       <div>
-        <Layout title="Join Meet" />
+        <Layout title="Metting Now" />
         <Header />
         <div
           style={{ height: "40vw" }}

@@ -84,7 +84,8 @@ const Jobdetails = ({ data }) => {
     ) {
       const jobData = {
         jobId: data._id,
-        candidateEmail: loggedInUser.email,
+        candidateEmail: loggedInUser?.email,
+        resumeLink: loggedInUser?.resumeLink,
         companyName,
         jobTitle,
         jobType,
@@ -176,57 +177,70 @@ const Jobdetails = ({ data }) => {
             <div className="my-10">
               <h2 className="mb-4 text-xl font-bold">VIDEOS</h2>
               <iframe
-                className="inset-0 mt-6 rounded-md shadow-md mx-auto"
-                width="600"
+                className="inset-0 mt-6 rounded-md shadow-md mx-auto w-full"
                 height="315"
                 src="https://www.youtube.com/embed/4P2jJRbtTck"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+                allowFullScreen></iframe>
             </div>
 
             <div className="my-10">
               <h2 className="mb-4 text-xl font-bold">LOCATIONS</h2>
               <iframe
-                className="inset-0 mt-6 rounded-md shadow-md mx-auto "
+                className="inset-0 mt-6 rounded-md shadow-md mx-auto w-full"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3746841.2106474624!2d88.09993645646647!3d23.495622700490763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30adaaed80e18ba7%3A0xf2d28e0c4e1fc6b!2sBangladesh!5e0!3m2!1sen!2sbd!4v1644300400443!5m2!1sen!2sbd"
-                width="600"
                 height="300"
                 allowFullScreen
-                loading="lazy"
-              ></iframe>
+                loading="lazy"></iframe>
             </div>
             <div className="mt-12 mb-6 flex items-center ml-8">
-              <h2 className="text-md font-bold">SHARE:</h2>
-              <a className="ml-3 text-lg hover:text-blue-500" href="#">
+              <h2 className="text-sm md:text-md font-bold">SHARE:</h2>
+              <a
+                className="ml-3 text-sm md:text-lg hover:text-blue-500"
+                href="#">
                 <FaFacebookF />
               </a>
-              <a className="ml-3 text-xl hover:text-blue-400" href="#">
+              <a
+                className="ml-3 text-sm md:text-lg hover:text-blue-400"
+                href="#">
                 <AiOutlineTwitter />
               </a>
-              <a className="ml-3 text-lg hover:text-blue-400" href="#">
+              <a
+                className="ml-3 text-sm md:text-lg hover:text-blue-400"
+                href="#">
                 <GrLinkedinOption />
               </a>
-              <a className="ml-3 text-lg hover:text-red-500" href="#">
+              <a
+                className="ml-3 text-sm md:text-lg hover:text-red-500"
+                href="#">
                 <IoLogoGoogleplus />
               </a>
-              <a className="ml-3 text-lg hover:text-red-500" href="#">
+              <a
+                className="ml-3 text-sm md:text-lg hover:text-red-500"
+                href="#">
                 <IoLogoPinterest />
               </a>
             </div>
             <div className=" flex items-center">
               <h2 className="text-md font-bold flex items-center">
-                <AiFillTags className="text-blue-400 text-xl mr-2" /> Tagged as:
+                <AiFillTags className="text-blue-400 text-xl mr-2" />{" "}
+                <span className="text-sm md:text-lg inline-block">Tagged as:</span>
               </h2>
-              <a className="ml-3 text-sm text-blue-400" href="#">
+              <a
+                className="ml-1 md:ml-3 text-xs md:text-sm text-blue-400"
+                href="#">
                 Media,
               </a>
-              <a className="ml-3 text-sm text-blue-400" href="#">
+              <a
+                className="ml-1 md:ml-3 text-xs md:text-sm text-blue-400"
+                href="#">
                 Medicla,
               </a>
-              <a className="ml-3 text-sm text-blue-400" href="#">
+              <a
+                className="ml-1 md:ml-3 text-xs md:text-sm text-blue-400"
+                href="#">
                 Restaurants
               </a>
             </div>
@@ -234,13 +248,12 @@ const Jobdetails = ({ data }) => {
 
           <div
             style={{ height: "880px", borderBottom: "2px solid red" }}
-            className="col-span-3 md:col-span-1 bottom-1 border-cyan-100 shadow-md rounded-sm"
-          >
+            className="col-span-3 md:col-span-1 bottom-1 border-cyan-100 shadow-md rounded-sm">
             <div>
               <h2 className={`${Card_title}`}>Job Overview</h2>
               <div className="text-center pt-8 pb-12">
                 <img
-                  className="w-30 self-center inline-block"
+                  className="w-24 md:w-32 self-center inline-block"
                   src={companyLogo}
                   alt="ImageLogo"
                 />
@@ -319,8 +332,7 @@ const Jobdetails = ({ data }) => {
                   <div className="ml-10">
                     <button
                       onClick={applyJob}
-                      className="bg-red-500 hover:bg-red-700 text-white font-bold py-4 px-20 rounded tracking-wider"
-                    >
+                      className="bg-red-500 hover:bg-red-700 text-white font-bold py-4 px-10 md:px-20 rounded tracking-wider">
                       APPLY NOW!
                     </button>
 
@@ -347,7 +359,7 @@ export default Jobdetails;
 
 export const getServerSideProps = async (context) => {
   const res = await fetch(
-    `https://murmuring-spire-15534.herokuapp.com/jobs/${context.params.id}`
+    `https://murmuring-spire-15534.herokuapp.com/jobs/singleJob/${context.params.id}`
   );
   const data = await res.json();
 

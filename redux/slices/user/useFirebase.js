@@ -1,4 +1,5 @@
 import axios from "axios";
+import cogoToast from "cogo-toast";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -34,6 +35,7 @@ const useFirebase = () => {
   ) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
+        console.log(result);
         updateProfile(auth.currentUser, {
           displayName: username,
           photoURL: photoURL,
@@ -42,6 +44,7 @@ const useFirebase = () => {
         saveData(userInfo);
       })
       .catch((err) => {
+        cogoToast.error(err ? err.message : "authentication failed");
         dispatch(registerFailed(err.message));
       });
   };
@@ -51,9 +54,11 @@ const useFirebase = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         dispatch(signIn(result.user));
+
         router.push("/");
       })
       .catch((err) => {
+        cogoToast.error(err ? err.message : "authentication failed");
         dispatch(registerFailed(err.message));
       });
   };
@@ -71,7 +76,7 @@ const useFirebase = () => {
 
   useEffect(() => {
     fetch(
-      `https://murmuring-spire-15534.herokuapp.com/users/${currentUser?.email}`
+      `https://murmuring-spire-15534.herokuapp.com/users/signleUser/${currentUser?.email}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -82,31 +87,37 @@ const useFirebase = () => {
   // data save to database
   const saveData = async (data) => {
     try {
-      axios
-        .post("https://murmuring-spire-15534.herokuapp.com/users", data)
-        .then(function (response) {
-          console.log(response);
-          router.push("/dashboard/profile");
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+      const res = await fetch(
+        "https://murmuring-spire-15534.herokuapp.com/users/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+      const result = await res.json();
+      if (result) {
+        console.log(result);
+        router.push("/dashboard/profile");
+      } else {
+        console.log(error);
+      }
+      // axios
+      //   .post("http://localhost:4030/users/register", data)
+      //   .then(function (response) {
+      //     console.log(response);
+      //     router.push("/dashboard/profile");
+      //   })
+      //   .catch(function (error) {
+      //     console.log(error);
+      //   });
     } catch (err) {
       console.error(err);
     }
   };
-  //   // observer function
-  //   useEffect(() => {
-  //     const unsubscribe = onAuthStateChanged(auth, (user) => {
-  //       if (user) {
-  //         dispatch(initialUserData({ user }));
-  //       } else {
-  //         dispatch(initialUserData(null));
-  //       }
-  //     });
-  //     return () => unsubscribe;
-  //   }, []);
-  //[currentUser?.email]);
+
   return { logInWithEmailAndPassword, signupWithEmailAndPassword, logOut };
 };
 

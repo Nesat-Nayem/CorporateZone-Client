@@ -15,7 +15,7 @@ const Candidate = () => {
   const handleDelete = (id) => {
     const proccess = window.confirm("Are You Sure You Want To Delete");
     if (proccess) {
-      fetch(`https://murmuring-spire-15534.herokuapp.com/users/${id}`, {
+      fetch(`https://murmuring-spire-15534.herokuapp.com/users/delete/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

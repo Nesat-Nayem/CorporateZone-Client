@@ -27,7 +27,11 @@ import AdminProfile from "../Admin/AdminProfile";
 import SkillTest from "../Candidate/skillTest/SkillTest";
 import AppliedJobs from "../Candidate/AppliedJobs/AppliedJobs";
 import ChatLayout from "../Messages/ChatLayout";
-import PostedJobs from "../PostJob/JobPost";
+import BuildResume from "../Candidate/BuildResume/BuildResume";
+import { FcVideoCall } from "react-icons/fc";
+import Applicant from "../../Applicant/Applicant";
+import PostedJobs from "../Recruiter/postedJobs/PostedJobs";
+import CompanyLists from "../Candidate/CampalyLists";
 
 const DashboardRoutes = ({ jobs }) => {
   const [trigger, setTrigger] = useState(false);
@@ -48,33 +52,23 @@ const DashboardRoutes = ({ jobs }) => {
 
   return (
     <>
-      <div className="antialiased min-h-screen relative lg:flex">
+      <div className="antialiased h-screen overflow-y-scroll chats relative lg:flex">
         <nav
-          className={`absolute lg:relative z-10 w-72 lg:transform-none lg:opacity-100 bg-slate-800/100 text-white h-screen ${
+          className={`absolute overflow-y-scroll chats lg:relative z-10 w-72 lg:transform-none lg:opacity-100 bg-[#00355f] text-white h-screen ${
             !trigger
               ? "inset-0 opacity-0 transform duration-200 -translate-x-full ease-out"
               : "inset-0 opacity-100 transform duration-200 translate-x-0 ease-in"
           }`}
         >
-          <div className="flex justify-between m-5">
+          <div className="flex justify-between items-center my-5 mr-5 ml-0 md:ml-4 py-5">
             <div className="flex flex-col items-center mx-auto">
-              {currentUser && (
-                <img
-                  src={currentUser?.photoURL}
-                  className="h-20 w-20 "
-                  style={{ borderRadius: "50%" }}
-                  alt="user image"
-                />
-              )}
-              <h2 className="font-extrabold  text-xl mx-auto p-2">
-                {currentUser?.displayName}
-              </h2>
-              <h2 className="font-semibold text-green-600  capitalize text-md mx-auto pb-2 ">
-                {loggedInUser?.role}
-              </h2>
-              <small className="text-gray-100 text-center">
-                {currentUser?.email}
-              </small>
+              <Link href="/">
+                <a className="flex items-center ">
+                  <span className=" text-xl font-extrabold ">
+                    <span className="text-pink-500">C</span>orporate Zone
+                  </span>
+                </a>
+              </Link>
             </div>
             <MdOutlineChevronLeft
               onClick={() => setTrigger(false)}
@@ -83,9 +77,9 @@ const DashboardRoutes = ({ jobs }) => {
           </div>
           {/* routes */}
           <div className="w-full">
-            <ul className="m-2 py-5 border-y border-dotted">
+            <ul className="px-2 py-5 ">
               {
-                <li className="divide-y divide-solid">
+                <li className="">
                   {/* candidate dashboard */}
                   {loggedInUser?.role === "candidate" && (
                     <CandidateRoutes setTrigger={setTrigger} />
@@ -99,11 +93,11 @@ const DashboardRoutes = ({ jobs }) => {
                   )}
 
                   {/* shared for candidate and recruiter */}
-                  {loggedInUser && (
+                  {loggedInUser && loggedInUser?.role !== "admin" && (
                     <Link href={`/dashboard/chats`}>
                       <a
                         onClick={() => setTrigger(false)}
-                        className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
+                        className=" py-4 text-lg font-extralight text-gray-300 hover:text-white   cursor-pointer flex items-center  px-10 "
                       >
                         <BsFillChatSquareDotsFill className="text-xl" />
                         &nbsp;&nbsp;&nbsp;Messages
@@ -113,36 +107,50 @@ const DashboardRoutes = ({ jobs }) => {
                 </li>
               }
             </ul>
-            {/* // log out button */}
-            <div className="text-center">
-              <button onClick={logOutHandler}>
-                <a className=" w-full p-2 text-md  mx-auto hover:bg-white  hover:text-black border-2 rounded-md flex justify-center items-center mt-10">
-                  <MdOutlineLogout className="text-2xl" />
-                  &nbsp;&nbsp;LogOut
-                </a>
-              </button>
-            </div>
+          </div>
+          {/* // log out button */}
+          <div className="px-10 absolute md:bottom-10 bottom-4">
+            <button onClick={logOutHandler}>
+              <a className=" w-full py-2 px-10 text-md  mx-auto text-gray-300 border border-gray-500 rounded flex justify-center items-center mt-10 hover:text-white">
+                <MdOutlineLogout className="text-2xl" />
+                &nbsp;&nbsp;LogOut
+              </a>
+            </button>
           </div>
         </nav>
         <div className="relative z-0 lg:flex-grow">
-          <header className="flex items-center bg-gray-800/100 text-white py-2">
+          <header className="flex  items-center  py-2">
             <MdOutlineMenu
               onClick={() => setTrigger(true)}
               className="h-12 xl:hidden w-12 p-2 ml-2 hover:bg-pink-600 rounded-md cursor-pointer"
             />
-            <div className="flex justify-center items-center ml-auto">
-              <Link href="/">
-                <a className="flex items-center px-3">
-                  <span className=" text-xl font-extrabold  pl-3">
-                    <span className="text-pink-500">C</span>orporate Zone
-                  </span>
-                </a>
-              </Link>
+            <div className="flex justify-center items-center ml-auto md:px-10 px-5">
+              <h1 className="px-3 font-semibold ">{loggedInUser?.username}</h1>
+              <div>
+                {loggedInUser?.photoRUL ? (
+                  <img
+                    src={loggedInUser?.photoURL}
+                    className="w-12 h-12 border-2 border-gray-600"
+                    style={{ borderRadius: "50%" }}
+                    alt=""
+                  />
+                ) : (
+                  <img
+                    src="https://png.pngtree.com/png-vector/20190704/ourlarge/pngtree-businessman-user-avatar-free-vector-png-image_1538405.jpg"
+                    className="w-12 h-12 border-2 border-gray-600"
+                    style={{ borderRadius: "50%" }}
+                    alt=""
+                  />
+                )}
+              </div>
             </div>
           </header>
 
           {/* route components */}
-          <section className="p-5 bg-gray-100 ">
+          <section
+            className="p-5 bg-gray-100  overflow-y-scroll"
+            style={{ height: "90vh" }}
+          >
             {!params?.length ? (
               <div>
                 <h1>Welcome to the dashboard</h1>
@@ -181,11 +189,10 @@ const DashboardRoutes = ({ jobs }) => {
             {params[0] === "profile" && loggedInUser?.role === "recruiter" && (
               <RecruiterProfile />
             )}
-
-            {/* recruiter postedJobs */}
-            {params[0] === "postedJobs" && loggedInUser?.role === "recruiter" && (
-              <PostedJobs/>
-            )}
+            {params[0] === "applicant" &&
+              loggedInUser?.role === "recruiter" && <Applicant />}
+            {params[0] === "postedJobs" &&
+              loggedInUser?.role === "recruiter" && <PostedJobs />}
             {/* update recruiter profile  */}
             {params[0] === "updateProfile" &&
               loggedInUser?.role === "recruiter" && <RecruiteProfileUpdate />}
@@ -202,6 +209,10 @@ const DashboardRoutes = ({ jobs }) => {
             {/* candidate profile update */}
             {params[0] === "updateProfile" &&
               loggedInUser?.role === "candidate" && <CandidateProfileUpdate />}
+
+            {/* candidate profile update */}
+            {params[0] === "topCompanies" &&
+              loggedInUser?.role === "candidate" && <CompanyLists />}
 
             {/* candidate profile update */}
             {params[0] === "skillTest" &&

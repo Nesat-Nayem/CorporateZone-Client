@@ -4,24 +4,27 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 
 const PostedJobs = ({ jobs }) => {
-    const [postJobs, setpostJobs] = useState([]);
-    const loggedInUser = useSelector((state) => state.user.loggedInUser);
-
+  const [postJobs, setpostJobs] = useState([]);
+  const loggedInUser = useSelector((state) => state.user.loggedInUser);
 
   // fetching data
-  useEffect( () => {
-      const fetchData = async () => {
-          const data = await (
-              await fetch(
-                  `https://murmuring-spire-15534.herokuapp.com/jobs`
-              )
-          ).json();
-          setpostJobs(data.data.filter(crrElm => crrElm.companyEmail === loggedInUser.email))
-      };
-      fetchData();
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch(
+        `https://murmuring-spire-15534.herokuapp.com/jobs`
+      );
+      const data = await res.json();
+
+      setpostJobs(
+        data.data.filter(
+          (crrElm) => crrElm.companyEmail === loggedInUser?.email
+        )
+      );
+    };
+    fetchData();
   }, []);
-    
-console.log(postJobs);
+
+  console.log(postJobs);
   // handling error if no jobs found
   if (!postJobs.length) {
     return (

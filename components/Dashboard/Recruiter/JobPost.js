@@ -7,13 +7,13 @@ import countryList from "react-select-country-list";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
-import Swal from 'sweetalert2';
-import toast, { Toaster } from 'react-hot-toast';
+import Swal from "sweetalert2";
+import toast, { Toaster } from "react-hot-toast";
 
 const JobPost = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
   const [responsibilitiData, setResponsibilitiData] = useState("");
-  const [AllResponsibilitiData, setAllResponsibilitiData] = useState([]);
+  const [allResponsibilitiData, setAllResponsibilitiData] = useState([]);
   const [value, setValue] = useState("");
   const router = useRouter();
   const options2 = useMemo(() => countryList().getData(), []);
@@ -96,33 +96,64 @@ const JobPost = () => {
   const submitData = (e) => {
     e.preventDefault();
     allData.skills = selectedLists.map((crrElm) => crrElm.name);
-    allData.responsibilities = AllResponsibilitiData;
+    allData.responsibilities = allResponsibilitiData;
     allData.companyLogo = photoURL;
     allData.location = value.label;
     allData.companyEmail = currentUser.email;
     allData.jobTags = "Media, Medicla, Restaurants";
-    const {businessType, companyEmail, companyLogo, companyName, companySize, companyWebsite, experience, jobDescription, jobTitle, jobType, lastDate,location, responsibilities, salary, since, skills} = allData
-    if (businessType && companyEmail && companyLogo && companyName && companySize && companyWebsite && experience && jobDescription && jobTitle && jobType && lastDate && location && responsibilities.length && salary && since && skills.length)
-    {
+    const {
+      businessType,
+      companyEmail,
+      companyLogo,
+      companyName,
+      companySize,
+      companyWebsite,
+      experience,
+      jobDescription,
+      jobTitle,
+      jobType,
+      lastDate,
+      location,
+      responsibilities,
+      salary,
+      since,
+      skills,
+    } = allData;
+    if (
+      businessType &&
+      companyEmail &&
+      companyLogo &&
+      companyName &&
+      companySize &&
+      companyWebsite &&
+      experience &&
+      jobDescription &&
+      jobTitle &&
+      jobType &&
+      lastDate &&
+      location &&
+      responsibilities.length &&
+      salary &&
+      since &&
+      skills.length
+    ) {
       axios
-      .post("https://murmuring-spire-15534.herokuapp.com/jobs", allData)
-      .then((res) => {
-        if (res.status === 200) {
-          router.push("/");
-          toast.success('Successfully Post!')
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    }
-    else
-    {
+        .post("https://murmuring-spire-15534.herokuapp.com/jobs", allData)
+        .then((res) => {
+          if (res.status === 200) {
+            router.push("/");
+            toast.success("Successfully Post!");
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    } else {
       Swal.fire(
-        'Unsuccessfull Post!',
-        'Please fill the form and try again',
-        'error'
-      )
+        "Unsuccessfull Post!",
+        "Please fill the form and try again",
+        "error"
+      );
     }
   };
 
@@ -140,7 +171,7 @@ const JobPost = () => {
         <div className="md:grid md:grid-cols-1 px-20 py-8 md:gap-6">
           <div className="md:col-span-1">
             <div className="px-4 sm:px-0">
-              <h3 className="text-lg md:text-xl italic font-bold animate-bounce leading-6 text-center text-gray-900">
+              <h3 className="text-lg md:text-xl italic font-bold animate-bounce leading-6 text-center text-gray-900 dark:text-white">
                 Post You Job
               </h3>
             </div>
@@ -305,10 +336,7 @@ const JobPost = () => {
                     />
                   </div>
 
-                  <Toaster
-                    position="top-center"
-                    reverseOrder={false}
-                  />
+                  <Toaster position="top-center" reverseOrder={false} />
 
                   <div className="col-span-6 sm:col-span-3">
                     <label className="block text-sm font-medium text-gray-700">
@@ -338,7 +366,7 @@ const JobPost = () => {
                       Responsibilities
                     </label>
                     <div>
-                      {AllResponsibilitiData.map((value, id) => {
+                      {allResponsibilitiData.map((value, id) => {
                         return (
                           value && (
                             <div

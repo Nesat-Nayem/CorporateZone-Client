@@ -23,7 +23,7 @@ const CandidateForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  
+
   const onSubmit = (data) => {
     const userInfo = {
       ...data,
@@ -97,7 +97,7 @@ const CandidateForm = () => {
             <input
               className="w-full border border-gray-200 p-2  text-black focus:outline-none "
               placeholder="+880"
-              type="number"
+              type="text"
               {...register("phone", { required: true, pattern: /^(?=.{11,})/ })}
             />
             {/* errors will return when field validation fails  */}

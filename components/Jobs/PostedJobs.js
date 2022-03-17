@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+
 import {
   MdMoreTime,
   MdPedalBike,
@@ -14,12 +14,16 @@ import { useEffect } from "react";
 import PostedJob from "./PostedJob";
 import { useRouter } from "next/router";
 
-const PostedJobs = (props) => {
+const PostedJobs = (props) =>
+{
   const [jobs, setJobs] = useState(props.jobs);
   const [category, setCategory] = useState();
   const [display, setDisplay] = useState([]);
+  const [page, setPage] = useState(1);
+  const [pageCount] = useState(5);
 
-  const handleChange = (event) => {
+  const handleChange = (event) =>
+  {
     const searchText = event.target.value;
     const matched = jobs.filter((job) =>
       job.jobTitle.toLowerCase().includes(searchText.toLowerCase())
@@ -30,32 +34,50 @@ const PostedJobs = (props) => {
 
   const router = useRouter();
 
-  const filterJobs = async (e) => {
+  const filterJobs = async (e) =>
+  {
     setCategory(e.target.value);
     const response = await fetch(
       `https://murmuring-spire-15534.herokuapp.com/jobs?jobType=${e.target.value}`
     );
     const data = await response.json();
-    setDisplay(data.data);
-    setJobs(data.data);
+    setDisplay(data?.data);
+    setJobs(data?.data);
 
     router.push(`/jobs?jobType=${e.target.value}`, undefined, {
       shallow: true,
     });
   };
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     fetch("https://murmuring-spire-15534.herokuapp.com/jobs")
       .then((res) => res.json())
-      .then((data) => {
+      .then((data) =>
+      {
         setJobs(data.data);
         setDisplay(data.data);
         console.log(data.data);
       });
   }, []);
 
+  //Get Current Posts
+  const indexOfLastPost = page * pageCount;
+  const indexOfFirstPost = indexOfLastPost - pageCount;
+  const currentPost = jobs.slice(indexOfFirstPost, indexOfLastPost);
+
+  //pagination
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(jobs.length / pageCount); i++) {
+    pageNumbers.push(i);
+  }
+
+  //change page
+  const paginate = (pageNumber) => {
+    setPage(pageNumber);
+  };
   return (
-    <section className="bg-gray-100 pb-10">
+    <section className="pb-10">
       <div className="md:w-9/12 w-11/12 mx-auto">
         {/* Search Start */}
         <div className="md:flex justify-center items-center md:max-w-[75%] md:mx-auto relative mt-12">
@@ -83,7 +105,7 @@ const PostedJobs = (props) => {
         {/* Start Filter */}
         <div className="md:flex justify-between items-center md:max-w-[75%] md:mx-auto relative mb-12 filter_jobs">
           <div>
-            <h1 className="text-xl font-serif font-bold">Filter Jobs</h1>
+            <h1 className="text-xl font-serif font-bold dark:text-white">Filter Jobs</h1>
           </div>
           <div>
             <select
@@ -104,7 +126,7 @@ const PostedJobs = (props) => {
         {/* End Filter */}
 
         <div>
-          <p className="text-center pb-5 font-bold ">
+          <p className="text-center pb-5 font-bold dark:text-white">
             {display.length} total jobs found.
           </p>
         </div>
@@ -112,12 +134,24 @@ const PostedJobs = (props) => {
         {/* Start Jobs Card */}
 
         <div className="grid gird-cols-1 gap-4">
-          {display?.map((job) => (
+          {currentPost?.map((job) => (
             <PostedJob key={job._id} job={job}></PostedJob>
           ))}
         </div>
 
         {/* End Jobs Card */}
+
+        {/* pagination */}
+        <div className="text-2xl flex text-center text-black border-2 md:w-40 mx-auto my-5 pagination">
+          {pageNumbers.map((number) => (
+            <ul key={number} className="w-full">
+              <li className="border-2">
+                <button onClick={() => paginate(number)}>{number}</button>
+              </li>
+            </ul>
+          ))}
+        </div>
+
       </div>
       <div
         style={{

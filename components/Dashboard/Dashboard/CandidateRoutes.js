@@ -3,6 +3,8 @@ import React from "react";
 import { MdDashboard } from "react-icons/md";
 import { BiCalendarCheck } from "react-icons/bi";
 import { BsFillBookmarkCheckFill } from "react-icons/bs";
+import { FaUserTie } from "react-icons/fa";
+import { VscOrganization } from "react-icons/vsc";
 
 const CandidateRoutes = ({ setTrigger }) => {
   return (
@@ -10,16 +12,16 @@ const CandidateRoutes = ({ setTrigger }) => {
       <Link href={`/dashboard/profile`}>
         <a
           onClick={() => setTrigger(false)}
-          className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
+          className=" py-4 text-lg font-extralight text-gray-300 hover:text-white   cursor-pointer flex items-center  px-10  "
         >
-          <MdDashboard className="text-xl" />
+          <FaUserTie className="text-xl" />
           &nbsp;&nbsp;&nbsp;Profile
         </a>
       </Link>
       <Link href={`/dashboard/appliedJobs`}>
         <a
           onClick={() => setTrigger(false)}
-          className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
+          className=" py-4 text-lg font-extralight text-gray-300 hover:text-white   cursor-pointer flex items-center  px-10  "
         >
           <BsFillBookmarkCheckFill className="text-xl" />
           &nbsp;&nbsp;&nbsp;Applied Jobs
@@ -28,9 +30,9 @@ const CandidateRoutes = ({ setTrigger }) => {
       <Link href={`/dashboard/topCompanies`}>
         <a
           onClick={() => setTrigger(false)}
-          className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
+          className=" py-4 text-lg font-extralight text-gray-300 hover:text-white   cursor-pointer flex items-center  px-10  "
         >
-          <MdDashboard className="text-xl" />
+          <VscOrganization className="text-xl" />
           &nbsp;&nbsp;&nbsp;Companies
         </a>
       </Link>
@@ -38,7 +40,7 @@ const CandidateRoutes = ({ setTrigger }) => {
       <Link href={`/dashboard/skillTest`}>
         <a
           onClick={() => setTrigger(false)}
-          className="px-4 py-2 text-lg font-extralight text-gray-50 hover:bg-white  hover:text-black cursor-pointer rounded-md flex items-center mx-5 mb-5"
+          className=" py-4 text-lg font-extralight text-gray-300 hover:text-white   cursor-pointer flex items-center  px-10  "
         >
           <BiCalendarCheck className="text-xl" />
           &nbsp;&nbsp;&nbsp;Skill Test

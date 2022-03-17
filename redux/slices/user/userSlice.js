@@ -67,10 +67,12 @@ export const userSlice = createSlice({
 export const {
   initialUserData,
   registerUser,
+ 
   signIn,
   loggedInUserData,
   signOutCurrentUser,
   registerFailed,
 } = userSlice.actions;
+
 
 export default userSlice.reducer;

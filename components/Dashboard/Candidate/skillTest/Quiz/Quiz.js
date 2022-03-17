@@ -4,8 +4,12 @@ import html from "../../../../../public/html.json";
 import css from "../../../../../public/css.json";
 import javascript from "../../../../../public/javascript.json";
 import uc from "../../../../../public/uc.json";
+import { useSelector } from "react-redux";
+import axios from "axios";
 
 const Quiz = ({ technology, setState }) => {
+  const loggedInUser = useSelector((state) => state.user.loggedInUser);
+
   const [questions, setQuestions] = useState({});
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOptions, setSelectedOptions] = useState([]);
@@ -46,12 +50,6 @@ const Quiz = ({ technology, setState }) => {
     console.log(selectedOptions);
   };
 
-  /* const handlePrevious = () =>
-    {
-        const prevQues = currentQuestion - 1;
-        prevQues >= 0 && setCurrentQuestion(prevQues);
-    }; */
-
   const handleNext = () => {
     const nextQues = currentQuestion + 1;
     nextQues < questions.length && setCurrentQuestion(nextQues);
@@ -68,6 +66,31 @@ const Quiz = ({ technology, setState }) => {
           (newScore += 1)
       );
     }
+    saveResult(newScore);
+  };
+
+  const saveResult = (newScore) => {
+    let pass = false;
+    if (newScore >= 7) {
+      pass = true;
+
+      axios
+        .put(
+          `https://murmuring-spire-15534.herokuapp.com/skill/${technology}`,
+          {
+            email: loggedInUser?.email,
+            technology: technology,
+            pass: pass,
+          }
+        )
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+
     setScore(newScore);
     setShowScore(true);
   };
@@ -104,7 +127,9 @@ const Quiz = ({ technology, setState }) => {
       {showScore ? (
         <div className="lg:w-1/2 bg-[#1A1A1A] text-center shadow-md rounded-xl p-5">
           <h1 className="text-3xl font-semibold text-white">
-            You scored {score} out of {questions?.length}
+            {score >= 7
+              ? `WoW, you did it. You've got ${technology} Badges...Check your profile`
+              : `Didn't get any badges. Don't worry. Please try again. Good luck to you.`}
           </h1>
           <button
             onClick={() => setState(false)}
