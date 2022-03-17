@@ -42,7 +42,7 @@ export default function Navbar() {
   const currentUser = useSelector((state) => state.user.currentUser);
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
   const [notifications, setNotifications] = useState([]);
-  const [headerColor, setHeaderColor] = useState("");
+  const [headerColor, setHeaderColor] = useState("#ebf8fe");
   
   useEffect(() => {
     const fetchNotifications = async () => {
@@ -70,7 +70,10 @@ export default function Navbar() {
   };
 
   const listenScrollEvent = () => {
-    window.scrollY > 70 ? setHeaderColor("#ebf8fe") : setHeaderColor("");
+    window.scrollY > 70 ? setHeaderColor("#ebf8fe") : setHeaderColor("#ebf8fe");
+    if (window.screenY < 20) {
+      // document.getElementById("scroll").style.background = "#ebf8fe";
+    }
   }
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
@@ -85,7 +88,7 @@ export default function Navbar() {
         id="scroll" style={{background:headerColor}}
       >
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex relative justify-between items-center py-6 lg:justify-start md:space-x-10">
+          <div className="flex relative justify-between items-center py-3 lg:justify-start md:space-x-10">
             <div className="flex justify-start md:w-0 md:flex-1">
               <Link href="/">
                 <a className="flex items-center">
