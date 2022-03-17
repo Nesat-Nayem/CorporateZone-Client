@@ -17,15 +17,7 @@ const AdminRoutes = ({ setTrigger }) => {
           &nbsp;&nbsp;&nbsp;Profile
         </a>
       </Link>
-      <Link href={`/dashboard/user`}>
-        <a
-          onClick={() => setTrigger(false)}
-          className=" py-4 text-lg font-extralight text-gray-300 hover:text-white   cursor-pointer flex items-center  px-10  "
-        >
-          <FaUserCircle className="text-lg" />
-          &nbsp;&nbsp;&nbsp;USER
-        </a>
-      </Link>
+
       <Link href={`/dashboard/jobs`}>
         <a
           onClick={() => setTrigger(false)}

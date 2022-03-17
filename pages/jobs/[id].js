@@ -1,17 +1,15 @@
 import styles from "../../styles/JobDetails.module.css";
-import
-  {
-    FaFacebookF,
-    FaLocationArrow,
-    FaRegMoneyBillAlt,
-  } from "react-icons/fa";
-import
-  {
-    AiOutlineTwitter,
-    AiFillTags,
-    AiTwotoneCalendar,
-    AiFillStar,
-  } from "react-icons/ai";
+import {
+  FaFacebookF,
+  FaLocationArrow,
+  FaRegMoneyBillAlt,
+} from "react-icons/fa";
+import {
+  AiOutlineTwitter,
+  AiFillTags,
+  AiTwotoneCalendar,
+  AiFillStar,
+} from "react-icons/ai";
 import { GrLinkedinOption } from "react-icons/gr";
 import { IoLogoGoogleplus, IoLogoPinterest } from "react-icons/io";
 import { FcLikePlaceholder } from "react-icons/fc";
@@ -23,8 +21,7 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import cogoToast from "cogo-toast";
 
-const Jobdetails = ({ data }) =>
-{
+const Jobdetails = ({ data }) => {
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
 
   const { main_head, Card_title, mini_title } = styles;
@@ -49,8 +46,7 @@ const Jobdetails = ({ data }) =>
     postedTime,
   } = data;
 
-  const applyJob = () =>
-  {
+  const applyJob = () => {
     const options = { position: "bottom-right" };
     if (!loggedInUser) {
       return cogoToast.warn(
@@ -88,8 +84,8 @@ const Jobdetails = ({ data }) =>
     ) {
       const jobData = {
         jobId: data._id,
-        candidateEmail: loggedInUser.email,
-        resumeLink: loggedInUser.resumeLink,
+        candidateEmail: loggedInUser?.email,
+        resumeLink: loggedInUser?.resumeLink,
         companyName,
         jobTitle,
         jobType,
@@ -99,12 +95,10 @@ const Jobdetails = ({ data }) =>
           "https://murmuring-spire-15534.herokuapp.com/appliedJobs",
           jobData
         )
-        .then((response) =>
-        {
+        .then((response) => {
           cogoToast.success("Apply successfull", options);
         })
-        .catch((err) =>
-        {
+        .catch((err) => {
           cogoToast.warn(`${err.message}`, options);
         });
     }
@@ -143,8 +137,7 @@ const Jobdetails = ({ data }) =>
                 egestas non nisi. Curabitur aliquet quam id dui posuere blandit.
               </p>
               <ul className="list-none text-gray-500">
-                {responsibilities.map((crrElm, index) =>
-                {
+                {responsibilities.map((crrElm, index) => {
                   return (
                     <div key={index}>
                       <li className="mt-4">
@@ -160,8 +153,7 @@ const Jobdetails = ({ data }) =>
             <div className="my-10">
               <h2 className="mb-4 text-xl font-bold">MINIMUM QUALIFICATIONS</h2>
               <ul className="list-none text-gray-500">
-                {skills.map((crrElm, index) =>
-                {
+                {skills.map((crrElm, index) => {
                   return (
                     <li key={index} className="mt-4">
                       <span className="text-red-500 mr-3">&#x2714;</span>
@@ -354,8 +346,7 @@ const Jobdetails = ({ data }) =>
 
 export default Jobdetails;
 
-export const getServerSideProps = async (context) =>
-{
+export const getServerSideProps = async (context) => {
   const res = await fetch(
     `https://murmuring-spire-15534.herokuapp.com/jobs/singleJob/${context.params.id}`
   );
