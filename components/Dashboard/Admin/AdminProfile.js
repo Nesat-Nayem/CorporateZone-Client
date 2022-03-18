@@ -8,8 +8,8 @@ const AdminProfile = () => {
   return (
     <div className="bg-white xl:px-32 py-5 ">
       <div className="md:flex lg:px-10 md:px-5 justify-between">
-        <div>
-          <h1 className="text-center text-xl font-bold font-serif">Profile</h1>
+        <div className="mx-auto">
+          <h1 className="text-center text-2xl font-bold font-serif">Profile</h1>
         </div>
       </div>
 

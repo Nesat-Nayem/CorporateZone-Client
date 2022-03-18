@@ -36,7 +36,8 @@ const HeroArea = () => {
       title: "Skill Assesment",
       description:
         "As a candidate, you always have to prove yourself that you are the best. To make attention to the company, you can take a skill assesment,if you pass that will show in your profile that will help you to land your job.",
-      image: "https://i.postimg.cc/LsSG6YHm/exam-removebg-preview.png",
+      image: "https://tailwindcomponents.com/svg/website-designer-bro.svg",
+      // image: "https://i.postimg.cc/LsSG6YHm/exam-removebg-preview.png",
     },
   ];
   return (

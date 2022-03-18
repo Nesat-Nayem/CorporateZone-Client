@@ -11,15 +11,8 @@ const ProfileView = ({ role, loggedInUser }) => {
     <div className="bg-white xl:px-5 md:px-2 px-2 py-1">
       {/* profile information */}
       <div className="">
-        <div className="lg:flex ">
+        <div className="lg:flex flex-col">
           <div>
-            <div className="flex justify-center">
-              <img
-                src={loggedInUser?.photoURL}
-                className="w-40 h-40 ring-2"
-                alt=""
-              />
-            </div>
             {loggedInUser?.role === "candidate" && (
               <div className="text-center py-5">
                 <button
@@ -43,10 +36,17 @@ const ProfileView = ({ role, loggedInUser }) => {
           </div>
 
           {/* common information for both candidate and recruiter */}
-          <div className="flex justify-center">
-            <div className="md:px-20">
+          <div className="lg:flex justify-center mt-10">
+            <div className="order-last">
+              <img
+                src={loggedInUser?.photoURL}
+                className="w-40 h-40 ring-2"
+                alt=""
+              />
+            </div>
+            <div className="md:px-20 lg:flex lg:flex-col md:flex md:flex-col">
               {/* username */}
-              <div>
+              <div className="w-[500px]">
                 <p className="font-semibold text-sm text-slate-600 py-1">
                   Username:
                 </p>
@@ -102,7 +102,7 @@ const ProfileView = ({ role, loggedInUser }) => {
                         {/* companyWebsite */}
                         <div className="py-2">
                           <p className="font-semibold text-slate-600 py-1">
-                            Company website{" "}
+                            Company website
                           </p>
                           <a className="text-blue-700 hover:underline">
                             {loggedInUser?.companyWebsite}
