@@ -169,7 +169,7 @@ export default function Navbar() {
             }
           >
             <button
-              onClick={() => router.push("/dashboard/profile")}
+              onClick={() => router.push("/dashboard/panel")}
               className="flex items-center hover:bg-slate-100 dark:hover:text-black py-2 px-5 w-full"
             >
               <img
