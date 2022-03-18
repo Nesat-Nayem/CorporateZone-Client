@@ -14,7 +14,7 @@ const Works = () => {
   AOS.init();
 },[])
   return (
-    <div className="my-9 relative">
+    <div className="py-5 relative">
       <h3 className="text-3xl text-center after:content-[''] after:absolute after:border-t-2 after:w-16 md:after:border-cyan-500 after:left-0 after:bottom-0 after:right-60 after:top-10 after:mx-auto font-medium text-slate-700 uppercase my-20">
         How Does IT Works
       </h3>
