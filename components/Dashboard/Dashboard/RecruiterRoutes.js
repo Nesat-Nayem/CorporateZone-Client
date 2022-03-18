@@ -9,6 +9,15 @@ const RecruiterRoutes = ({ setTrigger }) => {
   return (
     <>
       <>
+        <Link href={`/dashboard/panel`}>
+          <a
+            onClick={() => setTrigger(false)}
+            className=" py-4 text-lg font-extralight text-gray-300 hover:text-white   cursor-pointer flex items-center  px-10  "
+          >
+            <FaUserTie className="text-xl" />
+            &nbsp;&nbsp;&nbsp;Dashboard
+          </a>
+        </Link>
         <Link href={`/dashboard/profile`}>
           <a
             onClick={() => setTrigger(false)}

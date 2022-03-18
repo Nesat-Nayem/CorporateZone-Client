@@ -192,6 +192,9 @@ const DashboardRoutes = ({ jobs }) => {
             {/* // recruiter route components */}
 
             {/* recruiter profile */}
+            {params[0] === "panel" && loggedInUser?.role === "recruiter" && (
+              <Panel />
+            )}
             {params[0] === "profile" && loggedInUser?.role === "recruiter" && (
               <RecruiterProfile />
             )}
@@ -204,6 +207,9 @@ const DashboardRoutes = ({ jobs }) => {
               loggedInUser?.role === "recruiter" && <RecruiteProfileUpdate />}
 
             {/* candidate route components */}
+            {params[0] === "panel" && loggedInUser?.role === "candidate" && (
+              <Panel />
+            )}
             {params[0] === "profile" && loggedInUser?.role === "candidate" && (
               <CandidateProfile />
             )}

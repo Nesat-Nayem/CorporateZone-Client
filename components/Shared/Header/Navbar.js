@@ -251,6 +251,7 @@ export default function Navbar() {
                         style={{ borderRadius: "50%" }}
                         alt=""
                       />
+                      
                       <p className="">
                         <p className="font-bold text-green-600 block">
                           {loggedInUser?.username}
