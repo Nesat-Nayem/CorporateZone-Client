@@ -41,7 +41,7 @@ const SigninForm = () => {
                     />
                   </div>
                   <h1 className="mb-4 text-2xl font-bold text-center text-gray-700">
-                    Sign In
+                    Hassle Free Journey!
                   </h1>
                   <div className="mt-4">
                     <label className="block text-sm">Email</label>
