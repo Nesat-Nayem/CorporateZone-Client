@@ -5,15 +5,15 @@ const Panel = () => {
   return (
     <div>
       {/* Highlight Start */}
-      <h3 className='text-2xl uppercase font-medium'>top Features</h3>
+      <h3 className="text-xl uppercase font-medium">top Features</h3>
       <div className="feature_box flex flex-wrap justify-center items-center gap-5 my-5">
         <div className="job w-60 shadow-lg rounded-md flex justify-evenly items-center bg-[#d9effa] py-3">
           <div className="bg-[#ebf8fe]">
             <FcList className="text-7xl" />
           </div>
-          <div>
+          <div className="text-center">
             <h3>34</h3>
-            <p>Posted Job</p>
+            <p>Posted Jobs</p>
           </div>
         </div>
 
@@ -21,25 +21,25 @@ const Panel = () => {
           <div className="bg-[#ebf8fe]">
             <FcBusinessman className="text-7xl" />
           </div>
-          <div>
+          <div className="text-center">
             <h3>34</h3>
-            <p>Active Recruiter</p>
+            <p>Active Recruiters</p>
           </div>
         </div>
         <div className="candidate w-60 shadow-lg rounded-md flex justify-evenly items-center bg-[#d9effa] py-3">
           <div className="bg-[#ebf8fe]">
             <FcReadingEbook className="text-7xl" />
           </div>
-          <div>
+          <div className="text-center">
             <h3>34</h3>
-            <p>Active Candidate</p>
+            <p>Active Candidates</p>
           </div>
         </div>
         <div className="spam w-60 shadow-lg rounded-md flex justify-evenly items-center bg-[#d9effa] py-3">
           <div className="bg-[#ebf8fe]">
             <FcRemoveImage className="text-7xl" />
           </div>
-          <div>
+          <div className="text-center">
             <h3>34</h3>
             <p>Spam Jobs</p>
           </div>
@@ -48,7 +48,7 @@ const Panel = () => {
           <div className="bg-[#ebf8fe]">
             <FcManager className="text-7xl" />
           </div>
-          <div>
+          <div className="text-center">
             <h3>34</h3>
             <p>Pro Users</p>
           </div>
@@ -58,7 +58,7 @@ const Panel = () => {
 
       {/* Jobs Start */}
       <div className="recent_jobs my-5">
-        <h3>recent jobs show with filtered</h3>
+        <h3 className="text-xl uppercase font-medium">Latest Jobs</h3>
         <table className="table-auto lg:w-9/12 md:w-9/12 mx-auto space-y-5">
           <thead className="text-left">
             <tr>
@@ -116,7 +116,48 @@ const Panel = () => {
 
       {/*recent applicants start  */}
       <div className="applicant my-5">
-        <h3>show recent applicants here</h3>
+        <h3 className="text-xl uppercase font-medium my-3">New applicants</h3>
+
+        <div className="flex flex-wrap justify-evenly items-center gap-5">
+          <div className="job w-60 shadow-lg rounded-md flex flex-col flex-wrap justify-evenly items-center bg-[#d9effa] py-3">
+            <div className="ring-2 rounded-full ring-slate-600">
+              <FcList className="text-7xl" />
+            </div>
+            <div className="text-center my-3">
+              <h3>Sumonto</h3>
+              <p>MERN-Stack Developer</p>
+              <button className="bg-cyan-500 px-3 py-1 rounded-lg text-white my-3">
+                view Profile
+              </button>
+            </div>
+          </div>
+
+          <div className="job w-60 shadow-lg rounded-md flex flex-col flex-wrap justify-evenly items-center bg-[#d9effa] py-3">
+            <div className="ring-2 rounded-full ring-slate-600">
+              <FcList className="text-7xl" />
+            </div>
+            <div className="text-center my-3">
+              <h3>Sumonto</h3>
+              <p>MERN-Stack Developer</p>
+              <button className="bg-cyan-500 px-3 py-1 rounded-lg text-white my-3">
+                view Profile
+              </button>
+            </div>
+          </div>
+
+          <div className="job w-60 shadow-lg rounded-md flex flex-col flex-wrap justify-evenly items-center bg-[#d9effa] py-3">
+            <div className="ring-2 rounded-full ring-slate-600">
+              <FcList className="text-7xl" />
+            </div>
+            <div className="text-center my-3">
+              <h3>Sumonto</h3>
+              <p>MERN-Stack Developer</p>
+              <button className="bg-cyan-500 px-3 py-1 rounded-lg text-white my-3">
+                view Profile
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
       {/*End recent applicants   */}
     </div>
