@@ -3,7 +3,7 @@ import MessageArea from "./MessageArea";
 
 const ContactUs = () => {
   return (
-    <div className="">
+    <div className="mt-16">
       <div className="bg-slate-700 text-white h-32 flex items-center justify-center">
         <div className=" text-center md:w-9/12 w-11/12 mx-auto ">
           <h1 className="font-serif font-bold text-4xl">Contact Us</h1>
