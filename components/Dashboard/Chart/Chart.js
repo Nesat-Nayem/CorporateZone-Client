@@ -89,7 +89,7 @@ const Chart = ({ data }) => {
                 </div>
               </div>
             </div>
-            <div className="container">
+            {/* <div className="container">
               <h2 className="mb-6 ml-1 font-semibold">
                 Your Profile Complete avarage:
               </h2>
@@ -101,7 +101,7 @@ const Chart = ({ data }) => {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         <style jsx>

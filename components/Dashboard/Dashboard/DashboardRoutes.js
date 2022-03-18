@@ -31,6 +31,8 @@ import { FcVideoCall } from "react-icons/fc";
 import Applicant from "../../Applicant/Applicant";
 import PostedJobs from "../Recruiter/postedJobs/PostedJobs";
 import CompanyLists from "../Candidate/CampalyLists";
+import Dashboard from "../../../pages/dashboard/[...params]";
+import Panel from "./Panel";
 
 const DashboardRoutes = ({ jobs }) => {
   const [trigger, setTrigger] = useState(false);
@@ -158,8 +160,13 @@ const DashboardRoutes = ({ jobs }) => {
 
             {/* // admin route components */}
 
+            {params[0] === "panel" && loggedInUser?.role === "admin" && (
+              <Panel />
+            )}
             {params[0] === "profile" && loggedInUser?.role === "admin" && (
-              <AdminProfile />
+              <div>
+                <AdminProfile />
+              </div>
             )}
             {params[0] === "jobs" && loggedInUser?.role === "admin" && (
               <div>
