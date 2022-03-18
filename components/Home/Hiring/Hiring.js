@@ -22,7 +22,7 @@ const Hiring = () => {
               Get Your Entire Team Onboard
             </h3>
 
-            <div className="flex items-center justify-between max-w-[500px] space-y-7 ml-5">
+            <div className="flex items-center flex-col md:flex-row justify-center md:justify-between max-w-[500px] space-y-7 ml-5">
               <div>
                 <FaUsers className="text-7xl mr-3 text-[#42C2FF]" />
               </div>
@@ -37,7 +37,7 @@ const Hiring = () => {
               </div>
             </div>
 
-            <div className="flex items-center justify-between max-w-[500px] space-y-7 ml-5">
+            <div className="flex items-center flex-col md:flex-row justify-center md:justify-between max-w-[500px] space-y-7 ml-5">
               <div>
                 <BiAnalyse className="text-7xl mr-3 text-[#42C2FF]" />
               </div>
@@ -52,7 +52,7 @@ const Hiring = () => {
               </div>
             </div>
 
-            <div className="flex items-center justify-between max-w-[500px] space-y-7 ml-5">
+            <div className="flex items-center flex-col md:flex-row justify-center md:justify-between max-w-[500px] space-y-7 ml-5">
               <div>
                 <MdOutlineNotificationsActive className="text-7xl mr-3 text-[#42C2FF]" />
               </div>

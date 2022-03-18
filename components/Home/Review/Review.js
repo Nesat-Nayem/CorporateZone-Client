@@ -71,7 +71,7 @@ SwiperCore.use([Navigation, Pagination, Autoplay]);
 const Review = () =>
 {
   return (
-    <section className="contrl max-w-screen-xl mx-auto px-6 pb-24 mt-16">
+    <section className="contrl max-w-screen-xl mx-auto md:px-6 pb-24 mt-16">
       {/* costom */}
 
       <div className="flex justify-center items-center flex-col">
@@ -99,7 +99,7 @@ const Review = () =>
         {fackreview.map((data) => (
           <SwiperSlide key={data._id}>
             <Bounce bottom>
-              <div className="container px-5 py-12 mx-auto">
+              <div className="container md:px-5 py-12 mx-auto">
                 <div className={card.zone_card} style={{width:'60%', height:'30%'}}>
                   <div className=" lg:w-3/4 w-full mx-auto text-center  p-4 shadow-lg rounded-lg">
                     <img
