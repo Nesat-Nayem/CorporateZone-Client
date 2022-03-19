@@ -18,8 +18,8 @@ const Video_Chat = () => {
 
   return call ? (
     <>
+        <Layout title="Metting Now">
       <div>
-        <Layout title="Metting Now" />
         <Header />
         <div
           style={{ height: "40vw" }}
@@ -36,12 +36,13 @@ const Video_Chat = () => {
           <Marquee direction="right" />
         </div>
       </div>
+      </Layout>
     </>
   ) : (
     <>
       {/* outside of meet  */}
+        <Layout title="Join Meet">
       <div>
-        <Layout title="Join Meet" />
         <Header />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2">
@@ -127,6 +128,7 @@ const Video_Chat = () => {
           }
         `}
       </style>
+      </Layout>
     </>
   );
 };
