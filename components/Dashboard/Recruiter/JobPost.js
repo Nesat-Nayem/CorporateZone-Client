@@ -168,7 +168,7 @@ const JobPost = () => {
   return (
     <>
       <div>
-        <div className="md:grid md:grid-cols-1 px-20 py-8 md:gap-6">
+        <div className="md:grid md:grid-cols-1 px-2 rounded-lg md:rounded-md md:px-20 py-8 md:gap-6">
           <div className="md:col-span-1">
             <div className="px-4 sm:px-0">
               <h3 className="text-lg md:text-xl italic font-bold animate-bounce leading-6 text-center text-gray-900 dark:text-white">
@@ -418,58 +418,9 @@ const JobPost = () => {
                       className="text-sm"
                     />
                   </div>
-
                   <div>
                     <label className="block text-sm font-medium text-gray-700">
-                      Job Description
-                    </label>
-                    <div className="mt-1">
-                      <textarea
-                        id="jobDescription"
-                        name="jobDescription"
-                        onChange={dataInput}
-                        value={allData.jobDescription}
-                        rows="5"
-                        className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full p-2 sm:text-sm border-gray-300 rounded-md"
-                        placeholder="Please Write Job Description"></textarea>
-                    </div>
-                  </div>
-
-                  <div className="col-span-4 sm:col-span-3">
-                    <label className="block text-sm font-medium text-gray-700">
-                      Since Date
-                    </label>
-                    <input
-                      type="number"
-                      name="since"
-                      id="since"
-                      autoComplete="given-name"
-                      className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2"
-                      onChange={dataInput}
-                      value={allData.since}
-                      placeholder="Since Date"
-                    />
-                  </div>
-
-                  <div className="col-span-4 sm:col-span-3">
-                    <label className="block text-sm font-medium text-gray-700">
-                      Last Date
-                    </label>
-                    <input
-                      type="date"
-                      name="lastDate"
-                      id="lastDate"
-                      autoComplete="given-name"
-                      className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2"
-                      onChange={dataInput}
-                      value={allData.lastDate}
-                      placeholder="Enter the location"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700">
-                      Logo photo
+                      Company Logo
                     </label>
                     <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                       <div className="space-y-1 text-center">
@@ -504,6 +455,54 @@ const JobPost = () => {
                         </p>
                       </div>
                     </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700">
+                      Job Description
+                    </label>
+                    <div className="mt-1">
+                      <textarea
+                        id="jobDescription"
+                        name="jobDescription"
+                        onChange={dataInput}
+                        value={allData.jobDescription}
+                        rows="5"
+                        className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full p-2 sm:text-sm border-gray-300 rounded-md"
+                        placeholder="Please Write Job Description"></textarea>
+                    </div>
+                  </div>
+
+                  <div className="col-span-4 sm:col-span-3">
+                    <label className="block text-sm font-medium text-gray-700">
+                      Company First Entry
+                    </label>
+                    <input
+                      type="date"
+                      name="since"
+                      id="since"
+                      autoComplete="given-name"
+                      className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2"
+                      onChange={dataInput}
+                      value={allData.since}
+                      placeholder="Since Date"
+                    />
+                  </div>
+
+                  <div className="col-span-4 sm:col-span-3">
+                    <label className="block text-sm font-medium text-gray-700">
+                      Last Date
+                    </label>
+                    <input
+                      type="date"
+                      name="lastDate"
+                      id="lastDate"
+                      autoComplete="given-name"
+                      className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2"
+                      onChange={dataInput}
+                      value={allData.lastDate}
+                      placeholder="Enter the location"
+                    />
                   </div>
                 </div>
                 <div className="px-4 py-3 bg-gray-50 text-center sm:px-6">
