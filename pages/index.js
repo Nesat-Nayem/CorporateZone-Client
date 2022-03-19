@@ -16,41 +16,53 @@ import Features from "../components/Home/Features/Features";
 import Zone from "../components/Home/Zone/Zone";
 import Hiring from "../components/Home/Hiring/Hiring";
 import Candidate from "../components/Home/Candidate/Candidate";
+import Modal from "../components/Home/Modal/Modal";
+import { useEffect, useState } from "react";
 
-export default function Home ({articles})
-
+export default function Home ({ articles })
 {
+      const [modalOpen, setModalOpen] = useState(false);
+      useEffect(() =>
+      {
+            setTimeout(() =>
+            {
+                  setModalOpen(true)
+            }, 2000)
+      }, [])
       // console.log(articles)
-  return (
-    <Layout title="Corporate Zone">
-      <Header />
-
-      <HeroArea className="" />
-      {/* <CategoryJobs /> */}
-      <Features />
-      {/* <RecentJobs /> */}
-      {/* <Recruiter /> */}
-      <Zone />
-      <Hiring />
-      <Candidate />
-      <CompanyJobs />
-      <Pricing />
-      {/* <Faq /> */}
-      {/* <Review articles={articles} /> */}
-      {/* <BlogArea /> */}
-      {/* <Rule /> */}
-      <Review />
-      <Footer />
-    </Layout>
-  );
+      return (
+            <Layout title="Corporate Zone">
+                  {
+                        modalOpen && <Modal setOpenModal={setModalOpen} />
+                  }
+                  <Header />
+                  <HeroArea className="" />
+                  {/* <CategoryJobs /> */}
+                  <Features />
+                  {/* <RecentJobs /> */}
+                  {/* <Recruiter /> */}
+                  <Zone />
+                  <Hiring />
+                  <Candidate />
+                  <CompanyJobs />
+                  <Pricing />
+                  {/* <Faq /> */}
+                  {/* <Review articles={articles} /> */}
+                  {/* <BlogArea /> */}
+                  {/* <Rule /> */}
+                  <Review />
+                  <Footer />
+            </Layout>
+      );
 }
 
-export const getStaticProps = async () =>{
+export const getStaticProps = async () =>
+{
       const res = await fetch(`https://ancient-castle-52925.herokuapp.com/testimonials`)
       const articles = await res.json()
 
       return {
-            props:{
+            props: {
                   articles
             }
       }
