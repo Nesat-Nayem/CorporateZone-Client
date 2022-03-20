@@ -43,9 +43,7 @@ const FireWork = () =>
     {
         if (!intervalId) {
             setIntervalId(setInterval(nextTickAnimation, 16));
-        } else {
-            return;
-        }
+        };
     }, []);
 
     useEffect(() =>
@@ -54,8 +52,8 @@ const FireWork = () =>
         {
             clearInterval(intervalId);
             setIntervalId(null);
-        }, 5000)
-    }, [intervalId])
+        }, 5000);
+    }, [intervalId]);
 
     /* const startAnimation = useCallback(() =>
     {
