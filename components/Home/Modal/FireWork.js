@@ -13,7 +13,7 @@ const canvasStyles = {
 function getAnimationSettings (angle, originX)
 {
     return {
-        particleCount: 7,
+        particleCount: 6,
         angle,
         spread: 55,
         origin: { x: originX },
