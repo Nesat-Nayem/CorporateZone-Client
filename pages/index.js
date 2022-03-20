@@ -18,22 +18,31 @@ import Hiring from "../components/Home/Hiring/Hiring";
 import Candidate from "../components/Home/Candidate/Candidate";
 import Modal from "../components/Home/Modal/Modal";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import FireWork from "../components/Home/Modal/FireWork";
 
 export default function Home ({ articles })
 {
+      const currentUser = useSelector((state) => state.user.currentUser);
+
       const [modalOpen, setModalOpen] = useState(false);
+
       useEffect(() =>
       {
             setTimeout(() =>
             {
                   setModalOpen(true)
             }, 2000)
-      }, [])
-      // console.log(articles)
+      }, []);
+
       return (
             <Layout title="Corporate Zone">
+                  {/* Offer pop-up modal */}
                   {
-                        modalOpen && <Modal setOpenModal={setModalOpen} />
+                        modalOpen && !currentUser?.email && <>
+                              <Modal setOpenModal={setModalOpen} />
+                              <FireWork />
+                        </>
                   }
                   <Header />
                   <HeroArea className="" />

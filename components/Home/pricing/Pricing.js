@@ -12,6 +12,9 @@ const Pricing = () =>
   {
     // Check to see if this is a redirect back from Checkout
     const query = new URLSearchParams(window.location.search);
+    const sid = query.get('session_id')
+    console.log(sid);
+
     if (query.get("success")) {
       Swal.fire(
         "Order placed!",
