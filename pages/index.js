@@ -45,13 +45,13 @@ export default function Home ({articles})
   );
 }
 
-export const getStaticProps = async () =>{
-      const res = await fetch(`https://ancient-castle-52925.herokuapp.com/testimonials`)
-      const articles = await res.json()
+// export const getStaticProps = async () =>{
+//       const res = await fetch(`https://ancient-castle-52925.herokuapp.com/testimonials`)
+//       const articles = await res.json()
 
-      return {
-            props:{
-                  articles
-            }
-      }
-}
+//       return {
+//             props:{
+//                   articles
+//             }
+//       }
+// }
