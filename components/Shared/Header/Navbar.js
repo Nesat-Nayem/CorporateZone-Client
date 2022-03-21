@@ -84,9 +84,9 @@ export default function Navbar() {
 
     return (
       <Popover
-        className="fixed top-0 right-0 left-0 bg-white dark:bg-slate-700"
+        className="fixed top-0 right-0 left-0 bg-[#ebf8fe] dark:bg-slate-700"
         id="scroll"
-        style={{ background: headerColor }}
+        // style={{ background: headerColor }}
       >
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex relative justify-between items-center py-3 lg:justify-start md:space-x-10">
