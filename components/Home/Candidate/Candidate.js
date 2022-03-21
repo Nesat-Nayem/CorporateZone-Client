@@ -7,7 +7,7 @@ const Candidate = () => {
       <div>
         <div className="space-y-7 mx-auto md:w-3/4 relative my-6 recent_header">
           <div className="md:flex md:justify-around lg:flex lg:justify-evenly order-2 mx-3 ml-20">
-            <div className="space-y-5 md:w-2/4 lg:w-2/4 text-slate-700 ">
+            <div className="space-y-5 md:w-2/4 lg:w-2/4 dark:text-white text-slate-800 ">
               <h3 className="text-3xl font-medium my-5">
                 Find The Right Candidate Faster
               </h3>

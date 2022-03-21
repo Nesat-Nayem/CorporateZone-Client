@@ -35,7 +35,7 @@ const Layout = ({ title, children }) =>
         <Head>
           <title>{title}</title>
         </Head>
-        <main className="bg-white dark:bg-slate-700">{children}</main>
+        <main className="bg-[#ebf8fe] dark:bg-slate-700">{children}</main>
       </ThemeProvider>
     </>
   );
