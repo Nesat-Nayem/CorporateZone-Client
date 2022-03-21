@@ -11,7 +11,6 @@ const Layout = ({ title, children }) =>
   initializeAuthentication();
 
   const currentUser = useSelector((state) => state.user.currentUser);
-  console.log(currentUser);
   const dispatch = useDispatch();
   const auth = getAuth();
   //   // observer function

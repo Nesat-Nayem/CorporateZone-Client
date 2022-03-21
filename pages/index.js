@@ -16,11 +16,12 @@ import Features from "../components/Home/Features/Features";
 import Zone from "../components/Home/Zone/Zone";
 import Hiring from "../components/Home/Hiring/Hiring";
 import Candidate from "../components/Home/Candidate/Candidate";
+import { setLogLevel } from "firebase/app";
 
-export default function Home ({articles})
 
-{
-      // console.log(articles)
+export default function Home({ articles }) {
+
+
   return (
     <Layout title="Corporate Zone">
       <Header />
@@ -45,13 +46,15 @@ export default function Home ({articles})
   );
 }
 
-export const getStaticProps = async () =>{
-      const res = await fetch(`https://ancient-castle-52925.herokuapp.com/testimonials`)
-      const articles = await res.json()
+export const getStaticProps = async () => {
+  const res = await fetch(
+    `https://ancient-castle-52925.herokuapp.com/testimonials`
+  );
+  const articles = await res.json();
 
-      return {
-            props:{
-                  articles
-            }
-      }
-}
+  return {
+    props: {
+      articles,
+    },
+  };
+};
