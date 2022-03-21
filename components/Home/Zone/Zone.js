@@ -14,12 +14,12 @@ const Zone = () => {
   return (
     <div className="mx-10 md:mx-20 md:my-40 ">
       <div className="md:grid md:grid-cols-2 lg:w-10/12 mx-auto space-y-20 ">
-        <div className="md:grid md:grid-cols-3 gap-5 space-y-10 ">
+        <div className="md:grid md:grid-cols-3 gap-5  ">
           <div
-            className="bg-[#ebf8fe] flex justify-center rounded-2xl items-center shadow-[12px 12px 24px #ebeff5, -12px -12px 24px #dbe5ee]"
+            className="dark:bg-[#ebf8fe] bg-[#e8f8fd] flex justify-center items-center rounded-2xl shadow-xl w-max-[300px] h-[150px]"
             // className={card.zone_card}
           >
-            <h4 className="text-xl text-center font-medium text-slate-800 dark:text-white bg-[#ebf8fe] dark:bg-slate-700">
+            <h4 className="text-xl text-center font-medium text-slate-800 dark:text-white bg-[#ebf8fe] dark:bg-slate-700 py-2">
               Attract & Manage The Right Talent
             </h4>
           </div>
@@ -29,8 +29,11 @@ const Zone = () => {
           >
             <MdMarkEmailRead className="text-7xl ring-2 rounded-lg ring-[#42c3ffe5] hover:transform duration-500 hover:scale-105" />
           </div>
-          <div className={card.zone_card}>
-            <h4 className="text-xl text-center font-medium text-slate-800">
+          <div
+            className="dark:bg-[#ebf8fe] bg-[#e8f8fd] flex justify-center items-center rounded-2xl shadow-xl w-max-[300px] h-[150px]"
+            // className={card.zone_card}
+          >
+            <h4 className="text-xl text-center font-medium text-slate-800 dark:text-white bg-[#ebf8fe] dark:bg-slate-700 ">
               Highly Structured Candidate Pipeline
             </h4>
           </div>
@@ -40,8 +43,11 @@ const Zone = () => {
           >
             <FaLaptopCode className="text-7xl ring-2 rounded-lg ring-[#42c3ffe5] hover:transform duration-500 hover:scale-105" />
           </div>
-          <div className={card.zone_card}>
-            <h4 className="text-xl text-center font-medium text-slate-800">
+          <div
+            // className={card.zone_card}
+            className="dark:bg-[#ebf8fe] bg-[#e8f8fd] flex justify-center items-center rounded-2xl shadow-xl w-max-[300px] h-[150px]"
+          >
+            <h4 className="text-xl text-center font-medium text-slate-800 dark:text-white bg-[#ebf8fe] dark:bg-slate-700 py-2">
               Faster & Better Hiring Process
             </h4>
           </div>
@@ -51,9 +57,12 @@ const Zone = () => {
           >
             <BsFillPieChartFill className="text-7xl ring-2 rounded-lg ring-[#42c3ffe5] hover:transform duration-500 hover:scale-105" />
           </div>
-          <div className={card.zone_card}>
-            <h4 className="text-xl text-center font-medium text-slate-800">
-              User Friendly Process
+          <div
+            className="dark:bg-[#ebf8fe] bg-[#e8f8fd] flex justify-center items-center rounded-2xl shadow-xl w-max-[300px] h-[150px]"
+            // className={card.zone_card}
+          >
+            <h4 className="text-xl text-center font-medium text-slate-800 dark:text-white bg-[#ebf8fe] dark:bg-slate-700 py-2">
+              User Friendly Process & Easy Communication
             </h4>
           </div>
           <div
@@ -62,9 +71,12 @@ const Zone = () => {
           >
             <RiUserSearchFill className="text-7xl ring-2 rounded-lg ring-[#42c3ffe5] hover:transform duration-500 hover:scale-105" />
           </div>
-          <div className={card.zone_card}>
-            <h4 className="text-xl text-center font-medium text-slate-800">
-              Remotely Hiring Ready
+          <div
+            className="dark:bg-[#ebf8fe] bg-[#e8f8fd] flex justify-center items-center rounded-2xl shadow-xl w-max-[300px] h-[150px]"
+            // className={card.zone_card}
+          >
+            <h4 className="text-xl text-center font-medium text-slate-800 dark:text-white bg-[#ebf8fe] dark:bg-slate-700 py-2">
+              Remotely Hiring Ready For Candidates
             </h4>
           </div>
         </div>

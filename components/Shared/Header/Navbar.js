@@ -120,7 +120,7 @@ export default function Navbar() {
 
             <Popover.Group
               as="nav"
-              className="hidden md:flex items-center space-x-10 uppercase relative"
+              className="hidden md:flex items-center space-x-10 uppercase relative dark:textw"
             >
               <Link href="/jobs">
                 <a className="text-base font-medium text-gray-500 dark:text-white hover:text-gray-900 dark:hover:text-gray-300">
@@ -128,12 +128,12 @@ export default function Navbar() {
                 </a>
               </Link>
               <Link href="/works">
-                <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+                <a className="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-white dark:hover:text-gray-300">
                   Features
                 </a>
               </Link>
               <Link href="/works">
-                <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+                <a className="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-white dark:hover:text-gray-300">
                   How Connects
                 </a>
               </Link>
