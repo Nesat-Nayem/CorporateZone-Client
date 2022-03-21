@@ -12,8 +12,8 @@ const Zone = () => {
     AOS.init();
   }, []);
   return (
-    <div className="mx-10 md:mx-20 md:my-40">
-      <div className="md:grid md:grid-cols-2 lg:w-10/12 mx-auto space-y-20">
+    <div className="mx-10 md:mx-20 md:my-40 ">
+      <div className="md:grid md:grid-cols-2 lg:w-10/12 mx-auto space-y-20 ">
         <div className="md:grid md:grid-cols-3 gap-5 space-y-10">
           <div className={card.zone_card}>
             <h4 className="text-xl text-center font-medium text-slate-800">
@@ -73,7 +73,7 @@ const Zone = () => {
           data-aos-easing="ease-in-sine"
         >
           <div className="">
-            <h3 className=" xl:text-5xl md:text-3xl text-xl font-bold leading-snug">
+            <h3 className=" xl:text-5xl md:text-3xl text-xl font-bold leading-snug dark:text-white text-slate-800">
               Why Does Your Company Need CorporateZone?
             </h3>
             <p className="text-gray-500 leading-7 mt-5">

@@ -85,7 +85,7 @@ const Review = () =>
 
       <Swiper
         loop={true}
-        className="mySwiper py-6"
+        className="mySwiper py-6 "
         autoplay={{
           delay: 4000,
           disableOnInteraction: false,
@@ -99,16 +99,19 @@ const Review = () =>
         {fackreview.map((data) => (
           <SwiperSlide key={data._id}>
             <Bounce bottom>
-              <div className="container px-5 py-12 mx-auto">
-                <div className={card.zone_card} style={{width:'60%', height:'30%'}}>
-                  <div className=" lg:w-3/4 w-full mx-auto text-center  p-4 shadow-lg rounded-lg">
+              <div className="container px-5 py-12  mx-auto">
+                <div
+                  className={card.zone_card}
+                  style={{ width: "60%", height: "30%" }}
+                >
+                  <div className=" lg:w-3/4 w-full mx-auto text-center  p-4 shadow-lg rounded-lg ">
                     <img
                       className="w-12 mx-auto mb-4"
                       src="https://i.ibb.co/99dfqmz/quote.png"
                       alt="quotes"
                     />
 
-                    <p className="leading-relaxed poppins text-gray-500">
+                    <p className="leading-relaxed poppins text-slate-700 dark:text-white">
                       {data.review}
                     </p>
                     <span className="inline-block h-1 w-10 rounded bg-gray-400 mt-8 mb-6"></span>
@@ -130,11 +133,11 @@ const Review = () =>
                     {/* person info  */}
                     <div className="flex justify-center items-center space-x-3">
                       <img
-                        className="w-16 h-16 rounded-full object-cover"
+                        className="w-16 h-16 rounded-full object-cover "
                         src={data.image}
                         alt={data.username}
                       />
-                      <h2 className="text-gray-900 font-medium poppins tracking-wider text-sm">
+                      <h2 className="text-slate-700 dark:text-white font-medium poppins tracking-wider text-sm">
                         {data.username}
                       </h2>
                     </div>
