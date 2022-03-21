@@ -14,9 +14,12 @@ const Zone = () => {
   return (
     <div className="mx-10 md:mx-20 md:my-40 ">
       <div className="md:grid md:grid-cols-2 lg:w-10/12 mx-auto space-y-20 ">
-        <div className="md:grid md:grid-cols-3 gap-5 space-y-10">
-          <div className={card.zone_card}>
-            <h4 className="text-xl text-center font-medium text-slate-800">
+        <div className="md:grid md:grid-cols-3 gap-5 space-y-10 ">
+          <div
+            className="bg-[#ebf8fe] flex justify-center rounded-2xl items-center shadow-[12px 12px 24px #ebeff5, -12px -12px 24px #dbe5ee]"
+            // className={card.zone_card}
+          >
+            <h4 className="text-xl text-center font-medium text-slate-800 dark:text-white bg-[#ebf8fe] dark:bg-slate-700">
               Attract & Manage The Right Talent
             </h4>
           </div>
@@ -76,13 +79,13 @@ const Zone = () => {
             <h3 className=" xl:text-5xl md:text-3xl text-xl font-bold leading-snug dark:text-white text-slate-800">
               Why Does Your Company Need CorporateZone?
             </h3>
-            <p className="text-gray-500 leading-7 mt-5">
+            <p className="text-gray-500 dark:text-[#eee9e9]  leading-7 mt-5">
               Advanced Recruiting Solution With Everything You Need To
               Accelerate The Hiring Process. Remote Hiring or Local -
               CorporateZone Streamline The Whole Recruitment Process & Make It
               Easier Than Ever Before
             </p>
-            <p className="text-gray-500 leading-7 my-5">
+            <p className="text-gray-500 dark:text-[#eee9e9] leading-7 my-5">
               <strong className="text-lg">
                 You manage the tech. We manage everything else.{" "}
               </strong>

@@ -41,7 +41,10 @@ const HeroArea = () => {
     },
   ];
   return (
-    <div className={cover.hero_cover}>
+    <div
+      // className={cover.hero_cover}
+      className="bg-[#ebf8fe] dark:bg-slate-700 h-[100vh] w-[100%]"
+    >
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -49,7 +52,7 @@ const HeroArea = () => {
           delay: 3000,
           disableOnInteraction: false,
         }}
-        className="mySwiper lg:w-9/12 w-11/12 mx-auto h-full"
+        className="mySwiper lg:w-9/12 w-11/12 mx-auto h-full "
       >
         {data.map((item) => {
           return (
@@ -58,13 +61,13 @@ const HeroArea = () => {
               className="sm:flex justify-between items-center py-5 space-y-3 "
             >
               <div className="space-y-5">
-                <h1 className="xl:text-6xl lg:text-5xl md:py-8 text-black  py-2 md:text-4xl text-3xl font-bold tracking-wider">
+                <h2 className="xl:text-6xl lg:text-5xl md:py-8 dark:text-[#ffffff] text-slate-700  py-2 md:text-4xl text-3xl font-bold tracking-wider">
                   {item.title}
-                </h1>
-                <h6 className="md:py-3 py-1 md:text-2xl text-xl text-gray-500  font-bold">
+                </h2>
+                <h6 className="md:py-3 py-1 md:text-2xl text-xl   font-bold dark:text-[#ffffff] text-slate-700">
                   Browse <span className="text-cyan-500">3,000 +</span> Jobs
                 </h6>
-                <p className="text-gray-500 leading-7 w-7/12">
+                <p className="text-gray-500 dark:text-[#ffffff] leading-7 w-7/12">
                   {item.description}
                 </p>
                 <button className="pl-4 font-bold uppercase flex items-center space-x-3 pr-3 py-3  hover:text-[#42C2FF] text-white hover:transform duration-500 hover:scale-105 border-2 border-[#42C2FF] rounded-lg bg-[#42C2FF] hover:bg-white ml-5">

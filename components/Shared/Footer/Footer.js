@@ -52,7 +52,7 @@ const Footer = () => {
         smooth
         top="1000"
       />
-      <div className="text-center px:2 md:px-20 lg:text-left md:w-10/12 mx-auto  text-slate-800">
+      <div className="text-center px:2 md:px-20 lg:text-left md:w-10/12 mx-auto  text-slate-700 dark:text-white">
         <div className="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
           <div className="mr-12 hidden lg:block">
             <span className="text-xl font-bold uppercase">
@@ -75,11 +75,11 @@ const Footer = () => {
         </div>
         <div className="mx-6 py-10 text-center md:text-left">
           <div className="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-sm">
+            <div className="text-sm ">
               <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
                 CorporateZone
               </h6>
-              <p className="text-base text-slate-700 leading-8">
+              <p className="text-base leading-8 text-slate-700 dark:text-white">
                 We strongly encourage employers to embrace diversity, equity,
                 and inclusion as fundamental values when hiring through
                 CorporateZone.
@@ -142,7 +142,7 @@ const Footer = () => {
               <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
                 Hire Remotely
               </h6>
-              <p className="text-base text-slate-700 leading-8">
+              <p className="text-base leading-8 text-slate-700 dark:text-white">
                 Optimize your entire recruiting process. Post a job and reach
                 thousands of engineers, developers, and other remote candidates.
               </p>
@@ -176,7 +176,7 @@ const Footer = () => {
         <div className="text-center py-3">
           <span>© 2022 Copyright : </span>
           <a
-            className="text-slate-700 font-semibold hover:text-[#42C2FF]"
+            className=" font-semibold hover:text-[#42C2FF] text-slate-700 dark:text-white"
             href="#"
           >
             @Team-CodeExpress
