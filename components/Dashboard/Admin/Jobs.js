@@ -1,18 +1,15 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import style from "./jobs.module.css";
-import JobUpdateModal from "./utils/JobUpdateModal";
 
 const Jobs = () => {
   const [jobs, setJobs] = useState([]);
-  const [blogId, setBlogId] = useState(null);
-  const [modalIsOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     fetch("https://murmuring-spire-15534.herokuapp.com/jobs")
       .then((res) => res.json())
       .then((data) => setJobs(data.data));
-  }, [modalIsOpen]);
+  }, []);
 
   const handleDelete = (id) => {
     const proccess = window.confirm("Are You Sure You Want To Delete");
@@ -30,17 +27,6 @@ const Jobs = () => {
         });
     }
   };
-
-  // modal functions
-
-  function openModal(id) {
-    setIsOpen(true);
-    setBlogId(id);
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
 
   return (
     <div>
@@ -69,18 +55,17 @@ const Jobs = () => {
                     >
                       SALARY
                     </th>
-
                     <th
                       scope="col"
                       className="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
                     >
-                      STATUS
+                      EXPERIENCE
                     </th>
                     <th
                       scope="col"
                       className="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
                     >
-                      Update
+                      STATUS
                     </th>
                     {/* <th
                       scope="col"
@@ -109,32 +94,22 @@ const Jobs = () => {
                         <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                           {job.salary}
                         </td>
+                        <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                          {job.experience}
+                        </td>
                         <td className="py-4 px-6 text-sm  whitespace-nowrap dark:text-gray-400">
                           <span
-                            className={
-                              job.status === "pending"
-                                ? "py-1 px-2 rounded text-sm bg-pink-400 text-white  whitespace-nowrap dark:text-gray-400"
-                                : "py-1 px-2 rounded text-sm bg-green-400 text-white whitespace-nowrap dark:text-gray-400"
-                            }
+                            style={{
+                              backgroundColor: "black",
+                              padding: "10px 20px",
+                              color: "white",
+                              border: "1px solid grey",
+                              borderRadius: "10px",
+                            }}
                           >
                             {job.status}
                           </span>
                         </td>
-                        <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                          <button
-                            onClick={() => openModal(job?._id)}
-                            className="bg-cyan-600 text-white px-1 py-1 rounded"
-                          >
-                            Update
-                          </button>
-                          <JobUpdateModal
-                            modalIsOpen={modalIsOpen}
-                            closeModal={closeModal}
-                            jobTitle={job.jobTitle}
-                            id={blogId}
-                          />
-                        </td>
-
                         {/* <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                           <Link href={`/updatejobs/${job._id}`}>
                             <a>Edit</a>

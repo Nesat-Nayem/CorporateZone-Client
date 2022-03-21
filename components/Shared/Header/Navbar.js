@@ -120,7 +120,7 @@ export default function Navbar() {
               </a>
             </Link>
 
-            {loggedInUser && loggedInUser?.role === "candidate" && (
+            {currentUser && currentUser?.role === "candidate" && (
               <Notification notifications={notifications} />
             )}
 
