@@ -43,7 +43,7 @@ const HeroArea = () => {
   return (
     <div
       // className={cover.hero_cover}
-      className="bg-[#ebf8fe] dark:bg-slate-700 h-[100vh] w-[100%]"
+      className="bg-[url('../images/cover.jpg')] bg-cover bg-no-repeat bg-center dark:bg-slate-700 h-[100vh] w-[100%]"
     >
       <Swiper
         spaceBetween={30}
