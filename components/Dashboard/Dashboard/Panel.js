@@ -446,7 +446,7 @@ const Panel = () => {
                 </div>
               </div>
             </div>
-          </div>{" "}
+          </div>
         </div>
       )}
     </div>

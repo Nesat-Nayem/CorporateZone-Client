@@ -1,18 +1,14 @@
-import { useContext } from 'react';
-import { ThemeContext } from './themeContext';
-// import { ThemeContext } from './themeContext';
+import { useContext } from "react";
+import { ThemeContext } from "./themeContext";
 
-const Toggle = () =>
-
-{
+const Toggle = () => {
   const { theme, setTheme } = useContext(ThemeContext);
-  // const theme = "dark";
-console.log(useContext(ThemeContext))
+
   return (
     <div>
-      {theme === 'dark' ? (
+      {theme === "dark" ? (
         <button
-          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           className="text-gray-500 dark:text-gray-400 bg-white shadow-none p-1 focus:outline-none text-lg rounded-full outline-none ring-transparent cursor-pointer"
         >
           <svg
@@ -32,7 +28,7 @@ console.log(useContext(ThemeContext))
         </button>
       ) : (
         <button
-          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           className="text-gray-200 bg-black focus:outline-none shadow-none p-1 text-lg rounded-full outline-none ring-transparent cursor-pointer"
         >
           <svg

@@ -19,11 +19,16 @@ const TopHeader = () => {
         {/* signup and login */}
         <div className="flex flex-col rounded-bl-lg rounded-tl-lg absolute top-16 ">
           {currentUser ? (
-            <button>
-              <a className="pl-4 font-bold uppercase flex items-center space-x-3 font-serif py-3 hover:bg-[#42C2FF] hover:text-white duration-500 border-2 border-[#42C2FF] text-[#42C2FF] rounded-bl-lg rounded-tl-lg w-28 ml-2">
-                <MdLogin className="mr-2" /> Mode
-              </a>
-            </button>
+            <>
+              <button>
+                <a className="pl-4 font-bold uppercase flex items-center space-x-3 font-serif py-3 hover:bg-[#42C2FF] hover:text-white duration-500 border-2 border-[#42C2FF] text-[#42C2FF] rounded-bl-lg rounded-tl-lg w-28 ml-2">
+                  <MdLogin className="mr-2" /> Mode <Toggle />
+                </a>
+              </button>
+              <div className="flex justify-center items-center bg-red-700 text-yellow-400">
+                <Toggle className="" />
+              </div>
+            </>
           ) : (
             <>
               <Link href="/signup">
@@ -43,6 +48,9 @@ const TopHeader = () => {
               </button>
             </>
           )}
+          <div className="flex justify-center items-center bg-red-700 text-yellow-400">
+            <Toggle className="" />
+          </div>
         </div>
       </div>
     </div>
