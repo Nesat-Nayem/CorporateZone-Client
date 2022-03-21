@@ -5,6 +5,7 @@ import { initialUserData } from "../../redux/slices/user/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import initializeAuthentication from "../../firebase";
 import cover from '../../styles/Home.module.css'
+import { ThemeProvider } from "../Shared/Header/themeContext";
 
 const Layout = ({ title, children }) =>
 {
@@ -30,14 +31,12 @@ const Layout = ({ title, children }) =>
 
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;900&display=swap"
-          rel="stylesheet"
-        ></link>
-      </Head>
-      <main className={cover.main}>{children}</main>
+      <ThemeProvider>
+        <Head>
+          <title>{title}</title>
+        </Head>
+        <main className="bg-white dark:bg-slate-700">{children}</main>
+      </ThemeProvider>
     </>
   );
 };

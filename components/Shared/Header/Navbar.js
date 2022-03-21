@@ -84,8 +84,9 @@ export default function Navbar() {
 
     return (
       <Popover
-        className="fixed top-0 right-0 left-0 "
-        id="scroll" style={{background:headerColor}}
+        className="fixed top-0 right-0 left-0 bg-white dark:bg-slate-700"
+        id="scroll"
+        style={{ background: headerColor }}
       >
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex relative justify-between items-center py-3 lg:justify-start md:space-x-10">
@@ -251,12 +252,14 @@ export default function Navbar() {
                         style={{ borderRadius: "50%" }}
                         alt=""
                       />
-                      
+
                       <p className="">
                         <p className="font-bold text-green-600 block">
                           {loggedInUser?.username}
                         </p>
-                        <p className="text-sm capitalize">{loggedInUser?.role}</p>
+                        <p className="text-sm capitalize">
+                          {loggedInUser?.role}
+                        </p>
                       </p>
                     </button>
                     {pages.map((item) => (
