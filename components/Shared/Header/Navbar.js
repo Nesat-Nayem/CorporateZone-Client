@@ -152,7 +152,7 @@ export default function Navbar ()
         <div
           className={
             isOpen
-              ? "bg-white dark:bg-slate-700 dark:text-white md:block hidden shadow-md  w-56  py-4 absolute z-10 rounded top-20 right-6"
+              ? "bg-white dark:bg-slate-600 dark:text-white md:block hidden shadow-md  w-56  py-4 absolute z-10 rounded top-20 right-6"
               : "hidden"
           }
         >
