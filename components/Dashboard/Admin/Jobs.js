@@ -3,6 +3,23 @@ import React, { useEffect, useState } from "react";
 import style from "./jobs.module.css";
 import JobUpdateModal from "./utils/JobUpdateModal";
 
+ export const handleDelete = (id) => {
+   const proccess = window.confirm("Are You Sure You Want To Delete");
+   if (proccess) {
+     fetch(`https://murmuring-spire-15534.herokuapp.com/jobs/${id}`, {
+       method: "DELETE",
+     })
+       .then((res) => res.json())
+       .then((data) => {
+         if (data._id) {
+           alert("Deleted Successfully");
+           const remaining = jobs.filter((ema) => ema._id !== id);
+           setJobs(remaining);
+         }
+       });
+   }
+ };
+
 const Jobs = () => {
   const [jobs, setJobs] = useState([]);
   const [blogId, setBlogId] = useState(null);
@@ -14,22 +31,7 @@ const Jobs = () => {
       .then((data) => setJobs(data.data));
   }, [modalIsOpen]);
 
-  const handleDelete = (id) => {
-    const proccess = window.confirm("Are You Sure You Want To Delete");
-    if (proccess) {
-      fetch(`https://murmuring-spire-15534.herokuapp.com/jobs/${id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data._id) {
-            alert("Deleted Successfully");
-            const remaining = jobs.filter((ema) => ema._id !== id);
-            setJobs(remaining);
-          }
-        });
-    }
-  };
+ 
 
   // modal functions
 

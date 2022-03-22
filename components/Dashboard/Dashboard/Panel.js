@@ -3,24 +3,44 @@ import { FaRegMoneyBillAlt } from 'react-icons/fa';
 import { FcBiotech, FcBusinessman, FcList, FcManager, FcPortraitMode, FcReadingEbook, FcRemoveImage } from 'react-icons/fc';
 import { GoLocation } from 'react-icons/go';
 import { useSelector } from 'react-redux';
+import { handleDelete } from '../Admin/Jobs';
 
 const Panel = () => {
 
   const [jobs, setJobs] = useState([]);
-  
+  const [admin, setAdmin] = useState([])
+  const [recruiter, setRecruiter] = useState([])
+  const [candidate, setCandidate] = useState([]);
+  // const [remove, setRemove] = useState([]);
+
   useEffect(() => {
     fetch("https://murmuring-spire-15534.herokuapp.com/jobs")
       .then((res) => res.json())
       .then((data) => {
         setJobs(data.data);
-        console.log(data.data.slice(0,3).reverse())
+        console.log(data.data.slice(0, 3).reverse());
       });
   }, []);
+  
+  useEffect(() => {
+    fetch("https://murmuring-spire-15534.herokuapp.com/users")
+      .then((res) => res.json())
+      .then((data) => {
+        setCandidate(data.filter((e) => e.role === "candidate"));
+        setAdmin(data.filter((e) => e.role === "admin"));
+        console.log(data.filter((e) => e.role === "admin"));
+        setRecruiter(data.filter((e) => e.role === "recruiter"));
+        console.log(data.filter((e) => e.role === "recruiter"));
+        console.log(data.filter((e) => e.role === "candidate"));
+      });
+  }, []);
+
 
   const latest = jobs.slice(0, 3).reverse();
 
 
-      const loggedInUser = useSelector((state) => state.user.loggedInUser);
+  const loggedInUser = useSelector((state) => state.user.loggedInUser);
+
       
   return (
     <div>
@@ -44,7 +64,7 @@ const Panel = () => {
                 <FcBusinessman className="text-7xl" />
               </div>
               <div className="text-center">
-                <h3>34</h3>
+                <h3 className="text-xl font-medium">{recruiter?.length}</h3>
                 <p>Active Recruiters</p>
               </div>
             </div>
@@ -53,7 +73,7 @@ const Panel = () => {
                 <FcReadingEbook className="text-7xl" />
               </div>
               <div className="text-center">
-                <h3>34</h3>
+                <h3 className="text-xl font-medium">{candidate?.length}</h3>
                 <p>Active Candidates</p>
               </div>
             </div>
@@ -62,7 +82,9 @@ const Panel = () => {
                 <FcRemoveImage className="text-7xl" />
               </div>
               <div className="text-center">
-                <h3>34</h3>
+                <h3 className="text-xl font-medium">
+                  {handleDelete.length}
+                </h3>
                 <p>Spam Jobs</p>
               </div>
             </div>
@@ -71,7 +93,9 @@ const Panel = () => {
                 <FcManager className="text-7xl" />
               </div>
               <div className="text-center">
-                <h3>34</h3>
+                <h3 className="text-xl font-medium">
+                  {parseInt(admin.length + candidate.length + recruiter.length)}
+                </h3>
                 <p>Pro Users</p>
               </div>
             </div>
@@ -126,7 +150,7 @@ const Panel = () => {
                               {job.jobTitle}
                             </td>
                             <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                             {loggedInUser?.username}
+                              {loggedInUser?.username}
                             </td>
                             <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                               {job?.lastDate.toLocaleString()}
@@ -154,7 +178,6 @@ const Panel = () => {
               </div>
             </div>
           </div>
-          
           <div className="applicant my-5">
             <h3 className="text-xl uppercase font-medium my-3">
               New applicants
