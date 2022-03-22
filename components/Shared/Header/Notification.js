@@ -5,17 +5,18 @@ import { BsBellFill } from "react-icons/bs";
 const Notification = ({ notifications }) =>
 {
   const [trigger, setTrigger] = useState(false);
+  const [length, setLength] = useState(false);
   const router = useRouter();
 
   return (
     <>
       <button
-        onClick={() => setTrigger(!trigger)}
+        onClick={() => { setTrigger(!trigger); setLength(true); }}
         className="flex justify-center items-center hover:text-[#42C2FF]"
       >
         <BsBellFill className="w-7 h-7 dark:text-white" />
         {notifications.length > 0 && (
-          <span className="relative -top-2 right-3">
+          <span className={`absolute top-1 right-20 ${length && 'hidden'}`}>
             <div className="inline-flex items-center px-1 py-0.25 border-2 border-white dark:border-black rounded-full text-xs font-semibold bg-red-500 text-white">
               {notifications.length}
             </div>
@@ -25,7 +26,7 @@ const Notification = ({ notifications }) =>
       <div
         className={
           trigger
-            ? "bg-white dark:bg-slate-700 md:block hidden shadow-md w-auto absolute z-10 rounded top-14"
+            ? "bg-white dark:bg-slate-700 md:block hidden shadow-md w-auto absolute z-10 rounded top-14 left-20"
             : "hidden"
         }
       >
