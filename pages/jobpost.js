@@ -5,7 +5,7 @@ import Header from "../components/Shared/Header/Header";
 // here
 const PostJobs = () => {
   return (
-    <Layout title="Post your job | corporatezone">
+    <Layout title="Post your job">
       <Header />
       <JobPost />
       <Footer />
