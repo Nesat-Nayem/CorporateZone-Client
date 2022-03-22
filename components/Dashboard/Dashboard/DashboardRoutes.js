@@ -3,7 +3,8 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 
-import {
+import
+{
   MdOutlineLogout,
   MdOutlineChevronLeft,
   MdOutlineMenu,
@@ -32,8 +33,10 @@ import { FcVideoCall } from "react-icons/fc";
 import Applicant from "../../Applicant/Applicant";
 import PostedJobs from "../Recruiter/postedJobs/PostedJobs";
 import CompanyLists from "../Candidate/CampalyLists";
+import OrderHistory from "../../Dashboard/Recruiter/OrderHistory/OrderHistory"
 
-const DashboardRoutes = ({ jobs }) => {
+const DashboardRoutes = ({ jobs }) =>
+{
   const [trigger, setTrigger] = useState(false);
   const router = useRouter();
   const { params = [] } = router.query;
@@ -45,7 +48,8 @@ const DashboardRoutes = ({ jobs }) => {
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
 
   // log out handler
-  const logOutHandler = () => {
+  const logOutHandler = () =>
+  {
     router.push("/");
     dispatch(logOut);
   };
@@ -54,11 +58,10 @@ const DashboardRoutes = ({ jobs }) => {
     <>
       <div className="antialiased h-screen overflow-y-scroll chats relative lg:flex">
         <nav
-          className={`absolute overflow-y-scroll chats lg:relative z-10 w-72 lg:transform-none lg:opacity-100 bg-[#00355f] text-white h-screen ${
-            !trigger
-              ? "inset-0 opacity-0 transform duration-200 -translate-x-full ease-out"
-              : "inset-0 opacity-100 transform duration-200 translate-x-0 ease-in"
-          }`}
+          className={`absolute overflow-y-scroll chats lg:relative z-10 w-72 lg:transform-none lg:opacity-100 bg-[#00355f] text-white h-screen ${!trigger
+            ? "inset-0 opacity-0 transform duration-200 -translate-x-full ease-out"
+            : "inset-0 opacity-100 transform duration-200 translate-x-0 ease-in"
+            }`}
         >
           <div className="flex justify-between items-center my-5 mr-5 ml-0 md:ml-4 py-5">
             <div className="flex flex-col items-center mx-auto">
@@ -193,6 +196,8 @@ const DashboardRoutes = ({ jobs }) => {
               loggedInUser?.role === "recruiter" && <Applicant />}
             {params[0] === "postedJobs" &&
               loggedInUser?.role === "recruiter" && <PostedJobs />}
+            {params[0] === "orderHistory" &&
+              loggedInUser?.role === "recruiter" && <OrderHistory />}
             {/* update recruiter profile  */}
             {params[0] === "updateProfile" &&
               loggedInUser?.role === "recruiter" && <RecruiteProfileUpdate />}

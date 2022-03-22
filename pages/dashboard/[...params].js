@@ -1,6 +1,7 @@
 import DashboardRoutes from "../../components/Dashboard/Dashboard/DashboardRoutes";
 
-const Dashboard = (props) => {
+const Dashboard = (props) =>
+{
   return (
     <>
       <DashboardRoutes jobs={props.jobs} />
@@ -10,7 +11,8 @@ const Dashboard = (props) => {
 
 export default Dashboard;
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async (context) =>
+{
   const { query } = context;
   const { jobType } = query;
 

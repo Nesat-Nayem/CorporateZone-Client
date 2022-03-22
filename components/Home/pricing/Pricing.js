@@ -10,18 +10,7 @@ const Pricing = () =>
 
   useEffect(() =>
   {
-    // Check to see if this is a redirect back from Checkout
     const query = new URLSearchParams(window.location.search);
-    const sid = query.get('session_id')
-    console.log(sid);
-
-    if (query.get("success")) {
-      Swal.fire(
-        "Order placed!",
-        "You will receive an email confirmation with payment receipt.",
-        "success"
-      );
-    }
 
     if (query.get("canceled")) {
       Swal.fire(
@@ -43,7 +32,7 @@ const Pricing = () =>
             <span className="text-base text-cyan-700 dark:text-slate-300">No contracts, No surprise fees.</span>
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 lg:gap-12 text-center px-5 md:px-20 lg:px-32 py-10">
-            <div className="dark:bg-white text-center pt-5 pb-10 shadow-md card card_1">
+            <div className="bg-white text-center pt-5 pb-10 shadow-md card card_1">
               <div className="text-center">
                 <h2 className="text-2xl font-semibold head_title relative">
                   BASIC PLAN
@@ -94,7 +83,7 @@ const Pricing = () =>
               </form>
             </div>
 
-            <div className="dark:bg-white text-center pt-5 pb-10 shadow-md lg:relative lg:bottom-5 card card_2">
+            <div className="bg-white text-center pt-5 pb-10 shadow-md lg:relative lg:bottom-5 card card_2">
               <div className="card_sticker text-center">
                 <AiOutlineStar className="text-white text-xl inline-block mr-4" />
               </div>
@@ -148,7 +137,7 @@ const Pricing = () =>
               </form>
             </div>
 
-            <div className="dark:bg-white text-center pt-5 pb-10 shadow-md card card_1">
+            <div className="bg-white text-center pt-5 pb-10 shadow-md card card_1">
               <div className="text-center">
                 <h2 className="text-2xl font-semibold head_title relative">
                   ADVANCED PLAN

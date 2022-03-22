@@ -14,7 +14,7 @@ export default async function handler (req, res)
           },
         ],
         mode: "payment",
-        success_url: `${req.headers.origin}/?success=true&session_id={CHECKOUT_SESSION_ID}`,
+        success_url: `${req.headers.origin}/dashboard/orderHistory?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${req.headers.origin}/?canceled=true`,
       });
       res.redirect(303, session.url);
