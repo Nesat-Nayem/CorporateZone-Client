@@ -24,63 +24,58 @@ const Zone = () => {
             className="dark:bg-[#ebf8fe] bg-[#e8f8fd] flex justify-center items-center rounded-2xl shadow-xl w-max-[300px] h-[150px]"
             // className={card.zone_card}
           >
-            <h4 className="text-xl text-center font-medium text-slate-800 dark:text-white bg-[#ebf8fe] dark:bg-slate-700 py-2">
+            <h4 className="text-md p-2 text-center font-medium text-slate-800 dark:text-white bg-[#ebf8fe] dark:bg-slate-700 py-2">
               Attract & Manage The Right Talent
             </h4>
           </div>
           <div
             data-aos="zoom-in-up"
-            className="flex items-center justify-center text-[#42C2FF]"
-          >
-            <MdMarkEmailRead className="text-7xl ring-2 rounded-lg ring-[#42c3ffe5] hover:transform duration-500 hover:scale-105" />
+            className="flex items-center justify-center text-[#42C2FF]">
+            <MdMarkEmailRead className="text-7xl ring-2 mt-8 md:mt-0 rounded-lg ring-[#42c3ffe5] hover:transform duration-500 hover:scale-105" />
           </div>
           <div
             className="dark:bg-[#ebf8fe] bg-[#e8f8fd] flex justify-center items-center rounded-2xl shadow-xl w-max-[300px] h-[150px]"
             // className={card.zone_card}
           >
-            <h4 className="text-xl text-center font-medium text-slate-800 dark:text-white bg-[#ebf8fe] dark:bg-slate-700 ">
+            <h4 className="text-md p-2 text-center font-medium text-slate-800 dark:text-white bg-[#ebf8fe] dark:bg-slate-700 ">
               Highly Structured Candidate Pipeline
             </h4>
           </div>
           <div
             data-aos="zoom-in-down"
-            className="flex items-center justify-center text-[#42C2FF]"
-          >
-            <FaLaptopCode className="text-7xl ring-2 rounded-lg ring-[#42c3ffe5] hover:transform duration-500 hover:scale-105" />
+            className="flex items-center justify-center text-[#42C2FF]">
+            <FaLaptopCode className="text-7xl ring-2 mt-8 md:mt-0 rounded-lg ring-[#42c3ffe5] hover:transform duration-500 hover:scale-105" />
           </div>
           <div
             // className={card.zone_card}
-            className="dark:bg-[#ebf8fe] bg-[#e8f8fd] flex justify-center items-center rounded-2xl shadow-xl w-max-[300px] h-[150px]"
-          >
-            <h4 className="text-xl text-center font-medium text-slate-800 dark:text-white bg-[#ebf8fe] dark:bg-slate-700 py-2">
+            className="dark:bg-[#ebf8fe] bg-[#e8f8fd] flex justify-center items-center rounded-2xl shadow-xl w-max-[300px] h-[150px]">
+            <h4 className="text-md p-2 text-center font-medium text-slate-800 dark:text-white bg-[#ebf8fe] dark:bg-slate-700 py-2">
               Faster & Better Hiring Process
             </h4>
           </div>
           <div
             data-aos="zoom-in-down"
-            className="flex items-center justify-center text-[#42C2FF]"
-          >
-            <BsFillPieChartFill className="text-7xl ring-2 rounded-lg ring-[#42c3ffe5] hover:transform duration-500 hover:scale-105" />
+            className="flex items-center justify-center text-[#42C2FF]">
+            <BsFillPieChartFill className="text-7xl ring-2 mt-8 md:mt-0 rounded-lg ring-[#42c3ffe5] hover:transform duration-500 hover:scale-105" />
           </div>
           <div
             className="dark:bg-[#ebf8fe] bg-[#e8f8fd] flex justify-center items-center rounded-2xl shadow-xl w-max-[300px] h-[150px]"
             // className={card.zone_card}
           >
-            <h4 className="text-xl text-center font-medium text-slate-800 dark:text-white bg-[#ebf8fe] dark:bg-slate-700 py-2">
+            <h4 className="text-md p-2 text-center font-medium text-slate-800 dark:text-white bg-[#ebf8fe] dark:bg-slate-700 py-2">
               User Friendly Process & Easy Communication
             </h4>
           </div>
           <div
             data-aos="zoom-in-up"
-            className="flex items-center justify-center text-[#42C2FF]"
-          >
-            <RiUserSearchFill className="text-7xl ring-2 rounded-lg ring-[#42c3ffe5] hover:transform duration-500 hover:scale-105" />
+            className="flex items-center justify-center text-[#42C2FF]">
+            <RiUserSearchFill className="text-7xl ring-2 mt-8 md:mt-0 rounded-lg ring-[#42c3ffe5] hover:transform duration-500 hover:scale-105" />
           </div>
           <div
             className="dark:bg-[#ebf8fe] bg-[#e8f8fd] flex justify-center items-center rounded-2xl shadow-xl w-max-[300px] h-[150px]"
             // className={card.zone_card}
           >
-            <h4 className="text-xl text-center font-medium text-slate-800 dark:text-white bg-[#ebf8fe] dark:bg-slate-700 py-2">
+            <h4 className="text-md p-2 text-center font-medium text-slate-800 dark:text-white bg-[#ebf8fe] dark:bg-slate-700 py-2">
               Remotely Hiring Ready For Candidates
             </h4>
           </div>
@@ -90,8 +85,7 @@ const Zone = () => {
           className="ml-16 text-justify "
           data-aos="fade-up"
           data-aos-offset="300"
-          data-aos-easing="ease-in-sine"
-        >
+          data-aos-easing="ease-in-sine">
           <div className="">
             <h3 className=" xl:text-5xl md:text-3xl text-xl font-bold leading-snug dark:text-white text-slate-800">
               Why Does Your Company Need CorporateZone?
