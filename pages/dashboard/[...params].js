@@ -1,4 +1,5 @@
 import DashboardRoutes from "../../components/Dashboard/Dashboard/DashboardRoutes";
+import withProtected from "../protect";
 
 const Dashboard = (props) => {
   return (
@@ -8,7 +9,7 @@ const Dashboard = (props) => {
   );
 };
 
-export default Dashboard;
+export default withProtected(Dashboard);
 
 export const getServerSideProps = async (context) => {
   const { query } = context;

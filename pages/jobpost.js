@@ -2,6 +2,7 @@ import JobPost from "../components/Dashboard/Recruiter/JobPost";
 import Layout from "../components/layout/Layout";
 import Footer from "../components/Shared/Footer/Footer";
 import Header from "../components/Shared/Header/Header";
+import withProtected from "./protect";
 
 const PostJobs = () => {
   return (
@@ -13,4 +14,4 @@ const PostJobs = () => {
   );
 };
 
-export default PostJobs;
+export default withProtected(PostJobs);

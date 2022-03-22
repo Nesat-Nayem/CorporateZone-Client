@@ -21,6 +21,8 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import cogoToast from "cogo-toast";
 
+import withProtected from "../protect";
+
 const Jobdetails = ({ data }) => {
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
 
@@ -344,7 +346,7 @@ const Jobdetails = ({ data }) => {
   );
 };
 
-export default Jobdetails;
+export default withProtected(Jobdetails);
 
 export const getServerSideProps = async (context) => {
   const res = await fetch(

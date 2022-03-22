@@ -4,8 +4,13 @@ import cover from "../../../styles/Home.module.css";
 // import Swiper core and required modules
 import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
 import { BiRightArrowAlt } from "react-icons/bi";
+import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
 
 const HeroArea = () => {
+  const loggedInUser = useSelector((state) => state.user.loggedInUser);
+  const router = useRouter();
+
   const data = [
     {
       id: "34lkdasfj",
@@ -70,9 +75,32 @@ const HeroArea = () => {
                 <p className="text-gray-500 dark:text-[#ffffff] leading-7 w-7/12">
                   {item.description}
                 </p>
-                <button className="pl-4 font-bold uppercase flex items-center space-x-3 pr-3 py-3  hover:text-[#42C2FF] text-white hover:transform duration-500 hover:scale-105 border-2 border-[#42C2FF] rounded-lg bg-[#42C2FF] hover:bg-white ml-5">
-                  Join US <BiRightArrowAlt className="font-medium text-2xl" />
-                </button>
+                {loggedInUser && loggedInUser?.role === "candidate" && (
+                  <button
+                    onClick={() => router.push("/jobs")}
+                    className="pl-4 font-bold uppercase flex items-center space-x-3 pr-3 py-3  hover:text-[#42C2FF] text-white hover:transform duration-500 hover:scale-105 border-2 border-[#42C2FF] rounded-lg bg-[#42C2FF] hover:bg-white ml-5"
+                  >
+                    Browse Jobs{" "}
+                    <BiRightArrowAlt className="font-medium text-2xl" />
+                  </button>
+                )}
+                {loggedInUser?.role === "recruiter" && (
+                  <button
+                    onClick={() => router.push("/jobpost")}
+                    className="pl-4 font-bold uppercase flex items-center space-x-3 pr-3 py-3  hover:text-[#42C2FF] text-white hover:transform duration-500 hover:scale-105 border-2 border-[#42C2FF] rounded-lg bg-[#42C2FF] hover:bg-white ml-5"
+                  >
+                    Post a job{" "}
+                    <BiRightArrowAlt className="font-medium text-2xl" />
+                  </button>
+                )}
+                {!loggedInUser && (
+                  <button
+                    onClick={() => router.push("/signin")}
+                    className="pl-4 font-bold uppercase flex items-center space-x-3 pr-3 py-3  hover:text-[#42C2FF] text-white hover:transform duration-500 hover:scale-105 border-2 border-[#42C2FF] rounded-lg bg-[#42C2FF] hover:bg-white ml-5"
+                  >
+                    Join US <BiRightArrowAlt className="font-medium text-2xl" />
+                  </button>
+                )}
               </div>
               <div className="flex items-center justify-end w-full">
                 <img src={item.image} alt="" />
