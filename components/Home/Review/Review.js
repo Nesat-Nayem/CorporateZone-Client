@@ -99,7 +99,7 @@ const Review = () =>
         {fackreview.map((data) => (
           <SwiperSlide key={data._id}>
             <Bounce bottom>
-              <div className="container px-5 py-12  mx-auto">
+              <div className="container md:px-5 py-12  mx-auto">
                 <div
                   className={card.zone_card}
                   style={{ width: "60%", height: "30%" }}
