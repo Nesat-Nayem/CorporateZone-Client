@@ -15,7 +15,7 @@ const TopHeader = () =>
   const currentUser = useSelector((state) => state.user.currentUser);
 
   return (
-    <div className="fixed top-5 right-0">
+    <div className="fixed top-8 right-0">
       <div className=" text-white dark:text-slate-800 ml-auto pl-10 md:w-40 relative md:flex hidden justify-between items-center">
         {/* signup and login */}
         <div className="lg:flex flex-col rounded-bl-lg rounded-tl-lg absolute top-16 ">

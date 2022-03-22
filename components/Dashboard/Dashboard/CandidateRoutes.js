@@ -6,7 +6,8 @@ import { BsFillBookmarkCheckFill } from "react-icons/bs";
 import { FaUserTie } from "react-icons/fa";
 import { VscOrganization } from "react-icons/vsc";
 
-const CandidateRoutes = ({ setTrigger }) => {
+const CandidateRoutes = ({ setTrigger }) =>
+{
   return (
     <>
       <Link href={`/dashboard/panel`}>
@@ -59,10 +60,10 @@ const CandidateRoutes = ({ setTrigger }) => {
       <Link href={`/dashboard/buildResume`}>
         <a
           onClick={() => setTrigger(false)}
-          className=" py-4 text-lg font-extralight text-gray-300 hover:text-white   cursor-pointer flex items-center  px-10  "
+          className=" py-4 text-lg font-extralight text-gray-300 hover:text-white   cursor-pointer flex items-center whitespace-nowrap px-10  "
         >
-          <BiCalendarCheck className="text-xl" />
-          &nbsp;&nbsp;&nbsp;Build Resume
+          <BiCalendarCheck className="text-xl absolute" />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Build Resume
         </a>
       </Link>
     </>
