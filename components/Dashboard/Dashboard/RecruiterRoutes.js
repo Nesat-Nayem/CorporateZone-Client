@@ -4,8 +4,10 @@ import { MdDashboard } from "react-icons/md";
 import { FaUserTie } from "react-icons/fa";
 import { BsFillFileEarmarkPostFill } from "react-icons/bs";
 import { FiUsers } from "react-icons/fi";
+import { AiFillTags } from "react-icons/ai";
 
-const RecruiterRoutes = ({ setTrigger }) => {
+const RecruiterRoutes = ({ setTrigger }) =>
+{
   return (
     <>
       <>
@@ -43,6 +45,15 @@ const RecruiterRoutes = ({ setTrigger }) => {
           >
             <FiUsers className="text-xl" />
             &nbsp;&nbsp;&nbsp;Applicant
+          </a>
+        </Link>
+        <Link href={`/dashboard/orderHistory`}>
+          <a
+            onClick={() => setTrigger(false)}
+            className=" py-4 text-lg font-extralight text-gray-300 hover:text-white   cursor-pointer flex items-center  px-10  "
+          >
+            <AiFillTags className="text-xl" />
+            &nbsp;&nbsp;&nbsp;Order History
           </a>
         </Link>
       </>

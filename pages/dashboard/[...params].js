@@ -1,7 +1,8 @@
 import DashboardRoutes from "../../components/Dashboard/Dashboard/DashboardRoutes";
 import withProtected from "../protect";
 
-const Dashboard = (props) => {
+const Dashboard = (props) =>
+{
   return (
     <>
       <DashboardRoutes jobs={props.jobs} />
@@ -11,7 +12,8 @@ const Dashboard = (props) => {
 
 export default withProtected(Dashboard);
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async (context) =>
+{
   const { query } = context;
   const { jobType } = query;
 

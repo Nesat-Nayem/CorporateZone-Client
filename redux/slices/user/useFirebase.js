@@ -105,7 +105,7 @@ const useFirebase = () => {
         console.log(error);
       }
       // axios
-      //   .post("http://localhost:4030/users/register", data)
+      //   .post("https://murmuring-spire-15534.herokuapp.com/users/register", data)
       //   .then(function (response) {
       //     console.log(response);
       //     router.push("/dashboard/profile");

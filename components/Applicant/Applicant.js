@@ -2,19 +2,22 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import OpenJobs from "./OpenJobs";
 
-const Applicant = () => {
+const Applicant = () =>
+{
   const currentUser = useSelector((state) => state.user.currentUser);
 
   const [postedJobs, setPostedJobs] = useState([]);
   const [matchJobs, setMatchJobs] = useState([]);
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     fetch("https://murmuring-spire-15534.herokuapp.com/jobs")
       .then((res) => res.json())
       .then((data) => setPostedJobs(data.data));
   }, []);
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     const matchFound = postedJobs.filter(
       (posted) => posted.companyEmail === currentUser?.email
     );
