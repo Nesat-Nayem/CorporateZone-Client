@@ -6,13 +6,14 @@ import { useSelector } from 'react-redux';
 import { handleDelete } from '../Admin/Jobs';
 
 const Panel = () => {
-
   const [jobs, setJobs] = useState([]);
-  const [admin, setAdmin] = useState([])
-  const [recruiter, setRecruiter] = useState([])
+  const [admin, setAdmin] = useState([]);
+  const [recruiter, setRecruiter] = useState([]);
   const [candidate, setCandidate] = useState([]);
   // const [remove, setRemove] = useState([]);
-
+  const [myJobs, setMyJobs] = useState([]);
+  const [users, setUsers] = useState([]);
+  
   useEffect(() => {
     fetch("https://murmuring-spire-15534.herokuapp.com/jobs")
       .then((res) => res.json())
@@ -21,27 +22,52 @@ const Panel = () => {
         console.log(data.data.slice(0, 3).reverse());
       });
   }, []);
-  
+
   useEffect(() => {
     fetch("https://murmuring-spire-15534.herokuapp.com/users")
       .then((res) => res.json())
       .then((data) => {
+        setUsers(data.filter((e) => e.role === "candidate").slice(0, 5).reverse())
+        console.log(
+          data
+            .filter((e) => e.role === "candidate")
+            .slice(0, 5)
+            .reverse()
+        );
+        console.log(data);
         setCandidate(data.filter((e) => e.role === "candidate"));
         setAdmin(data.filter((e) => e.role === "admin"));
-        console.log(data.filter((e) => e.role === "admin"));
         setRecruiter(data.filter((e) => e.role === "recruiter"));
-        console.log(data.filter((e) => e.role === "recruiter"));
-        console.log(data.filter((e) => e.role === "candidate"));
       });
   }, []);
 
+  // fetching data
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await (
+        await fetch(
+          `https://murmuring-spire-15534.herokuapp.com/appliedJobs`
+        )
+      ).json();
+      setMyJobs(data.reverse().slice(0, 5));
+      console.log(data.reverse().slice(0,5))
+    };
+    fetchData();
+  }, []);
 
   const latest = jobs.slice(0, 3).reverse();
-
-
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
 
-      
+  const applicant = candidate
+    .map((e) => e.username)
+    .reverse()
+    .slice(0, 1);
+  console.log(
+    candidate
+      .map((e) => e.username)
+      .reverse()
+      .slice(0, 1)
+  );
   return (
     <div>
       {/* Admin */}
@@ -82,9 +108,7 @@ const Panel = () => {
                 <FcRemoveImage className="text-7xl" />
               </div>
               <div className="text-center">
-                <h3 className="text-xl font-medium">
-                  {handleDelete.length}
-                </h3>
+                <h3 className="text-xl font-medium">{handleDelete.length}</h3>
                 <p>Spam Jobs</p>
               </div>
             </div>
@@ -150,7 +174,7 @@ const Panel = () => {
                               {job.jobTitle}
                             </td>
                             <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                              {loggedInUser?.username}
+                              {applicant} +{candidate.length}more...
                             </td>
                             <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                               {job?.lastDate.toLocaleString()}
@@ -184,44 +208,31 @@ const Panel = () => {
             </h3>
 
             <div className="flex flex-wrap justify-evenly items-center gap-5">
-              <div className="job w-60 shadow-lg rounded-md flex flex-col flex-wrap justify-evenly items-center bg-[#d9effa] py-3">
-                <div className="ring-2 rounded-full ring-slate-600">
-                  <FcList className="text-7xl" />
-                </div>
-                <div className="text-center my-3">
-                  <h3>Sumonto</h3>
-                  <p>MERN-Stack Developer</p>
-                  <button className="bg-cyan-500 px-3 py-1 rounded-lg text-white my-3">
-                    view Profile
-                  </button>
-                </div>
-              </div>
+              {users.map((user) => {
+                return (
+                  <div className="job w-60 shadow-lg rounded-md flex flex-col flex-wrap justify-evenly items-center bg-[#d9effa] py-3">
+                    <div>
+                      <img
+                        className="ring-2 rounded-full ring-slate-600 w-20 h-20"
+                        src={user?.photoURL}
+                        alt="pro_pic"
+                      />
+                    </div>
+                    <div className="text-center my-3">
+                      <h3>{user?.username}</h3>
+                      <p>{user?.portfolio}</p>
+                      <span>{user?.location}</span> <br />
+                      <button className="bg-cyan-500 px-3 py-1 rounded-lg text-white my-3">
+                        view Profile
+                      </button>
+                    </div>
+                  </div>
+                );
+            })}
 
-              <div className="job w-60 shadow-lg rounded-md flex flex-col flex-wrap justify-evenly items-center bg-[#d9effa] py-3">
-                <div className="ring-2 rounded-full ring-slate-600">
-                  <FcList className="text-7xl" />
-                </div>
-                <div className="text-center my-3">
-                  <h3>Sumonto</h3>
-                  <p>MERN-Stack Developer</p>
-                  <button className="bg-cyan-500 px-3 py-1 rounded-lg text-white my-3">
-                    view Profile
-                  </button>
-                </div>
-              </div>
+ 
 
-              <div className="job w-60 shadow-lg rounded-md flex flex-col flex-wrap justify-evenly items-center bg-[#d9effa] py-3">
-                <div className="ring-2 rounded-full ring-slate-600">
-                  <FcList className="text-7xl" />
-                </div>
-                <div className="text-center my-3">
-                  <h3>Sumonto</h3>
-                  <p>MERN-Stack Developer</p>
-                  <button className="bg-cyan-500 px-3 py-1 rounded-lg text-white my-3">
-                    view Profile
-                  </button>
-                </div>
-              </div>
+            
             </div>
           </div>{" "}
         </div>
