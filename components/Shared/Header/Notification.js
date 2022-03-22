@@ -26,20 +26,14 @@ const Notification = ({ notifications }) =>
       <div
         className={
           trigger
-            ? "bg-white dark:bg-slate-700 md:block hidden shadow-md w-auto absolute z-10 rounded top-14 left-20"
+            ? "bg-white dark:bg-slate-600 md:block hidden shadow-md w-auto absolute z-10 rounded top-14 left-20"
             : "hidden"
         }
       >
         <div className="ml-4 mb-2">
-          <h2 className="text-2xl font-semibold text-gray-700 dark:text-white tracking-wide mb-2">
+          <h2 className="text-2xl font-semibold text-gray-700 dark:text-white tracking-wide my-3">
             Notifications
           </h2>
-          <button className="bg-[#42C2FF] text-white hover:bg-[#85F4FF] hover:text-black mx-1 px-2 py-1 rounded-2xl shadow-md text-semibold">
-            All
-          </button>
-          <button className="bg-[#85F4FF] text-black hover:bg-[#42C2FF] hover:text-white mx-1 px-2 py-1 rounded-2xl shadow-md text-semibold">
-            Unread
-          </button>
         </div>
         <div className="w-72 h-72 overflow-y-scroll chats border-t-2 border-green-500">
           <ul className="p-2">
@@ -50,7 +44,7 @@ const Notification = ({ notifications }) =>
                 className=" hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg p-2 cursor-pointer"
               >
                 <h1 className="text-slate-700 dark:text-slate-200">{n?.jobTitle}</h1>
-                <span className="text-xs italic text-green-500">
+                <span className="text-xs lowercase italic text-green-500">
                   Posted By, {n?.companyEmail}
                 </span>
               </li>
