@@ -23,8 +23,7 @@ const Pricing = () =>
 
   return (
     loggedInUser?.role === "recruiter" && (
-      <div>
-
+      <div className="py-12">
         <section className="lg:w-9/12 w-11/12 mx-auto relative mb-16">
           <h3 className="text-3xl text-center after:content-[''] after:text-red-500 after:absolute after:border-t-2 after:w-20 after:border-cyan-500 after:left-0 after:bottom-0 after:right-56 after:top-10 after:mx-auto font-medium text-slate-700 dark:text-white">
             Our Simple, transparent pricing
@@ -75,7 +74,7 @@ const Pricing = () =>
                 <button
                   type="submit"
                   role="link"
-                  className="flex flex-row justify-center items-center py-3 px-5 text-white bg-gray-800 rounded-md shadow-md hover:bg-red-500 transition-all"
+                  className="flex flex-row justify-center items-center py-3 px-5 text-white bg-gray-800 rounded-md shadow-md hover:bg-red-500 hover:transform duration-500 hover:scale-110"
                 >
                   <HiPlusCircle className="inline-block text-lg mr-2" />
                   <span className="inline-block font-semibold">Buy Plan</span>
@@ -129,7 +128,7 @@ const Pricing = () =>
                 <button
                   type="submit"
                   role="link"
-                  className="flex flex-row justify-center items-center py-3 px-5 text-white rounded-md shadow-md bg-red-500 transition-all"
+                  className="flex flex-row justify-center items-center py-3 px-5 text-white rounded-md shadow-md bg-red-500 hover:bg-blue-400 hover:transform duration-500 hover:scale-110"
                 >
                   <HiPlusCircle className="inline-block text-lg mr-2" />
                   <span className="inline-block font-semibold">Buy Plan</span>
@@ -180,7 +179,7 @@ const Pricing = () =>
                 <button
                   type="submit"
                   role="link"
-                  className="flex flex-row justify-center items-center py-3 px-5 text-white bg-gray-800 rounded-md shadow-md hover:bg-red-500 transition-all"
+                  className="flex flex-row justify-center items-center py-3 px-5 text-white bg-gray-800 rounded-md shadow-md hover:bg-red-500 hover:transform duration-500 hover:scale-110"
                 >
                   <HiPlusCircle className="inline-block text-lg mr-2" />
                   <span className="inline-block font-semibold">Buy Plan</span>

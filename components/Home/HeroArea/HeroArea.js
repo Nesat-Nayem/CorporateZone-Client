@@ -7,7 +7,8 @@ import { BiRightArrowAlt } from "react-icons/bi";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
 
-const HeroArea = () => {
+const HeroArea = () =>
+{
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
   const router = useRouter();
 
@@ -32,15 +33,15 @@ const HeroArea = () => {
       id: "34lk34sfasfj",
       title: "Live Chat",
       description:
-        "As a job portal, we provide a live chat functionality. It can be used for recruitment process or to hang out wiht others. You can easily build your connection bigger to make a chat with them or just can make a chat with company HR.",
+        "As a job portal, we provide a live chat functionality. It can be used for recruitment process or to hang out with others. You can easily build your connection bigger to make a chat with them or just can make a chat with company HR.",
       image:
         "https://i.postimg.cc/0j1wLsYX/Time-To-Chat-Vector-For-Free-removebg-preview.png",
     },
     {
       id: "34lkdad67fasfj",
-      title: "Skill Assesment",
+      title: "Skill Assessment",
       description:
-        "As a candidate, you always have to prove yourself that you are the best. To make attention to the company, you can take a skill assesment,if you pass that will show in your profile that will help you to land your job.",
+        "As a candidate, you always have to prove yourself that you are the best. To make attention to the company, you can take a skill assessment,if you pass that will show in your profile that will help you to land your job.",
       image: "https://tailwindcomponents.com/svg/website-designer-bro.svg",
       // image: "https://i.postimg.cc/LsSG6YHm/exam-removebg-preview.png",
     },
@@ -59,7 +60,8 @@ const HeroArea = () => {
         }}
         className="mySwiper lg:w-9/12 w-11/12 mx-auto h-full "
       >
-        {data.map((item) => {
+        {data.map((item) =>
+        {
           return (
             <SwiperSlide
               key={item.id}
