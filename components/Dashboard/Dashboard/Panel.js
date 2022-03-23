@@ -309,7 +309,10 @@ const Panel = () => {
                       <h3>{user?.username}</h3>
                       <p>{user?.portfolio}</p>
                       <span>{user?.location}</span> <br />
-                      <button className="bg-cyan-500 px-3 py-1 rounded-lg text-white my-3">
+                      <button
+                        onClick={handleJobs}
+                        className="bg-cyan-500 px-3 py-1 rounded-lg text-white my-3"
+                      >
                         View Profile
                       </button>
                     </div>
@@ -457,7 +460,10 @@ const Panel = () => {
                       <h3>{user?.username}</h3>
                       <p>{user?.portfolio}</p>
                       <span>{user?.location}</span> <br />
-                      <button className="bg-cyan-500 px-3 py-1 rounded-lg text-white my-3">
+                      <button
+                        onClick={handleJobs}
+                        className="bg-cyan-500 px-3 py-1 rounded-lg text-white my-3"
+                      >
                         View Profile
                       </button>
                     </div>

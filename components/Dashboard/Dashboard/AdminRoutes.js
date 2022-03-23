@@ -4,6 +4,7 @@ import { BsBagCheckFill } from "react-icons/bs";
 import { FaRegBuilding, FaUserCircle, FaUserGraduate } from "react-icons/fa";
 import { MdAdminPanelSettings, MdDashboard } from "react-icons/md";
 import { FaUserTie } from "react-icons/fa";
+import { AiFillDashboard } from "react-icons/ai";
 
 const AdminRoutes = ({ setTrigger }) => {
   return (
@@ -13,7 +14,7 @@ const AdminRoutes = ({ setTrigger }) => {
           onClick={() => setTrigger(false)}
           className=" py-4 text-lg font-extralight text-gray-300 hover:text-white   cursor-pointer flex items-center  px-10  "
         >
-          <FaUserTie className="text-lg" />
+          <AiFillDashboard className="text-lg" />
           &nbsp;&nbsp;&nbsp;Dashboard
         </a>
       </Link>

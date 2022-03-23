@@ -5,6 +5,7 @@ import { BiCalendarCheck } from "react-icons/bi";
 import { BsFillBookmarkCheckFill } from "react-icons/bs";
 import { FaUserTie } from "react-icons/fa";
 import { VscOrganization } from "react-icons/vsc";
+import { AiFillDashboard } from "react-icons/ai";
 
 const CandidateRoutes = ({ setTrigger }) =>
 {
@@ -15,7 +16,7 @@ const CandidateRoutes = ({ setTrigger }) =>
           onClick={() => setTrigger(false)}
           className=" py-4 text-lg font-extralight text-gray-300 hover:text-white   cursor-pointer flex items-center  px-10  "
         >
-          <FaUserTie className="text-xl" />
+          <AiFillDashboard className="text-xl" />
           &nbsp;&nbsp;&nbsp;Dashboard
         </a>
       </Link>
