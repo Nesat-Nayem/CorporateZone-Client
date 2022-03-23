@@ -78,11 +78,11 @@ export default function Navbar ()
               <a className="flex items-center">
                 <img
                   src="https://i.ibb.co/z8GVp26/corzon.png"
-                  className="w-16 h-16"
+                  className="w-12 h-12"
                   alt="logo"
                 />
-                <span className=" text-2xl font-extrabold">
-                  <span className="dark:text-white text-slate-700">Corporate Zone</span>
+                <span className=" text-xl font-extrabold">
+                  <span className="dark:text-white text-slate-700 whitespace-nowrap">CorporateZone</span>
                 </span>
               </a>
             </Link>

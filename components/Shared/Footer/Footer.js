@@ -81,10 +81,19 @@ const Footer = () =>
         </div>
         <div className="mx-6 py-10 text-center md:text-left">
           <div className="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-sm ">
-              <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
-                CorporateZone
-              </h6>
+            <div className="text-sm space-y-3">
+              <Link href="/">
+                <a className="flex items-center">
+                  <img
+                    src="https://i.ibb.co/z8GVp26/corzon.png"
+                    className="w-12 h-12"
+                    alt="logo"
+                  />
+                  <span className=" text-xl font-extrabold">
+                    <span className="dark:text-white text-slate-700 whitespace-nowrap">CorporateZone</span>
+                  </span>
+                </a>
+              </Link>
               <p className="text-base leading-8 text-slate-700 dark:text-white">
                 We strongly encourage employers to embrace diversity, equity,
                 and inclusion as fundamental values when hiring through
@@ -116,7 +125,7 @@ const Footer = () =>
                   <a className="">Rules & Regulation</a>
                 </Link>
               </p>
-           
+
             </div>
 
             <div className="text-base">
@@ -169,7 +178,7 @@ const Footer = () =>
                 <a className="">Contact us</a>
               </Link>
             </p>
-      
+
             <p className="ml-3 text-xs md:text-sm">
               <Link href="/policy">
                 <a className="">Privacy Policy</a>
@@ -182,12 +191,12 @@ const Footer = () =>
         </div>
 
         <div className="text-center py-3">
-        
+
           <p
             className=" font-semibold text-slate-700 dark:text-white"
-           
+
           >
-        &copy; 2022, Code Express. All Rights Reserved.
+            &copy; 2022, Code Express. All Rights Reserved.
           </p>
         </div>
       </div>
