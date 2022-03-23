@@ -132,7 +132,7 @@ const Rule = () =>
         <div className="flex justify-center items-center">
           <div className="hidden lg:block">
             <Image
-              src="https://github.com/Nesat-Nayem/CorporateZone-Clitent/blob/rules/joynul/images/rules.png?raw=true"
+              src="https://i.ibb.co/sbjhBZG/rules.png"
               width={2000}
               height={2000}
               alt="rules img"

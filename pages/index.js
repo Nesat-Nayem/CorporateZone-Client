@@ -45,7 +45,7 @@ export default function Home ({ articles })
                         </>
                   }
                   <Header />
-                  <HeroArea className="" />
+                  <HeroArea />
                   {/* <CategoryJobs /> */}
                   <Features />
                   {/* <RecentJobs /> */}

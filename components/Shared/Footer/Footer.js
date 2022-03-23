@@ -94,52 +94,53 @@ const Footer = () =>
 
             <div className="text-base">
               <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
-                Post A Job
+                Recruiter
               </h6>
               <p className="mb-2">
-                <Link href="/signin">
-                  <a className="">Sign In</a>
+                <Link href="/jobpost">
+                  <a className="">Post A Job</a>
                 </Link>
               </p>
               <p className="mb-2">
-                <Link href="/pricing">
-                  <a className="">Pricing</a>
+                <Link href="/dashboard/applicant">
+                  <a className="">Applicant</a>
                 </Link>
               </p>
               <p className="mb-2">
-                <Link href="/signup">
-                  <a className="">Guarantee</a>
+                <Link href="/dashboard/chats">
+                  <a className="">Live Chat</a>
                 </Link>
               </p>
               <p className="mb-2">
-                <Link href="/signup">
-                  <a className="">Request an Invoice</a>
+                <Link href="/rules">
+                  <a className="">Rules & Regulation</a>
                 </Link>
               </p>
+           
             </div>
 
             <div className="text-base">
               <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
-                Find A job
+                Candidate
               </h6>
               <p className="mb-2">
                 <Link href="/jobs">
-                  <a className="">Full-time Jobs</a>
+                  <a className="">Get A Job</a>
                 </Link>
               </p>
               <p className="mb-2">
-                <Link href="/jobs">
-                  <a className="">Remote Jobs</a>
+                <Link href="/dashboard/topCompanies">
+                  <a className="">Company List</a>
                 </Link>
               </p>
               <p className="mb-2">
-                <Link href="/jobs">
-                  <a className="">Part-time Jobs</a>
+                <Link href="/dashboard/skillTest">
+                  <a className="">Skill Test</a>
                 </Link>
               </p>
               <p className="mb-2">
-                <Link href="/jobs">
-                  <a className="">Internship</a>
+                <Link href="/dashboard/buildResume">
+                  <a className="">Build Resume</a>
                 </Link>
               </p>
             </div>
@@ -168,11 +169,7 @@ const Footer = () =>
                 <a className="">Contact us</a>
               </Link>
             </p>
-            <p className="ml-3 text-xs md:text-sm">
-              <Link href="/policy">
-                <a className="">Terms & Conditions</a>
-              </Link>
-            </p>
+      
             <p className="ml-3 text-xs md:text-sm">
               <Link href="/policy">
                 <a className="">Privacy Policy</a>
@@ -185,13 +182,13 @@ const Footer = () =>
         </div>
 
         <div className="text-center py-3">
-          <span>© 2022 Copyright : </span>
-          <a
-            className=" font-semibold hover:text-[#42C2FF] text-slate-700 dark:text-white"
-            href="#"
+        
+          <p
+            className=" font-semibold text-slate-700 dark:text-white"
+           
           >
-            @Team-CodeExpress
-          </a>
+        &copy; 2022, Code Express. All Rights Reserved.
+          </p>
         </div>
       </div>
     </footer>

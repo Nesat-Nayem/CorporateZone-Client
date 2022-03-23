@@ -71,7 +71,7 @@ SwiperCore.use([Navigation, Pagination, Autoplay]);
 const Review = () =>
 {
   return (
-    <section className="max-w-screen-xl mx-auto px-6 pb-24 mt-10">
+    <section className="max-w-screen-xl w-full mx-auto px-6 pb-24 mt-10">
       {/* costom */}
 
       <div className="flex justify-center items-center flex-col relative">

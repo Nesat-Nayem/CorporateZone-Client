@@ -28,15 +28,11 @@ const pages = [
     icon: ChartBarIcon,
   },
   {
-    name: "Features",
+    name: "Process",
     href: "/works",
     icon: ShieldCheckIcon,
   },
-  {
-    name: " How Connects",
-    href: "/works",
-    icon: ViewGridIcon,
-  },
+
 ];
 
 export default function Navbar ()
@@ -114,11 +110,7 @@ export default function Navbar ()
                 Jobs
               </a>
             </Link>
-            <Link href="/works">
-              <a className="text-base font-medium text-gray-500 dark:text-white hover:text-gray-900">
-                Features
-              </a>
-            </Link>
+           
             <Link href="/works">
               <a className="text-base font-medium text-gray-500  dark:text-white hover:text-gray-900">
                 Process
@@ -183,11 +175,11 @@ export default function Navbar ()
             </button>
           )}
           {/* make a review */}
-          {loggedInUser?.role !== "admin" && (
+          {/* {loggedInUser?.role !== "admin" && (
             <button className="flex items-center hover:bg-slate-100 dark:hover:text-black py-2 px-5 w-full">
               <BsChatRightText className="mr-2" /> Share experience
             </button>
-          )}
+          )} */}
           {/* // log out button */}
           <button
             onClick={logOutHandler}
@@ -280,14 +272,14 @@ export default function Navbar ()
                       </button>
                     )}
                     {/* make a review */}
-                    {loggedInUser?.role !== "admin" && (
+                    {/* {loggedInUser?.role !== "admin" && (
                       <button className="-m-3 p-3 flex mb-2 bg-white  items-center rounded-md hover:bg-gray-50">
                         <BsChatRightText className="flex-shrink-0 h-6 w-6 text-indigo-600 mr-3" />{" "}
                         <span className=" text-base font-medium text-gray-900">
                           Share experience
                         </span>
                       </button>
-                    )}
+                    )} */}
                     {/* // log out button */}
                     <button
                       onClick={logOutHandler}

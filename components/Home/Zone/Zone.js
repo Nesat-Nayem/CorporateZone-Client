@@ -90,7 +90,7 @@ const Zone = () =>
           data-aos-easing="ease-in-sine">
           <div className="">
             <h3 className=" xl:text-5xl md:text-3xl text-xl font-bold leading-snug dark:text-white text-slate-800 text-left">
-              Why &nbsp;&nbsp;Does &nbsp;&nbsp;Your Company &nbsp;&nbsp;Need CorporateZone?
+              Why Does Your Company Need CorporateZone?
             </h3>
             <p className="text-gray-500 dark:text-[#eee9e9]  leading-7 mt-5">
               Advanced Recruiting Solution With Everything You Need To

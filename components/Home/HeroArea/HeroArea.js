@@ -16,6 +16,7 @@ const HeroArea = () =>
     {
       id: "34lkdasfj",
       title: "Find Jobs & Career Opportunities",
+      motto:" Browse 3,000 + Jobs",
       description:
         "Corporate zone is one of newest and fastest growing job portal where you can advertise jobs and search for resumes. They are an integral part of almost every hiring process and using them effectively will translate into qualified candidates for relatively low costs.",
       image:
@@ -25,26 +26,38 @@ const HeroArea = () =>
     {
       id: "34lkdadsfasfj",
       title: "Build Your Resume",
+      motto:"We provide standard resume format",
       description:
         "We provide you a custom resume builder from where you can build your own resume without have any trouble of the format. We provide you one of the world-class resume format which will help help you to land your dream job. ",
       image: "https://i.postimg.cc/SKVC23pJ/build-removebg-preview.png",
     },
     {
       id: "34lk34sfasfj",
-      title: "Live Chat",
+      title: "Live Text Chat",
+      motto:"Real time text chat for recruitment process",
       description:
-        "As a job portal, we provide a live chat functionality. It can be used for recruitment process or to hang out with others. You can easily build your connection bigger to make a chat with them or just can make a chat with company HR.",
+        "As a job portal, we provide a  live text chat functionality. It can be used for recruitment process or to hang out with others. You can easily build your connection bigger to make a chat with them or just can make a chat with company HR or a candidate.",
       image:
         "https://i.postimg.cc/0j1wLsYX/Time-To-Chat-Vector-For-Free-removebg-preview.png",
     },
     {
       id: "34lkdad67fasfj",
       title: "Skill Assessment",
+      motto:"Candidate can take their skill to the next level",
       description:
         "As a candidate, you always have to prove yourself that you are the best. To make attention to the company, you can take a skill assessment,if you pass that will show in your profile that will help you to land your job.",
       image: "https://tailwindcomponents.com/svg/website-designer-bro.svg",
       // image: "https://i.postimg.cc/LsSG6YHm/exam-removebg-preview.png",
     },
+    {
+      id: "34lkdatrd67fasfj",
+      title: "Live Video Chat",
+      motto:"For final recruitment process we provide real time video chat communication",
+      description:
+        "For recruitment process recruiter and candidate can communicate each other through our video chat system. It helps both to create a mutual platform to get an easier recruitment process.",
+      image: "https://i.ibb.co/Bs1VYzP/Video-Chat-Woman-Man-PNG.png",
+      // image: "https://i.postimg.cc/LsSG6YHm/exam-removebg-preview.png",
+    }
   ];
   return (
     <div
@@ -71,8 +84,8 @@ const HeroArea = () =>
                 <h2 className="xl:text-6xl lg:text-5xl md:py-8 dark:text-[#ffffff] text-slate-700  py-2 md:text-4xl text-3xl font-bold tracking-wider">
                   {item.title}
                 </h2>
-                <h6 className="md:py-3 py-1 md:text-2xl text-xl   font-bold dark:text-[#ffffff] text-slate-700">
-                  Browse <span className="text-cyan-500">3,000 +</span> Jobs
+                <h6 className="md:py-3 py-1 md:text-2xl text-xl   font-bold dark:text-[#ffffff] text-[#42C2FF]">
+                  {item?.motto}
                 </h6>
                 <p className="text-gray-500 dark:text-[#ffffff] leading-7 w-7/12">
                   {item.description}

@@ -135,11 +135,11 @@ const CompanyJobs = (props) =>
                   {job?.location}
                 </span>
                 <br />
-                <a
-                  href="#"
+                <p
+              
                   className="text-black block md:w-3/4 mx-auto mt-3 text-sm font-semibold hover:bg-[#36b9f7] p-2 rounded-lg bg-[#42C2FF] hover:text-white">
                   7 Openings
-                </a>
+                </p>
               </SwiperSlide>
             );
           })}
