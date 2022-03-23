@@ -31,7 +31,7 @@ const Notification = ({ notifications }) =>
         }
       >
         <div className="ml-4 mb-2">
-          <h2 className="text-2xl font-semibold text-gray-700 dark:text-white tracking-wide my-3">
+          <h2 className="text-2xl normal-case font-semibold text-gray-700 dark:text-white tracking-widest my-3">
             Notifications
           </h2>
         </div>

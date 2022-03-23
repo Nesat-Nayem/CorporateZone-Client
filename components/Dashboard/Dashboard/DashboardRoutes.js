@@ -129,9 +129,9 @@ const DashboardRoutes = ({ jobs }) =>
               className="h-12 xl:hidden w-12 p-2 ml-2 hover:bg-pink-600 rounded-md cursor-pointer"
             />
             <div className="flex justify-center items-center ml-auto md:px-10 px-5">
-              <h1 className="px-3 font-semibold ">{loggedInUser?.username}</h1>
+              <h1 className="px-3 dark:text-white font-semibold ">{loggedInUser?.username}</h1>
               <div>
-                {loggedInUser?.photoRUL ? (
+                {loggedInUser?.photoURL ? (
                   <img
                     src={loggedInUser?.photoURL}
                     className="w-12 h-12 border-2 border-gray-600"

@@ -4,8 +4,10 @@ import Link from "next/link";
 import ScrollToTop from "react-scroll-to-top";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
+import stripe from "../../../images/stripe.png";
 
 import { useRef } from "react";
+import Image from "next/image";
 
 
 const Footer = () =>
@@ -154,27 +156,32 @@ const Footer = () =>
           </div>
         </div>
 
-        <div className="flex flex-wrap flex-row items-center pb-3">
-          <p className="ml-3 text-xs">
-            <Link href="/about">
-              <a className="">About us</a>
-            </Link>
-          </p>
-          <p className="ml-3 text-xs">
-            <Link href="/contact">
-              <a className="">Contact us</a>
-            </Link>
-          </p>
-          <p className="ml-3 text-xs">
-            <Link href="/policy">
-              <a className="">Terms & Conditions</a>
-            </Link>
-          </p>
-          <p className="ml-3 text-xs">
-            <Link href="/policy">
-              <a className="">Privacy Policy & Cookies</a>
-            </Link>
-          </p>
+        <div className="flex flex-col md:flex-row justify-between items-center mb-3">
+          <div className="flex flex-wrap flex-row items-center text-gray-500 dark:text-gray-400">
+            <p className="ml-3 text-xs md:text-sm">
+              <Link href="/about">
+                <a className="">About us</a>
+              </Link>
+            </p>
+            <p className="ml-3 text-xs md:text-sm">
+              <Link href="/contact">
+                <a className="">Contact us</a>
+              </Link>
+            </p>
+            <p className="ml-3 text-xs md:text-sm">
+              <Link href="/policy">
+                <a className="">Terms & Conditions</a>
+              </Link>
+            </p>
+            <p className="ml-3 text-xs md:text-sm">
+              <Link href="/policy">
+                <a className="">Privacy Policy</a>
+              </Link>
+            </p>
+          </div>
+          <div className="my-2">
+            <Image src={stripe} width={300} height={80} alt="" />
+          </div>
         </div>
 
         <div className="text-center py-3">
