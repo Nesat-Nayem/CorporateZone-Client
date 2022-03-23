@@ -7,7 +7,8 @@ import { useSelector } from 'react-redux';
 import { handleDelete } from '../Admin/Jobs';
 import BadgeShow from '../Candidate/skillTest/BadgeShow';
 
-const Panel = () => {
+const Panel = () =>
+{
   const [jobs, setJobs] = useState([]);
   const [admin, setAdmin] = useState([]);
   const [recruiter, setRecruiter] = useState([]);
@@ -21,10 +22,12 @@ const Panel = () => {
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
 
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     fetch("https://murmuring-spire-15534.herokuapp.com/jobs")
       .then((res) => res.json())
-      .then((data) => {
+      .then((data) =>
+      {
         setJobs(data.data)
         setpostJobs(
           data.data.filter(
@@ -37,11 +40,13 @@ const Panel = () => {
         setMatchJobs(matchFound);
       });
   }, [postJobs, loggedInUser]);
-//users
-  useEffect(() => {
+  //users
+  useEffect(() =>
+  {
     fetch("https://murmuring-spire-15534.herokuapp.com/users")
       .then((res) => res.json())
-      .then((data) => {
+      .then((data) =>
+      {
         setUsers(data.filter((e) => e.role === "candidate").slice(0, 5).reverse())
         setCandidate(data.filter((e) => e.role === "candidate"));
         setAdmin(data.filter((e) => e.role === "admin"));
@@ -50,8 +55,10 @@ const Panel = () => {
   }, [users, loggedInUser]);
 
   // fetching data
-  useEffect(() => {
-    const fetchData = async () => {
+  useEffect(() =>
+  {
+    const fetchData = async () =>
+    {
       const data = await (
         await fetch(
           `https://murmuring-spire-15534.herokuapp.com/appliedJobs`
@@ -60,7 +67,7 @@ const Panel = () => {
       setMyJobs(data.reverse().slice(0, 5));
     };
     fetchData();
-  }, [ loggedInUser]);
+  }, [loggedInUser]);
 
   const latest = jobs.slice(0, 3).reverse();
   const company = jobs.slice(0, 5).reverse();
@@ -68,9 +75,10 @@ const Panel = () => {
     .map((e) => e.username)
     .reverse()
     .slice(0, 1);
-  const handleJobs = () => {
-  router.push("/jobs");
-}
+  const handleJobs = () =>
+  {
+    router.push("/jobs");
+  }
   return (
     <div>
       {/* Admin */}
@@ -313,7 +321,8 @@ const Panel = () => {
             </h3>
 
             <div className="flex flex-wrap justify-evenly items-center gap-5">
-              {users.map((user) => {
+              {users.map((user) =>
+              {
                 return (
                   <div
                     key={user.id}
@@ -479,7 +488,8 @@ const Panel = () => {
               New applicants
             </h3>
             <div className="flex flex-wrap justify-evenly items-center gap-5">
-              {users.map((user) => {
+              {users.map((user) =>
+              {
                 return (
                   <div
                     key={user.id}
@@ -514,11 +524,6 @@ const Panel = () => {
       {loggedInUser?.role === "candidate" && (
         <div>
           <div className="feature_box flex flex-wrap justify-center items-center gap-5 my-5">
-            <div className="job w-60 shadow-lg rounded-md flex justify-evenly items-center bg-[#d9effa] py-3">
-              <div className="bg-[#ebf8fe]">
-                <BadgeShow />
-              </div>
-            </div>
 
             <div className="candidate w-60 shadow-lg rounded-md flex justify-evenly items-center bg-[#d9effa] py-3">
               <div className="bg-[#ebf8fe]">
@@ -548,6 +553,12 @@ const Panel = () => {
                 <p className="font-medium">Total Jobs</p>
               </div>
             </div>
+          </div>
+          <div className="bg-[#d9effa] md:w-7/12 w-full mx-auto border rounded mt-5 p-3">
+            <h1 className="mb-5 text-zinc-600 text-2xl font-serif font-bold tracking-widest border-b-4 border-green-500 shadow-md rounded-2xl p-2">
+              Skill Test Badges
+            </h1>
+            <BadgeShow />
           </div>
           <div className="recent_jobs my-5">
             <h3 className="text-xl uppercase font-medium">Latest Jobs</h3>
@@ -636,7 +647,8 @@ const Panel = () => {
             </h3>
 
             <div className="flex flex-wrap justify-evenly items-center gap-5">
-              {company.map((details) => {
+              {company.map((details) =>
+              {
                 return (
                   <div
                     key={details.id}

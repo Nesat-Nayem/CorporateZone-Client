@@ -26,7 +26,7 @@ const Notification = ({ notifications }) =>
       <div
         className={
           trigger
-            ? "bg-white dark:bg-slate-600 md:block hidden shadow-md w-auto absolute z-10 rounded top-14 left-10"
+            ? "bg-white dark:bg-slate-600 md:block hidden shadow-md w-auto absolute z-10 rounded top-14 right-20"
             : "hidden"
         }
       >
