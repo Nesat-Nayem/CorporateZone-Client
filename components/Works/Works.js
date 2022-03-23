@@ -8,14 +8,16 @@ import interview from "../../images/interview.svg";
 import bgParallax from "../About/About.module.css";
 import { useEffect } from "react";
 
-  
-const Works = () => {
-  useEffect(() => {
-  AOS.init();
-},[])
+
+const Works = () =>
+{
+  useEffect(() =>
+  {
+    AOS.init();
+  }, [])
   return (
     <div className="py-5 relative">
-      <h3 className="text-3xl text-center after:content-[''] after:absolute after:border-t-2 after:w-16 md:after:border-cyan-500 after:left-0 after:bottom-0 after:right-60 after:top-10 after:mx-auto font-medium text-slate-700 dark:text-slate-50 uppercase my-20">
+      <h3 className="text-3xl text-center after:content-[''] after:absolute after:border-t-2 after:w-16 md:after:border-cyan-500 after:left-0 after:bottom-0 after:right-60 after:top-36 after:mx-auto font-medium text-slate-700 dark:text-slate-50 uppercase my-20">
         How Does IT Works
       </h3>
 
