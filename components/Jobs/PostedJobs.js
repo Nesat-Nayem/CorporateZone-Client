@@ -1,6 +1,7 @@
 import React from "react";
 
-import {
+import
+{
   MdMoreTime,
   MdPedalBike,
   MdMobileFriendly,
@@ -14,14 +15,16 @@ import { useEffect } from "react";
 import PostedJob from "./PostedJob";
 import { useRouter } from "next/router";
 
-const PostedJobs = (props) => {
+const PostedJobs = (props) =>
+{
   const [jobs, setJobs] = useState(props.jobs);
   const [category, setCategory] = useState();
   const [display, setDisplay] = useState([]);
   const [page, setPage] = useState(1);
   const [pageCount] = useState(5);
 
-  const handleChange = (event) => {
+  const handleChange = (event) =>
+  {
     const searchText = event.target.value;
     const matched = jobs.filter((job) =>
       job.jobTitle.toLowerCase().includes(searchText.toLowerCase())
@@ -32,7 +35,8 @@ const PostedJobs = (props) => {
 
   const router = useRouter();
 
-  const filterJobs = async (e) => {
+  const filterJobs = async (e) =>
+  {
     setCategory(e.target.value);
     const response = await fetch(
       `https://murmuring-spire-15534.herokuapp.com/jobs/approved?jobType=${e.target.value}`
@@ -46,10 +50,12 @@ const PostedJobs = (props) => {
     });
   };
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     fetch("https://murmuring-spire-15534.herokuapp.com/jobs/approved")
       .then((res) => res.json())
-      .then((data) => {
+      .then((data) =>
+      {
         setJobs(data.data);
         setDisplay(data.data);
         console.log(data.data);
@@ -68,7 +74,8 @@ const PostedJobs = (props) => {
   }
 
   //change page
-  const paginate = (pageNumber) => {
+  const paginate = (pageNumber) =>
+  {
     setPage(pageNumber);
   };
   return (
@@ -139,13 +146,15 @@ const PostedJobs = (props) => {
         {/* End Jobs Card */}
 
         {/* pagination */}
-        <div className="text-2xl flex text-center text-black border-2 md:w-40 mx-auto my-5 pagination">
+        <div className="flex justify-center items-center">
           {pageNumbers.map((number) => (
-            <ul key={number} className="w-full">
-              <li className="border-2">
-                <button onClick={() => paginate(number)}>{number}</button>
-              </li>
-            </ul>
+            <button
+              key={number}
+              onClick={() => paginate(number)}
+              className="text-2xl bg-slate-500 hover:bg-slate-700 text-white my-5 rounded-full mx-1 px-3 py-0.5"
+            >
+              {number}
+            </button>
           ))}
         </div>
       </div>
