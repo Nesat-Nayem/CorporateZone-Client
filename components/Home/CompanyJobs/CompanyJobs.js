@@ -13,7 +13,8 @@ import { useRouter } from "next/router";
 
 
 
-const CompanyJobs = (props) => {
+const CompanyJobs = (props) =>
+{
   const [jobs, setJobs] = useState(props.jobs);
   const [widths, setWidths] = useState(0);
   const [swiper, setSwiper] = useState();
@@ -21,10 +22,12 @@ const CompanyJobs = (props) => {
   const nextRef = useRef();
   const router = useRouter();
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     fetch("https://murmuring-spire-15534.herokuapp.com/jobs")
       .then((res) => res.json())
-      .then((data) => {
+      .then((data) =>
+      {
         setJobs(
           data.data
             .reverse()
@@ -39,7 +42,8 @@ const CompanyJobs = (props) => {
   }, []);
 
   //slider
-  useEffect(() => {
+  useEffect(() =>
+  {
     if (swiper) {
       console.log("Swiper instance:", swiper);
       swiper.params.navigation.prevEl = prevRef.current;
@@ -50,15 +54,18 @@ const CompanyJobs = (props) => {
   }, [swiper]);
 
   // responsive swiper
-  useEffect(() => {
-    function handleResize() {
+  useEffect(() =>
+  {
+    function handleResize ()
+    {
       setWidths(window.innerWidth);
     }
 
     window.addEventListener("resize", handleResize);
     window.addEventListener("load", handleResize);
     window.addEventListener("mouseover", handleResize);
-    return () => {
+    return () =>
+    {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("load", handleResize);
       window.removeEventListener("mouseover", handleResize);
@@ -102,7 +109,8 @@ const CompanyJobs = (props) => {
           observeParents
           onSwiper={setSwiper}
           className="lg:w-9/12 md:w-11/12 mx:mx-auto h-full">
-          {jobs?.map((job) => {
+          {jobs?.map((job) =>
+          {
             return (
               <SwiperSlide
                 key={job._id}
