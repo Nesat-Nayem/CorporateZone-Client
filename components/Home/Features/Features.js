@@ -53,7 +53,7 @@ const Features = (props) =>
   return (
     <>
       <div className="space-y-7 mx-auto md:w-3/4 relative my-6 recent_header px-2 md:px-0">
-        <h3 className="text-3xl text-center after:content-[''] after:absolute after:border-t-2 after:w-16 md:after:border-cyan-500 after:left-0 after:bottom-0 after:right-40 after:top-10 after:mx-auto font-medium text-slate-700 uppercase mb-20">
+        <h3 className="text-3xl text-center after:content-[''] after:absolute after:border-t-2 after:w-16 md:after:border-cyan-500 after:left-0 after:bottom-0 after:right-40 after:top-10 after:mx-auto font-medium text-slate-700 dark:text-white uppercase mb-20">
           Features Jobs
         </h3>
 
@@ -77,7 +77,7 @@ const Features = (props) =>
             return (
               <SwiperSlide
                 key={job._id}
-                className=" bg-cover flex flex-col items-center justify-center bg-slate-100 bg-center rounded-md shadow-md relative">
+                className=" bg-cover flex flex-col items-center justify-center bg-slate-50 bg-center rounded-md shadow-md relative">
                 <img
                   className="block w-32 h-32 mx-auto "
                   src={job.companyLogo}
