@@ -77,14 +77,12 @@ export default function Navbar ()
             <Link href="/">
               <a className="flex items-center">
                 <img
-                  src="https://i.ibb.co/V29yZ2z/logo-zone.png"
-                  className="w-16"
+                  src="https://i.ibb.co/z8GVp26/corzon.png"
+                  className="w-16 h-16"
                   alt="logo"
                 />
-                <span className=" text-2xl font-extrabold  pl-3">
-                  <span className="text-pink-500">Co</span>
-                  <span className="dark:text-white text-black">rporate Zo</span>
-                  <span className="text-cyan-500">ne</span>
+                <span className=" text-2xl font-extrabold">
+                  <span className="dark:text-white text-slate-700">Corporate Zone</span>
                 </span>
               </a>
             </Link>
@@ -110,10 +108,14 @@ export default function Navbar ()
                 Jobs
               </a>
             </Link>
-           
             <Link href="/works">
               <a className="text-base font-medium text-gray-500  dark:text-white hover:text-gray-900">
                 Process
+              </a>
+            </Link>
+            <Link href="/dashboard/chats">
+              <a className="pl-4 font-light uppercase flex items-center space-x-3 font-serif pr-2 py-1  hover:text-[#42C2FF] hover:transform duration-500 hover:scale-95 border-2 border-[#42C2FF] text-white rounded-lg rounded-tl-lg bg-[#42C2FF] hover:bg-white">
+                Live Chat
               </a>
             </Link>
 
@@ -225,12 +227,17 @@ export default function Navbar ()
                     onClick={() => router.push("/dashboard/profile")}
                     className="flex items-center hover:bg-slate-100 dark:hover:text-black py-2 w-full"
                   >
-                    <img
-                      src={currentUser?.photoURL}
-                      className="w-10 h-10 mr-2 border "
-                      style={{ borderRadius: "50%" }}
-                      alt=""
-                    />
+                    {
+                      currentUser ?
+                        <img
+                          src={currentUser?.photoURL}
+                          className="w-10 h-10 mr-2 border "
+                          style={{ borderRadius: "50%" }}
+                          alt=""
+                        />
+                        :
+                        ""
+                    }
                     <p className="">
                       <p className="font-bold text-green-600 block">
                         {loggedInUser?.username}

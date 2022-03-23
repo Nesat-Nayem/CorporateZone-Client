@@ -119,8 +119,8 @@ const CompanyJobs = (props) =>
                   <Image
                     className="rounded w-full 2xl:h-56 lg:h-44 md:h-48 h-56 transition duration-300 transform group-hover:scale-125 group-hover:animate-pulse"
                     width="120"
-                    height="70"
-                    src={company}
+                    height="100"
+                    src={job?.companyLogo}
                     alt=""
                   />
                 </div>
@@ -136,7 +136,7 @@ const CompanyJobs = (props) =>
                 </span>
                 <br />
                 <p
-              
+
                   className="text-black block md:w-3/4 mx-auto mt-3 text-sm font-semibold hover:bg-[#36b9f7] p-2 rounded-lg bg-[#42C2FF] hover:text-white">
                   7 Openings
                 </p>

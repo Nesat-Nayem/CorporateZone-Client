@@ -4,13 +4,16 @@ import { useSelector } from "react-redux";
 import SingleChat from "./SingleChat";
 import { getSender } from "../../../config/ChatLogics";
 
-const ChatLayout = () => {
+const ChatLayout = () =>
+{
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
   const [users, setUsers] = useState([]);
   const [selectedChat, setSelectedChat] = useState(null);
 
-  useEffect(() => {
-    const fetchUsers = async () => {
+  useEffect(() =>
+  {
+    const fetchUsers = async () =>
+    {
       const response = await fetch(
         "https://murmuring-spire-15534.herokuapp.com/users"
       );
@@ -28,7 +31,7 @@ const ChatLayout = () => {
       style={{ height: "86vh" }}
     >
       {/* // chats names */}
-      <div className=" chats xl:col-span-3 md:col-span-4 w-full  h-full overflow-y-scroll ">
+      <div className=" chats xl:col-span-3 md:col-span-4 w-full h-80 md:h-full overflow-y-scroll ">
         <Chats
           setSelectedChat={setSelectedChat}
           loggedInUser={loggedInUser}

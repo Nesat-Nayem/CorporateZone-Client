@@ -4,7 +4,8 @@ import Badge from "../Candidate/skillTest/Badge";
 import BadgeShow from "../Candidate/skillTest/BadgeShow";
 import Chart from "../Chart/Chart";
 
-const ProfileView = ({ role, loggedInUser }) => {
+const ProfileView = ({ role, loggedInUser }) =>
+{
   const router = useRouter();
   console.log(loggedInUser);
   return (
@@ -46,7 +47,7 @@ const ProfileView = ({ role, loggedInUser }) => {
             </div>
             <div className="md:px-20 lg:flex lg:flex-col md:flex md:flex-col">
               {/* username */}
-              <div className="w-[500px]">
+              <div className="md:w-[500px] w-full">
                 <p className="font-semibold text-sm text-slate-600 py-1">
                   Username:
                 </p>

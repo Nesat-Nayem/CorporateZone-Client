@@ -4,7 +4,8 @@ import job from "../../images/job_hunt.svg";
 import Image from "next/image";
 import Link from "next/link";
 
-const SigninForm = () => {
+const SigninForm = () =>
+{
   const { logInWithEmailAndPassword } = useFirebase();
 
   const {
@@ -12,7 +13,8 @@ const SigninForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
+  const onSubmit = (data) =>
+  {
     logInWithEmailAndPassword(data.email, data.password);
     console.log(data.email, data.password);
 
@@ -24,7 +26,7 @@ const SigninForm = () => {
         <div className="flex items-center min-h-screen bg-gray-50">
           <div className="flex-1 h-full max-w-4xl mx-auto bg-white rounded-lg shadow-xl">
             <div className="flex flex-col md:flex-row">
-              <div className="h-32 md:h-auto md:w-1/2 md:order-last">
+              <div className="h-32 md:h-auto md:w-1/2 md:order-last mb-16">
                 <Image
                   className="object-cover w-full h-full"
                   src={job}
