@@ -29,45 +29,11 @@ const Company = () => {
     }
   };
 
-  // const companies = [
-  //   {
-  //     logo: "https://demoapus2.com/entaro/wp-content/uploads/2017/12/c1.jpg",
-  //     name: "Akshay INC.",
-  //     position: "IT Project Manager",
-  //     address: " 12 Lane No 5 Jain ",
-  //     website: "www.abc.com",
-  //     salary: "$15k - $25K",
-  //   },
-  //   {
-  //     logo: "https://demoapus2.com/entaro/wp-content/uploads/2017/12/c1.jpg",
-  //     name: "Akshay INC.",
-  //     position: "IT Project Manager",
-  //     address: " 12 Lane No 5 Jain ",
-  //     website: "www.abc.com",
-  //     salary: "$15k - $25K",
-  //   },
-  //   {
-  //     logo: "https://demoapus2.com/entaro/wp-content/uploads/2017/12/c1.jpg",
-  //     name: "Akshay INC.",
-  //     position: "IT Project Manager",
-  //     address: " 12 Lane No 5 Jain i",
-  //     website: "www.abc.com",
-  //     salary: "$15k - $25K",
-  //   },
-  //   {
-  //     logo: "https://demoapus2.com/entaro/wp-content/uploads/2017/12/c1.jpg",
-  //     name: "Akshay INC.",
-  //     position: "IT Project Manager",
-  //     address: " 12 Lane No 5 Jain ",
-  //     website: "www.abc.com",
-  //     salary: "$15k - $25K",
-  //   },
-  // ];
 
   return (
     <div>
       <div className="flex flex-col">
-        <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div className="overflow-x-auto sm:mx-6 lg:mx-8">
           <div className="inline-block py-2 min-w-full sm:px-6 lg:px-8">
             <div className="overflow-hidden shadow-md sm:rounded-lg">
               <table className="min-w-full">
