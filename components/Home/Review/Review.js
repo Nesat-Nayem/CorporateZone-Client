@@ -71,14 +71,13 @@ SwiperCore.use([Navigation, Pagination, Autoplay]);
 const Review = () =>
 {
   return (
-    <section className="contrl max-w-screen-xl mx-auto px-6 pb-24 mt-16">
+    <section className="max-w-screen-xl mx-auto px-6 pb-24 mt-10">
       {/* costom */}
 
-      <div className="flex justify-center items-center flex-col">
-        <h1 className="font-logo text-gray-800 dark:text-white text-3xl font-semibold">
+      <div className="flex justify-center items-center flex-col relative">
+        <h1 className="font-logo text-gray-800 dark:text-white text-3xl font-medium after:content-[''] after:absolute after:border-t-2 after:w-16 after:border-cyan-500 after:top-10 after:left-32 md:after:left-1/2">
           Testimonials
         </h1>
-        <div className="h-1 w-24 bg-gray-400 rounded-full"></div>
       </div>
 
       {/* costom */}

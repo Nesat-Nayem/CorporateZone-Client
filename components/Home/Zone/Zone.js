@@ -9,11 +9,13 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
-const Zone = () => {
+const Zone = () =>
+{
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
   const router = useRouter();
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     AOS.init();
   }, []);
   return (
@@ -22,7 +24,7 @@ const Zone = () => {
         <div className="md:grid md:grid-cols-3 gap-5  ">
           <div
             className="dark:bg-[#ebf8fe] bg-[#e8f8fd] flex justify-center items-center rounded-2xl shadow-xl w-max-[300px] h-[150px]"
-            // className={card.zone_card}
+          // className={card.zone_card}
           >
             <h4 className="text-md p-2 text-center font-medium text-slate-800 dark:text-white bg-[#ebf8fe] dark:bg-slate-700 py-2">
               Attract & Manage The Right Talent
@@ -35,7 +37,7 @@ const Zone = () => {
           </div>
           <div
             className="dark:bg-[#ebf8fe] bg-[#e8f8fd] flex justify-center items-center rounded-2xl shadow-xl w-max-[300px] h-[150px]"
-            // className={card.zone_card}
+          // className={card.zone_card}
           >
             <h4 className="text-md p-2 text-center font-medium text-slate-800 dark:text-white bg-[#ebf8fe] dark:bg-slate-700 ">
               Highly Structured Candidate Pipeline
@@ -60,7 +62,7 @@ const Zone = () => {
           </div>
           <div
             className="dark:bg-[#ebf8fe] bg-[#e8f8fd] flex justify-center items-center rounded-2xl shadow-xl w-max-[300px] h-[150px]"
-            // className={card.zone_card}
+          // className={card.zone_card}
           >
             <h4 className="text-md p-2 text-center font-medium text-slate-800 dark:text-white bg-[#ebf8fe] dark:bg-slate-700 py-2">
               User Friendly Process & Easy Communication
@@ -73,7 +75,7 @@ const Zone = () => {
           </div>
           <div
             className="dark:bg-[#ebf8fe] bg-[#e8f8fd] flex justify-center items-center rounded-2xl shadow-xl w-max-[300px] h-[150px]"
-            // className={card.zone_card}
+          // className={card.zone_card}
           >
             <h4 className="text-md p-2 text-center font-medium text-slate-800 dark:text-white bg-[#ebf8fe] dark:bg-slate-700 py-2">
               Remotely Hiring Ready For Candidates
@@ -87,8 +89,8 @@ const Zone = () => {
           data-aos-offset="300"
           data-aos-easing="ease-in-sine">
           <div className="">
-            <h3 className=" xl:text-5xl md:text-3xl text-xl font-bold leading-snug dark:text-white text-slate-800">
-              Why Does Your Company Need CorporateZone?
+            <h3 className=" xl:text-5xl md:text-3xl text-xl font-bold leading-snug dark:text-white text-slate-800 text-left">
+              Why &nbsp;&nbsp;Does &nbsp;&nbsp;Your Company &nbsp;&nbsp;Need CorporateZone?
             </h3>
             <p className="text-gray-500 dark:text-[#eee9e9]  leading-7 mt-5">
               Advanced Recruiting Solution With Everything You Need To

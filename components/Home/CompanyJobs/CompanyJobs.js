@@ -75,7 +75,7 @@ const CompanyJobs = (props) =>
   return (
     <div className="my-20">
       <div className="flex flex-wrap justify-center md:justify-between items-center md:w-8/12 mx-auto company_heading relative my-20 px-3">
-        <h3 className="text-3xl after:content-[''] after:ml-0.5 after:text-red-500 after:absolute after:border-t-2 after:w-20 after: after:border-cyan-500 after:top-11 after:left-4 after:bottom-0 after:right-0 font-medium text-slate-700 dark:text-white">
+        <h3 className="text-3xl after:content-[''] after:ml-0.5 after:text-red-500 after:absolute after:border-t-2 after:w-20 after: after:border-cyan-500 after:top-10 after:left-1/4 md:after:left-10 after:bottom-0 after:right-0 font-medium text-slate-700 dark:text-white">
           Top Hiring Companies
         </h3>
         <ul className="flex md:float-right items-center mt-6 md:ml-0 md:mt-0 ">
