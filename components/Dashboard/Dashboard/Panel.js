@@ -25,6 +25,7 @@ const Panel = () => {
     fetch("https://murmuring-spire-15534.herokuapp.com/jobs")
       .then((res) => res.json())
       .then((data) => {
+        setJobs(data.data)
         setpostJobs(
           data.data.filter(
             (crrElm) => crrElm.companyEmail === loggedInUser?.email
@@ -59,12 +60,10 @@ const Panel = () => {
       setMyJobs(data.reverse().slice(0, 5));
     };
     fetchData();
-  }, [myJobs, loggedInUser]);
+  }, [ loggedInUser]);
 
   const latest = jobs.slice(0, 3).reverse();
   const company = jobs.slice(0, 5).reverse();
-
-
   const applicant = candidate
     .map((e) => e.username)
     .reverse()
@@ -79,6 +78,15 @@ const Panel = () => {
       {loggedInUser?.role === "admin" && (
         <div>
           <div className="feature_box flex flex-wrap justify-center items-center gap-5 my-5">
+            <div className="spam w-60 shadow-lg rounded-md flex justify-evenly items-center bg-[#d9effa] py-3">
+              <div className="bg-[#ebf8fe]">
+                <FcCollect className="text-7xl" />
+              </div>
+              <div className="text-center">
+                <h3 className="text-xl font-medium">{matchJobs?.length}</h3>
+                <p>Applicant</p>
+              </div>
+            </div>
             <div className="job w-60 shadow-lg rounded-md flex justify-evenly items-center bg-[#d9effa] py-3">
               <div className="bg-[#ebf8fe]">
                 <FcList className="text-7xl" />
@@ -179,7 +187,10 @@ const Panel = () => {
                     <tbody>
                       {myJobs?.map((job) => (
                         <>
-                          <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                          <tr
+                            key={job.id}
+                            className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                          >
                             <td className="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
                               {job?.candidateEmail}
                             </td>
@@ -260,7 +271,10 @@ const Panel = () => {
                     <tbody>
                       {latest?.map((job) => (
                         <>
-                          <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                          <tr
+                            key={job.id}
+                            className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                          >
                             <td className="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
                               {job.jobTitle}
                             </td>
@@ -301,7 +315,10 @@ const Panel = () => {
             <div className="flex flex-wrap justify-evenly items-center gap-5">
               {users.map((user) => {
                 return (
-                  <div className="job w-60 shadow-lg rounded-md flex flex-col flex-wrap justify-evenly items-center bg-[#d9effa] py-3">
+                  <div
+                    key={user.id}
+                    className="job w-60 shadow-lg rounded-md flex flex-col flex-wrap justify-evenly items-center bg-[#d9effa] py-3"
+                  >
                     <div>
                       <img
                         className="ring-2 ring-cyan-600 rounded-full w-20 h-20"
@@ -421,7 +438,10 @@ const Panel = () => {
                     <tbody>
                       {latest?.map((job) => (
                         <>
-                          <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                          <tr
+                            key={job.id}
+                            className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                          >
                             <td className="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
                               {job.jobTitle}
                             </td>
@@ -461,7 +481,10 @@ const Panel = () => {
             <div className="flex flex-wrap justify-evenly items-center gap-5">
               {users.map((user) => {
                 return (
-                  <div className="job w-60 shadow-lg rounded-md flex flex-col flex-wrap justify-evenly items-center bg-[#d9effa] py-3">
+                  <div
+                    key={user.id}
+                    className="job w-60 shadow-lg rounded-md flex flex-col flex-wrap justify-evenly items-center bg-[#d9effa] py-3"
+                  >
                     <div>
                       <img
                         className="ring-2 rounded-full ring-slate-600 w-20 h-20"
@@ -484,7 +507,7 @@ const Panel = () => {
                 );
               })}
             </div>
-          </div>{" "}
+          </div>
         </div>
       )}
       {/* Candidate */}
@@ -571,7 +594,10 @@ const Panel = () => {
                     <tbody>
                       {latest?.map((job) => (
                         <>
-                          <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                          <tr
+                            key={job.id}
+                            className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                          >
                             <td className="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
                               {job.jobTitle}
                             </td>
@@ -612,7 +638,10 @@ const Panel = () => {
             <div className="flex flex-wrap justify-evenly items-center gap-5">
               {company.map((details) => {
                 return (
-                  <div className="job w-60 shadow-lg rounded-md flex flex-col flex-wrap justify-evenly items-center bg-[#d9effa] py-3">
+                  <div
+                    key={details.id}
+                    className="job w-60 shadow-lg rounded-md flex flex-col flex-wrap justify-evenly items-center bg-[#d9effa] py-3"
+                  >
                     <div>
                       <img
                         className="ring-2 ring-cyan-600 rounded-full w-20 h-20"
