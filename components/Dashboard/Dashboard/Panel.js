@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { FaRegMoneyBillAlt } from 'react-icons/fa';
-import { FcBiotech, FcBusinessman, FcList, FcManager, FcPortraitMode, FcReadingEbook, FcRemoveImage } from 'react-icons/fc';
+import { FcBiotech, FcBusinessman, FcGenericSortingDesc, FcList, FcManager, FcPortraitMode, FcReadingEbook, FcRemoveImage } from 'react-icons/fc';
 import { GoLocation } from 'react-icons/go';
 import { useSelector } from 'react-redux';
 import { handleDelete } from '../Admin/Jobs';
@@ -15,6 +15,7 @@ const Panel = () => {
   // const [remove, setRemove] = useState([]);
   const [myJobs, setMyJobs] = useState([]);
   const [users, setUsers] = useState([]);
+   const [postJobs, setpostJobs] = useState([]);
   const router = useRouter()
 
   useEffect(() => {
@@ -23,6 +24,11 @@ const Panel = () => {
       .then((data) => {
         setJobs(data.data);
         console.log(data.data.slice(0, 3).reverse());
+          setpostJobs(
+            data.data.filter(
+              (crrElm) => crrElm.companyEmail === loggedInUser?.email
+            )
+          );
       });
   }, []);
 
@@ -327,15 +333,15 @@ const Panel = () => {
       {loggedInUser?.role === "recruiter" && (
         <div>
           <div className="feature_box flex flex-wrap justify-center items-center gap-5 my-5">
-            {/* <div className="candidate w-60 shadow-lg rounded-md flex justify-evenly items-center bg-[#d9effa] py-3">
+            <div className="candidate w-60 shadow-lg rounded-md flex justify-evenly items-center bg-[#d9effa] py-3">
               <div className="bg-[#ebf8fe]">
-                <FcReadingEbook className="text-7xl" />
+                <FcGenericSortingDesc className="text-7xl" />
               </div>
               <div className="text-center">
-                <h3 className="text-xl font-medium">{myJobs.length}</h3>
-                <p>Applied Jobs</p>
+                <h3 className="text-xl font-medium">{postJobs?.length}</h3>
+                <p>Posted Jobs</p>
               </div>
-            </div> */}
+            </div>
             <div className="candidate w-60 shadow-lg rounded-md flex justify-evenly items-center bg-[#d9effa] py-3">
               <div className="bg-[#ebf8fe]">
                 <FcReadingEbook className="text-7xl" />
@@ -611,7 +617,10 @@ const Panel = () => {
                       <h3>{details?.companyName}</h3>
                       <p>{details?.businessType}</p>
                       <span>{details?.companySize}</span> <br />
-                      <button onClick={handleJobs} className="bg-cyan-500 px-3 py-1 rounded-lg text-white my-3">
+                      <button
+                        onClick={handleJobs}
+                        className="bg-cyan-500 px-3 py-1 rounded-lg text-white my-3"
+                      >
                         View Profile
                       </button>
                     </div>
