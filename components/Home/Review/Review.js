@@ -93,22 +93,24 @@ const Review = () =>
         grabCursor={true}
         slidesPerView={1}
         speed={600}
-        spaceBetween={20}>
+        spaceBetween={20}
+      >
         {fackreview.map((data) => (
           <SwiperSlide key={data._id}>
             <Bounce bottom>
               <div className="container md:px-5 py-12  mx-auto">
                 <div
                   className={card.zone_card}
-                  style={{ width: "60%", height: "30%" }}>
-                  <div className=" lg:w-3/4 w-full mx-auto bg-white dark:bg-[#46bfeb7a]  text-center  p-4 shadow-lg rounded-lg ">
+                  style={{ width: "60%", height: "30%" }}
+                >
+                  <div className=" lg:w-3/4 w-full mx-auto bg-white dark:bg-[#ebf8fe]  text-center  p-4 shadow-lg rounded-lg ">
                     <img
                       className="w-12 mx-auto mb-4"
                       src="https://i.ibb.co/99dfqmz/quote.png"
                       alt="quotes"
                     />
 
-                    <p className="leading-relaxed poppins text-slate-700 dark:text-white">
+                    <p className="leading-relaxed poppins text-slate-700 ">
                       {data.review}
                     </p>
                     <span className="inline-block h-1 w-10 rounded bg-gray-400 mt-8 mb-6"></span>

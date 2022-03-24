@@ -21,11 +21,6 @@ const TopHeader = () =>
         <div className="lg:flex flex-col rounded-bl-lg rounded-tl-lg absolute top-16 ">
           {currentUser ? (
             <>
-              {/* <button>
-                <a className="font-bold uppercase flex items-center space-x-3 px-10 font-serif py-1 hover:bg-[#42C2FF] hover:text-white duration-500 border-2 border-[#42C2FF] text-[#42C2FF] rounded-bl-lg rounded-tl-lg ">
-                  <Toggle />
-                </a>
-              </button> */}
             </>
           ) : (
             <>
