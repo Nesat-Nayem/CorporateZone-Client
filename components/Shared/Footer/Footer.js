@@ -79,11 +79,11 @@ const Footer = () =>
             </form>
           </div>
         </div>
-        <div className="mx-6 py-10 text-center md:text-left">
+        <div className="mx-6 pt-10 text-center md:text-left">
           <div className="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-sm space-y-3">
               <Link href="/">
-                <a className="flex items-center">
+                <a className="flex justify-center md:justify-start items-center">
                   <img
                     src="https://i.ibb.co/z8GVp26/corzon.png"
                     className="w-12 h-12"
@@ -166,8 +166,8 @@ const Footer = () =>
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center mb-3">
-          <div className="flex flex-wrap flex-row items-center text-gray-500 dark:text-gray-400">
+        <div className="flex flex-col md:flex-row justify-between items-center pb-5 border-b border-gray-300">
+          <div className="flex flex-wrap flex-row items-center text-gray-500 dark:text-gray-400 my-5 md:my-0">
             <p className="ml-3 text-xs md:text-sm">
               <Link href="/about">
                 <a className="">About us</a>
@@ -185,16 +185,14 @@ const Footer = () =>
               </Link>
             </p>
           </div>
-          <div className="my-2">
+          <div className="mb-2">
             <Image src={stripe} width={300} height={80} alt="" />
           </div>
         </div>
 
-        <div className="text-center py-3">
-
+        <div className="text-center py-5">
           <p
-            className=" font-semibold text-slate-700 dark:text-white"
-
+            className=" font-semibold text-slate-600 dark:text-white"
           >
             &copy; 2022, Code Express. All Rights Reserved.
           </p>

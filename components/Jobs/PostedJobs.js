@@ -151,7 +151,7 @@ const PostedJobs = (props) =>
             <button
               key={number}
               onClick={() => paginate(number)}
-              className="text-2xl bg-slate-500 hover:bg-slate-700 text-white my-5 rounded-full mx-1 px-3 py-0.5"
+              className="text-2xl bg-slate-500 hover:bg-slate-700 dark:hover:bg-slate-400 text-white my-5 rounded-full mx-1 px-3 py-0.5"
             >
               {number}
             </button>

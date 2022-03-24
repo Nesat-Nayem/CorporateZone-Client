@@ -16,7 +16,7 @@ const HeroArea = () =>
     {
       id: "34lkdasfj",
       title: "Find Jobs & Career Opportunities",
-      motto:" Browse 3,000 + Jobs",
+      motto: " Browse 3,000 + Jobs",
       description:
         "Corporate zone is one of newest and fastest growing job portal where you can advertise jobs and search for resumes. They are an integral part of almost every hiring process and using them effectively will translate into qualified candidates for relatively low costs.",
       image:
@@ -26,7 +26,7 @@ const HeroArea = () =>
     {
       id: "34lkdadsfasfj",
       title: "Build Your Resume",
-      motto:"We provide standard resume format",
+      motto: "We provide standard resume format",
       description:
         "We provide you a custom resume builder from where you can build your own resume without have any trouble of the format. We provide you one of the world-class resume format which will help help you to land your dream job. ",
       image: "https://i.postimg.cc/SKVC23pJ/build-removebg-preview.png",
@@ -34,7 +34,7 @@ const HeroArea = () =>
     {
       id: "34lk34sfasfj",
       title: "Live Text Chat",
-      motto:"Real time text chat for recruitment process",
+      motto: "Real time text chat for recruitment process",
       description:
         "As a job portal, we provide a  live text chat functionality. It can be used for recruitment process or to hang out with others. You can easily build your connection bigger to make a chat with them or just can make a chat with company HR or a candidate.",
       image:
@@ -43,7 +43,7 @@ const HeroArea = () =>
     {
       id: "34lkdad67fasfj",
       title: "Skill Assessment",
-      motto:"Candidate can take their skill to the next level",
+      motto: "Candidate can take their skill to the next level",
       description:
         "As a candidate, you always have to prove yourself that you are the best. To make attention to the company, you can take a skill assessment,if you pass that will show in your profile that will help you to land your job.",
       image: "https://tailwindcomponents.com/svg/website-designer-bro.svg",
@@ -52,9 +52,9 @@ const HeroArea = () =>
     {
       id: "34lkdatrd67fasfj",
       title: "Live Video Chat",
-      motto:"For final recruitment process we provide real time video chat communication",
+      motto: "We provide live video chat for the final recruitment",
       description:
-        "For recruitment process recruiter and candidate can communicate each other through our video chat system. It helps both to create a mutual platform to get an easier recruitment process.",
+        "For recruitment process recruiter and candidate can communicate each other through our video chat system. It helps both to create a mutual platform to get an easier recruitment process. It's easy to use for both.",
       image: "https://i.ibb.co/Bs1VYzP/Video-Chat-Woman-Man-PNG.png",
       // image: "https://i.postimg.cc/LsSG6YHm/exam-removebg-preview.png",
     }
