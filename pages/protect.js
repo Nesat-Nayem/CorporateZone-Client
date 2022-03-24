@@ -20,15 +20,12 @@ import { useEffect } from "react";
 //   }
 
 //Protect Route
-function withProtected (Component)
-{
-  return function WithProtected (props)
-  {
+function withProtected(Component) {
+  return function WithProtected(props) {
     const user = useSelector((state) => state.user.currentUser);
     const router = useRouter();
 
-    useEffect(() =>
-    {
+    useEffect(() => {
       if (!user) {
         router.replace("/signin");
         return (

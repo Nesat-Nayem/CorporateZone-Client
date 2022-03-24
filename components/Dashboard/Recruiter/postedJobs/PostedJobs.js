@@ -24,6 +24,24 @@ const PostedJobs = ({ jobs }) => {
     fetchData();
   }, []);
 
+  // delete job
+  const handleDelete = (id) => {
+    const proccess = window.confirm("Are You Sure You Want To Delete");
+    if (proccess) {
+      fetch(`https://murmuring-spire-15534.herokuapp.com/jobs/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data._id) {
+            alert("Deleted Successfully");
+            const remaining = postJobs.filter((ema) => ema._id !== id);
+            setJobs(remaining);
+          }
+        });
+    }
+  };
+
   console.log(postJobs);
   // handling error if no jobs found
   if (!postJobs.length) {
@@ -108,6 +126,7 @@ const PostedJobs = ({ jobs }) => {
                   </td>
                   <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                     <button
+                      onClick={() => handleDelete(job._id)}
                       type="button"
                       className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
                     >
