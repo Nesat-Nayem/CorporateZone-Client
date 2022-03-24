@@ -70,7 +70,10 @@ export default function Navbar ()
   };
 
   return (
-    <Popover className="">
+    <Popover
+      className="fixed top-0 right-0 left-0 bg-[#ebf8fe] dark:bg-slate-700"
+      id="scroll"
+    >
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex relative justify-between items-center   py-6 lg:justify-start md:space-x-10">
           <div className="flex justify-start md:w-0 md:flex-1">
@@ -78,11 +81,13 @@ export default function Navbar ()
               <a className="flex items-center">
                 <img
                   src="https://i.ibb.co/z8GVp26/corzon.png"
-                  className="w-12 h-12"
+                  className="w-12 h-10"
                   alt="logo"
                 />
                 <span className=" text-xl font-extrabold">
-                  <span className="dark:text-white text-slate-700 whitespace-nowrap">CorporateZone</span>
+                  <span className="dark:text-white text-slate-700 whitespace-nowrap">
+                    CorporateZone
+                  </span>
                 </span>
               </a>
             </Link>
@@ -227,17 +232,16 @@ export default function Navbar ()
                     onClick={() => router.push("/dashboard/profile")}
                     className="flex items-center hover:bg-slate-100 dark:hover:text-black py-2 w-full"
                   >
-                    {
-                      currentUser ?
-                        <img
-                          src={currentUser?.photoURL}
-                          className="w-10 h-10 mr-2 border "
-                          style={{ borderRadius: "50%" }}
-                          alt=""
-                        />
-                        :
-                        ""
-                    }
+                    {currentUser ? (
+                      <img
+                        src={currentUser?.photoURL}
+                        className="w-10 h-10 mr-2 border "
+                        style={{ borderRadius: "50%" }}
+                        alt=""
+                      />
+                    ) : (
+                      ""
+                    )}
                     <p className="">
                       <p className="font-bold text-green-600 block">
                         {loggedInUser?.username}
