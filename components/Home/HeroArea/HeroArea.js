@@ -104,7 +104,7 @@ const HeroArea = () =>
                     onClick={() => router.push("/jobpost")}
                     className="pl-4 font-bold uppercase flex items-center space-x-3 pr-3 py-3  hover:text-[#42C2FF] text-white hover:transform duration-500 hover:scale-105 border-2 border-[#42C2FF] rounded-lg bg-[#42C2FF] hover:bg-white ml-5"
                   >
-                    Post a job{" "}
+                    Post a job
                     <BiRightArrowAlt className="font-medium text-2xl" />
                   </button>
                 )}

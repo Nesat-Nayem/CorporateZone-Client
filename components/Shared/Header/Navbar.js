@@ -70,7 +70,7 @@ export default function Navbar ()
   };
 
   return (
-    <Popover className="relative ">
+    <Popover className="">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex relative justify-between items-center   py-6 lg:justify-start md:space-x-10">
           <div className="flex justify-start md:w-0 md:flex-1">
