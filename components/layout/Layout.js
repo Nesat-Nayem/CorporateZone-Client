@@ -30,6 +30,15 @@ const Layout = ({ title, children }) => {
       <ThemeProvider>
         <Head>
           <title>{title}</title>
+          <link
+            rel="icon"
+            type="image/x-icon"
+            href="https://i.ibb.co/6sPtZFV/Logo-Maker-Ca-1647832483138-removebg-preview.png"
+          ></link>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;900&display=swap"
+            rel="stylesheet"
+          ></link>
         </Head>
         <main className="bg-[#ebf8fe] dark:bg-slate-700">{children}</main>
       </ThemeProvider>

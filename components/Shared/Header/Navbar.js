@@ -103,12 +103,12 @@ export default function Navbar() {
             className="hidden md:flex items-center space-x-10 uppercase relative"
           >
             <Link href="/jobs">
-              <a className="text-base font-medium text-gray-500 dark:text-white hover:text-gray-900 dark:hover:text-gray-300">
+              <a className="text-base font-medium text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-300">
                 Jobs
               </a>
             </Link>
             <Link href="/works">
-              <a className="text-base font-medium text-gray-500  dark:text-white hover:text-gray-900">
+              <a className="text-base font-medium text-gray-600 dark:text-white hover:text-gray-900">
                 Process
               </a>
             </Link>

@@ -1,14 +1,24 @@
-import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
-import { FaRegMoneyBillAlt } from 'react-icons/fa';
-import { FcBiotech, FcBusinessman, FcCollect, FcGenericSortingDesc, FcList, FcManager, FcPortraitMode, FcReadingEbook, FcRemoveImage } from 'react-icons/fc';
-import { GoLocation } from 'react-icons/go';
-import { useSelector } from 'react-redux';
-import { handleDelete } from '../Admin/Jobs';
-import BadgeShow from '../Candidate/skillTest/BadgeShow';
+import cogoToast from "cogo-toast";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
+import { FaRegMoneyBillAlt } from "react-icons/fa";
+import {
+  FcBiotech,
+  FcBusinessman,
+  FcCollect,
+  FcGenericSortingDesc,
+  FcList,
+  FcManager,
+  FcPortraitMode,
+  FcReadingEbook,
+  FcRemoveImage,
+} from "react-icons/fc";
+import { GoLocation } from "react-icons/go";
+import { useSelector } from "react-redux";
+import { handleDelete } from "../Admin/Jobs";
+import BadgeShow from "../Candidate/skillTest/BadgeShow";
 
-const Panel = () =>
-{
+const Panel = () => {
   const [jobs, setJobs] = useState([]);
   const [admin, setAdmin] = useState([]);
   const [recruiter, setRecruiter] = useState([]);
@@ -18,17 +28,14 @@ const Panel = () =>
   const [users, setUsers] = useState([]);
   const [postJobs, setpostJobs] = useState([]);
   const [matchJobs, setMatchJobs] = useState([]);
-  const router = useRouter()
+  const router = useRouter();
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
 
-
-  useEffect(() =>
-  {
+  useEffect(() => {
     fetch("https://murmuring-spire-15534.herokuapp.com/jobs")
       .then((res) => res.json())
-      .then((data) =>
-      {
-        setJobs(data.data)
+      .then((data) => {
+        setJobs(data.data);
         setpostJobs(
           data.data.filter(
             (crrElm) => crrElm.companyEmail === loggedInUser?.email
@@ -41,13 +48,16 @@ const Panel = () =>
       });
   }, [postJobs, loggedInUser]);
   //users
-  useEffect(() =>
-  {
+  useEffect(() => {
     fetch("https://murmuring-spire-15534.herokuapp.com/users")
       .then((res) => res.json())
-      .then((data) =>
-      {
-        setUsers(data.filter((e) => e.role === "candidate").slice(0, 5).reverse())
+      .then((data) => {
+        setUsers(
+          data
+            .filter((e) => e.role === "candidate")
+            .slice(0, 5)
+            .reverse()
+        );
         setCandidate(data.filter((e) => e.role === "candidate"));
         setAdmin(data.filter((e) => e.role === "admin"));
         setRecruiter(data.filter((e) => e.role === "recruiter"));
@@ -55,14 +65,10 @@ const Panel = () =>
   }, [users, loggedInUser]);
 
   // fetching data
-  useEffect(() =>
-  {
-    const fetchData = async () =>
-    {
+  useEffect(() => {
+    const fetchData = async () => {
       const data = await (
-        await fetch(
-          `https://murmuring-spire-15534.herokuapp.com/appliedJobs`
-        )
+        await fetch(`https://murmuring-spire-15534.herokuapp.com/appliedJobs`)
       ).json();
       setMyJobs(data.reverse().slice(0, 5));
     };
@@ -75,10 +81,9 @@ const Panel = () =>
     .map((e) => e.username)
     .reverse()
     .slice(0, 1);
-  const handleJobs = () =>
-  {
-    router.push("/jobs");
-  }
+  const handleJobs = () => {
+    cogoToast.warn("Profile work on Going", { position: "bottom-right" });
+  };
   return (
     <div>
       {/* Admin */}
@@ -321,8 +326,7 @@ const Panel = () =>
             </h3>
 
             <div className="flex flex-wrap justify-evenly items-center gap-5">
-              {users.map((user) =>
-              {
+              {users.map((user) => {
                 return (
                   <div
                     key={user.id}
@@ -488,8 +492,7 @@ const Panel = () =>
               New applicants
             </h3>
             <div className="flex flex-wrap justify-evenly items-center gap-5">
-              {users.map((user) =>
-              {
+              {users.map((user) => {
                 return (
                   <div
                     key={user.id}
@@ -524,7 +527,6 @@ const Panel = () =>
       {loggedInUser?.role === "candidate" && (
         <div>
           <div className="feature_box flex flex-wrap justify-center items-center gap-5 my-5">
-
             <div className="candidate w-60 shadow-lg rounded-md flex justify-evenly items-center bg-[#d9effa] py-3">
               <div className="bg-[#ebf8fe]">
                 <FcBusinessman className="text-7xl" />
@@ -647,8 +649,7 @@ const Panel = () =>
             </h3>
 
             <div className="flex flex-wrap justify-evenly items-center gap-5">
-              {company.map((details) =>
-              {
+              {company.map((details) => {
                 return (
                   <div
                     key={details.id}
