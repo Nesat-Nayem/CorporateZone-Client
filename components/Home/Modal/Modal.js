@@ -27,8 +27,8 @@ const Modal = ({ setOpenModal }) =>
                         <div className="flex justify-center items-center">
                             <Image src="https://i.ibb.co/jk2pq6t/candidate-w.png" alt="candidate" width={80} height={100} />
                         </div>
-                        <ul className="sm:w-40 w-auto h-auto">
-                            <li className="flex justify-center lg:text-sm text-xs">
+                        <ul className="sm:w-40 w-auto h-auto space-y-3 text-slate-900 ">
+                            <li className="flex justify-center lg:text-sm text-xs ">
                                 <CheckCircle className="text-xl text-white mx-1" />
                                 Search for the right company
                             </li>
@@ -52,11 +52,11 @@ const Modal = ({ setOpenModal }) =>
                     <div className="mt-10 hidden md:block">
                         <Image src="https://i.ibb.co/XSTCBWV/hiring.png" alt="job offer" width={350} height={300} />
                     </div>
-                    <div className="border-l-2 rounded-full flex flex-col justify-center items-center">
+                    <div className="border-l-2 rounded-full flex flex-col justify-center items-center ">
                         <div className="flex justify-center items-center">
                             <Image src="https://i.ibb.co/s2FgzMm/recruiter-w.png" alt="recruiter" width={100} height={100} />
                         </div>
-                        <ul className="sm:w-40 w-auto h-auto">
+                        <ul className="sm:w-40 w-auto h-auto space-y-3">
                             <li className="flex justify-center lg:text-sm text-xs">
                                 <CheckCircle className="text-xl text-white mx-1" />
                                 Show off your employer brand
