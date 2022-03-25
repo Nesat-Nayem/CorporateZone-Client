@@ -1,8 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment, useEffect } from "react";
 import { Popover, Transition } from "@headlessui/react";
-import
-{
+import {
   ChartBarIcon,
   MenuIcon,
   RefreshIcon,
@@ -32,19 +31,15 @@ const pages = [
     href: "/works",
     icon: ShieldCheckIcon,
   },
-
 ];
 
-export default function Navbar ()
-{
+export default function Navbar() {
   const currentUser = useSelector((state) => state.user.currentUser);
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
   const [notifications, setNotifications] = useState([]);
 
-  useEffect(() =>
-  {
-    const fetchNotifications = async () =>
-    {
+  useEffect(() => {
+    const fetchNotifications = async () => {
       const res = await fetch(
         "https://murmuring-spire-15534.herokuapp.com/jobs/notifyJobs"
       );
@@ -52,7 +47,7 @@ export default function Navbar ()
       setNotifications(data);
     };
     fetchNotifications();
-  }, [notifications]);
+  }, [loggedInUser?.role === "candidate"]);
 
   const router = useRouter();
 
@@ -63,8 +58,7 @@ export default function Navbar ()
   const { logOut } = useFirebase();
 
   // log out handler
-  const logOutHandler = () =>
-  {
+  const logOutHandler = () => {
     dispatch(logOut);
     setIsOpen(!isOpen);
   };

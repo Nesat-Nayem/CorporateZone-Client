@@ -2,6 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
+import Preloader from "../components/preloader/Preloader";
 
 // // PublicRoute
 // export function withPublic(Component) {
@@ -23,24 +24,19 @@ import { useEffect } from "react";
 function withProtected(Component) {
   return function WithProtected(props) {
     const user = useSelector((state) => state.user.currentUser);
+    const loading = useSelector((state) => state.user.loading);
     const router = useRouter();
 
-    useEffect(() => {
+    if (loading) {
+      return <Preloader />;
+    } else {
       if (!user) {
         router.replace("/signin");
-        return (
-          <div>
-            {
-              <div className="flex justify-center items-center mt-48">
-                <div className="animate-spin rounded-full h-32 w-32 border-b-4 border-cyan-700"></div>
-              </div>
-            }
-          </div>
-        );
+        return <Preloader />;
+      } else {
+        return <Component user={user} {...props} />;
       }
-    }, []);
-
-    return <Component user={user} {...props} />;
+    }
   };
 }
 
