@@ -1,5 +1,4 @@
-const Preloader = () =>
-{
+const Preloader = () => {
   return (
     <>
       <main className="w-screen h-screen bg-white flex flex-col justify-center items-center">

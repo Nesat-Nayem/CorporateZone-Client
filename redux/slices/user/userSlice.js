@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const userSlice = createSlice({
   name: "user",
   initialState: {
-    loading: false,
+    loading: true,
     currentUser: null,
     error: null,
     loggedInUser: null,
@@ -36,6 +36,7 @@ export const userSlice = createSlice({
     registerFailed: (state, action) => {
       return {
         ...state,
+        loading: false,
         error: action.payload,
       };
     },
@@ -50,6 +51,7 @@ export const userSlice = createSlice({
     loggedInUserData: (state, action) => {
       return {
         ...state,
+        loading: false,
         loggedInUser: action.payload,
       };
     },
@@ -57,6 +59,7 @@ export const userSlice = createSlice({
       return {
         ...state,
         error: null,
+        loading: false,
         currentUser: null,
       };
     },
@@ -67,12 +70,11 @@ export const userSlice = createSlice({
 export const {
   initialUserData,
   registerUser,
- 
+
   signIn,
   loggedInUserData,
   signOutCurrentUser,
   registerFailed,
 } = userSlice.actions;
-
 
 export default userSlice.reducer;

@@ -1,8 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment, useEffect } from "react";
 import { Popover, Transition } from "@headlessui/react";
-import
-{
+import {
   ChartBarIcon,
   MenuIcon,
   RefreshIcon,
@@ -32,19 +31,15 @@ const pages = [
     href: "/works",
     icon: ShieldCheckIcon,
   },
-
 ];
 
-export default function Navbar ()
-{
+export default function Navbar() {
   const currentUser = useSelector((state) => state.user.currentUser);
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
   const [notifications, setNotifications] = useState([]);
 
-  useEffect(() =>
-  {
-    const fetchNotifications = async () =>
-    {
+  useEffect(() => {
+    const fetchNotifications = async () => {
       const res = await fetch(
         "https://murmuring-spire-15534.herokuapp.com/jobs/notifyJobs"
       );
@@ -52,7 +47,7 @@ export default function Navbar ()
       setNotifications(data);
     };
     fetchNotifications();
-  }, [notifications]);
+  }, [loggedInUser?.role === "candidate"]);
 
   const router = useRouter();
 
@@ -63,8 +58,7 @@ export default function Navbar ()
   const { logOut } = useFirebase();
 
   // log out handler
-  const logOutHandler = () =>
-  {
+  const logOutHandler = () => {
     dispatch(logOut);
     setIsOpen(!isOpen);
   };
@@ -82,7 +76,9 @@ export default function Navbar ()
                   alt="logo"
                 />
                 <span className=" text-xl font-extrabold">
-                  <span className="dark:text-white text-slate-700 whitespace-nowrap">CorporateZone</span>
+                  <span className="dark:text-white text-slate-700 whitespace-nowrap">
+                    CorporateZone
+                  </span>
                 </span>
               </a>
             </Link>
@@ -227,17 +223,16 @@ export default function Navbar ()
                     onClick={() => router.push("/dashboard/profile")}
                     className="flex items-center hover:bg-slate-100 dark:hover:text-black py-2 w-full"
                   >
-                    {
-                      currentUser ?
-                        <img
-                          src={currentUser?.photoURL}
-                          className="w-10 h-10 mr-2 border "
-                          style={{ borderRadius: "50%" }}
-                          alt=""
-                        />
-                        :
-                        ""
-                    }
+                    {currentUser ? (
+                      <img
+                        src={currentUser?.photoURL}
+                        className="w-10 h-10 mr-2 border "
+                        style={{ borderRadius: "50%" }}
+                        alt=""
+                      />
+                    ) : (
+                      ""
+                    )}
                     <p className="">
                       <p className="font-bold text-green-600 block">
                         {loggedInUser?.username}
