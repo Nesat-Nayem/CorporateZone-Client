@@ -6,7 +6,7 @@ import "swiper/components/pagination/pagination.min.css";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper/core";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
-import card from '../../../styles/Home.module.css'
+import card from '../../../styles/Home.module.css';
 
 const fackreview = [
   {

@@ -36,32 +36,32 @@ export default function Home ({ articles })
       }, []);
 
       return (
-            <Layout title="Corporate Zone">
-                  {/* Offer pop-up modal */}
-                  {
-                        modalOpen && !currentUser?.email && <>
-                              <Modal setOpenModal={setModalOpen} />
-                              <FireWork />
-                        </>
-                  }
-                  <Header />
-                  <HeroArea className="" />
-                  {/* <CategoryJobs /> */}
-                  <Features />
-                  {/* <RecentJobs /> */}
-                  {/* <Recruiter /> */}
-                  <Zone />
-                  <Hiring />
-                  <Candidate />
-                  <CompanyJobs />
-                  <Pricing />
-                  {/* <Faq /> */}
-                  {/* <Review articles={articles} /> */}
-                  {/* <BlogArea /> */}
-                  {/* <Rule /> */}
-                  <Review />
-                  <Footer />
-            </Layout>
+        <Layout title="CorporateZone">
+          {/* Offer pop-up modal */}
+          {modalOpen && !currentUser?.email && (
+            <>
+              <Modal setOpenModal={setModalOpen} />
+              <FireWork />
+            </>
+          )}
+          <Header />
+          <HeroArea className="" />
+          {/* <CategoryJobs /> */}
+          <Features />
+          {/* <RecentJobs /> */}
+          {/* <Recruiter /> */}
+          <Zone />
+          <Hiring />
+          <Candidate />
+          <CompanyJobs />
+          <Pricing />
+          {/* <Faq /> */}
+          {/* <Review articles={articles} /> */}
+          {/* <BlogArea /> */}
+          {/* <Rule /> */}
+          <Review />
+          <Footer />
+        </Layout>
       );
 }
 
