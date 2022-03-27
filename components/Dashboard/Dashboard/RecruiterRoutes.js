@@ -53,7 +53,7 @@ const RecruiterRoutes = ({ setTrigger }) =>
             className=" py-4 text-lg font-extralight text-gray-300 hover:text-white   cursor-pointer flex items-center  px-10  "
           >
             <AiFillTags className="text-xl" />
-            &nbsp;&nbsp;&nbsp;Order History
+          &nbsp;Order History
           </a>
         </Link>
       </>

@@ -101,7 +101,7 @@ const Review = () =>
                 <div
                   className={card.zone_card}
                   style={{ width: "60%", height: "30%" }}>
-                  <div className=" lg:w-3/4 w-full mx-auto bg-white dark:bg-[#46bfeb7a]  text-center  p-4 shadow-lg rounded-lg ">
+                  <div className=" lg:w-3/4 w-full mx-auto bg-white dark:bg-[#46bfeb7a]  text-center  p-4 shadow-lg  rounded-lg ">
                     <img
                       className="w-12 mx-auto mb-4"
                       src="https://i.ibb.co/99dfqmz/quote.png"

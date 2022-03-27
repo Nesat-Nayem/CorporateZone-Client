@@ -6,7 +6,7 @@ const Modal = ({ setOpenModal }) =>
 {
     // home page popup
     return (
-        <div className="lg:w-5/12 lg:h-2/4 w-3/4 h-1/2 m-auto fixed inset-0 z-30">
+        <div className="lg:w-5/12 lg:h-2/4 md:h-3/4 w-3/4 h-1/2 m-auto fixed inset-0 z-30">
             <div className="w-full h-full rounded-3xl bg-[#42C2FF] opacity-80 shadow-2xl flex flex-col p-3 hover:opacity-100 hover:transform duration-700 hover:scale-105 ease-in-out">
                 <div className="flex justify-end">
                     <button
