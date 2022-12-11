@@ -12,7 +12,7 @@ const BadgeShow = () => {
   useEffect(() => {
     axios
       .get(
-        `https://murmuring-spire-15534.herokuapp.com/skill/${loggedInUser?.email}`
+        `https://corporate-zone-back-end-side-production.up.railway.app/skill/${loggedInUser?.email}`
       )
       .then(function (response) {
         setResult(response?.data);

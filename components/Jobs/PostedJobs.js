@@ -38,7 +38,7 @@ const PostedJobs = (props) =>
   {
     setCategory(e.target.value);
     const response = await fetch(
-      `https://murmuring-spire-15534.herokuapp.com/jobs?jobType=${e.target.value}`
+      `https://corporate-zone-back-end-side-production.up.railway.app/jobs?jobType=${e.target.value}`
     );
     const data = await response.json();
     setDisplay(data?.data);
@@ -51,7 +51,7 @@ const PostedJobs = (props) =>
 
   useEffect(() =>
   {
-    fetch("https://murmuring-spire-15534.herokuapp.com/jobs")
+    fetch("https://corporate-zone-back-end-side-production.up.railway.app/jobs")
       .then((res) => res.json())
       .then((data) =>
       {

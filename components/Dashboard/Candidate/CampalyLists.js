@@ -4,7 +4,7 @@ const CompanyLists = () => {
   const [companies, setCompanies] = useState([]);
 
   useEffect(() => {
-    fetch("https://murmuring-spire-15534.herokuapp.com/users")
+    fetch("https://corporate-zone-back-end-side-production.up.railway.app/users")
       .then((res) => res.json())
       .then((data) => {
         const main = data.filter((company) => company.role === "recruiter");

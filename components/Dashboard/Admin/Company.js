@@ -4,7 +4,7 @@ const Company = () => {
   const [companies, setCompanies] = useState([]);
 
   useEffect(() => {
-    fetch("https://murmuring-spire-15534.herokuapp.com/users")
+    fetch("https://corporate-zone-back-end-side-production.up.railway.app/users")
       .then((res) => res.json())
       .then((data) => {
         const main = data.filter((company) => company.role === "recruiter");
@@ -15,7 +15,7 @@ const Company = () => {
   const handleDelete = (id) => {
     const proccess = window.confirm("Are You Sure You Want To Delete");
     if (proccess) {
-      fetch(`https://murmuring-spire-15534.herokuapp.com/users/delete/${id}`, {
+      fetch(`https://corporate-zone-back-end-side-production.up.railway.app/users/delete/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

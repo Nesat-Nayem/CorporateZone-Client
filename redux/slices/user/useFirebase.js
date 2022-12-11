@@ -76,7 +76,7 @@ const useFirebase = () => {
 
   useEffect(() => {
     fetch(
-      `https://murmuring-spire-15534.herokuapp.com/users/signleUser/${currentUser?.email}`
+      `https://corporate-zone-back-end-side-production.up.railway.app/users/signleUser/${currentUser?.email}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -88,7 +88,7 @@ const useFirebase = () => {
   const saveData = async (data) => {
     try {
       const res = await fetch(
-        "https://murmuring-spire-15534.herokuapp.com/users/register",
+        "https://corporate-zone-back-end-side-production.up.railway.app/users/register",
         {
           method: "POST",
           headers: {

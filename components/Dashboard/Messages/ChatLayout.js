@@ -12,7 +12,7 @@ const ChatLayout = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       const response = await fetch(
-        "https://murmuring-spire-15534.herokuapp.com/users"
+        "https://corporate-zone-back-end-side-production.up.railway.app/users"
       );
       const data = await response.json();
       const allUsers = data.filter((user) => user._id !== loggedInUser?._id);

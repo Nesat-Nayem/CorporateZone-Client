@@ -11,7 +11,7 @@ const PostedJobs = ({ jobs }) => {
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(
-        `https://murmuring-spire-15534.herokuapp.com/jobs`
+        `https://corporate-zone-back-end-side-production.up.railway.app/jobs`
       );
       const data = await res.json();
 

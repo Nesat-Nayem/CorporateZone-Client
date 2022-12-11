@@ -21,7 +21,7 @@ const SingleChat = ({ loggedInUser, selectedChat }) => {
       setLoading(true);
 
       const { data } = await axios.get(
-        `https://murmuring-spire-15534.herokuapp.com/messages/${selectedChat?._id}`
+        `https://corporate-zone-back-end-side-production.up.railway.app/messages/${selectedChat?._id}`
       );
 
       setMessages(data);
@@ -71,7 +71,7 @@ const SingleChat = ({ loggedInUser, selectedChat }) => {
         };
         setNewMessage("");
         const { data } = await axios.post(
-          " https://murmuring-spire-15534.herokuapp.com/messages",
+          " https://corporate-zone-back-end-side-production.up.railway.app/messages",
           {
             senderId: loggedInUser?._id,
             content: newMessage,

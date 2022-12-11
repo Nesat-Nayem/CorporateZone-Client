@@ -15,9 +15,9 @@ const BuildResume = () =>
   const onSubmit = (data) =>
   {
     axios
-      .post("https://murmuring-spire-15534.herokuapp.com/create-pdf", data)
+      .post("https://corporate-zone-back-end-side-production.up.railway.app/create-pdf", data)
       .then(() =>
-        axios.get("https://murmuring-spire-15534.herokuapp.com/fetch-pdf", {
+        axios.get("https://corporate-zone-back-end-side-production.up.railway.app/fetch-pdf", {
           responseType: "blob",
         })
       )

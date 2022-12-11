@@ -92,7 +92,7 @@ const Jobdetails = ({ data }) => {
       };
       axios
         .post(
-          "https://murmuring-spire-15534.herokuapp.com/appliedJobs",
+          "https://corporate-zone-back-end-side-production.up.railway.app/appliedJobs",
           jobData
         )
         .then((response) => {
@@ -359,7 +359,7 @@ export default Jobdetails;
 
 export const getServerSideProps = async (context) => {
   const res = await fetch(
-    `https://murmuring-spire-15534.herokuapp.com/jobs/singleJob/${context.params.id}`
+    `https://corporate-zone-back-end-side-production.up.railway.app/jobs/singleJob/${context.params.id}`
   );
   const data = await res.json();
 
