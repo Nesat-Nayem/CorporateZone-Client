@@ -18,7 +18,7 @@ const RecruiterUpdateForm = () => {
   const onSubmit = (data) => {
     const newData = { ...data, photoURL };
     fetch(
-      `https://murmuring-spire-15534.herokuapp.com/users/${loggedInUser?.email}`,
+      `https://corporate-zone-back-end-side-production.up.railway.app/users/${loggedInUser?.email}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },

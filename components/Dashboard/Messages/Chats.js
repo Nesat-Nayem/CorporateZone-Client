@@ -13,7 +13,7 @@ const Chats = ({ selectedChat, setSelectedChat, loggedInUser, users }) => {
     };
 
     const { data } = await axios.post(
-      "https://murmuring-spire-15534.herokuapp.com/chats",
+      "https://corporate-zone-back-end-side-production.up.railway.app/chats",
       doc
     );
     setSelectedChat(data);

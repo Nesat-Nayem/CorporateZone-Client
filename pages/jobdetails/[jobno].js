@@ -19,7 +19,7 @@ import Footer from "../../components/Shared/Footer/Footer";
 export const getServerSideProps = async (context) => {
   const id = context.params.jobno;
   const res = await fetch(
-    `https://murmuring-spire-15534.herokuapp.com/jobs/${id}`
+    `https://corporate-zone-back-end-side-production.up.railway.app/jobs/${id}`
   );
   const data = await res.json();
 

@@ -76,7 +76,7 @@ const Quiz = ({ technology, setState }) => {
 
       axios
         .put(
-          `https://murmuring-spire-15534.herokuapp.com/skill/${technology}`,
+          `https://corporate-zone-back-end-side-production.up.railway.app/skill/${technology}`,
           {
             email: loggedInUser?.email,
             technology: technology,

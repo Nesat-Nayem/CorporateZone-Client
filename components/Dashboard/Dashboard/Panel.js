@@ -24,7 +24,7 @@ const Panel = () =>
 
   useEffect(() =>
   {
-    fetch("https://murmuring-spire-15534.herokuapp.com/jobs")
+    fetch("https://corporate-zone-back-end-side-production.up.railway.app/jobs")
       .then((res) => res.json())
       .then((data) =>
       {
@@ -43,7 +43,7 @@ const Panel = () =>
   //users
   useEffect(() =>
   {
-    fetch("https://murmuring-spire-15534.herokuapp.com/users")
+    fetch("https://corporate-zone-back-end-side-production.up.railway.app/users")
       .then((res) => res.json())
       .then((data) =>
       {
@@ -61,7 +61,7 @@ const Panel = () =>
     {
       const data = await (
         await fetch(
-          `https://murmuring-spire-15534.herokuapp.com/appliedJobs`
+          `https://corporate-zone-back-end-side-production.up.railway.app/appliedJobs`
         )
       ).json();
       setMyJobs(data.reverse().slice(0, 5));
@@ -86,7 +86,8 @@ const Panel = () =>
       {loggedInUser?.role === "admin" && (
         <div>
           <div className="feature_box flex flex-wrap justify-center items-center gap-5 my-5">
-            <div className="spam w-60 shadow-lg rounded-md flex justify-evenly items-center bg-[#d9effa] py-3">
+
+            <div className="spam  w-60 shadow-lg rounded-md flex justify-evenly items-center bg-[#d9effa] py-3">
               <div className="bg-[#ebf8fe]">
                 <FcCollect className="text-7xl" />
               </div>
@@ -95,6 +96,7 @@ const Panel = () =>
                 <p>Applicant</p>
               </div>
             </div>
+
             <div className="job w-60 shadow-lg rounded-md flex justify-evenly items-center bg-[#d9effa] py-3">
               <div className="bg-[#ebf8fe]">
                 <FcList className="text-7xl" />
@@ -144,6 +146,8 @@ const Panel = () =>
               </div>
             </div>
           </div>
+
+          
           <div className="recent_jobs my-5">
             <h3 className="text-xl uppercase font-medium">Applied Jobs</h3>
 
@@ -353,10 +357,14 @@ const Panel = () =>
           </div>
         </div>
       )}
+
+
       {/* Recruiter */}
       {loggedInUser?.role === "recruiter" && (
+
+   
         <div>
-          <div className="feature_box flex flex-wrap justify-center items-center gap-5 my-5">
+          <div className="feature_box  flex flex-wrap justify-center items-center gap-5 my-5">
             <div className="candidate w-60 shadow-lg rounded-md flex justify-evenly items-center bg-[#d9effa] py-3">
               <div className="bg-[#ebf8fe]">
                 <FcGenericSortingDesc className="text-7xl" />
@@ -366,6 +374,7 @@ const Panel = () =>
                 <p>Posted Jobs</p>
               </div>
             </div>
+
             <div className="candidate w-60 shadow-lg rounded-md flex justify-evenly items-center bg-[#d9effa] py-3">
               <div className="bg-[#ebf8fe]">
                 <FcReadingEbook className="text-7xl" />
@@ -403,7 +412,9 @@ const Panel = () =>
               </div>
             </div>
           </div>
-          <div className="recent_jobs my-5">
+
+
+          <div className="recent_jobs my-5 ">
             <h3 className="text-xl uppercase font-medium">Latest Jobs</h3>
             <div className="overflow-x-auto sm:mx-6 lg:mx-8">
               <div className="inline-block py-2 min-w-full sm:px-6 lg:px-8">
@@ -483,7 +494,8 @@ const Panel = () =>
               </div>
             </div>
           </div>
-          <div className="applicant my-5">
+
+          <div className="applicant my-5 ">
             <h3 className="text-xl uppercase font-medium my-3">
               New applicants
             </h3>
@@ -684,3 +696,4 @@ const Panel = () =>
 };
 
 export default Panel;
+

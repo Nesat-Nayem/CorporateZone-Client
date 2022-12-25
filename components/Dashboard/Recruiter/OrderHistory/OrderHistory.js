@@ -19,7 +19,7 @@ const OrderHistory = () => {
     if (session_id) {
       axios
         .get(
-          `https://murmuring-spire-15534.herokuapp.com/order/success/${session_id}`
+          `https://corporate-zone-back-end-side-production.up.railway.app/order/success/${session_id}`
         )
         .then(function (response) {
           if (response) {
@@ -57,7 +57,7 @@ const OrderHistory = () => {
     if (ready) {
       axios
         .put(
-          `https://murmuring-spire-15534.herokuapp.com/payment/${loggedInUser?.email}`,
+          `https://corporate-zone-back-end-side-production.up.railway.app/payment/${loggedInUser?.email}`,
           {
             email: loggedInUser?.email,
             plan: offer,
@@ -86,7 +86,7 @@ const OrderHistory = () => {
   useEffect(() => {
     axios
       .get(
-        `https://murmuring-spire-15534.herokuapp.com/payment/${loggedInUser?.email}`
+        `https://corporate-zone-back-end-side-production.up.railway.app/payment/${loggedInUser?.email}`
       )
       .then(function (response) {
         if (response) {

@@ -6,7 +6,7 @@ import JobUpdateModal from "./utils/JobUpdateModal";
  export const handleDelete = (id) => {
    const proccess = window.confirm("Are You Sure You Want To Delete");
    if (proccess) {
-     fetch(`https://murmuring-spire-15534.herokuapp.com/jobs/${id}`, {
+     fetch(`https://corporate-zone-back-end-side-production.up.railway.app/jobs/${id}`, {
        method: "DELETE",
      })
        .then((res) => res.json())
@@ -26,7 +26,7 @@ const Jobs = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    fetch("https://murmuring-spire-15534.herokuapp.com/jobs")
+    fetch("https://corporate-zone-back-end-side-production.up.railway.app/jobs")
       .then((res) => res.json())
       .then((data) => setJobs(data.data));
   }, [modalIsOpen]);

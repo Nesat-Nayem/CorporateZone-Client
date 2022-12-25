@@ -8,7 +8,7 @@ const ApplyJobs = ({ id }) =>
 
     useEffect(() =>
     {
-        fetch('https://murmuring-spire-15534.herokuapp.com/appliedJobs')
+        fetch('https://corporate-zone-back-end-side-production.up.railway.app/appliedJobs')
             .then(res => res.json())
             .then(data => setAppliedJobs(data.reverse()))
     }, []);

@@ -11,7 +11,7 @@ const Applicant = () =>
 
   useEffect(() =>
   {
-    fetch("https://murmuring-spire-15534.herokuapp.com/jobs")
+    fetch("https://corporate-zone-back-end-side-production.up.railway.app/jobs")
       .then((res) => res.json())
       .then((data) => setPostedJobs(data.data));
   }, []);
@@ -27,12 +27,12 @@ const Applicant = () =>
   console.log(matchJobs);
 
   return (
-    <>
-      <h2 className="text-center p-1 text-lg bg-slate-500 rounded-2xl font-semibold text-white">
-        You've posted{" "}
+    < div className="w-60 items-center justify-center flex-col ml-96">
+      <h2 className="text-center  p-1 text-lg bg-slate-500 rounded-2xl font-semibold text-white">
+        You've posted
         <span className="bg-white text-black rounded-2xl p-1">
           {matchJobs.length}
-        </span>{" "}
+        </span>
         job so far
       </h2>
       {matchJobs.map((job) => (
@@ -44,7 +44,7 @@ const Applicant = () =>
           lastDate={job.lastDate}
         />
       ))}
-    </>
+    </ div >
   );
 };
 

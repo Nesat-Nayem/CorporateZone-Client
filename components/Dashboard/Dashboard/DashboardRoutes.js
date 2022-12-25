@@ -57,9 +57,10 @@ const DashboardRoutes = ({ jobs }) =>
 
   return (
     <>
-      <div className="antialiased h-screen overflow-y-scroll chats relative lg:flex">
+      <div className="antialiased h-screen overflow-y-scroll chats relative flex ">
         <nav
-          className={`absolute overflow-y-scroll chats lg:relative z-10 w-72 lg:transform-none lg:opacity-100 bg-[#00355f] text-white h-screen ${!trigger
+    
+          className={`absolute overflow-y-scroll chats lg:relative z-10  w-72  lg:transform-none lg:opacity-100 bg-[#00355f] text-white h-screen ${!trigger
             ? "inset-0 opacity-0 transform duration-200 -translate-x-full ease-out"
             : "inset-0 opacity-100 transform duration-200 translate-x-0 ease-in"
             }`}

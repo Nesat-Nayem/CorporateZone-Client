@@ -11,7 +11,7 @@ const PostedJobs = ({ jobs }) => {
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(
-        `https://murmuring-spire-15534.herokuapp.com/jobs`
+        `https://corporate-zone-back-end-side-production.up.railway.app/jobs`
       );
       const data = await res.json();
 
@@ -43,8 +43,8 @@ const PostedJobs = ({ jobs }) => {
   } else {
     // jobs here
     return (
-      <div className="overflow-x-scroll bg-white py-5 xl:px-20 md:px-5 px-2">
-        <table className="min-w-full">
+      <div className="overflow-x-scroll bg-white py-5 xl:px-20 px-10 md:px-5 px-2">
+        <table className="lg:w-96">
           {/* table head */}
           <thead className="bg-gray-50 dark:bg-gray-700">
             <tr>
