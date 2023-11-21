@@ -98,7 +98,7 @@ const Jobdetails = ({ data }) =>
       };
       axios
         .post(
-          "https://corporate-zone-back-end-side-production.up.railway.app/appliedJobs",
+          "https://sore-rose-bighorn-sheep-fez.cyclic.app/appliedJobs",
           jobData
         )
         .then((response) =>
@@ -359,7 +359,7 @@ export default withProtected(Jobdetails);
 export const getServerSideProps = async (context) =>
 {
   const res = await fetch(
-    `https://corporate-zone-back-end-side-production.up.railway.app/jobs/singleJob/${context.params.id}`
+    `https://sore-rose-bighorn-sheep-fez.cyclic.app/jobs/singleJob/${context.params.id}`
   );
   const data = await res.json();
 

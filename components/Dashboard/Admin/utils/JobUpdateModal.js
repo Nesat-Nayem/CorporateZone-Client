@@ -21,7 +21,7 @@ const JobUpdateModal = ({ modalIsOpen, closeModal, jobTitle, id }) => {
     const updatedUser = {
       status: data.status,
     };
-    fetch(`https://corporate-zone-back-end-side-production.up.railway.app/jobs/${id}`, {
+    fetch(`https://sore-rose-bighorn-sheep-fez.cyclic.app/jobs/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedUser),

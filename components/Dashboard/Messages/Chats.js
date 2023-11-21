@@ -13,7 +13,7 @@ const Chats = ({ selectedChat, setSelectedChat, loggedInUser, users }) => {
     };
 
     const { data } = await axios.post(
-      "https://corporate-zone-back-end-side-production.up.railway.app/chats",
+      "https://sore-rose-bighorn-sheep-fez.cyclic.app/chats",
       doc
     );
     setSelectedChat(data);

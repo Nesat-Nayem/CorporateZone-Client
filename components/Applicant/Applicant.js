@@ -11,7 +11,7 @@ const Applicant = () =>
 
   useEffect(() =>
   {
-    fetch("https://corporate-zone-back-end-side-production.up.railway.app/jobs")
+    fetch("https://sore-rose-bighorn-sheep-fez.cyclic.app/jobs")
       .then((res) => res.json())
       .then((data) => setPostedJobs(data.data));
   }, []);

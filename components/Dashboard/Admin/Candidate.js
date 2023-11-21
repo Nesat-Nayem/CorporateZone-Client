@@ -4,7 +4,7 @@ const Candidate = () => {
   const [candidates, setCandidates] = useState([]);
 
   useEffect(() => {
-    fetch("https://corporate-zone-back-end-side-production.up.railway.app/users")
+    fetch("https://sore-rose-bighorn-sheep-fez.cyclic.app/users")
       .then((res) => res.json())
       .then((data) => {
         const main = data.filter((company) => company.role === "candidate");
@@ -15,7 +15,7 @@ const Candidate = () => {
   const handleDelete = (id) => {
     const proccess = window.confirm("Are You Sure You Want To Delete");
     if (proccess) {
-      fetch(`https://corporate-zone-back-end-side-production.up.railway.app/users/delete/${id}`, {
+      fetch(`https://sore-rose-bighorn-sheep-fez.cyclic.app/users/delete/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

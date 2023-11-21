@@ -46,7 +46,7 @@ export default function Navbar ()
     const fetchNotifications = async () =>
     {
       const res = await fetch(
-        "https://corporate-zone-back-end-side-production.up.railway.app/jobs/notifyJobs"
+        "https://sore-rose-bighorn-sheep-fez.cyclic.app/jobs/notifyJobs"
       );
       const data = await res.json();
       setNotifications(data);

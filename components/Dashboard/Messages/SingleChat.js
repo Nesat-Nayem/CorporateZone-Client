@@ -5,7 +5,7 @@ import axios from "axios";
 import ScrollableChat from "./ScrollableChat";
 import io from "socket.io-client";
 
-const ENDPOINT = "https://corporate-zone-back-end-side-production.up.railway.app";
+const ENDPOINT = "https://sore-rose-bighorn-sheep-fez.cyclic.app";
 var socket, selectedChatCompare;
 
 const SingleChat = ({ loggedInUser, selectedChat }) => {
@@ -21,7 +21,7 @@ const SingleChat = ({ loggedInUser, selectedChat }) => {
       setLoading(true);
 
       const { data } = await axios.get(
-        `https://corporate-zone-back-end-side-production.up.railway.app/messages/${selectedChat?._id}`
+        `https://sore-rose-bighorn-sheep-fez.cyclic.app/messages/${selectedChat?._id}`
       );
 
       setMessages(data);
@@ -71,7 +71,7 @@ const SingleChat = ({ loggedInUser, selectedChat }) => {
         };
         setNewMessage("");
         const { data } = await axios.post(
-          " https://corporate-zone-back-end-side-production.up.railway.app/messages",
+          " https://sore-rose-bighorn-sheep-fez.cyclic.app/messages",
           {
             senderId: loggedInUser?._id,
             content: newMessage,

@@ -12,7 +12,7 @@ const AppliedJobs = ({ jobs }) => {
     const fetchData = async () => {
       const data = await (
         await fetch(
-          `https://corporate-zone-back-end-side-production.up.railway.app/appliedJobs?email=${loggedInUser?.email}`
+          `https://sore-rose-bighorn-sheep-fez.cyclic.app/appliedJobs?email=${loggedInUser?.email}`
         )
       ).json();
       setMyJobs(data);
@@ -23,7 +23,7 @@ const AppliedJobs = ({ jobs }) => {
   const handleDelete = (id) => {
     const proccess = window.confirm("Are You Sure You Want To Delete");
     if (proccess) {
-      fetch(`https://corporate-zone-back-end-side-production.up.railway.app/appliedJobs/${id}`, {
+      fetch(`https://sore-rose-bighorn-sheep-fez.cyclic.app/appliedJobs/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

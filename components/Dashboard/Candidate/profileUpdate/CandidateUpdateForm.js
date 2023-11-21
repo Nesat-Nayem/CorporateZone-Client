@@ -23,7 +23,7 @@ const CandidateUpdateForm = () => {
   const onSubmit = (data) => {
     const newData = { ...data, photoURL, selectedSkills };
     fetch(
-      `https://corporate-zone-back-end-side-production.up.railway.app/users/${loggedInUser?.email}`,
+      `https://sore-rose-bighorn-sheep-fez.cyclic.app/users/${loggedInUser?.email}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },

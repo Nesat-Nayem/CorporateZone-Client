@@ -13,9 +13,9 @@ const BuildResume = () => {
 
   const onSubmit = (data) => {
     axios
-      .post("https://corporate-zone-back-end-side-production.up.railway.app/create-pdf", data)
+      .post("https://sore-rose-bighorn-sheep-fez.cyclic.app/create-pdf", data)
       .then(() =>
-        axios.get("https://corporate-zone-back-end-side-production.up.railway.app/fetch-pdf", {
+        axios.get("https://sore-rose-bighorn-sheep-fez.cyclic.app/fetch-pdf", {
           responseType: "blob",
         })
       )

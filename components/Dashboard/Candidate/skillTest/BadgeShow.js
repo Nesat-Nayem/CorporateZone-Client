@@ -12,7 +12,7 @@ const BadgeShow = () => {
   useEffect(() => {
     axios
       .get(
-        `https://corporate-zone-back-end-side-production.up.railway.app/skill/${loggedInUser?.email}`
+        `https://sore-rose-bighorn-sheep-fez.cyclic.app/skill/${loggedInUser?.email}`
       )
       .then(function (response) {
         setResult(response?.data);

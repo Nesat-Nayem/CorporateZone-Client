@@ -11,7 +11,7 @@ const PostedJobs = ({ jobs }) => {
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(
-        `https://corporate-zone-back-end-side-production.up.railway.app/jobs`
+        `https://sore-rose-bighorn-sheep-fez.cyclic.app/jobs`
       );
       const data = await res.json();
 

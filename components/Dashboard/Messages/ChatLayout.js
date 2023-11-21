@@ -15,7 +15,7 @@ const ChatLayout = () =>
     const fetchUsers = async () =>
     {
       const response = await fetch(
-        "https://corporate-zone-back-end-side-production.up.railway.app/users"
+        "https://sore-rose-bighorn-sheep-fez.cyclic.app/users"
       );
       const data = await response.json();
       const allUsers = data.filter((user) => user._id !== loggedInUser?._id);

@@ -8,7 +8,7 @@ const ApplyJobs = ({ id }) =>
 
     useEffect(() =>
     {
-        fetch('https://corporate-zone-back-end-side-production.up.railway.app/appliedJobs')
+        fetch('https://sore-rose-bighorn-sheep-fez.cyclic.app/appliedJobs')
             .then(res => res.json())
             .then(data => setAppliedJobs(data.reverse()))
     }, []);

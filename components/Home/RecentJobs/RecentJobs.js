@@ -23,7 +23,7 @@ const RecentJobs = (props) =>
   {
     setCategory(e.target.value);
     const response = await fetch(
-      `https://corporate-zone-back-end-side-production.up.railway.app/jobs?jobType=${e.target.value}`
+      `https://sore-rose-bighorn-sheep-fez.cyclic.app/jobs?jobType=${e.target.value}`
     );
     const data = await response.json();
     console.log(data.data);
@@ -37,7 +37,7 @@ const RecentJobs = (props) =>
 
   useEffect(() =>
   {
-    fetch("https://corporate-zone-back-end-side-production.up.railway.app/jobs")
+    fetch("https://sore-rose-bighorn-sheep-fez.cyclic.app/jobs")
       .then((res) => res.json())
       .then((data) =>
       {

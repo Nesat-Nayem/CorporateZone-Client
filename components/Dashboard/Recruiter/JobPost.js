@@ -138,7 +138,7 @@ const JobPost = () => {
       skills.length
     ) {
       axios
-        .post("https://corporate-zone-back-end-side-production.up.railway.app/jobs", allData)
+        .post("https://sore-rose-bighorn-sheep-fez.cyclic.app/jobs", allData)
         .then((res) => {
           if (res.status === 200) {
             router.push("/");

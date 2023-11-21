@@ -20,7 +20,7 @@ export const getServerSideProps = async (context) =>
   // without filtering
   if (jobType) {
     const response = await fetch(
-      `https://corporate-zone-back-end-side-production.up.railway.app/jobs/?jobType=${jobType}`
+      `https://sore-rose-bighorn-sheep-fez.cyclic.app/jobs/?jobType=${jobType}`
     );
     const data = await response.json();
 
@@ -32,7 +32,7 @@ export const getServerSideProps = async (context) =>
     };
   } else {
     const response = await fetch(
-      "https://corporate-zone-back-end-side-production.up.railway.app/jobs"
+      "https://sore-rose-bighorn-sheep-fez.cyclic.app/jobs"
     );
     const data = await response.json();
     return {

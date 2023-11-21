@@ -24,7 +24,7 @@ const Panel = () =>
 
   useEffect(() =>
   {
-    fetch("https://corporate-zone-back-end-side-production.up.railway.app/jobs")
+    fetch("https://sore-rose-bighorn-sheep-fez.cyclic.app/jobs")
       .then((res) => res.json())
       .then((data) =>
       {
@@ -43,7 +43,7 @@ const Panel = () =>
   //users
   useEffect(() =>
   {
-    fetch("https://corporate-zone-back-end-side-production.up.railway.app/users")
+    fetch("https://sore-rose-bighorn-sheep-fez.cyclic.app/users")
       .then((res) => res.json())
       .then((data) =>
       {
@@ -61,7 +61,7 @@ const Panel = () =>
     {
       const data = await (
         await fetch(
-          `https://corporate-zone-back-end-side-production.up.railway.app/appliedJobs`
+          `https://sore-rose-bighorn-sheep-fez.cyclic.app/appliedJobs`
         )
       ).json();
       setMyJobs(data.reverse().slice(0, 5));
